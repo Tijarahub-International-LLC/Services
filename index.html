@@ -9,55 +9,48 @@
   </head>
   <body>
     <header
-      class="px-10 flex justify-between items-center h-[80px] relative bg-gray-200 lg:m-auto lg:px-0 lg:justify-around"
+      class="px-10 flex justify-between items-center h-[80px] relative border border-b-main/10 lg:m-auto lg:px-0 lg:justify-around"
     >
       <img src="assets/Logos-15.png" alt="TijaraHub" class="max-w-12" />
-      <span class="burger-icon text-xl lg:hidden"
+      <span class="text-xl text-gray-200 cursor-pointer burger-icon lg:hidden"
         ><i class="fa-solid fa-bars"></i
       ></span>
       <ul
-        class="menu hidden absolute flex-col left-0 top-0 justify-start opacity-0 pt-20 items-center font-semibold text-white text-xl *:transition duration-100 ease-in-out gap-11 bg-black h-[100vh] w-[100vw] lg:flex lg:opacity-100 lg:flex-row lg:justify-center lg:bg-transparent lg:text-black lg:static lg:right-0 lg:p-0 lg:h-auto lg:w-auto"
+        class="menu hidden absolute flex-col left-0 top-0 justify-start opacity-0 pt-20 items-center font-semibold text-white text-xl *:transition duration-100 ease-in-out gap-11 bg-black h-[100vh] w-[100vw] lg:flex lg:opacity-100 lg:flex-row lg:justify-center lg:bg-transparent lg:text-gray-200 lg:static lg:right-0 lg:p-0 lg:h-auto lg:w-auto"
       >
-        <span class="close absolute top-[16px] right-[16px] text-2xl lg:hidden"
+        <span
+          class="close absolute top-[16px] right-[16px] text-2xl lg:hidden cursor-pointer"
           ><i class="fa-solid fa-xmark"></i
         ></span>
         <li class="hover:text-main"><a href="#">Services</a></li>
         <li class="hover:text-main"><a href="#">Case Study</a></li>
         <li class="hover:text-main"><a href="#">Journey</a></li>
       </ul>
-      <div class="hidden gap-9 items-center lg:flex">
+      <div class="items-center hidden gap-9 lg:flex">
         <button
-          class="bg-gray-300 px-11 py-2 rounded-3xl text-xl font-bold cursor-pointer transition duration-300 ease-in-out hover:bg-main hover:text-white"
+          class="py-2 text-xl font-bold transition duration-300 ease-in-out bg-gray-300 cursor-pointer px-11 rounded-3xl hover:bg-main hover:text-white"
         >
           Free Trial
         </button>
-        <span class="text-2xl cursor-pointer"
+        <span class="text-2xl text-gray-200 cursor-pointer"
           ><i class="fa-solid fa-globe"></i
         ></span>
       </div>
     </header>
     <main class="container lg:px-0 lg:mx-auto">
       <div
-        class="container hero h-[calc(100vh-80px)] flex flex-col justify-center items-center gap-12"
+        class="container hero h-[calc(100vh-80px)] flex flex-col justify-center items-center gap-12 text-gray-200"
       >
         <h1 class="text-center text-4xl font-[700] leading-[150%] lg:text-6xl">
           Power Global B2B Trade With <br />TijaraHub
         </h1>
         <p class="text-xl">Try First, Pay Later</p>
-        <div class="flex flex-row justify-center gap-6 items-center">
-          <button
-            class="bg-[#DDDD] px-5 py-2 rounded-3xl text-lg font-bold cursor-pointer transition duration-300 ease-in-out hover:bg-main hover:text-white"
-          >
-            Free Trial
-          </button>
-          <button
-            class="bg-[#DDDD] px-5 py-2 rounded-3xl text-lg font-bold cursor-pointer transition duration-300 ease-in-out hover:bg-main hover:text-white"
-          >
-            CTA
-          </button>
+        <div class="flex flex-row items-center justify-center w-full gap-6">
+          <button class="btn lg:!px-10">Free Trial</button>
+          <button class="btn lg:!px-10">CTA</button>
         </div>
       </div>
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <iframe
           class="rounded-3xl aspect-video mb-14 md:mb-16"
           width="1240"
@@ -70,8 +63,8 @@
         ></iframe>
       </div>
 
-      <div class="container overflow-hidden">
-        <div class="animate-marquee flex flex-row justify-center gap-3">
+      <div class="container overflow-hidden section-bottom-space">
+        <div class="flex flex-row justify-center gap-3 animate-marquee">
           <div
             class="*:inline *:min-w-[100px] flex justify-between items-center gap-3"
           >
