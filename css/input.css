@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-main: #e95b2b;
-
+  --color-primary: #e95b2b;
+  --color-secondary: #252b58;
+  --font-inter: "Inter", sans-serif;
   /* Custom Animations */
   --animate-marquee-parteners: marquee-parteners 15s linear infinite;
   --animate-marquee: marquee 15s linear infinite;
@@ -33,7 +34,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
   animation-play-state: paused;
   background-color: rgb(12, 12, 12);
   background-image: linear-gradient(
@@ -60,4 +61,22 @@ button {
 
 .btn {
   @apply h-12 px-4 text-white duration-300 border rounded-full bg-main border-main hover:bg-transparent;
+}
+
+
+/* Typography */
+.h1 {
+  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[82px]
+}
+.h2 {
+  @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px]
+}
+.h3 {
+  @apply text-[28px] leading-[30px] md:text-[32px] md:leading-[34px]
+}
+.h4 {
+  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px]
+}
+.body {
+  @apply text-[16px] leading-[18px] md:text-[18px] md:leading-[20px]
 }
