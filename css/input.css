@@ -5,9 +5,19 @@
   --color-main: #e95b2b;
 
   /* Custom Animations */
+  --animate-marquee-parteners: marquee-parteners 15s linear infinite;
   --animate-marquee: marquee 15s linear infinite;
 
   /* Key Frames */
+  @keyframes marquee-parteners {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-104.7%);
+    }
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0%);
@@ -31,6 +41,9 @@ body {
     rgb(12, 12, 12),
     rgba(222, 78, 54, 0.09)
   );
+  ::selection {
+    background-color: #e95b2b;
+  }
 }
 
 button {
@@ -42,9 +55,9 @@ button {
 }
 
 .stat-card {
-  @apply h-12 px-4 text-gray-200 duration-300 border shadow-main hover:shadow hover:border-main border-main/10 flex gap-3 items-center justify-center rounded-full;
+  @apply flex items-center justify-center h-12 gap-3 px-4 text-gray-200 duration-300 border rounded-full shadow-main hover:shadow hover:border-main border-main/10;
 }
 
 .btn {
-  @apply bg-main border px-4 border-main hover:bg-transparent duration-300 text-white h-12 rounded-full;
+  @apply h-12 px-4 text-white duration-300 border rounded-full bg-main border-main hover:bg-transparent;
 }

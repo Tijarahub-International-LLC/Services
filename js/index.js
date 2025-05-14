@@ -21,8 +21,6 @@ close.addEventListener('click' , ()=>{
 window.addEventListener('resize' , (e)=>{
     if(window.innerWidth > 1024){
         menu.style.opacity = 100
-    }else{
-        
-        menu.style.opacity = 100
+        menu.style.display = 'flex'
     }
 })
