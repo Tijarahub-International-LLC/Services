@@ -5,6 +5,8 @@
   --color-primary: #e95b2b;
   --color-secondary: #252b58;
   --font-inter: "Inter", sans-serif;
+  --color-main: #e95b2b;
+  --color-dark: rgb(54, 54, 54);
   /* Custom Animations */
   --animate-marquee-parteners: marquee-parteners 15s linear infinite;
   --animate-marquee: marquee 15s linear infinite;
@@ -15,7 +17,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-104.7%);
+      transform: translateX(-104.6%);
     }
   }
 
@@ -24,7 +26,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-50.2%);
     }
   }
 }
@@ -79,4 +81,10 @@ button {
 }
 .body {
   @apply text-[16px] leading-[18px] md:text-[18px] md:leading-[20px]
+}
+.active-menu {
+  display: flex;
+}
+.active-answer {
+  @apply max-h-[340px];
 }
