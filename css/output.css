@@ -8,9 +8,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-amber-400: oklch(82.8% 0.189 84.429);
-    --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --spacing: 0.25rem;
@@ -54,8 +51,8 @@
     --color-secondary-100: #e0e8f9;
     --color-secondary-50: #f1f5fd;
     --font-inter: "Inter", sans-serif;
-    --animate-marquee-parteners: marquee-parteners 15s linear infinite;
-    --animate-marquee: marquee 23s linear infinite;
+    --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+    --animate-marquee: marquee 36s linear infinite;
   }
 }
 @layer base {
@@ -302,9 +299,6 @@
   .list-item {
     display: list-item;
   }
-  .table {
-    display: table;
-  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -360,9 +354,6 @@
   .flex-1\/9 {
     flex: calc(1/9 * 100%);
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -377,9 +368,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -404,9 +392,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -466,21 +451,11 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-none {
-    --tw-border-style: none;
-    border-style: none;
-  }
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
-  .border-secondary {
-    border-color: var(--color-secondary);
-  }
   .border-secondary-50 {
     border-color: var(--color-secondary-50);
-  }
-  .border-secondary-200 {
-    border-color: var(--color-secondary-200);
   }
   .border-secondary-400 {
     border-color: var(--color-secondary-400);
@@ -499,6 +474,9 @@
   }
   .bg-secondary-300 {
     background-color: var(--color-secondary-300);
+  }
+  .bg-transparent {
+    background-color: transparent;
   }
   .bg-gradient-to-br {
     --tw-gradient-position: to bottom right in oklab;
@@ -601,9 +579,6 @@
   .text-gray-200 {
     color: var(--color-gray-200);
   }
-  .text-red-600 {
-    color: var(--color-red-600);
-  }
   .text-secondary {
     color: var(--color-secondary);
   }
@@ -612,15 +587,6 @@
   }
   .text-secondary-100 {
     color: var(--color-secondary-100);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .accent-amber-400 {
-    accent-color: var(--color-amber-400);
-  }
-  .accent-amber-950 {
-    accent-color: var(--color-amber-950);
   }
   .opacity-0 {
     opacity: 0%;
@@ -683,14 +649,14 @@
       min-height: 100px;
     }
   }
+  .\*\:w-\[200px\] {
+    :is(& > *) {
+      width: 200px;
+    }
+  }
   .\*\:min-w-\[170px\] {
     :is(& > *) {
       min-width: 170px;
-    }
-  }
-  .\*\:min-w-\[250px\] {
-    :is(& > *) {
-      min-width: 250px;
     }
   }
   .\*\:flex-1 {
@@ -711,11 +677,6 @@
   .\*\:bg-no-repeat {
     :is(& > *) {
       background-repeat: no-repeat;
-    }
-  }
-  .\*\:p-4 {
-    :is(& > *) {
-      padding: calc(var(--spacing) * 4);
     }
   }
   .\*\:duration-300 {
@@ -1186,6 +1147,7 @@ button {
 }
 .active-answer {
   max-height: 340px;
+  border-color: var(--color-secondary-200);
 }
 @property --tw-rotate-x {
   syntax: "*";
