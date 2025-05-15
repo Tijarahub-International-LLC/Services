@@ -56,7 +56,7 @@ body {
 }
 
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer focus:border-none focus-within:border-none focus-visible:border-none;
 }
 
 .section-bottom-space {
@@ -64,10 +64,7 @@ button {
 }
 
 .stat-card {
-  @apply flex items-center justify-center h-12 gap-3 px-4 text-gray-200 duration-300 border rounded-full shadow-secondary hover:shadow hover:border-main border-main/10;
-}
-.btn-contained {
-  @apply h-12 px-4 duration-300 border rounded-full text-secondary-100 border-main bg-main;
+  @apply flex items-center justify-center h-12 gap-3 px-4 duration-300 border rounded-full hover:shadow-[0px_8px_16px_1px_var(--color-secondary-600)] shadow-[0px_4px_16px_1px_var(--color-secondary-600)] border-secondary-600 text-secondary-100 hover:bg-secondary-50 hover:text-secondary hover:scale-105;
 }
 .btn {
   @apply h-12 px-4 duration-300 border rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main hover:border-main;
@@ -75,7 +72,7 @@ button {
 
 /* Typography */
 .h1 {
-  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[82px] font-black;
+  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[100px] font-black 
 }
 .h2 {
   @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px] font-[700];
