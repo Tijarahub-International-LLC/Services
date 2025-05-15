@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -17,8 +17,6 @@
   --font-inter: "Inter", sans-serif;
   --color-dark: rgb(54, 54, 54);
 
-
-
   /* Custom Animations */
   --animate-marquee-parteners: marquee-parteners 15s linear infinite;
   --animate-marquee: marquee 23s linear infinite;
@@ -29,7 +27,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-104.6%);
+      transform: translateX(-131.67%);
     }
   }
 
@@ -50,12 +48,11 @@
 }
 
 ::selection {
-    @apply bg-main text-secondary-50
- }
+  @apply bg-main text-secondary-50;
+}
 
 body {
-
-  @apply font-inter
+  @apply font-inter;
 }
 
 button {
@@ -67,34 +64,34 @@ button {
 }
 
 .stat-card {
-  @apply flex items-center justify-center h-12 gap-3 px-4 text-gray-200 duration-300 border rounded-full shadow-secondary hover:shadow hover:border-secondary border-secondary/10;
+  @apply flex items-center justify-center h-12 gap-3 px-4 text-gray-200 duration-300 border rounded-full shadow-secondary hover:shadow hover:border-main border-main/10;
 }
-
+.btn-contained {
+  @apply h-12 px-4 duration-300 border rounded-full text-secondary-100 border-main bg-main;
+}
 .btn {
   @apply h-12 px-4 duration-300 border rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main hover:border-main;
 }
 
-
 /* Typography */
 .h1 {
-  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[82px] font-black 
+  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[82px] font-black;
 }
 .h2 {
-  @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px] font-[700] 
+  @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px] font-[700];
 }
-.h3 { 
-  @apply text-[28px] leading-[30px] md:text-[32px] md:leading-[34px] font-medium 
+.h3 {
+  @apply text-[28px] leading-[30px] md:text-[32px] md:leading-[34px] font-medium;
 }
 .h4 {
-  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px] font-medium 
+  @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px] font-medium;
 }
 .body {
-  @apply text-[16px] leading-[18px] md:text-[18px] md:leading-[20px] 
+  @apply text-[16px] leading-[18px] md:text-[18px] md:leading-[20px];
 }
 
-
 .active-menu {
-  @apply opacity-100
+  @apply opacity-100;
 }
 .active-answer {
   @apply max-h-[340px];
