@@ -8,55 +8,65 @@
     <link href="./css/output.css" rel="stylesheet" />
   </head>
   <body>
-    <header
-      class="px-10 flex justify-between items-center h-[80px] relative border border-b-main/10 lg:m-auto lg:px-0 lg:justify-around"
+    <!-- Hero Section -->
+    <div
+      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#252b58_94%)] section-bottom-space"
     >
-      <img src="assets/Logos-15.png" alt="TijaraHub" class="max-w-12" />
-      <span class="text-xl text-gray-200 cursor-pointer burger-icon lg:hidden"
-        ><i class="fa-solid fa-bars"></i
-      ></span>
-      <ul
-        class="menu hidden absolute flex-col left-0 top-0 justify-start opacity-0 pt-20 items-center font-semibold text-white text-xl *:transition duration-100 ease-in-out gap-11 bg-black h-[100vh] w-[100vw] lg:flex lg:opacity-100 lg:flex-row lg:justify-center lg:bg-transparent lg:text-gray-200 lg:static lg:right-0 lg:p-0 lg:h-auto lg:w-auto"
-      >
-        <span
-          class="close absolute top-[16px] right-[16px] text-2xl lg:hidden cursor-pointer"
-          ><i class="fa-solid fa-xmark"></i
-        ></span>
-        <li class="hover:text-main"><a href="#">Services</a></li>
-        <li class="hover:text-main"><a href="#">Case Study</a></li>
-        <li class="hover:text-main"><a href="#">Journey</a></li>
-      </ul>
-      <div class="items-center hidden gap-9 lg:flex">
-        <button
-          class="py-2 text-xl font-bold transition duration-300 ease-in-out bg-gray-300 cursor-pointer px-11 rounded-3xl hover:bg-main hover:text-white"
-        >
-          Free Trial
-        </button>
-        <span
-          class="text-2xl text-gray-200 transition duration-300 ease-in-out cursor-pointer hover:text-main"
-          ><i class="fa-solid fa-globe"></i
-        ></span>
-      </div>
-    </header>
-    <main class="container lg:px-0 lg:mx-auto">
-      <div
-        class="container hero h-[calc(100vh-80px)] flex flex-col justify-center items-center gap-12 text-gray-200"
-      >
-        <h1
-          class="text-center text-4xl leading-[50px] font-[700] lg:leading-[80px] lg:text-7xl"
-        >
-          Power Global B2B Trade With <br />TijaraHub
-        </h1>
-        <p class="text-xl font-medium">Try First, Pay Later</p>
-        <div class="flex flex-row items-center justify-center w-full gap-6">
-          <button class="btn font-semibold lg:!px-10">Free Trial</button>
-          <button class="btn font-semibold lg:!px-10">CTA</button>
+      <header class="container">
+        <div class="flex justify-between items-center h-[80px]">
+          <img src="assets/Logos-15.png" alt="TijaraHub" class="max-w-12" />
+
+          <ul
+            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-main *:duration-300 text-center"
+          >
+            <li>
+              <span
+                class="absolute block text-3xl cursor-pointer end-4 top-4 size-8 close lg:hidden"
+                ><i class="fa-solid fa-xmark"></i
+              ></span>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">Journey</a></li>
+          </ul>
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 lg:gap-8">
+              <!-- <button
+              class="hidden shadow btn lg:w-44 md:block shadow-transparent hover:shadow-main"
+            >
+              Free Trial
+            </button> -->
+              <span
+                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-secondary"
+                ><i class="fa-solid fa-globe"></i
+              ></span>
+            </div>
+            <span class="text-3xl cursor-pointer burger-icon lg:hidden"
+              ><i class="fa-solid fa-bars"></i
+            ></span>
+          </div>
         </div>
-      </div>
-      <div class="flex items-center justify-center">
+      </header>
+      <section class="pt-32 mb-16 lg:mb-24 lg:pt-48">
+        <div
+          class="container flex flex-col items-center justify-center gap-6 text-gray-200 lg:gap-12"
+        >
+          <h1 class="text-center text-secondary h1">
+            Power Global B2B Trade With <br />TijaraHub
+          </h1>
+          <p class="body">Try First, Pay Later</p>
+          <div
+            class="flex flex-row items-center justify-center w-full gap-4 lg:gap-6"
+          >
+            <button class="btn font-semibold lg:!px-10">Free Trial</button>
+            <button class="btn font-semibold lg:!px-10">CTA</button>
+          </div>
+        </div>
+      </section>
+      <!-- Video -->
+      <div class="container flex items-center justify-center">
         <iframe
-          class="rounded-3xl aspect-video mb-14 md:mb-16"
-          width="1240"
+          class="w-full rounded-3xl aspect-video"
           src="https://www.youtube.com/embed/L1PO_KzWIX8?si=DAWduktLBZaoerS4"
           title="YouTube video player"
           frameborder="0"
@@ -65,11 +75,13 @@
           allowfullscreen
         ></iframe>
       </div>
-
-      <div class="container overflow-hidden section-bottom-space">
-        <h2
-          class="mb-8 text-3xl font-semibold text-center text-gray-200 md:text-4xl md:mb-10"
-        >
+    </div>
+    <main
+      class="relative flex flex-col pb-8 overflow-x-hidden bg-secondary gap-14 md:gap-16 pb:gap-12"
+    >
+      <!-- Our Parteners -->
+      <div class="container overflow-hidden">
+        <h2 class="mb-8 text-center text-gray-200 h2 md:mb-10">
           Our Parteners
         </h2>
         <div
@@ -179,648 +191,574 @@
           </div>
         </div>
       </div>
-    </main>
-    <!-- Stats Section -->
-    <section class="container flex flex-col gap-6 section-bottom-space">
-      <button class="block mx-auto btn w-3xs">Become a Partner</button>
 
-      <div class="flex flex-wrap items-center justify-center gap-6">
-        <div class="stat-card">
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-          <p><span class="font-bold">9k</span> Wholesale buyers</p>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-users"></i>
-          <p><span class="font-bold">70K</span> Visistor</p>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-handshake-angle"></i>
-          <p><span class="font-bold">4K</span> Successful Deals</p>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-boxes-packing"></i>
-          <p><span class="font-bold">1200</span> Suppliers</p>
-        </div>
-      </div>
-    </section>
-    <!-- Services Section -->
-    <section class="container">
-      <div
-        class="relative max-w-[1000px] mx-auto flex flex-col gap-6 p-12 border shadow lg:py-20 shadow-main border-main/10 rounded-3xl section-bottom-space"
-      >
-        <div class="flex flex-col gap-3">
-          <h2 class="text-4xl font-semibold text-gray-200 md:text-5xl">
-            Trade Smarter. <br />
-            Grow Globally.
-          </h2>
-          <p class="text-lg md:text-xl max-w-[688px] text-gray-200">
-            From factory floors to global doors,TijaraHub powers B2B trade with
-            Middle Eastern roots and world-class innovation.
-          </p>
-        </div>
-        <div>
-          <button class="btn">See How it Works</button>
-        </div>
+      <!-- Stats Section -->
+      <section class="container flex flex-col gap-6">
+        <button class="block mx-auto btn h4">Become a Partner</button>
 
-        <div
-          class="static xl:absolute end-5 bottom-5 flex items-center [animation-duration:10s] gap-6 flex-wrap animate-bounce pt-6"
-        >
-          <div
-            class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-main md:text-6xl size-20 md:size-28"
-          >
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <div
-            class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-main md:text-6xl size-20 md:size-28"
-          >
-            <i class="fa-solid fa-boxes-packing"></i>
-          </div>
-          <div
-            class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-main md:text-6xl size-20 md:size-28"
-          >
+        <div class="flex flex-wrap items-center justify-center gap-6 body">
+          <div class="stat-card">
             <i class="fa-solid fa-hand-holding-dollar"></i>
+            <p><span class="font-bold">9k</span> Wholesale buyers</p>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-users"></i>
+            <p><span class="font-bold">70K</span> Visistor</p>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-handshake-angle"></i>
+            <p><span class="font-bold">4K</span> Successful Deals</p>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-boxes-packing"></i>
+            <p><span class="font-bold">1200</span> Suppliers</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Pricing Plans Section -->
-    <section class="container section-bottom-space">
-      <h2
-        class="mb-6 text-3xl font-semibold text-center text-gray-200 md:text-4xl"
-      >
-        Our Pricing Plans
-      </h2>
-
-      <div
-        class="flex max-w-[300px] mb-6 mx-auto items-center border border-main/10 text-gray-200 rounded-full p-3 *:flex-1"
-      >
-        <button class="btn">Annually</button>
-        <button>Monthly</button>
-      </div>
-
-      <div
-        class="flex justify-center max-[800px]:flex-col flex-row items-center gap-10 *:flex-1"
-      >
+      </section>
+      <!-- Services Section -->
+      <section class="container">
         <div
-          class="flex max-w-[480px] text-gray-200 duration-300 hover:shadow shadow-main border-main/50 flex-col gap-6 p-5 border rounded-3xl"
+          class="relative flex flex-col gap-6 p-6 min-h-[520px] lg:p-12 lg:py-20 bg-gradient-to-br to-secondary-900 from-secondary-100 rounded-3xl"
         >
-          <div class="flex flex-col justify-center gap-2 text-center">
-            <h3 class="text-2xl font-semibold md:text-3xl">Standard</h3>
-            <p class="text-xl font-bold text-main">195 USD / Monthly</p>
-            <p>$2340 Per Year</p>
+          <div class="flex flex-col gap-3">
+            <h2 class="h2">
+              Trade Smarter. <br />
+              Grow Globally.
+            </h2>
+            <p class="body max-w-[688px]">
+              From factory floors to global doors,TijaraHub powers B2B trade
+              with Middle Eastern roots and world-class innovation.
+            </p>
           </div>
-          <ul class="flex flex-col gap-6">
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-          </ul>
-          <button class="btn">Select Plan</button>
-        </div>
-        <div
-          class="flex max-w-[480px] text-gray-200 duration-300 hover:shadow shadow-main border-main/50 flex-col gap-6 p-5 border rounded-3xl"
-        >
-          <div class="flex flex-col justify-center gap-2 text-center">
-            <h3 class="text-2xl font-semibold md:text-3xl">Standard</h3>
-            <p class="text-xl font-bold text-main">195 USD / Monthly</p>
-            <p>$2340 Per Year</p>
+          <div>
+            <button class="btn body">See How it Works</button>
           </div>
-          <ul class="flex flex-col gap-6">
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-            <li class="flex items-center justify-between gap-2 text-sm">
-              <p class="flex items-center gap-0.5 xl:gap-4">
-                International Export Sales
-                <i class="fa-solid fa-circle-info"></i>
-              </p>
-              1 Sales
-            </li>
-          </ul>
-          <button class="btn">Select Plan</button>
-        </div>
-      </div>
-    </section>
 
-    <!-- Our Top Sellers Section -->
-    <section class="container section-bottom-space">
-      <h2
-        class="mb-6 text-3xl font-semibold text-center text-gray-200 md:text-4xl"
-      >
-        Our Top Sellers
-      </h2>
-      <div class="flex overflow-hidden">
+          <div
+            class="static xl:absolute end-5 bottom-5 flex justify-center items-center [animation-duration:5s] gap-6 flex-wrap animate-bounce pt-6"
+          >
+            <div
+              class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-secondary md:text-6xl size-20 md:size-28"
+            >
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div
+              class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-secondary md:text-6xl size-20 md:size-28"
+            >
+              <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <div
+              class="flex items-center justify-center text-3xl bg-gray-300 rounded-full text-secondary md:text-6xl size-20 md:size-28"
+            >
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Plans Section -->
+      <section class="container">
+        <h2 class="mb-6 text-center text-gray-200 h2">Our Pricing Plans</h2>
+
         <div
-          class="flex space-x-5 animate-marquee hover:[animation-play-state:paused]"
+          class="flex w-full max-w-[300px] mb-6 mx-auto items-center border border-secondary/10 text-gray-200 rounded-full p-3 *:flex-1"
+        >
+          <button class="btn">Annually</button>
+          <button>Monthly</button>
+        </div>
+
+        <div
+          class="flex justify-center max-[800px]:flex-col flex-row md:items-center gap-10 *:flex-1"
         >
           <div
-            class="flex items-center gap-22 *:min-w-[170px] *:p-4 *:rounded-2xl *:min-h-[100px]"
+            class="flex md:max-w-[480px] border border-secondary-400 text-secondary-100 duration-300 flex-col gap-6 p-5 rounded-3xl"
           >
-            <div>
-              <img
-                src="./assets/Parteners-Logos-01.png"
-                alt="Parteners-Logos-01"
-              />
+            <div class="flex flex-col justify-center gap-2 text-center">
+              <h3 class="text-gray-200 h3">Standard</h3>
+              <p class="body text-secondary">195 USD / Monthly</p>
+              <p class="body">$2340 Per Year</p>
             </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-02.png"
-                alt="Parteners-Logos-02"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-03.png"
-                alt="Parteners-Logos-03"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-04.png"
-                alt="Parteners-Logos-04"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-05.png"
-                alt="Parteners-Logos-05"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-06.png"
-                alt="Parteners-Logos-06"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-07.png"
-                alt="Parteners-Logos-07"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-08.png"
-                alt="Parteners-Logos-08"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-09.png"
-                alt="Parteners-Logos-09"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-10.png"
-                alt="Parteners-Logos-10"
-              />
-            </div>
+            <ul class="flex flex-col gap-4 text-sm">
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+            </ul>
+            <button class="btn">Select Plan</button>
           </div>
           <div
-            class="flex items-center gap-22 *:min-w-[170px] *:p-4 *:rounded-2xl *:min-h-[100px]"
+            class="flex md:max-w-[480px] border border-secondary-400 text-secondary-100 duration-300 flex-col gap-6 p-5 rounded-3xl"
           >
-            <div>
-              <img
-                src="./assets/Parteners-Logos-01.png"
-                alt="Parteners-Logos-01"
-              />
+            <div class="flex flex-col justify-center gap-2 text-center">
+              <h3 class="text-gray-200 h3">Standard</h3>
+              <p class="body text-secondary">195 USD / Monthly</p>
+              <p class="body">$2340 Per Year</p>
             </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-02.png"
-                alt="Parteners-Logos-02"
-              />
+            <ul class="flex flex-col gap-4 text-sm">
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+              <li class="flex items-center justify-between gap-2">
+                <p class="flex items-center gap-0.5 xl:gap-4">
+                  International Export Sales
+                  <i class="fa-solid fa-circle-info"></i>
+                </p>
+                1 Sales
+              </li>
+            </ul>
+            <button class="btn">Select Plan</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Top Sellers Section -->
+      <section class="container">
+        <h2 class="mb-6 text-center text-gray-200 h2">Our Top Sellers</h2>
+        <div class="flex overflow-hidden">
+          <div class="flex animate-marquee hover:[animation-play-state:paused]">
+            <div
+              class="flex items-center gap-22 *:min-w-[250px] *:p-4 *:rounded-2xl *:min-h-[100px]"
+            >
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-01.png"
+                  alt="Parteners-Logos-01"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-02.png"
+                  alt="Parteners-Logos-02"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-03.png"
+                  alt="Parteners-Logos-03"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-04.png"
+                  alt="Parteners-Logos-04"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-05.png"
+                  alt="Parteners-Logos-05"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-06.png"
+                  alt="Parteners-Logos-06"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-07.png"
+                  alt="Parteners-Logos-07"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-08.png"
+                  alt="Parteners-Logos-08"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-09.png"
+                  alt="Parteners-Logos-09"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-10.png"
+                  alt="Parteners-Logos-10"
+                />
+              </div>
             </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-03.png"
-                alt="Parteners-Logos-03"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-04.png"
-                alt="Parteners-Logos-04"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-05.png"
-                alt="Parteners-Logos-05"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-06.png"
-                alt="Parteners-Logos-06"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-07.png"
-                alt="Parteners-Logos-07"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-08.png"
-                alt="Parteners-Logos-08"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-09.png"
-                alt="Parteners-Logos-09"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/Parteners-Logos-10.png"
-                alt="Parteners-Logos-10"
-              />
+            <div
+              class="flex items-center gap-22 *:min-w-[250px] *:p-4 *:rounded-2xl *:min-h-[100px]"
+            >
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-01.png"
+                  alt="Parteners-Logos-01"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-02.png"
+                  alt="Parteners-Logos-02"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-03.png"
+                  alt="Parteners-Logos-03"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-04.png"
+                  alt="Parteners-Logos-04"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-05.png"
+                  alt="Parteners-Logos-05"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-06.png"
+                  alt="Parteners-Logos-06"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-07.png"
+                  alt="Parteners-Logos-07"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-08.png"
+                  alt="Parteners-Logos-08"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-09.png"
+                  alt="Parteners-Logos-09"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/Parteners-Logos-10.png"
+                  alt="Parteners-Logos-10"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Testimonials Section -->
-    <section class="container section-bottom-space">
-      <div
-        class="grid lg:grid-cols-2 xl:grid-cols-4 p-5 text-center rounded-3xl gap-8"
-      >
+      <!-- Testimonials Section -->
+      <section class="container">
         <div
-          class="flex flex-col gap-4 items-center p-5 border border-main/10 text-gray-200 shadow hover:scale-105 hover:shadow-main/50 duration-300 rounded-2xl"
+          class="grid gap-8 p-5 text-center lg:grid-cols-2 xl:grid-cols-4 rounded-3xl"
         >
           <div
-            class="flex items-center justify-center font-semibold rounded-full size-16 text-2xl bg-main"
+            class="flex flex-col items-center gap-4 p-5 duration-300 border text-secondary-50 border-secondary-400 hover:scale-105 rounded-2xl"
           >
-            S
+            <div
+              class="flex items-center justify-center text-2xl font-semibold rounded-full size-16 text-secondary bg-secondary-100"
+            >
+              S
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-2xl font-semibold md:text-3xl">Sarah El-Ahmed</h2>
+              <p class="text-base">CEO, Global Imports Co.</p>
+            </div>
+            <p class="text-lg leading-8 md:text-xl">
+              "TijaraHub has revolutionized the way we engage in B2B trading.
+              The platform's seamless navigation and comprehensive services have
+              significantly boosted our international transactions. It's a
+              game-changer for businesses like ours." 
+            </p>
           </div>
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl md:text-3xl font-semibold">Sarah El-Ahmed</h2>
-            <p class="text-base">CEO, Global Imports Co.</p>
+          <div
+            class="flex flex-col items-center gap-4 p-5 duration-300 border text-secondary-50 border-secondary-400 xl:col-span-2 hover:scale-105 hover:shadow-secondary/50 rounded-2xl"
+          >
+            <div
+              class="flex items-center justify-center text-2xl font-semibold rounded-full size-16 text-secondary bg-secondary-100"
+            >
+              O
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-2xl font-semibold md:text-3xl">
+                Omar El-Dowsary
+              </h2>
+              <p class="text-base">Founder, HappyCafe</p>
+            </div>
+            <p class="text-lg leading-8 md:text-xl">
+              "Launching our Cafe and finding a chep resource to compete with in
+              the Saudi Market is very challenging, and TijaraHub exceeded our
+              expectations. The platform not only connected us with top-tier
+              suppliers but also provided tailored shipping solutions and secure
+              payment options with less pricines than the market by more than
+              20% which helped us to compete with our competitors .TijaraHub is
+              the catalyst for startups into the global market.
+            </p>
           </div>
-          <p class="text-lg md:text-xl leading-8">
-            "TijaraHub has revolutionized the way we engage in B2B trading. The
-            platform's seamless navigation and comprehensive services have
-            significantly boosted our international transactions. It's a
-            game-changer for businesses like ours." 
+          <div
+            class="flex flex-col items-center gap-4 p-5 duration-300 border text-secondary-50 border-secondary-400 hover:scale-105 hover:shadow-secondary/50 rounded-2xl"
+          >
+            <div
+              class="flex items-center justify-center text-2xl font-semibold rounded-full size-16 text-secondary bg-secondary-100"
+            >
+              A
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-2xl font-semibold md:text-3xl">Anas Elwy</h2>
+              <p class="text-base">General Manager, Al Thawaqa World Company</p>
+            </div>
+            <p class="text-lg leading-8 md:text-xl">
+              "Huge thanks to Tijarahub, their amazing support helped us land
+              our first Saudi order and ensured swift delivery, we’re thrilled
+              with their dedication and look forward to a lasting partnership"
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center gap-4 p-5 duration-300 border text-secondary-50 border-secondary-400 xl:col-span-2 hover:scale-105 hover:shadow-secondary/50 rounded-2xl"
+          >
+            <div
+              class="flex items-center justify-center text-2xl font-semibold rounded-full size-16 text-secondary bg-secondary-100"
+            >
+              K
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-2xl font-semibold md:text-3xl">Kellan May</h2>
+              <p class="text-base">
+                International Sales Manager, EcoProducts Ltd.
+              </p>
+            </div>
+            <p class="text-lg leading-8 md:text-xl">
+              "As an international sales, TijaraHub stands out as an invaluable
+              asset. The platform's diverse range of certified suppliers and
+              user-friendly interface have empowered us to explore new markets
+              and establish strong B2B connections, Especially that we did not
+              have any previous experience to buy any products from both Egypt
+              and Turkey. It really helped us in having a new orders from both
+              countries, hassle free I would say, noting that we have never
+              worked previously with both manufacturers ."
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center gap-4 p-5 duration-300 border text-secondary-50 border-secondary-400 xl:col-span-2 hover:scale-105 hover:shadow-secondary/50 rounded-2xl"
+          >
+            <div
+              class="flex items-center justify-center text-2xl font-semibold rounded-full size-16 text-secondary bg-secondary-100"
+            >
+              L
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-2xl font-semibold md:text-3xl">Lim Jen Ming</h2>
+              <p class="text-base">
+                Director of Procurement, Tech Innovations Ltd.
+              </p>
+            </div>
+            <p class="text-lg leading-8 md:text-xl">
+              "As a director responsible for procurement, TijaraHub has
+              simplified our supplier management and enhanced the efficiency of
+              our B2B transactions. They were able to remove the headache that
+              that we have seen in managing the orders and receiving it on time
+              in the normal trades and orders we used to do as well the secure
+              payment options and product inspection services make it a
+              trustworthy partner in our global sourcing strategy."
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section class="container relative mt-20">
+        <div class="flex flex-col gap-10 md:flex-row">
+          <div
+            class="flex flex-col items-start flex-1 gap-10 justify-baseline md:sticky md:top-[20px]"
+          >
+            <h2 class="text-secondary-100 h2">
+              Frequently Asked Questions (FAQs)
+            </h2>
+            <p class="text-secondary-50 body">
+              Find answers to common questions about our services, features, and
+              how TijaraHub can help your business grow.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center gap-0.5 flex-1/9"
+          >
+            <button
+              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg"
+            >
+              What are the steps to becoming a seller?
+              <i
+                class="transition duration-300 ease-in-out fa-solid fa-chevron-right"
+              ></i>
+            </button>
+            <div
+              class="answer w-[100%] bg-secondary-200 text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+            >
+              <p class="p-4">
+                Becoming a seller on Tijarahub involves the following steps:
+                Sign Up: Register for a seller account by providing necessary
+                business details and contact information. Verification: Submit
+                required documentation for verification, including business
+                licenses and tax information. Setup: Complete your seller
+                profile, including uploading product listings, setting prices,
+                and defining shipping options. Training: Participate in
+                onboarding sessions and review training materials to familiarize
+                yourself with the platform. Launch: Once approved, your products
+                will go live, and you can start receiving orders.
+              </p>
+            </div>
+            <button
+              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg"
+            >
+              How does Tijarahub handle logistics and shipping?
+
+              <i
+                class="transition duration-300 ease-in-out fa-solid fa-chevron-right"
+              ></i>
+            </button>
+            <div
+              class="answer w-[100%] bg-secondary-200 text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+            >
+              <p class="p-4">
+                Tijarahub offers flexible logistics and shipping solutions to
+                streamline the process: You can choose from various shipping
+                partners integrated into the platform for efficient delivery
+                such as FedEx, UPS, and DHL.
+              </p>
+            </div>
+            <button
+              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg"
+            >
+              How can sellers track their sales performance?
+              <i
+                class="transition duration-300 ease-in-out fa-solid fa-chevron-right"
+              ></i>
+            </button>
+            <div
+              class="answer w-[100%] bg-secondary-200 text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+            >
+              <p class="p-4">
+                Sellers can monitor their performance through: Dashboard
+                Analytics: Access a comprehensive dashboard with real-time sales
+                data, including total sales, order volume, and revenue.
+              </p>
+            </div>
+            <button
+              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg"
+            >
+              How does TijaraHub ensure the security of transactions on its
+              platform?
+              <i
+                class="transition duration-300 ease-in-out fa-solid fa-chevron-right"
+              ></i>
+            </button>
+            <div
+              class="answer w-[100%] bg-secondary-200 text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+            >
+              <p class="p-4">
+                TijaraHub prioritizes the security of transactions on its
+                platform. We employ robust security measures and encryption
+                protocols and regularly update our systems to safeguard user
+                data and ensure secure business operations.
+              </p>
+            </div>
+            <button
+              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg"
+            >
+              What happens if there is an issue with the products or services?
+
+              <i
+                class="transition duration-300 ease-in-out fa-solid fa-chevron-right"
+              ></i>
+            </button>
+            <div
+              class="answer w-[100%] bg-secondary-200 text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+            >
+              <p class="p-4">
+                TijaraHub serves as a facilitator for transactions between
+                buyers and suppliers. In case of any issues with products or
+                services, please refer to the terms and conditions outlined in
+                the Agreement with Supplier. TijaraHub will support the exchange
+                of information between parties and assist in dispute resolution
+                as needed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  News Letter -->
+      <section class="container">
+        <div
+          class="flex flex-col gap-6 p-6 mx-auto text-center lg:p-12 lg:py-20 text-secondary rounded-3xl bg-gradient-to-br to-secondary-900 from-secondary-100"
+        >
+          <h2 class="h2">Lorem ipsum, dolor sit amet</h2>
+          <p class="body max-w-[688px] mx-auto">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident,
+            rerum.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Provident, rerum.
           </p>
+
+          <form class="mx-auto">
+            <div class="relative flex border rounded-full border-secondary-200">
+              <input
+                type="email"
+                name="news-email"
+                id="news-email"
+                class="block w-full p-4 border-none outline-none"
+                placeholder="enter your email"
+              />
+              <button
+                type="button"
+                class="px-4 rounded-full body text-secondary-100 lg:px-12 bg-secondary"
+              >
+                Send
+              </button>
+            </div>
+          </form>
         </div>
-        <div
-          class="xl:col-span-2 flex flex-col gap-4 items-center p-5 border border-main/10 text-gray-200 shadow hover:scale-105 hover:shadow-main/50 duration-300 rounded-2xl"
-        >
-          <div
-            class="flex items-center justify-center rounded-full font-semibold size-16 text-2xl bg-main"
-          >
-            O
-          </div>
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl md:text-3xl font-semibold">Omar El-Dowsary</h2>
-            <p class="text-base">Founder, HappyCafe</p>
-          </div>
-          <p class="text-lg md:text-xl leading-8">
-            "Launching our Cafe and finding a chep resource to compete with in
-            the Saudi Market is very challenging, and TijaraHub exceeded our
-            expectations. The platform not only connected us with top-tier
-            suppliers but also provided tailored shipping solutions and secure
-            payment options with less pricines than the market by more than 20%
-            which helped us to compete with our competitors .TijaraHub is the
-            catalyst for startups into the global market.
-          </p>
-        </div>
-        <div
-          class="flex flex-col gap-4 items-center p-5 border border-main/10 text-gray-200 shadow hover:scale-105 hover:shadow-main/50 duration-300 rounded-2xl"
-        >
-          <div
-            class="flex items-center justify-center font-semibold rounded-full size-16 text-2xl bg-main"
-          >
-            A
-          </div>
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl md:text-3xl font-semibold">Anas Elwy</h2>
-            <p class="text-base">General Manager, Al Thawaqa World Company</p>
-          </div>
-          <p class="text-lg md:text-xl leading-8">
-            "Huge thanks to Tijarahub, their amazing support helped us land our
-            first Saudi order and ensured swift delivery, we’re thrilled with
-            their dedication and look forward to a lasting partnership"
-          </p>
-        </div>
-        <div
-          class="xl:col-span-2 flex flex-col gap-4 items-center p-5 border border-main/10 text-gray-200 shadow hover:scale-105 hover:shadow-main/50 duration-300 rounded-2xl"
-        >
-          <div
-            class="flex items-center justify-center font-semibold rounded-full size-16 text-2xl bg-main"
-          >
-            K
-          </div>
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl md:text-3xl font-semibold">Kellan May</h2>
-            <p class="text-base">
-              International Sales Manager, EcoProducts Ltd.
-            </p>
-          </div>
-          <p class="text-lg md:text-xl leading-8">
-            "As an international sales, TijaraHub stands out as an invaluable
-            asset. The platform's diverse range of certified suppliers and
-            user-friendly interface have empowered us to explore new markets and
-            establish strong B2B connections, Especially that we did not have
-            any previous experience to buy any products from both Egypt and
-            Turkey. It really helped us in having a new orders from both
-            countries, hassle free I would say, noting that we have never worked
-            previously with both manufacturers ."
-          </p>
-        </div>
-        <div
-          class="xl:col-span-2 flex flex-col gap-4 items-center p-5 border border-main/10 text-gray-200 shadow hover:scale-105 hover:shadow-main/50 duration-300 rounded-2xl"
-        >
-          <div
-            class="flex items-center justify-center font-semibold rounded-full size-16 text-2xl bg-main"
-          >
-            L
-          </div>
-          <div class="flex flex-col gap-4">
-            <h2 class="text-2xl md:text-3xl font-semibold">Lim Jen Ming</h2>
-            <p class="text-base">
-              Director of Procurement, Tech Innovations Ltd.
-            </p>
-          </div>
-          <p class="text-lg md:text-xl leading-8">
-            "As a director responsible for procurement, TijaraHub has simplified
-            our supplier management and enhanced the efficiency of our B2B
-            transactions. They were able to remove the headache that that we
-            have seen in managing the orders and receiving it on time in the
-            normal trades and orders we used to do as well the secure payment
-            options and product inspection services make it a trustworthy
-            partner in our global sourcing strategy."
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!--  News Letter -->
-    <section class="container">
-      <div
-        class="mx-auto text-center flex flex-col gap-6 p-12 border shadow lg:py-20 shadow-main border-main/10 rounded-3xl section-bottom-space"
-      >
-        <h2 class="text-4xl font-semibold text-gray-200 md:text-5xl">
-          Lorem ipsum, dolor sit amet
-        </h2>
-        <p class="text-lg md:text-xl max-w-[688px] mx-auto text-gray-200">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident,
-          rerum.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Provident, rerum.
-        </p>
-
-        <form>
-          <div class="flex items-center relative border border-main/10">
-            <input
-              type="email"
-              name="news-email"
-              id="news-email"
-              class="block size-full bot"
-            />
-            <button type="button" class="">Send</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- FAQ Section -->
-    <section class="container relative mt-20 section-bottom-space">
-      <div class="flex flex-col gap-10 md:flex-row">
-        <div class="flex flex-col items-start flex-1 gap-10 justify-baseline md:sticky md:top-[20px]">
-          <h2 class="text-5xl leading-[55px] font-semibold text-gray-200 ">
-            Frequently Asked Questions (FAQs)
-          </h2>
-          <p class="text-main selection:text-white ">
-            Find answers to common questions about our services, features, and
-            how TijaraHub can help your business grow.
-          </p>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-0.5 flex-1/9">
-          <button
-            class="show-answer w-[100%] bg-dark text-white flex flex-row justify-between items-center  p-4 md:sticky md:top-[20px] hover:bg-main hover:text-white transition ease-in-out duration-300 rounded-lg"
-          >
-            What are the steps to becoming a seller?
-            <i class="transition duration-300 ease-in-out fa-solid fa-chevron-right"></i>
-          </button>
-          <div
-            class="answer w-[100%] bg-dark text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
-          >
-            <p class="p-4">
-              Becoming a seller on Tijarahub involves the following steps: Sign
-              Up: Register for a seller account by providing necessary business
-              details and contact information. Verification: Submit required
-              documentation for verification, including business licenses and
-              tax information. Setup: Complete your seller profile, including
-              uploading product listings, setting prices, and defining shipping
-              options. Training: Participate in onboarding sessions and review
-              training materials to familiarize yourself with the platform.
-              Launch: Once approved, your products will go live, and you can
-              start receiving orders.
-            </p>
-          </div>
-          <button
-            class="show-answer w-[100%] bg-dark text-white flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-main hover:text-white transition ease-in-out duration-300 rounded-lg"
-          >
-          How does Tijarahub handle logistics and shipping?
-
-            <i class="transition duration-300 ease-in-out fa-solid fa-chevron-right"></i>
-          </button>
-          <div
-            class="answer w-[100%] bg-dark text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
-          >
-            <p class="p-4">
-              Tijarahub offers flexible logistics and shipping solutions to streamline the process:
-You can choose from various shipping partners integrated into the platform for efficient delivery such as FedEx, UPS, and DHL.
-            </p>
-          </div>
-          <button
-            class="show-answer w-[100%] bg-dark text-white flex flex-row justify-between items-center p-4 hover:bg-main md:sticky md:top-[20px] hover:text-white transition ease-in-out duration-300 rounded-lg"
-          >
-            How can sellers track their sales performance?
-            <i class="transition duration-300 ease-in-out fa-solid fa-chevron-right"></i>
-          </button>
-          <div
-            class="answer w-[100%] bg-dark text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
-          >
-            <p class="p-4">
-            Sellers can monitor their performance through:
-            Dashboard Analytics: Access a comprehensive dashboard with real-time sales data, including total sales, order volume, and revenue.
-            </p>
-          </div>
-          <button
-            class="show-answer w-[100%] bg-dark text-white flex flex-row justify-between items-center p-4 hover:bg-main md:sticky md:top-[20px] hover:text-white transition ease-in-out duration-300 rounded-lg"
-          >
-            How does TijaraHub ensure the security of transactions on its platform?
-            <i class="transition duration-300 ease-in-out fa-solid fa-chevron-right"></i>
-          </button>
-          <div
-            class="answer w-[100%] bg-dark text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
-          >
-            <p class="p-4">
-              TijaraHub prioritizes the security of transactions on its platform. We employ robust security measures and encryption protocols and regularly update our systems to safeguard user data and ensure secure business operations.
-            </p>
-          </div>
-          <button
-            class="show-answer w-[100%] bg-dark text-white flex flex-row justify-between items-center p-4 hover:bg-main md:sticky md:top-[20px] hover:text-white transition ease-in-out duration-300 rounded-lg"
-          >
-            What happens if there is an issue with the products or services?
-
-            <i class="transition duration-300 ease-in-out fa-solid fa-chevron-right"></i>
-          </button>
-          <div
-            class="answer w-[100%] bg-dark text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
-          >
-            <p class="p-4">
-          TijaraHub serves as a facilitator for transactions between buyers and suppliers. In case of any issues with products or services, please refer to the terms and conditions outlined in the Agreement with Supplier. TijaraHub will support the exchange of information between parties and assist in dispute resolution as needed.
-            </p>
-          </div>
-        </div>
-          
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <script src="js/index.js" defer></script>
   </body>
 </html>
