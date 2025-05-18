@@ -20,7 +20,7 @@
   /* Custom Animations */
   --animate-marquee-parteners: marquee-parteners 26s linear infinite;
   --animate-marquee: marquee 36s linear infinite;
-  --animate-up-down: up-down 3s linear infinite;
+  --animate-up-down: up-down 10s linear infinite;
   --animate-gradient-glow: gradient-glow 5s ease infinite;
 
   /* Key Frames */
@@ -48,13 +48,13 @@
     }
 
     25%{ 
-      transform: translateY(-15px)
+      transform: translateY(-20px)
     }
     50%{
       transform: translateY(0px)
     }
     75%{
-      transform: translateY(15px)
+      transform: translateY(20px)
     }
     100%{
       transform: translateY(0px)
@@ -95,10 +95,10 @@ button {
 }
 
 .stat-card {
-  @apply flex items-center justify-center h-12 gap-3 px-4 duration-300 border rounded-full hover:shadow-[0px_8px_16px_1px_var(--color-secondary-600)] shadow-[0px_4px_16px_1px_var(--color-secondary-600)] border-secondary-600 text-secondary-100 hover:bg-secondary-50 hover:text-secondary hover:scale-105;
+  @apply flex items-center justify-center h-12 gap-3 px-4 duration-300 border rounded-full  shadow-[0px_4px_16px_1px_var(--color-secondary-600)] border-secondary-600 text-secondary-100  ;
 }
 .btn {
-  @apply h-12 px-4 duration-300 border rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main hover:border-main text-center content-center cursor-pointer;
+  @apply content-center h-12 px-4 text-center duration-300 border rounded-full cursor-pointer text-secondary-100 bg-secondary border-secondary hover:bg-main hover:border-main;
 }
 .active {
   @apply bg-main;
@@ -127,9 +127,9 @@ button {
   @apply border-secondary-200 max-h-[340px];
 }
 .animate-on-scroll {
-  @apply opacity-0 translate-y-5 transition-all duration-600;
+  @apply transition-all translate-y-5 opacity-0 duration-600;
 }
 
 .show {
-  @apply opacity-100  translate-y-0;
+  @apply translate-y-0 opacity-100;
 }

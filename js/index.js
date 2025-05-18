@@ -14,7 +14,6 @@ burgerIcon.addEventListener('click' , ()=>{
     }
 })
 close.addEventListener('click' , ()=>{
-    console.log("close");
      menu.classList.remove("z-10");
     if(!menu.classList.contains("-z-10")) {
         menu.classList.add("-z-10");
@@ -75,7 +74,7 @@ const monthlyPrices = {
     premium: "460 USD / Monthly"
 };
  
-document.querySelector(".togglePlan").addEventListener('click' , (e)=>{
+document.querySelector(".togglePlan")?.addEventListener('click' , (e)=>{
     if (e.target.id === "annually" || e.target.id === "monthly"){
         annuallyButton.classList.toggle('active' ,e.target.id === "annually")
         monthlyButton.classList.toggle('active' ,e.target.id === "monthly")
