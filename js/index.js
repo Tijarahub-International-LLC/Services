@@ -1,3 +1,6 @@
+//  sliding animation
+AOS.init();
+
 const burgerIcon = document.querySelector("header .burger-icon")
 const menu = document.querySelector('.menu')
 const close = document.querySelector('.close')
@@ -44,19 +47,6 @@ showAnswerButtons.forEach((btn , index)=>{
         }
     })
 })
-//  sliding animation
-window.addEventListener('scroll', () => {
-  const elements = document.querySelectorAll('.animate-on-scroll');
-  
-  elements.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    
-    if (elementPosition < screenPosition) {
-      element.classList.add('show');
-    }
-  });
-});
 
 // Pricing Plan Toggle
 const annuallyButton = document.getElementById("annually");
