@@ -2,6 +2,8 @@ const burgerIcon = document.querySelector("header .burger-icon")
 const menu = document.querySelector('.menu')
 const close = document.querySelector('.close')
 const showAnswerButtons = document.querySelectorAll('.show-answer')
+const langToggle = document.querySelector("#lang-toggle");
+const langMenu = document.querySelector("#lang-menu");
 
 // Mobile Nav Logic
 burgerIcon.addEventListener('click' , ()=>{
@@ -102,3 +104,22 @@ document.querySelector(".togglePlan").addEventListener('click' , (e)=>{
         }
 }
 })
+
+
+// Handle the lang options toggle
+const handleLangOptions = () => {
+    langMenu.classList.toggle("opacity-0")
+    langMenu.classList.toggle("-z-10")
+}
+
+
+document.body.addEventListener("click", (e) => {
+    if(e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
+        if(!langMenu.classList.contains("opacity-0")) {
+            handleLangOptions()
+        }
+    }
+})
+
+
+langToggle.addEventListener("click",handleLangOptions)

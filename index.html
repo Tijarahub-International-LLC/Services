@@ -59,11 +59,24 @@
             <li><a href="#">Journey</a></li>
           </ul>
           <div class="flex items-center justify-between gap-4">
-            <div class="flex items-center gap-4 lg:gap-8">
+            <div class="relative">
               <span
+                id="lang-toggle"
                 class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-secondary"
-                ><i class="fa-solid fa-globe"></i
+                ><i class="fa-solid fa-globe lang-icon"></i
               ></span>
+
+              <div
+                id="lang-menu"
+                class="absolute -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
+              >
+                <a href="" class="block p-3 rounded-lg hover:bg-secondary-300"
+                  >العربية</a
+                >
+                <a href="" class="block p-3 rounded-lg hover:bg-secondary-300 bg-secondary-300"
+                  >English</a
+                >
+              </div>
             </div>
             <span class="text-3xl cursor-pointer burger-icon lg:hidden"
               ><i class="fa-solid fa-bars"></i
@@ -382,7 +395,7 @@
               <p class="text-gray-200 body" id="standard-price">
                 275 USD / Monthly
               </p>
-              <p class="body perYear hidden">$2340 Per Year</p>
+              <p class="hidden body perYear">$2340 Per Year</p>
             </div>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="flex items-center justify-between gap-2">
@@ -428,7 +441,7 @@
               <p class="text-gray-200 body" id="premium-price">
                 460 USD / Monthly
               </p>
-              <p class="body perYear hidden">$2340 Per Year</p>
+              <p class="hidden body perYear">$2340 Per Year</p>
             </div>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="flex items-center justify-between gap-2">
