@@ -1293,21 +1293,6 @@ button {
   max-height: 340px;
   border-color: var(--color-secondary-200);
 }
-.animate-on-scroll {
-  --tw-translate-y: calc(var(--spacing) * 5);
-  translate: var(--tw-translate-x) var(--tw-translate-y);
-  opacity: 0%;
-  transition-property: all;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 600ms;
-  transition-duration: 600ms;
-}
-.show {
-  --tw-translate-y: calc(var(--spacing) * 0);
-  translate: var(--tw-translate-x) var(--tw-translate-y);
-  opacity: 100%;
-}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
