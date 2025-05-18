@@ -18,8 +18,8 @@
   --color-dark: rgb(54, 54, 54);
 
   /* Custom Animations */
-  --animate-marquee-parteners: marquee-parteners 15s linear infinite;
-  --animate-marquee: marquee 23s linear infinite;
+  --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+  --animate-marquee: marquee 36s linear infinite;
   --animate-up-down: up-down 3s linear infinite;
 
   /* Key Frames */
@@ -111,5 +111,5 @@ button {
   @apply opacity-100;
 }
 .active-answer {
-  @apply max-h-[340px];
+  @apply border-secondary-200 max-h-[340px];
 }

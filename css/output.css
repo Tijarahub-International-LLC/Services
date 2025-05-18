@@ -52,8 +52,8 @@
     --color-secondary-100: #e0e8f9;
     --color-secondary-50: #f1f5fd;
     --font-inter: "Inter", sans-serif;
-    --animate-marquee-parteners: marquee-parteners 15s linear infinite;
-    --animate-marquee: marquee 23s linear infinite;
+    --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+    --animate-marquee: marquee 36s linear infinite;
     --animate-up-down: up-down 3s linear infinite;
   }
 }
@@ -483,6 +483,9 @@
       background-color: color-mix(in oklab, var(--color-secondary) 50%, transparent);
     }
   }
+  .bg-transparent {
+    background-color: transparent;
+  }
   .bg-gradient-to-br {
     --tw-gradient-position: to bottom right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
@@ -703,14 +706,14 @@
       min-height: 100px;
     }
   }
+  .\*\:w-\[200px\] {
+    :is(& > *) {
+      width: 200px;
+    }
+  }
   .\*\:min-w-\[170px\] {
     :is(& > *) {
       min-width: 170px;
-    }
-  }
-  .\*\:min-w-\[250px\] {
-    :is(& > *) {
-      min-width: 250px;
     }
   }
   .\*\:flex-1 {
@@ -731,11 +734,6 @@
   .\*\:bg-no-repeat {
     :is(& > *) {
       background-repeat: no-repeat;
-    }
-  }
-  .\*\:p-4 {
-    :is(& > *) {
-      padding: calc(var(--spacing) * 4);
     }
   }
   .\*\:duration-300 {
@@ -1231,6 +1229,7 @@ button {
 }
 .active-answer {
   max-height: 340px;
+  border-color: var(--color-secondary-200);
 }
 @property --tw-rotate-x {
   syntax: "*";

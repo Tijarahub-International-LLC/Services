@@ -23,9 +23,9 @@ close.addEventListener('click' , ()=>{
 
 
 // FAQs Logic
-showAnswerButtons.forEach(btn=>{
+showAnswerButtons.forEach((btn , index)=>{
     btn.addEventListener('click',(e)=>{
-        console.log(btn.nextElementSibling)
+
         if (btn.nextElementSibling.classList.contains('active-answer')){
 
             btn.querySelector("i").style.transform = "rotate(0deg)"
@@ -34,6 +34,11 @@ showAnswerButtons.forEach(btn=>{
             
             btn.nextElementSibling.classList.toggle('active-answer')
             btn.querySelector("i").style.transform = "rotate(90deg)"
+            showAnswerButtons.forEach((btn , i)=>{
+                if (i != index){
+                    btn.nextElementSibling.classList.remove('active-answer')
+                }
+            })
         }
     })
 })
