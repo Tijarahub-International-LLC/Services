@@ -7,29 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/Tijarahub-07.png" />
     <link href="./css/all.min.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
-    <!-- MailerLite Universal -->
-    <script>
-      (function (w, d, e, u, f, l, n) {
-        (w[f] =
-          w[f] ||
-          function () {
-            (w[f].q = w[f].q || []).push(arguments);
-          }),
-          (l = d.createElement(e)),
-          (l.async = 1),
-          (l.src = u),
-          (n = d.getElementsByTagName(e)[0]),
-          n.parentNode.insertBefore(l, n);
-      })(
-        window,
-        document,
-        "script",
-        "https://assets.mailerlite.com/js/universal.js",
-        "ml"
-      );
-      ml("account", "1524217");
-    </script>
-    <!-- End MailerLite Universal -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Hero Section -->
@@ -938,6 +916,7 @@
                 ></ul>
                 <div class="formkit-field">
                   <input
+                    id="emailInput"
                     class="formkit-input"
                     name="email_address"
                     aria-label="Email Address"
@@ -959,6 +938,7 @@
                   class="seva-fields formkit-fields"
                 >
                   <button
+                    type="button"
                     data-element="submit"
                     class="formkit-submit"
                     style="
@@ -1591,7 +1571,7 @@
         </div>
       </section>
       <!-- FAQ Section -->
-      <section class="container relative mt-20" data-aos="fade-up">
+      <section class="container relative mt-20">
         <div class="flex flex-col gap-10 md:flex-row">
           <div class="flex flex-col items-start flex-1 gap-10 justify-baseline">
             <h2 class="text-secondary-100 h2">
@@ -1709,7 +1689,7 @@
         </div>
       </section>
     </main>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/index.js" defer></script>
   </body>
