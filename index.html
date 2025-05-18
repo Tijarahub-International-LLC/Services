@@ -234,7 +234,7 @@
       </div>
 
       <!-- Stats Section -->
-      <section class="container flex flex-col gap-6">
+      <section class="container flex flex-col gap-6 animate-on-scroll">
         <a
           href=""
           class="px-4 py-3 mx-auto duration-300 border rounded-full shadow hover:scale-105 border-secondary-600 h4 shadow-secondary-700 bg-gradient-to-r from-secondary-400 to-secondary-800 text-secondary-50"
@@ -262,7 +262,7 @@
         </div>
       </section>
       <!-- Services Section -->
-      <section class="container">
+      <section class="container animate-on-scroll">
         <div
           class="relative flex flex-col gap-6 p-6 min-h-[520px] lg:p-12 lg:py-20 bg-gradient-to-br to-secondary-900 from-secondary-100 rounded-3xl"
         >
@@ -351,14 +351,24 @@
       </section>
 
       <!-- Pricing Plans Section -->
-      <section class="container">
+      <section class="container animate-on-scroll">
         <h2 class="mb-6 text-center text-gray-200 h2">Our Pricing Plans</h2>
 
         <div
-          class="flex w-full max-w-[300px] mb-6 mx-auto items-center border border-gray-200 text-gray-200 rounded-full p-3 *:flex-1"
+          class="togglePlan flex w-full max-w-[300px] mb-6 mx-auto items-center border border-gray-200 text-gray-200 rounded-full p-1 *:flex-1"
         >
-          <button class="btn">Annually</button>
-          <button class="btn active">Monthly</button>
+          <button
+            class="h-10 px-4 duration-300 rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main"
+            id="annually"
+          >
+            Annually
+          </button>
+          <button
+            class="h-10 px-4 duration-300 rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main active"
+            id="monthly"
+          >
+            Monthly
+          </button>
         </div>
 
         <div
@@ -369,8 +379,10 @@
           >
             <div class="flex flex-col justify-center gap-2 text-center">
               <h3 class="text-gray-200 h3">Standard</h3>
-              <p class="text-gray-200 body">195 USD / Monthly</p>
-              <p class="body">$2340 Per Year</p>
+              <p class="text-gray-200 body" id="standard-price">
+                275 USD / Monthly
+              </p>
+              <p class="body perYear hidden">$2340 Per Year</p>
             </div>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="flex items-center justify-between gap-2">
@@ -402,15 +414,21 @@
                 1 Sales
               </li>
             </ul>
-            <button class="btn">Select Plan</button>
+            <a
+              class="btn active standard-button"
+              href="https://tijarahub.com/vendor-registration/?plan_id=3"
+              >Select Plan</a
+            >
           </div>
           <div
             class="flex md:max-w-[480px] border border-secondary-400 text-secondary-100 duration-300 flex-col gap-6 p-5 rounded-3xl"
           >
             <div class="flex flex-col justify-center gap-2 text-center">
-              <h3 class="text-gray-200 h3">Standard</h3>
-              <p class="text-gray-200 body">195 USD / Monthly</p>
-              <p class="body">$2340 Per Year</p>
+              <h3 class="text-gray-200 h3">Premium</h3>
+              <p class="text-gray-200 body" id="premium-price">
+                460 USD / Monthly
+              </p>
+              <p class="body perYear hidden">$2340 Per Year</p>
             </div>
             <ul class="flex flex-col gap-4 text-sm">
               <li class="flex items-center justify-between gap-2">
@@ -442,13 +460,17 @@
                 1 Sales
               </li>
             </ul>
-            <button class="btn">Select Plan</button>
+            <a
+              class="btn active premium-button"
+              href="https://tijarahub.com/vendor-registration/?plan_id=4"
+              >Select Plan</a
+            >
           </div>
         </div>
       </section>
 
       <!-- Our Top Sellers Section -->
-      <section class="container">
+      <section class="container animate-on-scroll">
         <h2 class="mb-6 text-center text-gray-200 h2">Our Top Sellers</h2>
         <div class="flex overflow-hidden">
           <div class="flex animate-marquee hover:[animation-play-state:paused]">
@@ -756,7 +778,7 @@
       </section>
 
       <!-- Calculator -->
-      <section class="container">
+      <section class="container animate-on-scroll">
         <div
           class="p-6 mx-auto text-center lg:p-12 rounded-3xl bg-gradient-to-br text-secondary to-secondary-900 from-secondary-100"
         >
@@ -852,7 +874,7 @@
         </div>
       </section>
       <!--  News Letter -->
-      <section class="container w-full">
+      <section class="container w-full animate-on-scroll">
         <div class="flex flex-col mx-auto text-center">
           <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
           <form
@@ -912,7 +934,7 @@
                       border-color: rgb(228, 231, 234);
                       border-radius: 1000px;
                       font-weight: 400;
-                      width: 500px;
+                      max-width: 500px;
                     "
                   />
                 </div>
