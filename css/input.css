@@ -72,6 +72,10 @@
   }
 }
 
+html {
+  @apply scroll-smooth scroll-p-8
+}
+
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;

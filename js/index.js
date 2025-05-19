@@ -9,16 +9,16 @@ const langToggle = document.querySelector("#lang-toggle");
 const langMenu = document.querySelector("#lang-menu");
 
 // Mobile Nav Logic
-burgerIcon.addEventListener('click' , ()=>{
+burgerIcon?.addEventListener('click', () => {
     menu.classList.toggle('active-menu');
     menu.classList.remove('-z-10');
-    if(!menu.classList.contains("z-10")) {
+    if (!menu.classList.contains("z-10")) {
         menu.classList.add('z-10');
     }
 })
-close.addEventListener('click' , ()=>{
-     menu.classList.remove("z-10");
-    if(!menu.classList.contains("-z-10")) {
+close?.addEventListener('click', () => {
+    menu.classList.remove("z-10");
+    if (!menu.classList.contains("-z-10")) {
         menu.classList.add("-z-10");
     }
     menu.classList.remove("active-menu");
@@ -27,19 +27,19 @@ close.addEventListener('click' , ()=>{
 
 
 // FAQs Logic
-showAnswerButtons.forEach((btn , index)=>{
-    btn.addEventListener('click',(e)=>{
+showAnswerButtons?.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
 
-        if (btn.nextElementSibling.classList.contains('active-answer')){
+        if (btn.nextElementSibling.classList.contains('active-answer')) {
 
             btn.querySelector("i").style.transform = "rotate(0deg)"
             btn.nextElementSibling.classList.toggle('active-answer')
-        }else{
-            
+        } else {
+
             btn.nextElementSibling.classList.toggle('active-answer')
             btn.querySelector("i").style.transform = "rotate(90deg)"
-            showAnswerButtons.forEach((btn , i)=>{
-                if (i != index){
+            showAnswerButtons.forEach((btn, i) => {
+                if (i != index) {
                     btn.nextElementSibling.classList.remove('active-answer')
                 }
             })
@@ -63,35 +63,35 @@ const monthlyPrices = {
     standard: "275 USD / Monthly",
     premium: "460 USD / Monthly"
 };
- 
-document.querySelector(".togglePlan")?.addEventListener('click' , (e)=>{
-    if (e.target.id === "annually" || e.target.id === "monthly"){
-        annuallyButton.classList.toggle('active' ,e.target.id === "annually")
-        monthlyButton.classList.toggle('active' ,e.target.id === "monthly")
 
-        
+document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
+    if (e.target.id === "annually" || e.target.id === "monthly") {
+        annuallyButton.classList.toggle('active', e.target.id === "annually")
+        monthlyButton.classList.toggle('active', e.target.id === "monthly")
+
+
         const standardButton = document.querySelector(".standard-button")
         const premiumButton = document.querySelector(".premium-button")
 
-        const yearlyCost = document.querySelectorAll(".perYear") 
+        const yearlyCost = document.querySelectorAll(".perYear")
         if (e.target.id === "annually") {
             standardPrice.innerText = annuallyPrices.standard;
             premiumPrice.innerText = annuallyPrices.premium;
-            standardButton.href  = "https://tijarahub.com/vendor-registration/?plan_id=5"
-            premiumButton.href  = "https://tijarahub.com/vendor-registration/?plan_id=6"
-            yearlyCost.forEach(e=>{
-                e.style.display="block"
+            standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=5"
+            premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=6"
+            yearlyCost.forEach(e => {
+                e.style.display = "block"
             })
-        }else if (e.target.id === "monthly"){
+        } else if (e.target.id === "monthly") {
             standardPrice.innerText = monthlyPrices.standard;
             premiumPrice.innerText = monthlyPrices.premium;
-            standardButton.href  = "https://tijarahub.com/vendor-registration/?plan_id=3"
-            premiumButton.href  = "https://tijarahub.com/vendor-registration/?plan_id=4"
-            yearlyCost.forEach(e=>{
-                e.style.display="none"
+            standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
+            premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
+            yearlyCost.forEach(e => {
+                e.style.display = "none"
             })
         }
-}
+    }
 })
 
 
@@ -103,33 +103,33 @@ const handleLangOptions = () => {
 
 
 document.body.addEventListener("click", (e) => {
-    if(e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
-        if(!langMenu.classList.contains("opacity-0")) {
+    if (e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
+        if (!langMenu.classList.contains("opacity-0")) {
             handleLangOptions()
         }
     }
 })
 
 
-langToggle.addEventListener("click",handleLangOptions)
+langToggle.addEventListener("click", handleLangOptions)
 const submitButton = document.querySelector('.formkit-submit')
 
-    const email = document.getElementById('emailInput')
-    
-email.addEventListener('keyup' , (e)=>{
+const email = document.getElementById('emailInput')
+
+email?.addEventListener('keyup', (e) => {
     function isBusinessEmail(email) {
-            const businessEmailRegex = /^(?!.*(@gmail\.com|@yahoo\.com|@outlook\.com|@hotmail\.com|@aol\.com|@protonmail\.com|@icloud\.com|@mail\.com|@zoho\.com|@yandex\.com))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return businessEmailRegex.test(email);
-        }
-        if (isBusinessEmail(e.target.value)){
-            submitButton.type = 'submit'
-        }else{
-            submitButton.type = 'button'
-        }
-    })
+        const businessEmailRegex = /^(?!.*(@gmail\.com|@yahoo\.com|@outlook\.com|@hotmail\.com|@aol\.com|@protonmail\.com|@icloud\.com|@mail\.com|@zoho\.com|@yandex\.com))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return businessEmailRegex.test(email);
+    }
+    if (isBusinessEmail(e.target.value)) {
+        submitButton.type = 'submit'
+    } else {
+        submitButton.type = 'button'
+    }
+})
 
 
-   
+
 // Handle Calc Modal
 
 const modal = document.querySelector("#calc-modal");
@@ -144,7 +144,7 @@ const closeCalcModal = () => {
 
 
 
-closeModalBtn?.addEventListener("click",()=> {
+closeModalBtn?.addEventListener("click", () => {
     closeCalcModal()
 })
 
@@ -159,3 +159,19 @@ clacForm?.addEventListener("submit", (e) => {
         behavior: "smooth"
     })
 })
+
+
+// Handle Anchor tag Scrolling by ID 
+
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const target = document.querySelector(this.getAttribute('href'));
+//         if (target) {
+//             window.scrollTo({
+//                 top: target.offsetTop - 70, // Adjust for header
+//                 behavior: 'smooth'
+//             });
+//         }
+//     });
+// });
