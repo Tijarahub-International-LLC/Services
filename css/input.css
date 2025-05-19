@@ -117,7 +117,7 @@ button {
   @apply text-[18px] leading-[20px] md:text-[20px] md:leading-[22px] font-medium;
 }
 .body {
-  @apply text-[16px] leading-[18px] md:text-[18px] md:leading-[20px];
+  @apply text-[16px] md:text-[18px] leading-[1.5];
 }
 
 .active-menu {

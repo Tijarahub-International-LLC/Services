@@ -127,4 +127,35 @@ email.addEventListener('keyup' , (e)=>{
             submitButton.type = 'button'
         }
     })
+
+
    
+// Handle Calc Modal
+
+const modal = document.querySelector("#calc-modal");
+const closeModalBtn = document.querySelector("#close-calc-modal");
+const calcSection = document.querySelector("#calc-section")
+
+
+const closeCalcModal = () => {
+    modal.classList.toggle("flex");
+    modal.classList.toggle("hidden");
+}
+
+
+
+closeModalBtn?.addEventListener("click",()=> {
+    closeCalcModal()
+})
+
+
+// Calc Logic 
+const clacForm = document.querySelector("#calc-form");
+clacForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    closeCalcModal()
+    window.scrollTo({
+        top: window.scrollY + calcSection.getBoundingClientRect().top - 50,
+        behavior: "smooth"
+    })
+})
