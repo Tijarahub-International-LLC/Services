@@ -602,6 +602,12 @@
   .max-w-\[3500px\] {
     max-width: 3500px;
   }
+  .min-w-1 {
+    min-width: calc(var(--spacing) * 1);
+  }
+  .min-w-1\/4 {
+    min-width: calc(1/4 * 100%);
+  }
   .min-w-\[120px\] {
     min-width: 120px;
   }
@@ -1772,6 +1778,11 @@
       padding: calc(var(--spacing) * 12);
     }
   }
+  .lg\:p-14 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 14);
+    }
+  }
   .lg\:px-10 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 10);
@@ -1831,6 +1842,11 @@
   .\32 xl\:grid-cols-3 {
     @media (width >= 96rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .\32 xl\:flex-row {
+    @media (width >= 96rem) {
+      flex-direction: row;
     }
   }
 }
