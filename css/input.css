@@ -135,5 +135,5 @@ button {
   @apply py-3 px-4 font-semibold cursor-pointer rounded-3xl bg-secondary-200 bg-[linear-gradient(118deg,rgba(241,245,253,1)4%,rgba(241,245,253,1)55%,rgba(118,155,228,1)100%)];
 }
 .info-reversed {
-  @apply py-3 px-4 font-semibold rounded-3xl bg-secondary-200;
+  @apply px-4 py-3 font-semibold rounded-3xl bg-secondary-200;
 }
