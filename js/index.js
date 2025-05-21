@@ -160,14 +160,17 @@ clacForm?.addEventListener("submit", (e) => {
     })
 })
 
+// Carousel Arrows 
 
 const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
-const journeyCarousel = document.querySelector(' .journey-carousel')
+const journeyCarousel = document.querySelector('.journey-carousel')
 const slideWidth = 386 //slide + gap
+let autoScrollInterval
 rightArrow?.addEventListener('click' , ()=>{
+    
     journeyCarousel?.scrollBy({left:slideWidth,behavior: "smooth"})
-
+    
 })
 leftArrow?.addEventListener('click' , ()=>{
     
@@ -175,39 +178,49 @@ leftArrow?.addEventListener('click' , ()=>{
 
 })
 
-const autoScroll = () => {
-    autoScrollInterval = setInterval(() => {
+ autoScroll =  ()=>{
+     autoScrollInterval = setInterval(() => {
         journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
-        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
-    }, 3000);
+    }, 1000);
 };
 
 autoScroll()
 // Draging animation Handling
 let startLocation = 0
 let holding = false;
-
+let baseScrollLeft 
 journeyCarousel?.addEventListener("mousedown" , dragStart)
 journeyCarousel?.addEventListener("mouseup" , dragEnd)
 journeyCarousel?.addEventListener("mouseleave" , dragEnd)
 journeyCarousel?.addEventListener("mousemove" , drag)
 
 function dragStart(e){
+    clearInterval(autoScrollInterval)
+
+    journeyCarousel.style.cursor = "grabbing"
     holding = true
-    startLocation = e.clientX
-    
+    startLocation = e.pageX
+    baseScrollLeft = journeyCarousel.scrollLeft;
 }
+let translation = 0
 function drag(e){
     if (!holding) return
-    let translation =  startLocation-e.clientX 
-
-    console.log(translation)
-
-    journeyCarousel?.scrollBy( translation, 0);
+    
+    journeyCarousel.scrollLeft = baseScrollLeft - (  e.pageX-startLocation)
 
 }
 function dragEnd(){
+    clearInterval(autoScrollInterval)
+    autoScrollInterval =  setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
+            journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    }, 1000);
+    journeyCarousel.scrollLeft = Math.round(journeyCarousel.scrollLeft / 386) * 386
+    journeyCarousel.style.cursor = "grab"
     holding = false
 }
