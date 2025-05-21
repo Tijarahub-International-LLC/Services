@@ -161,17 +161,53 @@ clacForm?.addEventListener("submit", (e) => {
 })
 
 
-// Handle Anchor tag Scrolling by ID 
+const leftArrow = document.querySelector(".arrows .left-arrow")
+const rightArrow = document.querySelector(".arrows .right-arrow")
+const journeyCarousel = document.querySelector(' .journey-carousel')
+const slideWidth = 386 //slide + gap
+rightArrow?.addEventListener('click' , ()=>{
+    journeyCarousel?.scrollBy({left:slideWidth,behavior: "smooth"})
 
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         const target = document.querySelector(this.getAttribute('href'));
-//         if (target) {
-//             window.scrollTo({
-//                 top: target.offsetTop - 70, // Adjust for header
-//                 behavior: 'smooth'
-//             });
-//         }
-//     });
-// });
+})
+leftArrow?.addEventListener('click' , ()=>{
+    
+    journeyCarousel?.scrollBy({left:-slideWidth , behavior:'smooth'})
+
+})
+
+const autoScroll = () => {
+    autoScrollInterval = setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
+            journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    }, 3000);
+};
+
+autoScroll()
+// Draging animation Handling
+let startLocation = 0
+let holding = false;
+
+journeyCarousel?.addEventListener("mousedown" , dragStart)
+journeyCarousel?.addEventListener("mouseup" , dragEnd)
+journeyCarousel?.addEventListener("mouseleave" , dragEnd)
+journeyCarousel?.addEventListener("mousemove" , drag)
+
+function dragStart(e){
+    holding = true
+    startLocation = e.clientX
+    
+}
+function drag(e){
+    if (!holding) return
+    let translation =  startLocation-e.clientX 
+
+    console.log(translation)
+
+    journeyCarousel?.scrollBy( translation, 0);
+
+}
+function dragEnd(){
+    holding = false
+}
