@@ -158,6 +158,7 @@ const inputs = document.querySelectorAll("#calc-form select")
 clacForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     closeCalcModal()
+    
     let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
     modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     window.scrollTo({
@@ -198,18 +199,23 @@ autoScroll()
 // Draging animation Handling
 let startLocation = 0
 let holding = false;
-let baseScrollLeft
-journeyCarousel?.addEventListener("mousedown", dragStart)
-journeyCarousel?.addEventListener("mouseup", dragEnd)
-journeyCarousel?.addEventListener("mouseleave", dragEnd)
-journeyCarousel?.addEventListener("mousemove", drag)
+let baseScrollLeft 
+
+journeyCarousel?.addEventListener("touchstart" , dragStart)
+journeyCarousel?.addEventListener("touchmove" , drag)
+journeyCarousel?.addEventListener("touchend" , dragEnd)
+
+journeyCarousel?.addEventListener("mousedown" , dragStart)
+journeyCarousel?.addEventListener("mouseup" , dragEnd)
+journeyCarousel?.addEventListener("mouseleave" , dragEnd)
+journeyCarousel?.addEventListener("mousemove" , drag)
 
 function dragStart(e) {
     clearInterval(autoScrollInterval)
-
     journeyCarousel.style.cursor = "grabbing"
     holding = true
-    startLocation = e.pageX
+    e.type == "touchstart" ? startLocation = e.changedTouches[0].pageX :  startLocation = e.pageX
+
     baseScrollLeft = journeyCarousel.scrollLeft;
 }
 let translation = 0
@@ -218,9 +224,11 @@ function drag(e) {
         clearInterval(autoScrollInterval)
         return
     }
-
-    journeyCarousel.scrollLeft = baseScrollLeft - (e.pageX - startLocation)
-
+    if (e.type == 'touchmove'){
+        journeyCarousel.scrollLeft = baseScrollLeft - (e.changedTouches[0].pageX-startLocation)
+        return
+    }
+    journeyCarousel.scrollLeft = baseScrollLeft - (e.pageX-startLocation)
 }
 function dragEnd() {
     clearInterval(autoScrollInterval)
@@ -234,3 +242,4 @@ function dragEnd() {
     journeyCarousel.style.cursor = "grab"
     holding = false
 }
+
