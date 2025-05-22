@@ -135,7 +135,6 @@ email?.addEventListener('keyup', (e) => {
 
 const modal = document.querySelector("#calc-modal");
 const modalResult = document.querySelector("#calc-modal h4");
-const modalResult = document.querySelector("#calc-modal h4");
 const closeModalBtn = document.querySelector("#close-calc-modal");
 const calcSection = document.querySelector("#calc-section")
 
@@ -156,13 +155,10 @@ closeModalBtn?.addEventListener("click", () => {
 const clacForm = document.querySelector("#calc-form");
 const inputs = document.querySelectorAll("#calc-form select")
 
-const inputs = document.querySelectorAll("#calc-form select")
-
 clacForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     closeCalcModal()
-    let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
-    modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
+    
     let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
     modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     window.scrollTo({
