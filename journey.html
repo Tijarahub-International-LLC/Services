@@ -11,7 +11,7 @@
   </head>
   <body class="overflow-x-hidden">
     <div
-      class="bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#252b58_94%)]"
+      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#252b58_94%)]"
     >
       <header class="container">
         <div class="flex justify-between items-center h-[80px]">
@@ -40,7 +40,7 @@
               <a href="./case-studies.html" class="font-medium">Case Studies</a>
             </li>
             <li>
-              <a href="./journey.html" class="font-bold text-main">Journey</a>
+              <a href="./journey.html" class="font-medium text-main">Journey</a>
             </li>
           </ul>
           <div class="flex items-center justify-between gap-4">
@@ -71,19 +71,17 @@
           </div>
         </div>
       </header>
-      <section class="pt-8 pb-16 lg:pb-24">
+      <section class="min-h-[400px] md:h-[600px]">
         <div
-          class="container flex flex-col items-center justify-center gap-6 lg:gap-12"
+          class="container h-full flex flex-col items-center justify-center gap-6 lg:gap-12"
         >
           <div class="flex flex-col gap-4">
-            <h1 class="text-center text-secondary h1">
-              Our Growth Journey, and Industry Impact
-            </h1>
+            <h1 class="text-center text-secondary h1">Journey</h1>
             <p
               class="!leading-normal text-center text-secondary h4 max-w-[766px] mx-auto"
             >
-              TijaraHub drives global trade innovation through key milestones,
-              industry recognition, and strategic partnerships.
+              Discover expert B2B services, from smart solutions to realiable
+              support. designed to elevate your online trading.
             </p>
           </div>
           <div
@@ -94,7 +92,7 @@
                 class="absolute start-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md top-1/2 -translate-y-1/2"
               ></div>
               <a
-                href=""
+                href="./free-trial.html"
                 class="relative flex items-center gap-2 px-4 py-3 duration-300 border rounded-full hover:shadow-md shadow-main size-full border-secondary bg-secondary"
               >
                 <img src="./assets/icon.svg" alt="icon" />
@@ -104,25 +102,47 @@
           </div>
         </div>
       </section>
+      <section
+        class="container flex flex-col-reverse md:flex-row items-center justify-between gap-8 pb-14 md:pb-16"
+      >
+        <div class="flex flex-col gap-4">
+          <h2 class="h2 pb-4 text-secondary-200">
+            TijaraHub <br />Born To Compete
+          </h2>
+          <p class="body text-balance text-secondary-200 !leading-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
+            ipsum quidem quos, accusamus inventore ratione consectetur laborum
+            rerum adipisci temporibus fugit reiciendis, autem ad veritatis
+            accusantium fuga quod quas doloribus.
+          </p>
+        </div>
+        <div>
+          <img
+            src="./assets/Tijarahub-07.png"
+            class="w-[120px] md:w-[auto]"
+            alt="tijarahub"
+          />
+        </div>
+      </section>
     </div>
 
     <main
-      class="relative flex flex-col items-center min-h-screen pb-8 overflow-x-hidden bg-secondary gap-14 md:gap-16 pb:gap-12 cursor-grab"
+      class="relative flex flex-col items-center min-h-screen pb-14 overflow-x-hidden bg-secondary gap-14 md:gap-16 md:pb-16"
     >
-      <div class="container">
+      <section class="w-[100%] cursor-grab">
         <div
           class="journey-carousel flex justify-around items-center gap-4 *:shrink-0 h-[700px] overflow-hidden"
         >
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/Off-Lun.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px] cursor-grab"
+            class="slide w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/Off-Lun.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px] cursor-grab"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Official Launch</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-full text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -130,14 +150,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/sahara.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/sahara.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Sahara Conference 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -145,14 +165,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/web-summit.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/web-summit.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Web summit 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -160,14 +180,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/leap.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/leap.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">LEAP 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -175,14 +195,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/riseup.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/riseup.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">RiseUp Summit 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -190,14 +210,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/worldef.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/worldef.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">WORLDEF ISTANBUL 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -205,14 +225,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/S-F-S.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/S-F-S.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Saudi Food Show 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -220,7 +240,7 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/food.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/food.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
@@ -229,7 +249,7 @@
                 Food & Non-Food (FMCG) B2B 2024
               </h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -237,14 +257,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/tech-shift.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/tech-shift.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">TechShift Summit 2025</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -252,14 +272,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/trade.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/trade.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Trade Missions</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -267,14 +287,14 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/6M$.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/6M$.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">6M$ Business Target</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
@@ -282,29 +302,31 @@
           </div>
           <!-- Single Slide  -->
           <div
-            class="w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/gulf.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
+            class="w-[310px] md:w-[370px] rounded-3xl flex items-end bg-[url(../assets/our-journey/gulf.jpg)] bg-no-repeat bg-cover bg-center min-h-[600px]"
           >
             <div
               class="p-4 flex justify-between w-full items-center select-none"
             >
               <h2 class="h3 text-secondary-200">Gulf Food 2024</h2>
               <a
-                class="bg-main px-5 py-4 rounded-[40px] text-secondary-200 font-bold text-xl"
+                class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
                 ><i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
           </div>
         </div>
-        <div class="arrows flex justify-end items-center gap-6 text-white">
-          <span class="px-8 py-3 bg-main rounded-xl cursor-pointer left-arrow"
+        <div class="arrows flex justify-center items-center gap-6 text-white">
+          <span
+            class="px-14 py-2 bg-secondary-100 rounded-full cursor-pointer text-2xl text-secondary hover:bg-secondary-300 transition duration-300 left-arrow"
             ><i class="fa-solid fa-arrow-left"></i
           ></span>
-          <span class="px-8 py-3 bg-main rounded-xl cursor-pointer right-arrow"
+          <span
+            class="px-14 py-2 bg-secondary-100 rounded-full cursor-pointer text-2xl text-secondary hover:bg-secondary-300 transition duration-300 right-arrow"
             ><i class="fa-solid fa-arrow-right"></i
           ></span>
         </div>
-      </div>
+      </section>
     </main>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/index.js" defer></script>

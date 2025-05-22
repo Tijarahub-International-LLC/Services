@@ -165,10 +165,11 @@ clacForm?.addEventListener("submit", (e) => {
 const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
-const slideWidth = 386 //slide + gap
+const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
+
 let autoScrollInterval
 rightArrow?.addEventListener('click' , ()=>{
-    
+    console.log(slideWidth)
     journeyCarousel?.scrollBy({left:slideWidth,behavior: "smooth"})
     
 })
@@ -184,7 +185,7 @@ leftArrow?.addEventListener('click' , ()=>{
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
-    }, 1000);
+    }, 3000);
 };
 
 autoScroll()
@@ -207,7 +208,10 @@ function dragStart(e){
 }
 let translation = 0
 function drag(e){
-    if (!holding) return
+    if (!holding) {
+        clearInterval(autoScrollInterval)
+        return
+    }
     
     journeyCarousel.scrollLeft = baseScrollLeft - (  e.pageX-startLocation)
 
@@ -219,8 +223,8 @@ function dragEnd(){
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
-    }, 1000);
-    journeyCarousel.scrollLeft = Math.round(journeyCarousel.scrollLeft / 386) * 386
+    }, 3000);
+    journeyCarousel.scrollLeft = Math.round(journeyCarousel.scrollLeft / slideWidth) * slideWidth
     journeyCarousel.style.cursor = "grab"
     holding = false
 }
