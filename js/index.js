@@ -41,6 +41,7 @@ showAnswerButtons?.forEach((btn, index) => {
             showAnswerButtons.forEach((btn, i) => {
                 if (i != index) {
                     btn.nextElementSibling.classList.remove('active-answer')
+                    btn.querySelector("i").style.transform = "rotate(0deg)"
                 }
             })
         }
