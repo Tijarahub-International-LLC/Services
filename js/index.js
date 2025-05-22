@@ -41,6 +41,7 @@ showAnswerButtons?.forEach((btn, index) => {
             showAnswerButtons.forEach((btn, i) => {
                 if (i != index) {
                     btn.nextElementSibling.classList.remove('active-answer')
+                    btn.querySelector("i").style.transform = "rotate(0deg)"
                 }
             })
         }
@@ -134,6 +135,7 @@ email?.addEventListener('keyup', (e) => {
 
 const modal = document.querySelector("#calc-modal");
 const modalResult = document.querySelector("#calc-modal h4");
+const modalResult = document.querySelector("#calc-modal h4");
 const closeModalBtn = document.querySelector("#close-calc-modal");
 const calcSection = document.querySelector("#calc-section")
 
@@ -154,9 +156,13 @@ closeModalBtn?.addEventListener("click", () => {
 const clacForm = document.querySelector("#calc-form");
 const inputs = document.querySelectorAll("#calc-form select")
 
+const inputs = document.querySelectorAll("#calc-form select")
+
 clacForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     closeCalcModal()
+    let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
+    modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
     modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     window.scrollTo({
@@ -173,20 +179,20 @@ const journeyCarousel = document.querySelector('.journey-carousel')
 const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
 
 let autoScrollInterval
-rightArrow?.addEventListener('click' , ()=>{
+rightArrow?.addEventListener('click', () => {
     console.log(slideWidth)
-    journeyCarousel?.scrollBy({left:slideWidth,behavior: "smooth"})
-    
+    journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
+
 })
-leftArrow?.addEventListener('click' , ()=>{
-    
-    journeyCarousel?.scrollBy({left:-slideWidth , behavior:'smooth'})
+leftArrow?.addEventListener('click', () => {
+
+    journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
 
 })
 
- autoScroll =  ()=>{
-     autoScrollInterval = setInterval(() => {
-        journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
+autoScroll = () => {
+    autoScrollInterval = setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
@@ -208,7 +214,7 @@ journeyCarousel?.addEventListener("mouseup" , dragEnd)
 journeyCarousel?.addEventListener("mouseleave" , dragEnd)
 journeyCarousel?.addEventListener("mousemove" , drag)
 
-function dragStart(e){
+function dragStart(e) {
     clearInterval(autoScrollInterval)
     journeyCarousel.style.cursor = "grabbing"
     holding = true
@@ -216,11 +222,9 @@ function dragStart(e){
 
     baseScrollLeft = journeyCarousel.scrollLeft;
 }
-function drag(e){
-    if (e.type == "mousemove"){
-        holding = true
-    }
-    if (!holding ) {
+let translation = 0
+function drag(e) {
+    if (!holding) {
         clearInterval(autoScrollInterval)
         return
     }
@@ -230,10 +234,10 @@ function drag(e){
     }
     journeyCarousel.scrollLeft = baseScrollLeft - (e.pageX-startLocation)
 }
-function dragEnd(){
+function dragEnd() {
     clearInterval(autoScrollInterval)
-    autoScrollInterval =  setInterval(() => {
-        journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
+    autoScrollInterval = setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
