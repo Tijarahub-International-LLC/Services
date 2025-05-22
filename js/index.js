@@ -172,11 +172,11 @@ clacForm?.addEventListener("submit", (e) => {
 const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
-const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
-
+let slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
+if (document.body.dir == "rtl") slideWidth = -slideWidth
 let autoScrollInterval
 rightArrow?.addEventListener('click', () => {
-    console.log(slideWidth)
+   
     journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
 
 })
@@ -188,7 +188,9 @@ leftArrow?.addEventListener('click', () => {
 
 autoScroll = () => {
     autoScrollInterval = setInterval(() => {
+      
         journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
+        
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
