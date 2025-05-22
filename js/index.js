@@ -184,40 +184,40 @@ rightArrow?.addEventListener('click', () => {
         journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
 
     })
+})
+const autoScroll = () => {
+    autoScrollInterval = setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
+            journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    }, 3000);
+};
 
-    const autoScroll = () => {
-        autoScrollInterval = setInterval(() => {
-            journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
-            if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
-                journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
-            }
-        }, 3000);
-    };
+autoScroll()
+// Draging animation Handling
+let startLocation = 0
+let holding = false;
 
-    autoScroll()
-    // Draging animation Handling
-    let startLocation = 0
-    let holding = false;
+journeyCarousel?.addEventListener("mousedown", dragStart)
+journeyCarousel?.addEventListener("mouseup", dragEnd)
+journeyCarousel?.addEventListener("mouseleave", dragEnd)
+journeyCarousel?.addEventListener("mousemove", drag)
 
-    journeyCarousel?.addEventListener("mousedown", dragStart)
-    journeyCarousel?.addEventListener("mouseup", dragEnd)
-    journeyCarousel?.addEventListener("mouseleave", dragEnd)
-    journeyCarousel?.addEventListener("mousemove", drag)
+function dragStart(e) {
+    holding = true
+    startLocation = e.clientX
 
-    function dragStart(e) {
-        holding = true
-        startLocation = e.clientX
+}
+function drag(e) {
+    if (!holding) return
+    let translation = startLocation - e.clientX
 
-    }
-    function drag(e) {
-        if (!holding) return
-        let translation = startLocation - e.clientX
+    console.log(translation)
 
-        console.log(translation)
+    journeyCarousel?.scrollBy(translation, 0);
 
-        journeyCarousel?.scrollBy(translation, 0);
-
-    }
-    function dragEnd() {
-        holding = false
-    }
+}
+function dragEnd() {
+    holding = false
+}
