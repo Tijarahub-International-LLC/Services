@@ -56,13 +56,13 @@ const standardPrice = document.getElementById("standard-price");
 const premiumPrice = document.getElementById("premium-price");
 
 const annuallyPrices = {
-    standard: "193 USD / Monthly",
-    premium: "320 USD / Monthly"
+    standard: "$193",
+    premium: "$320"
 };
 
 const monthlyPrices = {
-    standard: "275 USD / Monthly",
-    premium: "460 USD / Monthly"
+    standard: "$275",
+    premium: "$460"
 };
 
 document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
