@@ -674,6 +674,10 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
   .border-\[\#c2c2c2\] {
     border-color: #c2c2c2;
   }
