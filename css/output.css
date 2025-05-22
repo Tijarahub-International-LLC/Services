@@ -8,8 +8,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-300: oklch(80.8% 0.114 19.571);
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-400: oklch(79.2% 0.209 151.711);
@@ -18,8 +16,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
@@ -631,9 +627,6 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
-  .gap-9 {
-    gap: calc(var(--spacing) * 9);
-  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
@@ -714,26 +707,14 @@
   .\!bg-black {
     background-color: var(--color-black) !important;
   }
-  .\!bg-green-500 {
-    background-color: var(--color-green-500) !important;
-  }
-  .\!bg-secondary {
-    background-color: var(--color-secondary) !important;
+  .\!bg-secondary-600 {
+    background-color: var(--color-secondary-600) !important;
   }
   .bg-\[\#0E0E26\] {
     background-color: #0E0E26;
   }
   .bg-\[\#0200249c\] {
     background-color: #0200249c;
-  }
-  .bg-\[\#ddd\] {
-    background-color: #ddd;
-  }
-  .bg-\[\#ff0000\] {
-    background-color: #ff0000;
-  }
-  .bg-\[\#ff00000\] {
-    background-color: #ff00000;
   }
   .bg-secondary {
     background-color: var(--color-secondary);
@@ -749,6 +730,9 @@
   }
   .bg-secondary-300 {
     background-color: var(--color-secondary-300);
+  }
+  .bg-secondary-600 {
+    background-color: var(--color-secondary-600);
   }
   .bg-secondary\/50 {
     background-color: color-mix(in srgb, #252b58 50%, transparent);
@@ -1043,10 +1027,6 @@
     --tw-font-weight: var(--font-weight-medium) !important;
     font-weight: var(--font-weight-medium) !important;
   }
-  .\!font-normal {
-    --tw-font-weight: var(--font-weight-normal) !important;
-    font-weight: var(--font-weight-normal) !important;
-  }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
     font-weight: var(--font-weight-black);
@@ -1055,10 +1035,6 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .font-extralight {
-    --tw-font-weight: var(--font-weight-extralight);
-    font-weight: var(--font-weight-extralight);
-  }
   .font-light {
     --tw-font-weight: var(--font-weight-light);
     font-weight: var(--font-weight-light);
@@ -1066,10 +1042,6 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-  }
-  .font-normal {
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -1085,32 +1057,8 @@
   .text-wrap {
     text-wrap: wrap;
   }
-  .text-\[\#994a4a\] {
-    color: #994a4a;
-  }
-  .text-\[\#DDD\] {
-    color: #DDD;
-  }
-  .text-\[\#bbb\] {
-    color: #bbb;
-  }
-  .text-\[\#c0b9b9\] {
-    color: #c0b9b9;
-  }
-  .text-\[\#c2c2c2\] {
-    color: #c2c2c2;
-  }
-  .text-\[\#d1d1d1\] {
-    color: #d1d1d1;
-  }
   .text-\[\#d1d1d133\] {
     color: #d1d1d133;
-  }
-  .text-\[\#eee\] {
-    color: #eee;
-  }
-  .text-\[\#ff0000\] {
-    color: #ff0000;
   }
   .text-green-400 {
     color: var(--color-green-400);
