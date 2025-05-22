@@ -41,7 +41,6 @@ showAnswerButtons?.forEach((btn, index) => {
             showAnswerButtons.forEach((btn, i) => {
                 if (i != index) {
                     btn.nextElementSibling.classList.remove('active-answer')
-                    btn.querySelector("i").style.transform = "rotate(0deg)"
                 }
             })
         }
@@ -134,6 +133,7 @@ email?.addEventListener('keyup', (e) => {
 // Handle Calc Modal
 
 const modal = document.querySelector("#calc-modal");
+const modalResult = document.querySelector("#calc-modal h4");
 const closeModalBtn = document.querySelector("#close-calc-modal");
 const calcSection = document.querySelector("#calc-section")
 
@@ -152,9 +152,13 @@ closeModalBtn?.addEventListener("click", () => {
 
 // Calc Logic 
 const clacForm = document.querySelector("#calc-form");
+const inputs = document.querySelectorAll("#calc-form select")
+
 clacForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     closeCalcModal()
+    let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
+    modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     window.scrollTo({
         top: window.scrollY + calcSection.getBoundingClientRect().top - 50,
         behavior: "smooth"
@@ -165,30 +169,25 @@ clacForm?.addEventListener("submit", (e) => {
 
 const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
-const journeyCarousel = document.querySelector(' .journey-carousel')
-const slideWidth = 386 //slide + gap
+const journeyCarousel = document.querySelector('.journey-carousel')
+const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
+
+let autoScrollInterval
 rightArrow?.addEventListener('click', () => {
+    console.log(slideWidth)
     journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
 
-    const journeyCarousel = document.querySelector('.journey-carousel')
-    const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
-
-    let autoScrollInterval
-    rightArrow?.addEventListener('click', () => {
-        console.log(slideWidth)
-        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
-
-    })
-    leftArrow?.addEventListener('click', () => {
-
-        journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
-
-    })
 })
-const autoScroll = () => {
+leftArrow?.addEventListener('click', () => {
+
+    journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
+
+})
+
+autoScroll = () => {
     autoScrollInterval = setInterval(() => {
         journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
-        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
     }, 3000);
@@ -198,26 +197,39 @@ autoScroll()
 // Draging animation Handling
 let startLocation = 0
 let holding = false;
-
+let baseScrollLeft
 journeyCarousel?.addEventListener("mousedown", dragStart)
 journeyCarousel?.addEventListener("mouseup", dragEnd)
 journeyCarousel?.addEventListener("mouseleave", dragEnd)
 journeyCarousel?.addEventListener("mousemove", drag)
 
 function dragStart(e) {
+    clearInterval(autoScrollInterval)
+
+    journeyCarousel.style.cursor = "grabbing"
     holding = true
-    startLocation = e.clientX
-
+    startLocation = e.pageX
+    baseScrollLeft = journeyCarousel.scrollLeft;
 }
+let translation = 0
 function drag(e) {
-    if (!holding) return
-    let translation = startLocation - e.clientX
+    if (!holding) {
+        clearInterval(autoScrollInterval)
+        return
+    }
 
-    console.log(translation)
-
-    journeyCarousel?.scrollBy(translation, 0);
+    journeyCarousel.scrollLeft = baseScrollLeft - (e.pageX - startLocation)
 
 }
 function dragEnd() {
+    clearInterval(autoScrollInterval)
+    autoScrollInterval = setInterval(() => {
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
+        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
+            journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    }, 3000);
+    journeyCarousel.scrollLeft = Math.round(journeyCarousel.scrollLeft / slideWidth) * slideWidth
+    journeyCarousel.style.cursor = "grab"
     holding = false
 }
