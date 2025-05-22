@@ -161,6 +161,7 @@ clacForm?.addEventListener("submit", (e) => {
     })
 })
 
+// Carousel Arrows 
 
 const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
@@ -169,46 +170,54 @@ const slideWidth = 386 //slide + gap
 rightArrow?.addEventListener('click', () => {
     journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
 
-})
-leftArrow?.addEventListener('click', () => {
+    const journeyCarousel = document.querySelector('.journey-carousel')
+    const slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
 
-    journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
+    let autoScrollInterval
+    rightArrow?.addEventListener('click', () => {
+        console.log(slideWidth)
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
 
-})
+    })
+    leftArrow?.addEventListener('click', () => {
 
-const autoScroll = () => {
-    autoScrollInterval = setInterval(() => {
-        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
-        if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
-            journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
-        }
-    }, 3000);
-};
+        journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
 
-autoScroll()
-// Draging animation Handling
-let startLocation = 0
-let holding = false;
+    })
 
-journeyCarousel?.addEventListener("mousedown", dragStart)
-journeyCarousel?.addEventListener("mouseup", dragEnd)
-journeyCarousel?.addEventListener("mouseleave", dragEnd)
-journeyCarousel?.addEventListener("mousemove", drag)
+    const autoScroll = () => {
+        autoScrollInterval = setInterval(() => {
+            journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
+            if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
+                journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+            }
+        }, 3000);
+    };
 
-function dragStart(e) {
-    holding = true
-    startLocation = e.clientX
+    autoScroll()
+    // Draging animation Handling
+    let startLocation = 0
+    let holding = false;
 
-}
-function drag(e) {
-    if (!holding) return
-    let translation = startLocation - e.clientX
+    journeyCarousel?.addEventListener("mousedown", dragStart)
+    journeyCarousel?.addEventListener("mouseup", dragEnd)
+    journeyCarousel?.addEventListener("mouseleave", dragEnd)
+    journeyCarousel?.addEventListener("mousemove", drag)
 
-    console.log(translation)
+    function dragStart(e) {
+        holding = true
+        startLocation = e.clientX
 
-    journeyCarousel?.scrollBy(translation, 0);
+    }
+    function drag(e) {
+        if (!holding) return
+        let translation = startLocation - e.clientX
 
-}
-function dragEnd() {
-    holding = false
-}
+        console.log(translation)
+
+        journeyCarousel?.scrollBy(translation, 0);
+
+    }
+    function dragEnd() {
+        holding = false
+    }
