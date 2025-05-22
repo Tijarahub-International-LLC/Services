@@ -133,6 +133,7 @@ email?.addEventListener('keyup', (e) => {
 // Handle Calc Modal
 
 const modal = document.querySelector("#calc-modal");
+const modalResult = document.querySelector("#calc-modal h4");
 const closeModalBtn = document.querySelector("#close-calc-modal");
 const calcSection = document.querySelector("#calc-section")
 
@@ -151,9 +152,13 @@ closeModalBtn?.addEventListener("click", () => {
 
 // Calc Logic 
 const clacForm = document.querySelector("#calc-form");
+const inputs = document.querySelectorAll("#calc-form select")
+
 clacForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     closeCalcModal()
+    let growthResult = (inputs[0].value * 0.5 + inputs[1].value * 0.7 + inputs[2].value * 0.8 + inputs[3].value * 0.9 + inputs[4].value * 0.2) + 20
+    modalResult.innerHTML = `Your Potential Growth is: ${growthResult}%`
     window.scrollTo({
         top: window.scrollY + calcSection.getBoundingClientRect().top - 50,
         behavior: "smooth"
@@ -193,6 +198,11 @@ autoScroll()
 let startLocation = 0
 let holding = false;
 let baseScrollLeft 
+
+journeyCarousel?.addEventListener("touchstart" , dragStart)
+journeyCarousel?.addEventListener("touchmove" , drag)
+journeyCarousel?.addEventListener("touchend" , dragEnd)
+
 journeyCarousel?.addEventListener("mousedown" , dragStart)
 journeyCarousel?.addEventListener("mouseup" , dragEnd)
 journeyCarousel?.addEventListener("mouseleave" , dragEnd)
@@ -200,21 +210,25 @@ journeyCarousel?.addEventListener("mousemove" , drag)
 
 function dragStart(e){
     clearInterval(autoScrollInterval)
-
     journeyCarousel.style.cursor = "grabbing"
     holding = true
-    startLocation = e.pageX
+    e.type == "touchstart" ? startLocation = e.changedTouches[0].pageX :  startLocation = e.pageX
+
     baseScrollLeft = journeyCarousel.scrollLeft;
 }
-let translation = 0
 function drag(e){
-    if (!holding) {
+    if (e.type == "mousemove"){
+        holding = true
+    }
+    if (!holding ) {
         clearInterval(autoScrollInterval)
         return
     }
-    
-    journeyCarousel.scrollLeft = baseScrollLeft - (  e.pageX-startLocation)
-
+    if (e.type == 'touchmove'){
+        journeyCarousel.scrollLeft = baseScrollLeft - (e.changedTouches[0].pageX-startLocation)
+        return
+    }
+    journeyCarousel.scrollLeft = baseScrollLeft - (e.pageX-startLocation)
 }
 function dragEnd(){
     clearInterval(autoScrollInterval)
@@ -228,3 +242,4 @@ function dragEnd(){
     journeyCarousel.style.cursor = "grab"
     holding = false
 }
+
