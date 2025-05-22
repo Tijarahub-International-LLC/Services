@@ -19,6 +19,7 @@
 
   /* Custom Animations */
   --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+  --animate-marquee-parteners-mobile: marquee-parteners-mobile 20s linear infinite;
   --animate-marquee: marquee 36s linear infinite;
   --animate-up-down: up-down 10s linear infinite;
   --animate-gradient-glow: gradient-glow 5s ease infinite;
@@ -32,6 +33,15 @@
       transform: translateX(-131.67%);
     }
   }
+  @keyframes marquee-parteners-mobile {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-333%);
+    }
+  }
+  
 
   @keyframes marquee {
     0% {

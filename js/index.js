@@ -41,6 +41,7 @@ showAnswerButtons?.forEach((btn, index) => {
             showAnswerButtons.forEach((btn, i) => {
                 if (i != index) {
                     btn.nextElementSibling.classList.remove('active-answer')
+                    btn.querySelector("i").style.transform = "rotate(0deg)"
                 }
             })
         }
@@ -165,19 +166,19 @@ const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector(' .journey-carousel')
 const slideWidth = 386 //slide + gap
-rightArrow?.addEventListener('click' , ()=>{
-    journeyCarousel?.scrollBy({left:slideWidth,behavior: "smooth"})
+rightArrow?.addEventListener('click', () => {
+    journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
 
 })
-leftArrow?.addEventListener('click' , ()=>{
-    
-    journeyCarousel?.scrollBy({left:-slideWidth , behavior:'smooth'})
+leftArrow?.addEventListener('click', () => {
+
+    journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
 
 })
 
 const autoScroll = () => {
     autoScrollInterval = setInterval(() => {
-        journeyCarousel?.scrollBy({ left: slideWidth , behavior: "smooth" });
+        journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
         if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth - slideWidth) {
             journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
         }
@@ -189,25 +190,25 @@ autoScroll()
 let startLocation = 0
 let holding = false;
 
-journeyCarousel?.addEventListener("mousedown" , dragStart)
-journeyCarousel?.addEventListener("mouseup" , dragEnd)
-journeyCarousel?.addEventListener("mouseleave" , dragEnd)
-journeyCarousel?.addEventListener("mousemove" , drag)
+journeyCarousel?.addEventListener("mousedown", dragStart)
+journeyCarousel?.addEventListener("mouseup", dragEnd)
+journeyCarousel?.addEventListener("mouseleave", dragEnd)
+journeyCarousel?.addEventListener("mousemove", drag)
 
-function dragStart(e){
+function dragStart(e) {
     holding = true
     startLocation = e.clientX
-    
+
 }
-function drag(e){
+function drag(e) {
     if (!holding) return
-    let translation =  startLocation-e.clientX 
+    let translation = startLocation - e.clientX
 
     console.log(translation)
 
-    journeyCarousel?.scrollBy( translation, 0);
+    journeyCarousel?.scrollBy(translation, 0);
 
 }
-function dragEnd(){
+function dragEnd() {
     holding = false
 }
