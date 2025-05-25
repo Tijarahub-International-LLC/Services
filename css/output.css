@@ -12,7 +12,6 @@
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-400: oklch(79.2% 0.209 151.711);
     --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
@@ -67,7 +66,8 @@
     --color-secondary-50: #f1f5fd;
     --font-inter: "Inter", sans-serif;
     --animate-marquee-parteners: marquee-parteners 26s linear infinite;
-    --animate-marquee-parteners-mobile: marquee-parteners-mobile 20s linear infinite;
+    --animate-marquee-parteners-mobile: marquee-parteners-mobile 20s linear
+    infinite;
     --animate-marquee: marquee 36s linear infinite;
     --animate-up-down: up-down 10s linear infinite;
     --animate-gradient-glow: gradient-glow 5s ease infinite;
