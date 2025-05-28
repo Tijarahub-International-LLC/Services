@@ -10,8 +10,8 @@
   --color-dark-cyan: #2BA4C3;
 
   --color-main: #e95b2b;
-  --color-text: #F5F5F5;
-  --color-sub-text: #D9D9D9;
+  --color-text: #f5f5f5;
+  --color-sub-text: #d9d9d9;
   --color-secondary: #252b58;
   --color-secondary-900: #2d387b;
   --color-secondary-800: #333f9a;
@@ -179,10 +179,9 @@ button {
 }
 
 .secondary-ocean-gradient {
-  background-image: linear-gradient(145deg, var(--color-deep-light-blue) ,var(--color-light-cyan));
-  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);     this shadow for the services card icons */ 
+  background-image: linear-gradient(145deg, #1D4489, #50C9E8);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);
 }
-
 
 /* 
 #10324F ==> Dark Blue
