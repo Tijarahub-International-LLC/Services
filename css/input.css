@@ -2,9 +2,10 @@
 @import "tailwindcss";
 
 @theme {
+  --color-accent: #2ba4c3;
   --color-main: #e95b2b;
-  --color-text: #F5F5F5;
-  --color-sub-text: #D9D9D9;
+  --color-text: #f5f5f5;
+  --color-sub-text: #d9d9d9;
   --color-secondary: #252b58;
   --color-secondary-900: #2d387b;
   --color-secondary-800: #333f9a;
@@ -153,22 +154,21 @@ button {
 /* Gradients */
 
 .page-gradient {
-  background-image: linear-gradient(-100deg, #10324f ,#334159);
+  background-image: linear-gradient(-100deg, #10324f, #334159);
 }
 
 .secondary-gradient {
-  background-image: linear-gradient(-75deg, #1D4489,#5F75A9);
+  background-image: linear-gradient(-75deg, #1d4489, #5f75a9);
 }
 
 .ocean-gradient {
-  background-image: linear-gradient(119deg, #1D4489, #2BA4C3);
+  background-image: linear-gradient(119deg, #1d4489, #2ba4c3);
 }
 
 .secondary-ocean-gradient {
-  background-image: linear-gradient(145deg, #1D4489, #50C9E8);
+  background-image: linear-gradient(145deg, #1d4489, #50c9e8);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);
 }
-
 
 /* 
 #10324F ==> Dark Blue
