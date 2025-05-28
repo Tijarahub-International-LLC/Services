@@ -3,6 +3,8 @@
 
 @theme {
   --color-main: #e95b2b;
+  --color-text: #F5F5F5;
+  --color-sub-text: #D9D9D9;
   --color-secondary: #252b58;
   --color-secondary-900: #2d387b;
   --color-secondary-800: #333f9a;
@@ -97,7 +99,7 @@ html {
 }
 
 body {
-  @apply font-inter;
+  @apply font-inter text-text;
 }
 
 button {
@@ -109,7 +111,7 @@ button {
 }
 
 .stat-card {
-  @apply flex items-center justify-center h-12 gap-3 px-4 duration-300 border rounded-full  shadow-[0px_4px_16px_1px_var(--color-secondary-600)] border-secondary-600 text-secondary-100;
+  @apply flex items-center justify-center bg-white/10 backdrop-blur-md h-14 gap-3 px-4 duration-300 rounded-full  text-secondary-100;
 }
 .btn {
   @apply content-center h-12 px-4 text-center duration-300 border rounded-full cursor-pointer text-secondary-100 bg-secondary border-secondary hover:bg-main hover:border-main;
@@ -148,12 +150,30 @@ button {
   @apply px-4 py-3 font-semibold rounded-3xl bg-secondary-200;
 }
 
-.timeline-dot {
-  position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--color-secondary-100);
-  border: 4px solid var(--color-secondary);
-  border-radius: 9999px;
-  transform: translate(-50%, -50%);
+/* Gradients */
+
+.page-gradient {
+  background-image: linear-gradient(-100deg, #10324f ,#334159);
 }
+
+.secondary-gradient {
+  background-image: linear-gradient(-75deg, #1D4489,#5F75A9);
+}
+
+.ocean-gradient {
+  background-image: linear-gradient(119deg, #1D4489, #2BA4C3);
+}
+
+.secondary-ocean-gradient {
+  background-image: linear-gradient(145deg, #1D4489, #50C9E8);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);
+}
+
+
+/* 
+#10324F ==> Dark Blue
+#334159 ===> lighter Dark Blue
+#1D4489 ===> Deep Light Blue
+#2BA4C3 ===> Like Cyan
+
+*/

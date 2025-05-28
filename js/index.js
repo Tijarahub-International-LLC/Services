@@ -1,5 +1,55 @@
 //  sliding animation
 AOS.init();
+let index;
+
+const caseStudies = [
+  {
+    vendor: {
+      img: "../assets/Sellers/Sellers-Logos-06.png",
+      name: "LIBRA",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
+      services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
+      industry: "Software",
+      location: "Egypt",
+      challenge: ["challenge 1", "challenge 2", "challenge 3"],
+      solution: ["solution 1", "solution 2", "solution 3"],
+      results: ["result 1", "result 2", "result 3"],
+    },
+    caseStudy: {
+      img: "",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis alias totam quaerat, illo quisquam eos impedit hic. Dolor cum recusandae ipsam est sint, qui itaque accusamus labore hic sit.",
+      storyURL: "",
+      testimonialsURL: ""
+    },
+    buyer: {
+      img: "../assets/Parteners-Logos-06.png",
+      name: "BEAUTY GIRL",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
+      services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
+      industry: "",
+      location: "",
+      challenge: "",
+      solution: "",
+      results: ""
+    }
+  },
+
+]
+
+const services = [{
+  title: "",
+  img: "",
+  services: [
+    {
+      icon: "",
+      text: "+9.5k Wholesale buyers"
+    },
+    {
+      icon: "",
+      text: "+9.5k Wholesale buyers"
+    },
+  ]
+}]
 
 const burgerIcon = document.querySelector("header .burger-icon")
 const menu = document.querySelector('.menu')
@@ -37,7 +87,11 @@ showAnswerButtons?.forEach((btn, index) => {
     } else {
 
       btn.nextElementSibling.classList.toggle('active-answer')
-      btn.querySelector("i").style.transform = "rotate(90deg)"
+      if (btn.querySelector("i").classList.contains("fa-chevron-right")) {
+        btn.querySelector("i").style.transform = "rotate(90deg)"
+      } else {
+        btn.querySelector("i").style.transform = "rotate(-90deg)"
+      }
       showAnswerButtons.forEach((btn, i) => {
         if (i != index) {
           btn.nextElementSibling.classList.remove('active-answer')
@@ -244,4 +298,90 @@ function dragEnd() {
   journeyCarousel.style.cursor = "grab"
   holding = false
 }
+
+
+caseStudies.forEach(({ buyer, caseStudy, vendor }, index) => {
+  const caseStudiesContainer = document.querySelector("#caseStudiesContainer");
+
+  // Vendor Content
+  const vendorContent = `<div
+      data-aos="fade-right"
+      class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-secondary-900 to-secondary rounded-3xl"
+    >
+      <div>
+        <img
+          src="${vendor.img}"
+          alt="${vendor.name}"
+          class="mx-auto rounded w-[300px]"
+        />
+      </div>
+      <p class="p-2 text-base leading-5">
+        ${vendor.desc}
+      </p>
+      <div
+        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold 2xl:flex-row md:flex-row"
+      >
+        ${vendor.services.map((item) => `<div class='stat-card min-w-1/4'><p>${item}</p></div>`).join('')}
+      </div>
+    </div>`;
+
+  // Case Study Content
+  const caseStudyContent = ` <div
+      data-aos="fade-up"
+      class="flex flex-col items-center justify-around p-8 gap-7 text-secondary-100 bg-gradient-to-b from-secondary-500 to-secondary rounded-3xl"
+    >
+      <h3 class="text-center capitalize h2">Case Study</h3>
+      <div class="flex flex-wrap items-center justify-center gap-6 body">
+        <p class="text-center h4">
+          ${caseStudy.desc}
+        </p>
+      </div>
+      <div class="relative mx-auto w-fit">
+        <div
+          class="absolute start-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md to-secondary-main top-1/2 -translate-y-1/2"
+        ></div>
+
+        <a
+          href="${caseStudy.storyURL}?q=${index}"
+          class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md shadow-main size-full bg-secondary-100 text-secondary"
+        >
+          <img src="./assets/checkicon.svg" alt="icon" />
+          Check Story</a
+        >
+      </div>
+    </div>`;
+
+  // Buyer Content
+  const buyerContent = `
+  <div
+          data-aos="fade-left"
+          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-secondary-900 to-secondary rounded-3xl"
+        >
+          <div>
+            <img
+              src="${buyer.img}"
+              alt="${buyer.name}"
+              class="mx-auto rounded w-[300px]"
+            />
+          </div>
+          <p class="p-2 text-base leading-5">
+            ${buyer.desc}
+          </p>
+          <div
+            class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold 2xl:flex-row md:flex-row"
+          >
+          ${buyer.services.map((item) => ` <div class="stat-card min-w-1/4">
+              <p>${item}</p>
+            </div>`).join("")}
+          </div>
+        </div>`
+
+  const content = `
+    ${vendorContent}
+    ${caseStudyContent}
+    ${buyerContent}
+  `;
+
+  caseStudiesContainer?.insertAdjacentHTML("beforeend", content);
+})
 
