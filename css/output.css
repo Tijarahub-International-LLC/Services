@@ -902,6 +902,10 @@
   .bg-\[url\(\.\.\/assets\/partners\/raya\.png\)\] {
     background-image: url(../assets/partners/raya.png);
   }
+  .from-lighter-dark-blue {
+    --tw-gradient-from: var(--color-lighter-dark-blue);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
   .from-secondary {
     --tw-gradient-from: var(--color-secondary);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -981,6 +985,9 @@
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
+  .p-24 {
+    padding: calc(var(--spacing) * 24);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -1007,6 +1014,9 @@
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);

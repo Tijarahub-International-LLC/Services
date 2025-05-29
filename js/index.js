@@ -307,7 +307,7 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
   // Vendor Content
   const vendorContent = `<div
       data-aos="fade-right"
-      class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-secondary-900 to-secondary rounded-3xl"
+      class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
     >
       <div>
         <img
@@ -356,7 +356,7 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
   const buyerContent = `
   <div
           data-aos="fade-left"
-          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-secondary-900 to-secondary rounded-3xl"
+          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
         >
           <div>
             <img
@@ -389,9 +389,9 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
 
 function addContentToPage(index){
 const caseStudiesContainer = document.querySelector("#caseStudyContainer");
-console.log(index)
-  let {id, vendor , caseStudy , buyer} = caseStudies[index-1]
-console.log('sss')
+
+  let {id, vendor , caseStudy , buyer} = caseStudies[index]
+
 
   let storyContent = `
             <h2 class="h2 text-secondary-200 lg:text-3xl">Case Study</h2>
@@ -450,5 +450,7 @@ console.log('sss')
 }
 
 const searchParams = new URLSearchParams(window.location.search);
+if(searchParams.get('i')){
 
-addContentToPage(searchParams.get('i'))
+  addContentToPage(searchParams.get('i'))
+}
