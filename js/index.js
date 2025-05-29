@@ -6,7 +6,7 @@ const caseStudies = [
   {
     id:1,
     vendor: {
-      img: "../assets/Sellers/Sellers-Logos-06.png",
+      img: "./assets/Sellers/Sellers-Logos-06.png",
       name: "LIBRA",
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
@@ -23,7 +23,7 @@ const caseStudies = [
       testimonialsURL: ""
     },
     buyer: {
-      img: "../assets/Parteners-Logos-06.png",
+      img: "./assets/Parteners-Logos-06.png",
       name: "BEAUTY GIRL",
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
