@@ -610,10 +610,8 @@
     <link href="./css/all.min.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
   </head>
-  <body class="overflow-x-hidden">
-    <div
-      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#252b58_94%)]"
-    >
+  <body class="overflow-x-hidden page-gradient">
+    <div class="min-h-screen">
       <header class="container">
         <div class="flex justify-between items-center h-[80px]">
           <a target="_blank" href="https://tijarahub.com/"
@@ -624,7 +622,7 @@
           /></a>
 
           <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-main *:duration-300 text-center font-medium"
+            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-dark-cyan *:duration-300 text-center font-medium"
           >
             <li>
               <span
@@ -645,14 +643,16 @@
               >
             </li>
             <li>
-              <a href="./journeyar.html" class="font-medium text-main">قصتنا</a>
+              <a href="./journeyar.html" class="font-medium text-dark-cyan"
+                >قصتنا</a
+              >
             </li>
           </ul>
           <div class="flex items-center justify-between gap-4">
             <div class="relative">
               <span
                 id="lang-toggle"
-                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-secondary"
+                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-dark-cyan"
                 ><i class="fa-solid fa-globe lang-icon"></i
               ></span>
 
@@ -662,12 +662,12 @@
               >
                 <a
                   href="./journeyar.html"
-                  class="block p-3 rounded-lg bg-secondary-300 hover:bg-secondary-300"
+                  class="block p-3 rounded-lg text-black bg-secondary-300 hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
                   href="./journey.html"
-                  class="block p-3 rounded-lg hover:bg-secondary-300"
+                  class="block p-3 rounded-lg text-black hover:bg-secondary-300"
                   >English</a
                 >
               </div>
@@ -685,31 +685,23 @@
           class="container flex flex-col items-center justify-center h-full gap-6 lg:gap-12"
         >
           <div class="flex flex-col gap-4">
-            <h1 class="text-center text-secondary h1">
-              رحله نمونا وتأثيرنا علي الصناعة
-            </h1>
-            <p
-              class="!leading-normal text-center text-secondary h4 max-w-[766px] mx-auto"
-            >
-              Discover expert B2B services, from smart solutions to realiable
-              support. designed to elevate your online trading.
-            </p>
+            <h1 class="text-center h1">رحله نمونا وتأثيرنا علي الصناعة</h1>
           </div>
           <div
-            class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6 text-secondary-100"
+            class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6"
           >
-            <div class="relative">
-              <div
-                class="absolute end-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md top-1/2 -translate-y-1/2"
-              ></div>
-              <a
-                href="./free-trial.html"
-                class="relative flex items-center gap-2 px-4 py-3 duration-300 border rounded-full hover:shadow-md shadow-main size-full border-secondary bg-secondary"
-              >
-                <img src="./assets/icon.svg" alt="icon" />
-                Start Free Trial Now</a
-              >
-            </div>
+            <a
+              href="./free-trialar.html"
+              class="inline-flex items-center gap-2 px-4 duration-300 rounded-full h-14 hover:shadow-md shadow-dark-cyan ocean-gradient"
+            >
+              <img src="./assets/icon.svg" alt="icon" />
+              Start Free Trial Now</a
+            >
+            <a
+              href="./servicesar.html"
+              class="flex items-center px-4 duration-300 hover:shadow-md shadow-semi-lighter-blue rounded-full h-14 bg-semi-lighter-blue/30"
+              >Read More</a
+            >
           </div>
         </div>
       </section>
@@ -717,10 +709,8 @@
         class="container flex flex-col-reverse items-center justify-between gap-8 md:flex-row pb-14 md:pb-16"
       >
         <div class="flex flex-col gap-4">
-          <h2 class="pb-4 h2 text-secondary-200">
-            TijaraHub <br />Born To Compete
-          </h2>
-          <p class="body text-balance text-secondary-200 !leading-5">
+          <h2 class="pb-4 h2">TijaraHub <br />Born To Compete</h2>
+          <p class="body text-balance !leading-5">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
             ipsum quidem quos, accusamus inventore ratione consectetur laborum
             rerum adipisci temporibus fugit reiciendis, autem ad veritatis
@@ -737,7 +727,7 @@
       </section>
     </div>
     <main
-      class="relative flex flex-col items-center min-h-screen overflow-x-hidden pb-14 bg-secondary gap-14 md:gap-16 md:pb-16"
+      class="relative flex flex-col items-center min-h-screen overflow-x-hidden pb-14 gap-14 md:gap-16 md:pb-16"
     >
       <section class="w-[100%] cursor-grab">
         <div
@@ -754,7 +744,7 @@
               <a
                 class="px-5 py-4 text-xl font-bold rounded-full bg-secondary text-secondary-50"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -769,7 +759,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -784,7 +774,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -799,7 +789,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -814,7 +804,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -829,7 +819,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -844,7 +834,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -861,7 +851,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -876,7 +866,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -891,7 +881,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -906,7 +896,7 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
@@ -921,29 +911,30 @@
               <a
                 class="bg-secondary px-5 py-4 rounded-[24px] text-secondary-50 font-bold text-xl"
                 href="https://www.zawya.com/en/press-release/companies-news/tijarahub-launches-cutting-edge-b2b-e-commerce-platform-v0javai7"
-                ><i class="fa-solid fa-arrow-right"></i
+                ><i class="fa-solid fa-arrow-left"></i
               ></a>
             </div>
           </div>
         </div>
         <div class="flex items-center justify-center gap-6 text-white arrows">
           <span
-            class="py-2 text-2xl transition duration-300 rounded-full cursor-pointer px-14 bg-secondary-100 text-secondary hover:bg-secondary-300 left-arrow"
-            ><i class="fa-solid fa-arrow-left"></i
-          ></span>
-          <span
             class="py-2 text-2xl transition duration-300 rounded-full cursor-pointer px-14 bg-secondary-100 text-secondary hover:bg-secondary-300 right-arrow"
             ><i class="fa-solid fa-arrow-right"></i
           ></span>
+          <span
+            class="py-2 text-2xl transition duration-300 rounded-full cursor-pointer px-14 bg-secondary-100 text-secondary hover:bg-secondary-300 left-arrow"
+            ><i class="fa-solid fa-arrow-left"></i
+          ></span>
         </div>
       </section>
-      <section class="container w-full px-4 mb-10 lg:px-14" data-aos="fade-up">
+      <!-- Newsletter -->
+      <section class="container w-full" data-aos="fade-up">
         <div class="flex flex-col mx-auto text-center">
           <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
           <form
             id="news-letter-form"
             action="https://app.kit.com/forms/8057433/subscriptions"
-            class="w-full mx-auto text-center seva-form formkit-form lg:px-12 text-secondary rounded-3xl bg-gradient-to-br to-secondary-900 from-secondary-100"
+            class="w-full mx-auto text-center seva-form formkit-form lg:px-12 rounded-3xl bg-white/10 backdrop-blur-lg"
             method="post"
             data-sv-form="8057433"
             data-uid="3f5cb920f8"
@@ -958,22 +949,14 @@
                 <div
                   class="formkit-header"
                   data-element="header"
-                  style="
-                    color: rgb(37, 43, 88);
-                    font-size: 28px;
-                    font-weight: 700;
-                  "
+                  style="color: #f5f5f5; font-size: 28px; font-weight: 700"
                 >
                   <h2>Join our newsletter</h2>
                 </div>
                 <div
                   class="formkit-content"
                   data-element="content"
-                  style="
-                    color: rgb(37, 43, 88);
-                    font-size: 18px;
-                    font-weight: 400;
-                  "
+                  style="color: #d9d9d9; font-size: 18px; font-weight: 400"
                 >
                   <p>Receive tips and tricks on how to lorum ipsum.</p>
                 </div>
@@ -1013,15 +996,19 @@
                     class="formkit-submit"
                     style="
                       color: rgb(255, 255, 255);
-                      background-color: var(--color-secondary-900);
+                      background-image: linear-gradient(
+                        119deg,
+                        var(--color-dark-blue),
+                        var(--color-dark-cyan)
+                      );
                       border-radius: 1000px;
                       font-weight: normal;
                     "
                   >
                     <div class="formkit-spinner">
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                      <span></span>
+                      <span></span>
+                      <span></span>
                     </div>
                     <span class="">Send</span>
                   </button>

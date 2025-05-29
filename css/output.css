@@ -1455,6 +1455,13 @@
       }
     }
   }
+  .hover\:text-dark-cyan {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-dark-cyan);
+      }
+    }
+  }
   .hover\:text-secondary {
     &:hover {
       @media (hover: hover) {
