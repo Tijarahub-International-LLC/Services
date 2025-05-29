@@ -79,7 +79,6 @@
     infinite;
     --animate-marquee: marquee 36s linear infinite;
     --animate-up-down: up-down 10s linear infinite;
-    --animate-gradient-glow: gradient-glow 5s ease infinite;
   }
 }
 @layer base {
@@ -640,9 +639,6 @@
     --tw-border-style: none;
     border-style: none;
   }
-  .border-\[\#c2c2c2\] {
-    border-color: #c2c2c2;
-  }
   .border-\[rgba\(255\,255\,255\,0\.08\)\] {
     border-color: rgba(255,255,255,0.08);
   }
@@ -654,15 +650,6 @@
   }
   .border-secondary-50 {
     border-color: var(--color-secondary-50);
-  }
-  .border-secondary-400 {
-    border-color: var(--color-secondary-400);
-  }
-  .border-transparent {
-    border-color: transparent;
-  }
-  .\!bg-secondary-600 {
-    background-color: var(--color-secondary-600) !important;
   }
   .bg-\[\#265B9A\] {
     background-color: #265B9A;
@@ -725,9 +712,6 @@
   .bg-gradient-to-br {
     --tw-gradient-position: to bottom right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-  .bg-\[linear-gradient\(180deg\,\#f1f5fd_0\%\,\#769be4_36\%\,\#252b58_94\%\)\] {
-    background-image: linear-gradient(180deg,#f1f5fd 0%,#769be4 36%,#252b58 94%);
   }
   .bg-\[url\(\.\.\/assets\/backgrounds\/sales-bg\.png\)\] {
     background-image: url(../assets/backgrounds/sales-bg.png);
@@ -829,9 +813,6 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
-  }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -970,10 +951,6 @@
   .\!font-black {
     --tw-font-weight: var(--font-weight-black) !important;
     font-weight: var(--font-weight-black) !important;
-  }
-  .\!font-medium {
-    --tw-font-weight: var(--font-weight-medium) !important;
-    font-weight: var(--font-weight-medium) !important;
   }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
@@ -1217,13 +1194,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-dark-blue);
-      }
-    }
-  }
-  .hover\:bg-main {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-main);
       }
     }
   }
@@ -1619,6 +1589,16 @@
 html {
   scroll-padding: calc(var(--spacing) * 8);
   scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark-blue);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: calc(infinity * 1px);
+  background-color: var(--color-dark-cyan);
 }
 ::selection {
   background-color: var(--color-main);
@@ -2050,14 +2030,6 @@ button {
   }
   100% {
     transform: translateY(0px);
-  }
-}
-@keyframes gradient-glow {
-  0%, 100% {
-    background-position: 0%, 50%;
-  }
-  50% {
-    background-position: 100%, 50%;
   }
 }
 @layer properties {

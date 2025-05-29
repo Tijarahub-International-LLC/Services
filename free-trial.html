@@ -610,11 +610,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="font-inter overflow-x-hidden page-gradient">
     <!-- Hero Section -->
-    <main
-      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#252b58_94%)] overflow-hidden pb-12"
-    >
+    <main>
       <header class="container">
         <div class="flex justify-between items-center h-[80px]">
           <a target="_blank" href="https://tijarahub.com/"
@@ -625,7 +623,7 @@
           /></a>
 
           <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-main *:duration-300 text-center font-medium"
+            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium"
           >
             <li>
               <span
@@ -651,17 +649,17 @@
             <div class="relative">
               <span
                 id="lang-toggle"
-                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-secondary"
+                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-dark-cyan"
                 ><i class="fa-solid fa-globe lang-icon"></i
               ></span>
 
               <div
                 id="lang-menu"
-                class="absolute -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
+                class="absolute text-secondary -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
               >
                 <a
                   href="./free-trialar.html"
-                  class="block p-3 rounded-lg hover:bg-secondary-300"
+                  class="block font-cairo p-3 rounded-lg hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
@@ -682,10 +680,8 @@
           class="container flex flex-col items-center justify-center gap-6 lg:gap-12"
         >
           <div class="flex flex-col gap-4">
-            <h1 class="text-center text-secondary h1">Free Trial</h1>
-            <p
-              class="!leading-normal text-center text-secondary h4 max-w-[766px] mx-auto"
-            >
+            <h1 class="text-center h1">Free Trial</h1>
+            <p class="!leading-normal text-center h4 max-w-[766px] mx-auto">
               Discover expert B2B services, from smart solutions to realiable
               support. designed to elevate your online trading.
             </p>
@@ -696,27 +692,23 @@
         <!-- Calendly inline widget begin -->
         <div
           class="calendly-inline-widget"
-          data-url="https://calendly.com/mmsherif/30min?month=2025-05?primary_color=252b58&text_color=ffffff&background_color=252b58"
+          data-url="https://calendly.com/mmsherif/30min?month=2025-05?primary_color=10324F&text_color=ffffff&background_color=10324F"
           style="min-width: 100%; height: 700px"
         ></div>
         <!-- Calendly inline widget end -->
 
-        <section id="plans" class="container" data-aos="fade-up">
-          <h2 class="mb-6 text-center text-secondary-100 h2">
-            Our Pricing Plans
-          </h2>
-
+        <section id="plans" class="container pb-12" data-aos="fade-up">
           <div
-            class="togglePlan flex w-full max-w-[300px] mb-6 mx-auto items-center border border-gray-200 text-secondary-100 rounded-full p-1 *:flex-1"
+            class="togglePlan flex w-full h-12 max-w-[300px] mb-6 mx-auto items-center border-2 border-gray-200 rounded-full p-1 gap-1 *:flex-1"
           >
             <button
-              class="h-10 px-4 duration-300 rounded-full text-secondary-100 hover:bg-main"
+              class="h-10 px-4 duration-300 rounded-full hover:bg-dark-blue"
               id="annually"
             >
               Annually
             </button>
             <button
-              class="h-10 px-4 duration-300 rounded-full text-secondary-100 hover:bg-main active"
+              class="h-10 px-4 duration-300 rounded-full hover:bg-dark-blue active"
               id="monthly"
             >
               Monthly
@@ -727,28 +719,22 @@
             class="flex justify-center max-[800px]:flex-col flex-row md:items-center gap-6 *:flex-1"
           >
             <div
-              class="flex md:max-w-[480px] border border-[#c2c2c2] text-secondary-100 duration-300 flex-col gap-6 p-10 rounded-3xl"
+              class="flex md:max-w-[480px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.08)] backdrop-blur-md duration-300 flex-col gap-6 p-10 rounded-3xl"
             >
               <div class="flex flex-col justify-start gap-7">
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-secondary-100 h3">Standard</h3>
+                  <h3 class="h3">Standard</h3>
                   <p class="text-sm">Good for starting</p>
                 </div>
                 <div class="flex items-baseline gap-2">
-                  <p
-                    class="text-secondary-100 h2 !font-medium"
-                    id="standard-price"
-                  >
-                    $275
-                  </p>
+                  <p class="h2" id="standard-price">$275</p>
                   <span class="text-sm"> / Monthly</span>
                 </div>
-
                 <p class="hidden text-base font-light perYear">
                   $2340 Per Year
                 </p>
                 <a
-                  class="btn active standard-button !bg-secondary-600 border-none"
+                  class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
                   href="https://tijarahub.com/vendor-registration/?plan_id=3"
                   >Select Plan</a
                 >
@@ -757,36 +743,28 @@
               <div class="flex flex-col gap-4">
                 <p class="h4">What you will get</p>
                 <ul class="flex flex-col gap-3 text-sm">
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       International Export Sales
                     </p>
                     1 Sales
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Identifying Potential Buyers
                     </p>
                     8 / month
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Buyers from DataBase
                     </p>
                     12 / Month
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Paid Social Media Ads
@@ -797,27 +775,22 @@
               </div>
             </div>
             <div
-              class="flex md:max-w-[480px] border border-[#c2c2c2] text-secondary-100 duration-300 flex-col gap-6 p-10 rounded-3xl"
+              class="flex md:max-w-[480px] border border-light-cyan shadow-[0_0_10px_0_#ob1129] duration-300 flex-col gap-6 p-10 rounded-3xl"
             >
               <div class="flex flex-col justify-start gap-7">
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-secondary-100 h3">Premium</h3>
+                  <h3 class="h3">Premium</h3>
                   <p class="text-sm">Good for starting</p>
                 </div>
                 <div class="flex items-baseline gap-2">
-                  <p
-                    class="text-secondary-100 h2 !font-medium"
-                    id="premium-price"
-                  >
-                    $460
-                  </p>
+                  <p class="h2" id="premium-price">$460</p>
                   <span class="text-sm"> / Monthly</span>
                 </div>
                 <p class="hidden text-base font-light perYear">
                   $3840 Per Year
                 </p>
                 <a
-                  class="btn premium-button !bg-secondary-600 border-none"
+                  class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
                   href="https://tijarahub.com/vendor-registration/?plan_id=3"
                   >Select Plan</a
                 >
@@ -826,36 +799,28 @@
               <div class="flex flex-col gap-4">
                 <p class="h4">What you will get</p>
                 <ul class="flex flex-col gap-3 text-sm">
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       International Export Sales
                     </p>
                     1 Sales
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Identifying Potential Buyers
                     </p>
                     8 / month
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Buyers from DataBase
                     </p>
                     12 / Month
                   </li>
-                  <li
-                    class="flex items-center justify-between gap-2 text-secondary-100"
-                  >
+                  <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       <i class="fa-solid fa-circle-info"></i>
                       Paid Social Media Ads
