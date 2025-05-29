@@ -614,11 +614,9 @@
     <link href="./css/all.min.css" rel="stylesheet" />
     <link href="./css/output.css" rel="stylesheet" />
   </head>
-  <body class="overflow-x-hidden">
+  <body class="overflow-x-hidden page-gradient">
     <!-- Hero Section -->
-    <div
-      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd,#769be4,#252b58)] section-bottom-space"
-    >
+    <div class="min-h-screen section-bottom-space">
       <header class="container">
         <div class="flex justify-between items-center h-[80px]">
           <a target="_blank" href="https://tijarahub.com/"
@@ -629,7 +627,7 @@
           /></a>
 
           <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-main *:duration-300 text-center font-medium"
+            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-dark-cyan *:duration-300 text-center font-medium"
           >
             <li>
               <span
@@ -638,7 +636,7 @@
               ></span>
             </li>
             <li>
-              <a href="./indexar.html" class="font-medium text-main"
+              <a href="./indexar.html" class="font-medium text-dark-cyan"
                 >الرئيسية</a
               >
             </li>
@@ -667,7 +665,7 @@
               >
                 <a
                   href="./indexar.html"
-                  class="block p-3 rounded-lg bg-secondary-300 hover:bg-secondary-300"
+                  class="block p-3 rounded-lg text-black bg-secondary-300 hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
@@ -688,10 +686,8 @@
           class="container flex flex-col items-center justify-center gap-6 lg:gap-12"
         >
           <div class="flex flex-col gap-4">
-            <h1 class="text-center text-secondary h1">
-              الوصول الي المشتريـن المميزيــن
-            </h1>
-            <p class="!leading-normal text-center text-secondary h4 px-4">
+            <h1 class="text-center h1">الوصول الي المشتريـن المميزيــن</h1>
+            <p class="!leading-normal text-center h4 px-4">
               قم بتوسيع نطاق وصولك عبر الإنترنت عبر دول مجلس التعاون الخليجي
               والشرق الأوسط وأفريقيا والاتحاد الأوروبي
               <br />
@@ -702,20 +698,17 @@
             class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6 text-secondary-100"
           >
             <div class="relative">
-              <div
-                class="absolute end-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md top-1/2 -translate-y-1/2"
-              ></div>
               <a
-                href="./free-trial.html"
-                class="relative flex items-center gap-2 px-4 py-3 duration-300 border rounded-full hover:shadow-md shadow-main size-full border-secondary bg-secondary"
+                href="./free-trialar.html"
+                class="inline-flex items-center gap-2 px-4 duration-300 rounded-full h-14 hover:shadow-md shadow-dark-cyan ocean-gradient"
               >
                 <img src="./assets/icon.svg" alt="icon" />
                 ابدأ التجربة المجانية</a
               >
             </div>
             <a
-              href="./services.html"
-              class="px-4 py-3 duration-300 border rounded-full border-secondary/10 bg-secondary/50 hover:bg-secondary hover:border-secondary text-secondary-100"
+              href="./servicesar.html"
+              class="flex items-center px-4 duration-300 hover:shadow-md shadow-semi-lighter-blue rounded-full h-14 bg-semi-lighter-blue/30"
               >أقرا أكثر</a
             >
           </div>
@@ -734,7 +727,7 @@
       </div>
     </div>
     <main
-      class="relative flex flex-col pb-8 overflow-x-hidden bg-secondary gap-14 md:gap-28 pb:gap-12"
+      class="relative flex flex-col pb-8 overflow-x-hidden gap-14 md:gap-28 pb:gap-12"
     >
       <!-- Our Parteners -->
       <div class="container overflow-hidden">
@@ -831,27 +824,44 @@
       <!-- Stats Section -->
       <div class="container flex flex-col gap-6">
         <a
-          href="./free-trial.html"
-          class="px-4 py-3 mx-auto duration-300 border rounded-full shadow hover:shadow-lg border-secondary-600 h4 shadow-secondary-700 bg-gradient-to-r from-secondary-400 to-secondary-800 text-secondary-50"
+          href="./free-trialar.html"
+          class="px-6 py-4 mx-auto duration-300 rounded-full shadow secondary-gradient hover:shadow-lg h4 shadow-secondary-700"
         >
           كـن شريكا
         </a>
 
         <div class="flex flex-wrap items-center justify-center gap-6 body">
           <div class="stat-card">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <img
+              src="assets/icons/world.svg"
+              class="size-[32px]"
+              alt="planet"
+            />
             <p><span class="font-bold">+9.5k</span> Wholesale buyers</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-users"></i>
+            <img
+              src="assets/icons/visitors.svg"
+              class="size-[32px]"
+              alt="handshake"
+            />
             <p><span class="font-bold">+90K</span> Visitors</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-handshake-angle"></i>
+            <img
+              src="assets/icons/handshake.svg"
+              class="size-[32px]"
+              alt="handshake"
+            />
             <p><span class="font-bold">+4.5K</span> Deals Facilitated</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-boxes-packing"></i>
+            <img
+              src="assets/icons/suppliers.svg"
+              class="size-[32px]"
+              alt="suppliers"
+              h
+            />
             <p><span class="font-bold">+1.2k</span> Suppliers</p>
           </div>
         </div>
@@ -859,7 +869,7 @@
       <!-- Services Section -->
       <section class="container" data-aos="fade-up">
         <div
-          class="relative text-secondary flex flex-col gap-6 p-6 min-h-[520px] lg:p-12 bg-gradient-to-br to-secondary-900 overflow-hidden from-secondary-100 rounded-3xl"
+          class="relative flex flex-col text-text gap-6 p-6 min-h-[520px] ocean-gradient lg:p-12 overflow-hidden rounded-3xl"
         >
           <div class="flex flex-col gap-3">
             <h2 class="h2 uppercase !font-black">
@@ -873,7 +883,9 @@
             </p>
           </div>
           <div>
-            <a href="./services.html" class="inline-block btn body"
+            <a
+              href="./servicesar.html"
+              class="inline-flex px-7 bg-white/5 backdrop-blur-md items-center rounded-full justify-center h-14 border border-light-cyan body"
               >See How it Works</a
             >
           </div>
@@ -881,65 +893,65 @@
             class="flex flex-wrap items-center bottom-0 absolute min-w-[1200px] start-0 md:start-16 md:justify-center gap-6 pt-6"
           >
             <div
-              class="relative flex items-center justify-center text-4xl rounded-full shadow md:text-6xl bg-gradient-to-br from-secondary to-secondary-400 bg-secondary shadow-secondary animate-up-down group text-secondary-100 size-22 md:size-36"
+              class="relative flex items-center justify-center text-4xl rounded-full shadow md:text-6xl secondary-ocean-gradient animate-up-down group size-22 md:size-36"
             >
-              <i class="fa-solid fa-star"></i>
+              <img src="./assets/icons/leads.svg" alt="leads" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Leads</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center rounded-full [animation-delay:1.2s] shadow animate-up-down bg-gradient-to-br from-secondary-100 to-secondary-400 bg-secondary-100 shadow-secondary group text-secondary text-4xl md:text-6xl size-20 md:size-32"
+              class="relative flex items-center justify-center rounded-full [animation-delay:1.2s] shadow animate-up-down secondary-ocean-gradient group text-4xl md:text-6xl size-20 md:size-32"
             >
-              <i class="fa-solid fa-earth-europe"></i>
+              <img src="./assets/icons/marketplace.svg" alt="marketplace" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Market Expansion</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center rounded-full [animation-delay:1s] shadow animate-up-down bg-gradient-to-br from-secondary-400 to-secondary bg-secondary shadow-secondary group text-secondary-100 text-4xl md:text-7xl size-24 md:size-40"
+              class="relative flex items-center group justify-center rounded-full [animation-delay:1s] shadow animate-up-down secondary-ocean-gradient text-4xl md:text-7xl size-24 md:size-40"
             >
-              <i class="fa-solid fa-robot"></i>
+              <img src="./assets/icons/key.svg" alt="key" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >AI-Powered Tool</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center text-4xl rounded-full shadow animate-up-down bg-gradient-to-br from-secondary-100 to-secondary-400 bg-secondary-100 shadow-secondary group text-secondary md:text-7xl size-24 md:size-38"
+              class="relative flex items-center justify-center text-4xl rounded-full shadow animate-up-down secondary-ocean-gradient group md:text-7xl size-24 md:size-38"
             >
-              <i class="fa-solid fa-rectangle-ad"></i>
+              <img src="./assets/icons/marketing.svg" alt="marketing" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Marketing</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center rounded-full [animation-delay:1.5s] shadow animate-up-down bg-gradient-to-br from-secondary to-secondary-400 bg-secondary shadow-secondary group text-secondary-100 text-7xl size-36"
+              class="relative flex items-center justify-center rounded-full [animation-delay:1.5s] shadow animate-up-down secondary-ocean-gradient group text-7xl size-36"
             >
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <img src="./assets/icons/magnifier.svg" alt="magnifier" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Market Research</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center rounded-full [animation-delay:0.9s] shadow animate-up-down bg-gradient-to-br from-secondary-100 to-secondary-400 bg-secondary-100 shadow-secondar group text-secondary text-7xl size-32"
+              class="relative flex items-center justify-center rounded-full [animation-delay:0.9s] shadow animate-up-down secondary-ocean-gradient shadow-secondar group text-7xl size-32"
             >
-              <i class="fa-solid fa-boxes-packing"></i>
+              <img src="./assets/icons/customer-help.svg" alt="customer-help" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Logistics Support</span
               >
             </div>
             <div
-              class="relative flex items-center justify-center rounded-full shadow animate-up-down bg-gradient-to-br from-secondary-400 to-secondary bg-secondary shadow-secondary group text-secondary-100 text-7xl size-32"
+              class="relative flex items-center justify-center rounded-full shadow animate-up-down secondary-ocean-gradient group text-7xl size-32"
             >
-              <i class="fa-solid fa-headphones"></i>
+              <img src="./assets/icons/call-center.svg" alt="call-center" />
               <span
-                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 text-secondary-50 rounded-xl"
+                class="absolute w-[200px] text-center top-0 px-2 py-2 text-lg font-bold duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/2 tooltip bg-secondary/50 rounded-xl"
                 >Customer Services</span
               >
             </div>
@@ -948,20 +960,23 @@
       </section>
       <!-- Why Choose Us -->
       <section class="container" data-aos="fade-up">
-        <h2
-          class="mb-6 text-center mx-auto text-secondary-100 h2 max-w-[566px]"
-        >
-          Without TijaraHub
-        </h2>
+        <header class="flex flex-col gap-4 mb-8">
+          <h2 class="text-center mx-auto h2 max-w-[566px]">
+            Without TijaraHub
+          </h2>
+          <p class="text-center h4">
+            Save Money Compared to Traditional Import & Export
+          </p>
+        </header>
 
         <div class="flex flex-col gap-4 lg:items-start lg:flex-row">
           <div class="flex flex-col self-stretch flex-1 gap-4">
             <div
-              class="flex flex-col flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <div class="flex items-center gap-3">
                 <img
-                  src="./assets/icons/travel.png"
+                  src="./assets/icons/travel-planning.svg"
                   alt="travling icon"
                   class="w-8"
                 />
@@ -978,11 +993,11 @@
               </div>
             </div>
             <div
-              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <div class="flex items-center gap-3">
                 <img
-                  src="./assets/icons/trade.png"
+                  src="./assets/icons/trade-managment.svg"
                   alt="trade icon"
                   class="w-8"
                 />
@@ -1001,17 +1016,17 @@
           </div>
           <div class="flex flex-col self-stretch gap-4 flex-2">
             <div
-              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <div class="flex items-center gap-3">
                 <img
-                  src="./assets/icons/marketing.png"
+                  src="./assets/icons/marketing-2.svg"
                   alt="marketing icon"
                   class="w-8"
                 />
-                <h4 class="h4">Marketing</h4>
+                <h4 class="h4">Margketing</h4>
               </div>
-              <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-2 jhustify-between">
                 <p class="text-sm">Promote products through channels.</p>
                 <div
                   class="flex flex-wrap items-center justify-end w-full pt-4"
@@ -1023,11 +1038,11 @@
             </div>
             <div class="flex flex-col gap-4 flex-2 md:flex-row">
               <div
-                class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+                class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
               >
                 <div class="flex items-center gap-3">
                   <img
-                    src="./assets/icons/follow-up.png"
+                    src="./assets/icons/follow-ups.svg"
                     alt="follow up icon"
                     class="w-8"
                   />
@@ -1044,11 +1059,11 @@
                 </div>
               </div>
               <div
-                class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+                class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
               >
                 <div class="flex items-center gap-3">
                   <img
-                    src="./assets/icons/preperation.png"
+                    src="./assets/icons/quote-preparation.svg"
                     alt="preperation icon"
                     class="w-8"
                   />
@@ -1068,12 +1083,13 @@
           </div>
           <div class="flex flex-col self-stretch flex-1 gap-4">
             <div
-              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col justify-between flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <div class="flex items-center gap-3">
                 <img
-                  src="./assets/icons/crm.png"
-                  alt="CRM Management icon"
+                  src="./assets/icons/crm-managment.svg"
+                  alt="CRM
+                Management icon"
                   class="w-8"
                 />
                 <h4 class="h4">CRM Management</h4>
@@ -1089,31 +1105,29 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-4 p-4 text-center duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col gap-4 p-4 text-center duration-300 shadow md:p-5 rounded-3xl bg-text text-dark-blue hover:shadow-secondary-200"
             >
               <h4 class="h4">It'll cost</h4>
-              <p class="font-bold text-yellow-500 body">$6K–$20K</p>
+              <p class="font-bold body">$6K–$20K</p>
             </div>
           </div>
         </div>
       </section>
       <!-- Pricing Plans Section -->
       <section id="plans" class="container" data-aos="fade-up">
-        <h2 class="mb-6 text-center text-secondary-100 h2">
-          Our Pricing Plans
-        </h2>
+        <h2 class="mb-6 text-center h2">Our Pricing Plans</h2>
 
         <div
-          class="togglePlan flex w-full max-w-[300px] mb-6 mx-auto items-center border border-gray-200 text-secondary-100 rounded-full p-1 *:flex-1"
+          class="togglePlan flex w-full h-12 max-w-[300px] mb-6 mx-auto items-center border-2 border-gray-200 rounded-full p-1 gap-1 *:flex-1"
         >
           <button
-            class="h-10 px-4 duration-300 rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main"
+            class="h-10 px-4 duration-300 rounded-full hover:bg-dark-blue"
             id="annually"
           >
             Annually
           </button>
           <button
-            class="h-10 px-4 duration-300 rounded-full text-secondary-100 bg-secondary border-secondary hover:bg-main active"
+            class="h-10 px-4 duration-300 rounded-full hover:bg-dark-blue active"
             id="monthly"
           >
             Monthly
@@ -1121,106 +1135,122 @@
         </div>
 
         <div
-          class="flex justify-center max-[800px]:flex-col flex-row md:items-center gap-10 *:flex-1"
+          class="flex justify-center max-[800px]:flex-col flex-row md:items-center gap-6 *:flex-1"
         >
           <div
-            class="flex md:max-w-[480px] border border-secondary-400 text-secondary-100 duration-300 flex-col gap-6 p-5 rounded-3xl"
+            class="flex md:max-w-[480px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.08)] backdrop-blur-md duration-300 flex-col gap-6 p-10 rounded-3xl"
           >
-            <div class="flex flex-col justify-center gap-2 text-center">
-              <h3 class="text-secondary-100 h3">Standard</h3>
-              <p class="text-secondary-100 body" id="standard-price">
-                275 USD / Monthly
-              </p>
-              <p class="hidden body perYear">$2340 Per Year</p>
+            <div class="flex flex-col justify-start gap-7">
+              <div class="flex flex-col gap-2">
+                <h3 class="h3">Standard</h3>
+                <p class="text-sm">Good for starting</p>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <p class="h2" id="standard-price">$275</p>
+                <span class="text-sm"> / Monthly</span>
+              </div>
+              <p class="hidden text-base font-light perYear">$2340 Per Year</p>
+              <a
+                class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
+                href="https://tijarahub.com/vendor-registration/?plan_id=3"
+                >Select Plan</a
+              >
+              <hr class="text-[#d1d1d133]" />
             </div>
-            <ul class="flex flex-col gap-4 text-sm">
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-            </ul>
-            <a
-              class="btn active standard-button"
-              href="https://tijarahub.com/vendor-registration/?plan_id=3"
-              >Select Plan</a
-            >
+            <div class="flex flex-col gap-4">
+              <p class="h4">What you will get</p>
+              <ul class="flex flex-col gap-3 text-sm">
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    International Export Sales
+                  </p>
+                  1 Sales
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Identifying Potential Buyers
+                  </p>
+                  8 / month
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Buyers from DataBase
+                  </p>
+                  12 / Month
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Paid Social Media Ads
+                  </p>
+                  1 Campain
+                </li>
+              </ul>
+            </div>
           </div>
           <div
-            class="flex md:max-w-[480px] border border-secondary-400 text-secondary-100 duration-300 flex-col gap-6 p-5 rounded-3xl"
+            class="flex md:max-w-[480px] border border-light-cyan shadow-[0_0_10px_0_#ob1129] duration-300 flex-col gap-6 p-10 rounded-3xl"
           >
-            <div class="flex flex-col justify-center gap-2 text-center">
-              <h3 class="text-secondary-100 h3">Premium</h3>
-              <p class="text-secondary-100 body" id="premium-price">
-                460 USD / Monthly
-              </p>
-              <p class="hidden body perYear">$2340 Per Year</p>
+            <div class="flex flex-col justify-start gap-7">
+              <div class="flex flex-col gap-2">
+                <h3 class="h3">Premium</h3>
+                <p class="text-sm">Good for starting</p>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <p class="h2" id="premium-price">$460</p>
+                <span class="text-sm"> / Monthly</span>
+              </div>
+              <p class="hidden text-base font-light perYear">$3840 Per Year</p>
+              <a
+                class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
+                href="https://tijarahub.com/vendor-registration/?plan_id=3"
+                >Select Plan</a
+              >
+              <hr class="text-[#d1d1d133]" />
             </div>
-            <ul class="flex flex-col gap-4 text-sm">
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-              <li class="flex items-center justify-between gap-2">
-                <p class="flex items-center gap-0.5 xl:gap-4">
-                  International Export Sales
-                  <i class="fa-solid fa-circle-info"></i>
-                </p>
-                1 Sales
-              </li>
-            </ul>
-            <a
-              class="btn active premium-button"
-              href="https://tijarahub.com/vendor-registration/?plan_id=4"
-              >Select Plan</a
-            >
+            <div class="flex flex-col gap-4">
+              <p class="h4">What you will get</p>
+              <ul class="flex flex-col gap-3 text-sm">
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    International Export Sales
+                  </p>
+                  1 Sales
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Identifying Potential Buyers
+                  </p>
+                  8 / month
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Buyers from DataBase
+                  </p>
+                  12 / Month
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Paid Social Media Ads
+                  </p>
+                  1 Campain
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Our Top Sellers Section -->
       <section class="container" data-aos="fade-up">
-        <h2 class="mb-6 text-center text-secondary-100 h2">Our Top Sellers</h2>
+        <h2 class="mb-6 text-center h2">Our Top Sellers</h2>
         <div class="flex overflow-hidden">
           <div class="flex animate-marquee">
             <div
@@ -1357,16 +1387,14 @@
 
       <!-- Testimonials Section -->
       <section class="container" data-aos="fade-up">
-        <h2
-          class="mb-6 text-center mx-auto text-secondary-100 h2 max-w-[566px]"
-        >
+        <h2 class="mb-6 text-center mx-auto h2 max-w-[566px]">
           Hear what people are saying about us
         </h2>
 
         <div class="flex flex-col gap-4 lg:items-start lg:flex-row">
           <div class="flex flex-col flex-1 gap-4">
             <div
-              class="flex flex-col gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <p class="text-sm">
                 Clear instructions, solid execution. Would definitely rehire.
@@ -1390,7 +1418,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <p class="text-sm">
                 Great communicator. Executed sharp and kept improving results.
@@ -1416,7 +1444,7 @@
           </div>
           <div class="flex flex-col self-stretch gap-4 flex-2">
             <div
-              class="flex flex-col flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <p class="text-sm">
                 TijaraHub has been a game-changer. Seamless scheduling and great
@@ -1442,7 +1470,7 @@
             </div>
             <div class="flex flex-col gap-4 flex-2 md:flex-row">
               <div
-                class="flex flex-col gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+                class="flex flex-col gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
               >
                 <p class="text-sm">
                   Delivered more than expected. Great pricing and 24/7 support.
@@ -1466,7 +1494,7 @@
                 </div>
               </div>
               <div
-                class="flex flex-col gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+                class="flex flex-col gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
               >
                 <p class="text-sm">
                   Fast, organized, professional. Blended into our workflow
@@ -1494,7 +1522,7 @@
           </div>
           <div class="flex flex-col self-stretch flex-1 gap-4">
             <div
-              class="flex flex-col self-stretch flex-1 gap-4 p-4 duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col self-stretch flex-1 gap-4 p-4 duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <p class="text-sm">
                 Clear instructions, solid execution. Would definitely rehire.
@@ -1518,10 +1546,14 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-4 p-4 text-center duration-300 border shadow md:p-5 rounded-3xl bg-gradient-to-br from-secondary to-secondary-900 shadow-secondary hover:shadow-secondary-200 border-secondary-900 text-secondary-100"
+              class="flex flex-col gap-4 p-4 text-center duration-300 shadow md:p-5 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
               <h4 class="body">Our Growth Journey</h4>
-              <a href="./case-studies.html" class="btn body">Case Study</a>
+              <a
+                href="./case-studies.html"
+                class="flex items-center justify-center h-12 px-4 rounded-full ocean-gradient"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
@@ -1529,24 +1561,22 @@
 
       <!-- Calculator -->
       <section id="calc-section" class="container" data-aos="fade-up">
-        <div
-          class="p-6 mx-auto text-center lg:p-12 rounded-3xl bg-gradient-to-br text-secondary to-secondary-900 from-secondary-100"
-        >
+        <div class="p-6 mx-auto text-center lg:p-12 rounded-3xl ocean-gradient">
           <div
             class="flex flex-col items-center justify-center gap-5 mb-4 text-center md:mb-5"
           >
             <h2 class="h2 max-sm:!leading-[1]">
-              See how much your business could save with affordable outsourcing.
+              See Your Gross with <br />
+              TijaraHub
             </h2>
-            <p class="body max-w-[688px] mx-auto">
-              Free up your internal team and automate the boring stuff TijaraHub
-              handles the calls, emails, and leads so you can focus on what
-              matters.
-            </p>
           </div>
           <div class="flex items-center gap-10">
             <div class="hidden lg:block">
-              <img src="./assets/calculator.svg" alt="calculator" />
+              <img
+                src="./assets/calculator.png"
+                class="max-w-[550px]"
+                alt="calculator"
+              />
             </div>
             <div class="flex flex-col flex-1 gap-6">
               <form
@@ -1616,9 +1646,7 @@
                     <option value="60">60</option>
                   </select>
                 </div>
-                <button
-                  class="p-4 mt-4 duration-300 rounded-md bg-secondary hover:bg-secondary-800 text-secondary-100"
-                >
+                <button class="p-4 mt-4 duration-300 rounded-md bg-[#265B9A]">
                   Calculate
                 </button>
               </form>
@@ -1629,7 +1657,7 @@
         <div
           id="calc-modal"
           data-aos="zoom-in"
-          class="absolute top-0 items-center justify-center hidden size-full rounded-3xl bg-secondary-200 start-0"
+          class="absolute top-0 flex-col items-center justify-center hidden size-full rounded-3xl bg-secondary-200 start-0"
         >
           <button
             id="close-calc-modal"
@@ -1637,7 +1665,9 @@
           >
             X
           </button>
-          <h4 class="h1">Soon!</h4>
+
+          <img src="./assets/chart.png" class="w-[500px]" alt="chart" />
+          <h4 class="h2 text-secondary-900">Your Potential Growth is: 28%</h4>
         </div>
       </section>
       <!--  News Letter -->
@@ -1647,7 +1677,7 @@
           <form
             id="news-letter-form"
             action="https://app.kit.com/forms/8057433/subscriptions"
-            class="w-full mx-auto text-center seva-form formkit-form lg:px-12 text-secondary rounded-3xl bg-gradient-to-br to-secondary-900 from-secondary-100"
+            class="w-full mx-auto text-center seva-form formkit-form lg:px-12 rounded-3xl bg-white/10 backdrop-blur-lg"
             method="post"
             data-sv-form="8057433"
             data-uid="3f5cb920f8"
@@ -1662,22 +1692,14 @@
                 <div
                   class="formkit-header"
                   data-element="header"
-                  style="
-                    color: rgb(37, 43, 88);
-                    font-size: 28px;
-                    font-weight: 700;
-                  "
+                  style="color: #f5f5f5; font-size: 28px; font-weight: 700"
                 >
                   <h2>Join our newsletter</h2>
                 </div>
                 <div
                   class="formkit-content"
                   data-element="content"
-                  style="
-                    color: rgb(37, 43, 88);
-                    font-size: 18px;
-                    font-weight: 400;
-                  "
+                  style="color: #d9d9d9; font-size: 18px; font-weight: 400"
                 >
                   <p>Receive tips and tricks on how to lorum ipsum.</p>
                 </div>
@@ -1717,7 +1739,11 @@
                     class="formkit-submit"
                     style="
                       color: rgb(255, 255, 255);
-                      background-color: var(--color-secondary-900);
+                      background-image: linear-gradient(
+                        119deg,
+                        var(--color-dark-blue),
+                        var(--color-dark-cyan)
+                      );
                       border-radius: 1000px;
                       font-weight: normal;
                     "
@@ -1739,9 +1765,7 @@
       <section class="container relative mt-20 min-h-[520px]">
         <div class="flex flex-col gap-10 md:flex-row">
           <div class="flex flex-col items-start flex-1 gap-10 justify-baseline">
-            <h2 class="text-secondary-100 h2">
-              Frequently Asked Questions (FAQs)
-            </h2>
+            <h2 class="h2">Frequently Asked Questions (FAQs)</h2>
             <p class="text-secondary-50 body">
               Find answers to common questions about our services, features, and
               how TijaraHub can help your business grow.
@@ -1751,7 +1775,7 @@
             class="flex flex-col items-center justify-center gap-0.5 flex-1/9"
           >
             <button
-              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
+              class="show-answer w-[100%] bg-white/10 backdrop-blur-md flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-white/20 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
             >
               What are the steps to becoming a seller?
               <i
@@ -1759,9 +1783,9 @@
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent text-secondary border max-h-0 rounded-lg transition-all ease-in-out duration-300 max-md:overflow-auto overflow-hidden"
+              class="answer w-[100%] bg-transparent max-h-0 rounded-lg transition-all ease-in-out duration-300 max-md:overflow-auto overflow-hidden"
             >
-              <p class="p-4 text-start text-secondary-100 body">
+              <p class="p-4 border rounded-lg text-start body">
                 Becoming a seller on Tijarahub involves the following steps:
                 Sign Up: Register for a seller account by providing necessary
                 business details and contact information. Verification: Submit
@@ -1775,7 +1799,7 @@
               </p>
             </div>
             <button
-              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
+              class="show-answer w-[100%] bg-white/10 backdrop-blur-md flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-white/20 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
             >
               How does Tijarahub handle logistics and shipping?
 
@@ -1784,9 +1808,9 @@
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent border text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+              class="answer w-[100%] bg-transparent max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
             >
-              <p class="p-4 text-start text-secondary-100 body">
+              <p class="p-4 border rounded-lg text-start body">
                 Tijarahub offers flexible logistics and shipping solutions to
                 streamline the process: You can choose from various shipping
                 partners integrated into the platform for efficient delivery
@@ -1794,7 +1818,7 @@
               </p>
             </div>
             <button
-              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
+              class="show-answer w-[100%] bg-white/10 backdrop-blur-md flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-white/20 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
             >
               How can sellers track their sales performance?
               <i
@@ -1802,16 +1826,16 @@
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent border text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+              class="answer w-[100%] bg-transparent text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
             >
-              <p class="p-4 text-start text-secondary-100 body">
+              <p class="p-4 border rounded-lg text-start body">
                 Sellers can monitor their performance through: Dashboard
                 Analytics: Access a comprehensive dashboard with real-time sales
                 data, including total sales, order volume, and revenue.
               </p>
             </div>
             <button
-              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
+              class="show-answer w-[100%] bg-white/10 backdrop-blur-md flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-white/20 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
             >
               How does TijaraHub ensure the security of transactions on its
               platform?
@@ -1820,9 +1844,9 @@
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent border text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+              class="answer w-[100%] bg-transparent max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
             >
-              <p class="p-4 text-start text-secondary-100 body">
+              <p class="p-4 border rounded-lg text-start body">
                 TijaraHub prioritizes the security of transactions on its
                 platform. We employ robust security measures and encryption
                 protocols and regularly update our systems to safeguard user
@@ -1830,7 +1854,7 @@
               </p>
             </div>
             <button
-              class="show-answer w-[100%] bg-secondary-300 text-secondary flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-secondary-400 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
+              class="show-answer w-[100%] bg-white/10 backdrop-blur-md flex flex-row justify-between items-center p-4 md:sticky md:top-[20px] hover:bg-white/20 transition ease-in-out duration-300 rounded-lg gap-2 text-start"
             >
               What happens if there is an issue with the products or services?
 
@@ -1839,9 +1863,9 @@
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent border text-secondary max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+              class="answer w-[100%] bg-transparent max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
             >
-              <p class="p-4 text-start text-secondary-100 body">
+              <p class="p-4 border rounded-lg text-start body">
                 TijaraHub serves as a facilitator for transactions between
                 buyers and suppliers. In case of any issues with products or
                 services, please refer to the terms and conditions outlined in

@@ -4,6 +4,7 @@ let index;
 
 const caseStudies = [
   {
+    id:1,
     vendor: {
       img: "../assets/Sellers/Sellers-Logos-06.png",
       name: "LIBRA",
@@ -11,14 +12,14 @@ const caseStudies = [
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
       industry: "Software",
       location: "Egypt",
-      challenge: ["challenge 1", "challenge 2", "challenge 3"],
+      challenge: ["challenge 1","challenge 2","challenge 3"],
       solution: ["solution 1", "solution 2", "solution 3"],
       results: ["result 1", "result 2", "result 3"],
     },
     caseStudy: {
       img: "",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis alias totam quaerat, illo quisquam eos impedit hic. Dolor cum recusandae ipsam est sint, qui itaque accusamus labore hic sit.",
-      storyURL: "",
+      storyURL: "/case-study.html",
       testimonialsURL: ""
     },
     buyer: {
@@ -300,7 +301,7 @@ function dragEnd() {
 }
 
 
-caseStudies.forEach(({ buyer, caseStudy, vendor }, index) => {
+caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
   const caseStudiesContainer = document.querySelector("#caseStudiesContainer");
 
   // Vendor Content
@@ -342,7 +343,7 @@ caseStudies.forEach(({ buyer, caseStudy, vendor }, index) => {
         ></div>
 
         <a
-          href="${caseStudy.storyURL}?q=${index}"
+          href="${caseStudy.storyURL}?i=${index}"
           class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md shadow-main size-full bg-secondary-100 text-secondary"
         >
           <img src="./assets/checkicon.svg" alt="icon" />
@@ -385,3 +386,69 @@ caseStudies.forEach(({ buyer, caseStudy, vendor }, index) => {
   caseStudiesContainer?.insertAdjacentHTML("beforeend", content);
 })
 
+
+function addContentToPage(index){
+const caseStudiesContainer = document.querySelector("#caseStudyContainer");
+console.log(index)
+  let {id, vendor , caseStudy , buyer} = caseStudies[index-1]
+console.log('sss')
+
+  let storyContent = `
+            <h2 class="h2 text-secondary-200 lg:text-3xl">Case Study</h2>
+            <div class="w-[250px]">
+              <img src=${vendor.img} alt=${vendor.name} />
+            </div>
+            <p class="text-3xl font-black tracking-wide text-secondary-200">
+              ${vendor.desc}
+            </p>
+            <span class="info"> Industry: Performance Marketing </span>
+            <span class="info"> Location : ${vendor.location} </span>
+            <p class="body text-secondary-100">
+              They were struggling with high hiring costs, low conversion rates,
+              and slow sales cycles.
+            </p>
+            <span class="info"> The Challenge </span>
+            <p class="h4 text-secondary-200">
+              Before partnering with TijaraHub, G&S faced:
+            </p>
+            <div class="flex flex-col gap-6">
+            ${vendor.challenge.map(one=>
+                `
+                <p class="h4 text-secondary-200">
+                <i
+                  class="pr-2 text-2xl text-red-600 fa-solid fa-caret-down"
+                ></i>
+                  ${one}
+                </p>`
+              ).join("")}
+            </div>
+            <span class="info"> The Solution</span>
+            <p class="font-semibold body text-secondary-200">
+              TijaraHub provided a comprehensive medical services solution:
+            </p>
+            <div class="flex flex-col gap-3 pl-5">
+            ${vendor.solution.map(one=>
+                `
+                <p class="h4 text-secondary-200">
+                 <i class="pr-2 text-green-400 fa-solid fa-square-check"></i>
+                  ${one}
+                </p>
+                `
+              ).join("")}
+            </div>
+            <span class="info">Results</span>
+            <div class="flex flex-col gap-3 pl-5">
+            ${vendor.results.map(one=>
+              `
+               <p class="h4 text-secondary-200">
+                🎯 ${one}
+              </p>`
+              ).join("")}           
+            </div>
+          `
+  caseStudiesContainer?.insertAdjacentHTML("beforeend", storyContent);
+}
+
+const searchParams = new URLSearchParams(window.location.search);
+
+addContentToPage(searchParams.get('i'))
