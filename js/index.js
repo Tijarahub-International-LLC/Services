@@ -338,13 +338,11 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
         </p>
       </div>
       <div class="relative mx-auto w-fit">
-        <div
-          class="absolute start-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md to-secondary-main top-1/2 -translate-y-1/2"
-        ></div>
+   
 
         <a
           href="${caseStudy.storyURL}?i=${index}"
-          class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md shadow-main size-full bg-secondary-100 text-secondary"
+          class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md  size-full bg-secondary-100 text-secondary"
         >
           <img src="./assets/checkicon.svg" alt="icon" />
           Check Story</a

@@ -8,10 +8,8 @@
     <link href="../css/output.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="../assets/Tijarahub-07.png" />
   </head>
-  <body>
-    <div
-      class="min-h-screen bg-[linear-gradient(180deg,#f1f5fd_0%,#769be4_36%,#0E0E26_80%)] section-bottom-space"
-    >
+  <body class="font-cairo page-gradient">
+    <div class="min-h-screen section-bottom-space">
       <header class="container">
         <div class="flex justify-between items-center h-[80px]">
           <a target="_blank" href="https://tijarahub.com/"
@@ -22,7 +20,7 @@
           /></a>
 
           <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 bg-secondary-100 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body *:hover:text-main *:duration-300 text-center font-medium"
+            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium"
           >
             <li>
               <span
@@ -38,7 +36,7 @@
               <a href="./pricingar.html" class="font-medium">خطة الأسعار</a>
             </li>
             <li>
-              <a href="./case-studiesar.html" class="font-medium text-main"
+              <a href="./case-studiesar.html" class="font-medium"
                 >أمثله واقعية</a
               >
             </li>
@@ -48,7 +46,7 @@
             <div class="relative">
               <span
                 id="lang-toggle"
-                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-secondary"
+                class="text-3xl transition duration-300 ease-in-out cursor-pointer"
                 ><i class="fa-solid fa-globe lang-icon"></i
               ></span>
 
@@ -57,13 +55,13 @@
                 class="absolute -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
               >
                 <a
-                  href="./case-studyar.html"
-                  class="block p-3 rounded-lg bg-secondary-300 hover:bg-secondary-300"
+                  href="./indexar.html"
+                  class="block font-cairo p-3 text-black rounded-lg hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
-                  href="./case-study.html"
-                  class="block p-3 rounded-lg hover:bg-secondary-300"
+                  href="./index.html"
+                  class="block font-inter p-3 text-black rounded-lg hover:bg-secondary-300 bg-secondary-300"
                   >English</a
                 >
               </div>
@@ -78,7 +76,7 @@
       <section class="container pt-10">
         <div class="flex flex-col items-center justify-center gap-6 lg:gap-12">
           <div class="flex flex-col justify-start gap-4">
-            <h1 class="text-center text-secondary h1">مثال واقعي</h1>
+            <h1 class="text-center h1">مثال واقعي</h1>
           </div>
           <div class="w-full">
             <div
@@ -90,18 +88,16 @@
             </div>
           </div>
           <div
-            class="flex flex-col justify-start items-start p-4 lg:py-12 lg:px-10 w-full bg-[#0200249c] rounded-3xl gap-6 bg-[linear-gradient(180deg,rgba(2,0,36,1)0%,rgba(9,9,121,1)41%,rgba(118,155,228,1)89%,rgba(241,245,253,1)99%)]"
+            class="flex flex-col justify-start items-start p-24 lg:py-12 lg:px-10 w-full rounded-3xl gap-6 ocean-gradient"
             id="caseStudyContainer"
           ></div>
         </div>
       </section>
     </div>
-    <section
-      class="flex flex-col justify-center items-center gap-10 h-[300px] bg-[#0E0E26]"
-    >
+    <section class="flex flex-col justify-center items-center gap-10 h-[300px]">
       <div class="container">
         <div
-          class="flex flex-col justify-center items-center gap-10 bg-[linear-gradient(0deg,#0E0E26_10%,rgba(51,63,154,1)100%)] max-w-[800px] m-auto rounded-3xl p-10"
+          class="flex flex-col justify-center items-center gap-10 bg-white/10 backdrop-blur-md max-w-[800px] m-auto rounded-3xl p-10"
         >
           <h2 class="text-center h2 text-secondary-200">
             Want Results<br />
@@ -110,23 +106,22 @@
           <div
             class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6 text-secondary-100"
           >
-            <div class="relative">
-              <div
-                class="absolute end-1/2 -translate-x-1/2 w-[100%] h-14 rounded-full [background-size:200%] animate-gradient-glow bg-[linear-gradient(to_right,green,yellow,purple)] opacity-80 blur-md to-secondary-main top-1/2 -translate-y-1/2"
-              ></div>
+            <div
+              class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6"
+            >
               <a
-                href=""
-                class="relative flex items-center gap-2 px-4 py-3 duration-300 border rounded-full hover:shadow-md shadow-main size-full border-secondary bg-secondary"
+                href="./free-trial.html"
+                class="inline-flex items-center gap-2 px-4 duration-300 rounded-full h-14 hover:shadow-md shadow-dark-cyan ocean-gradient"
               >
-                <img src="../assets/icon.svg" alt="icon" />
+                <img src="./assets/icon.svg" alt="icon" />
                 Start Free Trial Now</a
               >
+              <a
+                href="./services.html"
+                class="flex items-center px-4 duration-300 hover:shadow-md shadow-semi-lighter-blue rounded-full h-14 bg-semi-lighter-blue/30"
+                >Read More</a
+              >
             </div>
-            <a
-              href=""
-              class="px-4 py-3 duration-300 border rounded-full border-secondary/10 bg-secondary/50 hover:bg-secondary hover:border-secondary text-secondary-100"
-              >Read More</a
-            >
           </div>
         </div>
       </div>
