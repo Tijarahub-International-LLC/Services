@@ -354,7 +354,7 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
   const buyerContent = `
   <div
           data-aos="fade-left"
-          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
+          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex  text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
         >
           <div>
             <img
