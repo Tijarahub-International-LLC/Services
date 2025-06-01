@@ -19,7 +19,7 @@ const caseStudies = [
     caseStudy: {
       img: "",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis alias totam quaerat, illo quisquam eos impedit hic. Dolor cum recusandae ipsam est sint, qui itaque accusamus labore hic sit.",
-      storyURL: "/case-study.html",
+      storyURL: "./case-study.html",
       testimonialsURL: ""
     },
     buyer: {
