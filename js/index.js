@@ -6,7 +6,7 @@ const caseStudies = [
   {
     id: 1,
     vendor: {
-      img: "./assets/Sellers/Sellers-Logos-06.png",
+      img: "./assets/Sellers/Logos-24.png",
       name: "LIBRA",
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
@@ -19,7 +19,7 @@ const caseStudies = [
     caseStudy: {
       img: "",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis alias totam quaerat, illo quisquam eos impedit hic. Dolor cum recusandae ipsam est sint, qui itaque accusamus labore hic sit.",
-      storyURL: "/case-study.html",
+      storyURL: "./case-study.html",
       testimonialsURL: ""
     },
     buyer: {
@@ -352,7 +352,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
   const buyerContent = `
   <div
           data-aos="fade-left"
-          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
+          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex  text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
         >
           <div>
             <img

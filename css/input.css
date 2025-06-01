@@ -28,7 +28,7 @@
   --color-dark: rgb(54, 54, 54);
 
   /* Custom Animations */
-  --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+  --animate-marquee-parteners: marquee-parteners 27s linear infinite;
   --animate-marquee-parteners-mobile: marquee-parteners-mobile 20s linear
     infinite;
   --animate-marquee: marquee 36s linear infinite;
@@ -41,7 +41,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-131.67%);
+      transform: translateX(-242.2%);
     }
   }
   @keyframes marquee-parteners-mobile {
@@ -97,15 +97,15 @@ html {
 }
 
 ::-webkit-scrollbar {
-    @apply w-[15px]
+  @apply w-[15px];
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-dark-blue
+  @apply bg-dark-blue;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-dark-cyan rounded-full
+  @apply bg-dark-cyan rounded-full;
 }
 
 @utility container {
@@ -202,4 +202,3 @@ button {
   background-image: linear-gradient(145deg, #1d4489, #50c9e8);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);
 }
-
