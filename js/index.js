@@ -4,7 +4,7 @@ let index;
 
 const caseStudies = [
   {
-    id:1,
+    id: 1,
     vendor: {
       img: "./assets/Sellers/Sellers-Logos-06.png",
       name: "LIBRA",
@@ -12,7 +12,7 @@ const caseStudies = [
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
       industry: "Software",
       location: "Egypt",
-      challenge: ["challenge 1","challenge 2","challenge 3"],
+      challenge: ["challenge 1", "challenge 2", "challenge 3"],
       solution: ["solution 1", "solution 2", "solution 3"],
       results: ["result 1", "result 2", "result 3"],
     },
@@ -301,7 +301,7 @@ function dragEnd() {
 }
 
 
-caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
+caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
   const caseStudiesContainer = document.querySelector("#caseStudiesContainer");
 
   // Vendor Content
@@ -320,7 +320,7 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
         ${vendor.desc}
       </p>
       <div
-        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold 2xl:flex-row md:flex-row"
+        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold md:flex-row"
       >
         ${vendor.services.map((item) => `<div class='stat-card min-w-1/4'><p>${item}</p></div>`).join('')}
       </div>
@@ -338,8 +338,6 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
         </p>
       </div>
       <div class="relative mx-auto w-fit">
-   
-
         <a
           href="${caseStudy.storyURL}?i=${index}"
           class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md  size-full bg-secondary-100 text-secondary"
@@ -385,10 +383,10 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
 })
 
 
-function addContentToPage(index){
-const caseStudiesContainer = document.querySelector("#caseStudyContainer");
+function addContentToPage(index) {
+  const caseStudiesContainer = document.querySelector("#caseStudyContainer");
 
-  let {id, vendor , caseStudy , buyer} = caseStudies[index]
+  let { id, vendor, caseStudy, buyer } = caseStudies[index]
 
 
   let storyContent = `
@@ -410,45 +408,45 @@ const caseStudiesContainer = document.querySelector("#caseStudyContainer");
               Before partnering with TijaraHub, G&S faced:
             </p>
             <div class="flex flex-col gap-6">
-            ${vendor.challenge.map(one=>
-                `
+            ${vendor.challenge.map(one =>
+    `
                 <p class="h4 text-secondary-200">
                 <i
                   class="pr-2 text-2xl text-red-600 fa-solid fa-caret-down"
                 ></i>
                   ${one}
                 </p>`
-              ).join("")}
+  ).join("")}
             </div>
             <span class="info"> The Solution</span>
             <p class="font-semibold body text-secondary-200">
               TijaraHub provided a comprehensive medical services solution:
             </p>
             <div class="flex flex-col gap-3 pl-5">
-            ${vendor.solution.map(one=>
-                `
+            ${vendor.solution.map(one =>
+    `
                 <p class="h4 text-secondary-200">
                  <i class="pr-2 text-green-400 fa-solid fa-square-check"></i>
                   ${one}
                 </p>
                 `
-              ).join("")}
+  ).join("")}
             </div>
             <span class="info">Results</span>
             <div class="flex flex-col gap-3 pl-5">
-            ${vendor.results.map(one=>
-              `
+            ${vendor.results.map(one =>
+    `
                <p class="h4 text-secondary-200">
                 🎯 ${one}
               </p>`
-              ).join("")}           
+  ).join("")}           
             </div>
           `
   caseStudiesContainer?.insertAdjacentHTML("beforeend", storyContent);
 }
 
 const searchParams = new URLSearchParams(window.location.search);
-if(searchParams.get('i')){
+if (searchParams.get('i')) {
 
   addContentToPage(searchParams.get('i'))
 }
