@@ -37,20 +37,140 @@ const caseStudies = [
 
 ]
 
-const services = [{
-  title: "",
-  img: "",
-  services: [
-    {
-      icon: "",
-      text: "+9.5k Wholesale buyers"
-    },
-    {
-      icon: "",
-      text: "+9.5k Wholesale buyers"
-    },
-  ]
-}]
+const services = [
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  }
+]
 
 const burgerIcon = document.querySelector("header .burger-icon")
 const menu = document.querySelector('.menu')
@@ -58,7 +178,7 @@ const close = document.querySelector('.close')
 const showAnswerButtons = document.querySelectorAll('.show-answer')
 const langToggle = document.querySelector("#lang-toggle");
 const langMenu = document.querySelector("#lang-menu");
-
+const servicesContainer = document.querySelector("#servicesContainer");
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
@@ -450,3 +570,37 @@ if (searchParams.get('i')) {
 
   addContentToPage(searchParams.get('i'))
 }
+
+services.forEach(({ title, img, services }, index) => {
+  const colIndex = index % 3;
+
+  const card = `
+        <div
+          data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
+          class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/10 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
+        >
+          <h3 class="text-4xl font-bold capitalize">Generated Leads</h3>
+          <div>
+            <img
+              src="${img}"
+              alt="${title}"
+              class="mx-auto h-[235.91px] w-full object-cover rounded-3xl"
+            />
+          </div>
+          <div class="flex-1">
+            <div
+              class="flex flex-wrap items-center justify-center h-full gap-4 body"
+            >
+            ${services.map(({ icon, text }) => `<div class="flex-grow text-sm stat-card basis-w-1/4">
+                <img src="${icon}" alt="text" class="w-7"/>
+                <p>${text}</p>
+              </div>`).join("")}
+              
+            </div>
+          </div>
+        </div>
+  
+  `;
+
+  servicesContainer?.insertAdjacentHTML("beforeend", card);
+})

@@ -34,6 +34,7 @@
   --animate-marquee: marquee 36s linear infinite;
   --animate-up-down: up-down 10s linear infinite;
   --animate-gradient-glow: gradient-glow 5s ease infinite;
+  --animate-primary-glow: primary-glow 5s infinite;
 
   /* Key Frames */
   @keyframes marquee-parteners {
@@ -88,6 +89,16 @@
 
     50% {
       background-position: 100%, 50%;
+    }
+  }
+  @keyframes primary-glow {
+    0%,
+    100% {
+      box-shadow: 0px 0px 10px 0px var(--color-dark-cyan);
+    }
+
+    50% {
+        box-shadow: 0px 0px 30px 0px var(--color-dark-cyan);
     }
   }
 }
@@ -172,6 +183,10 @@ button {
 }
 .info-reversed {
   @apply px-4 py-3 font-semibold rounded-3xl bg-secondary-200;
+}
+
+.primary-btn {
+  @apply inline-flex items-center border-none gap-2 px-4 duration-300 rounded-full animate-primary-glow bg-dark-cyan/80 h-14 shadow-[0px_0px_10px_0px_var(--color-dark-cyan)];
 }
 
 .page-gradient {
