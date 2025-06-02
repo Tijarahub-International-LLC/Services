@@ -250,6 +250,7 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
     const standardButton = document.querySelector(".standard-button")
     const premiumButton = document.querySelector(".premium-button")
 
+
     const yearlyCost = document.querySelectorAll(".perYear")
     if (e.target.id === "annually") {
       standardPrice.innerText = annuallyPrices.standard;
