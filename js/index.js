@@ -40,7 +40,7 @@ const caseStudies = [
 const services = [
   {
     title: "Generated Leads",
-    img: "../assets/Leads.png",
+    img: "./assets/Leads.png",
     services: [
       {
         icon: "../assets/icons/money.png",
