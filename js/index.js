@@ -186,6 +186,7 @@ burgerIcon?.addEventListener('click', () => {
   if (!menu.classList.contains("z-10")) {
     menu.classList.add('z-10');
   }
+  document.body.style.overflow = "hidden"
 })
 close?.addEventListener('click', () => {
   menu.classList.remove("z-10");
@@ -193,7 +194,7 @@ close?.addEventListener('click', () => {
     menu.classList.add("-z-10");
   }
   menu.classList.remove("active-menu");
-
+  document.body.style.overflow = "auto"
 })
 
 
