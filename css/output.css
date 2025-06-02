@@ -452,6 +452,9 @@
   .h-\[235\.91px\] {
     height: 235.91px;
   }
+  .h-\[285px\] {
+    height: 285px;
+  }
   .h-\[300px\] {
     height: 300px;
   }
@@ -950,8 +953,14 @@
   .bg-no-repeat {
     background-repeat: no-repeat;
   }
+  .object-contain {
+    object-fit: contain;
+  }
   .object-cover {
     object-fit: cover;
+  }
+  .object-center {
+    object-position: center;
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
