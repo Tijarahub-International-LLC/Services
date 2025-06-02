@@ -4,7 +4,7 @@ let index;
 
 const caseStudies = [
   {
-    id:1,
+    id: 1,
     vendor: {
       img: "./assets/Sellers/Logos-24.png",
       name: "LIBRA",
@@ -12,7 +12,7 @@ const caseStudies = [
       services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
       industry: "Software",
       location: "Egypt",
-      challenge: ["challenge 1","challenge 2","challenge 3"],
+      challenge: ["challenge 1", "challenge 2", "challenge 3"],
       solution: ["solution 1", "solution 2", "solution 3"],
       results: ["result 1", "result 2", "result 3"],
     },
@@ -37,20 +37,140 @@ const caseStudies = [
 
 ]
 
-const services = [{
-  title: "",
-  img: "",
-  services: [
-    {
-      icon: "",
-      text: "+9.5k Wholesale buyers"
-    },
-    {
-      icon: "",
-      text: "+9.5k Wholesale buyers"
-    },
-  ]
-}]
+const services = [
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/lead-generation.webp",
+    services: [
+      {
+        icon: "../assets/icons/money.svg",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.svg",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.svg",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.svg",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  }
+]
 
 const burgerIcon = document.querySelector("header .burger-icon")
 const menu = document.querySelector('.menu')
@@ -58,7 +178,7 @@ const close = document.querySelector('.close')
 const showAnswerButtons = document.querySelectorAll('.show-answer')
 const langToggle = document.querySelector("#lang-toggle");
 const langMenu = document.querySelector("#lang-menu");
-
+const servicesContainer = document.querySelector("#servicesContainer");
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
@@ -66,6 +186,7 @@ burgerIcon?.addEventListener('click', () => {
   if (!menu.classList.contains("z-10")) {
     menu.classList.add('z-10');
   }
+  document.body.style.overflow = "hidden"
 })
 close?.addEventListener('click', () => {
   menu.classList.remove("z-10");
@@ -73,7 +194,7 @@ close?.addEventListener('click', () => {
     menu.classList.add("-z-10");
   }
   menu.classList.remove("active-menu");
-
+  document.body.style.overflow = "auto"
 })
 
 
@@ -301,7 +422,7 @@ function dragEnd() {
 }
 
 
-caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
+caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
   const caseStudiesContainer = document.querySelector("#caseStudiesContainer");
 
   // Vendor Content
@@ -320,7 +441,7 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
         ${vendor.desc}
       </p>
       <div
-        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold 2xl:flex-row md:flex-row"
+        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold md:flex-row"
       >
         ${vendor.services.map((item) => `<div class='stat-card min-w-1/4'><p>${item}</p></div>`).join('')}
       </div>
@@ -338,8 +459,6 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
         </p>
       </div>
       <div class="relative mx-auto w-fit">
-   
-
         <a
           href="${caseStudy.storyURL}?i=${index}"
           class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md  size-full bg-secondary-100 text-secondary"
@@ -385,10 +504,10 @@ caseStudies.forEach(({ id,buyer, caseStudy, vendor }, index) => {
 })
 
 
-function addContentToPage(index){
-const caseStudiesContainer = document.querySelector("#caseStudyContainer");
+function addContentToPage(index) {
+  const caseStudiesContainer = document.querySelector("#caseStudyContainer");
 
-  let {id, vendor , caseStudy , buyer} = caseStudies[index]
+  let { id, vendor, caseStudy, buyer } = caseStudies[index]
 
 
   let storyContent = `
@@ -410,45 +529,79 @@ const caseStudiesContainer = document.querySelector("#caseStudyContainer");
               Before partnering with TijaraHub, G&S faced:
             </p>
             <div class="flex flex-col gap-6">
-            ${vendor.challenge.map(one=>
-                `
+            ${vendor.challenge.map(one =>
+    `
                 <p class="h4 text-secondary-200">
                 <i
                   class="pr-2 text-2xl text-red-600 fa-solid fa-caret-down"
                 ></i>
                   ${one}
                 </p>`
-              ).join("")}
+  ).join("")}
             </div>
             <span class="info"> The Solution</span>
             <p class="font-semibold body text-secondary-200">
               TijaraHub provided a comprehensive medical services solution:
             </p>
             <div class="flex flex-col gap-3 pl-5">
-            ${vendor.solution.map(one=>
-                `
+            ${vendor.solution.map(one =>
+    `
                 <p class="h4 text-secondary-200">
                  <i class="pr-2 text-green-400 fa-solid fa-square-check"></i>
                   ${one}
                 </p>
                 `
-              ).join("")}
+  ).join("")}
             </div>
             <span class="info">Results</span>
             <div class="flex flex-col gap-3 pl-5">
-            ${vendor.results.map(one=>
-              `
+            ${vendor.results.map(one =>
+    `
                <p class="h4 text-secondary-200">
                 🎯 ${one}
               </p>`
-              ).join("")}           
+  ).join("")}           
             </div>
           `
   caseStudiesContainer?.insertAdjacentHTML("beforeend", storyContent);
 }
 
 const searchParams = new URLSearchParams(window.location.search);
-if(searchParams.get('i')){
+if (searchParams.get('i')) {
 
   addContentToPage(searchParams.get('i'))
 }
+
+services.forEach(({ title, img, services }, index) => {
+  const colIndex = index % 3;
+
+  const card = `
+        <div
+          data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
+          class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/10 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
+        >
+          <h3 class="text-4xl font-bold capitalize">Generated Leads</h3>
+          <div>
+            <img
+              src="${img}"
+              alt="${title}"
+              class="mx-auto h-[235.91px] w-full object-cover rounded-3xl"
+            />
+          </div>
+          <div class="flex-1">
+            <div
+              class="flex flex-wrap items-center justify-center h-full gap-4 body"
+            >
+            ${services.map(({ icon, text }) => `<div class="flex-grow text-sm stat-card basis-w-1/4">
+                <img src="${icon}" alt="text" class="w-7"/>
+                <p>${text}</p>
+              </div>`).join("")}
+              
+            </div>
+          </div>
+        </div>
+  
+  `;
+
+  servicesContainer?.insertAdjacentHTML("beforeend", card);
+})
