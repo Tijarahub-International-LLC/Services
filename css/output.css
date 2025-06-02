@@ -1684,6 +1684,16 @@
       padding-block: calc(var(--spacing) * 12);
     }
   }
+  .lg\:pt-32 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:pt-36 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 36);
+    }
+  }
   .lg\:pt-48 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 48);
