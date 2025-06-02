@@ -40,136 +40,183 @@ const caseStudies = [
 const services = [
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/Leads.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/market-research.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/export.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/marketing.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/Leads.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/lead-generation.webp",
+    img: "../assets/market-research.png",
     services: [
       {
-        icon: "../assets/icons/money.svg",
+        icon: "../assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.svg",
+        icon: "../assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.svg",
+        icon: "../assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.svg",
+        icon: "../assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
-  }
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/export.png",
+    services: [
+      {
+        icon: "../assets/icons/money.png",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.png",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.png",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.png",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  {
+    title: "Generated Leads",
+    img: "../assets/marketing.png",
+    services: [
+      {
+        icon: "../assets/icons/money.png",
+        text: "+9.5k Wholesale buyers"
+      },
+      {
+        icon: "../assets/icons/user-group.png",
+        text: "+90K Visitors"
+      },
+      {
+        icon: "../assets/icons/deal.png",
+        text: "+4.5K Deals Facilitated"
+      },
+      {
+        icon: "../assets/icons/supplier.png",
+        text: "+1.2k Suppliers"
+      },
+    ]
+  },
+  
+    
+  
 ]
 
 const burgerIcon = document.querySelector("header .burger-icon")
@@ -299,8 +346,10 @@ email?.addEventListener('keyup', (e) => {
     return businessEmailRegex.test(email);
   }
   if (isBusinessEmail(e.target.value)) {
+    email.style.border = "none"
     submitButton.type = 'submit'
   } else {
+    email.style.border = "1px solid red"
     submitButton.type = 'button'
   }
 })
@@ -585,7 +634,7 @@ services.forEach(({ title, img, services }, index) => {
             <img
               src="${img}"
               alt="${title}"
-              class="mx-auto h-[235.91px] w-full object-cover rounded-3xl"
+              class="mx-auto h-[285px]  "
             />
           </div>
           <div class="flex-1">
