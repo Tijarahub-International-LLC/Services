@@ -43,173 +43,173 @@ const services = [
     img: "./assets/Leads.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/market-research.png",
+    img: "./assets/market-research.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/export.png",
+    img: "./assets/export.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/marketing.png",
+    img: "./assets/marketing.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/Leads.png",
+    img: "./assets/Leads.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/market-research.png",
+    img: "./assets/market-research.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/export.png",
+    img: "./assets/export.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
   },
   {
     title: "Generated Leads",
-    img: "../assets/marketing.png",
+    img: "./assets/marketing.png",
     services: [
       {
-        icon: "../assets/icons/money.png",
+        icon: "./assets/icons/money.png",
         text: "+9.5k Wholesale buyers"
       },
       {
-        icon: "../assets/icons/user-group.png",
+        icon: "./assets/icons/user-group.png",
         text: "+90K Visitors"
       },
       {
-        icon: "../assets/icons/deal.png",
+        icon: "./assets/icons/deal.png",
         text: "+4.5K Deals Facilitated"
       },
       {
-        icon: "../assets/icons/supplier.png",
+        icon: "./assets/icons/supplier.png",
         text: "+1.2k Suppliers"
       },
     ]
