@@ -98,7 +98,7 @@
     }
 
     50% {
-        box-shadow: 0px 0px 30px 0px var(--color-dark-cyan);
+      box-shadow: 0px 0px 30px 0px var(--color-dark-cyan);
     }
   }
 }
@@ -140,7 +140,9 @@ button {
 .section-bottom-space {
   @apply pb-14 md:pb-16;
 }
-
+.info-tooltip {
+  @apply absolute before:py-3 px-4 bg-white/20 before:top-0 before:left-[30px] before:absolute;
+}
 .stat-card {
   @apply flex items-center justify-center h-12 gap-3 px-4 duration-300 rounded-full bg-white/10 backdrop-blur-md text-secondary-100;
 }

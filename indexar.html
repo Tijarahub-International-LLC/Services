@@ -1178,6 +1178,7 @@
       <!-- Pricing Plans Section -->
       <section id="plans" class="container" data-aos="fade-up">
         <h2 class="mb-6 text-center h2">Our Pricing Plans</h2>
+
         <div
           class="togglePlan flex w-full h-12 max-w-[300px] mb-6 mx-auto items-center border-2 border-gray-200 rounded-full p-1 gap-1 text-sm lg:text-base"
         >
@@ -1202,51 +1203,71 @@
           >
             <div class="flex flex-col justify-start gap-7">
               <div class="flex flex-col gap-2">
-                <h3 class="h3">Standard</h3>
-                <p class="text-sm">Good for starting</p>
+                <h3 class="h2">Standard</h3>
+                <p class="text-sm">Best Choice for Growing Manufacturers</p>
               </div>
               <div class="flex items-baseline gap-2">
                 <p class="h2" id="standard-price">$275</p>
                 <span class="text-sm"> / Monthly</span>
               </div>
-              <p class="hidden text-base font-light perYear">$2340 Per Year</p>
+              <p class="hidden text-base font-light perYear">$2340 Annually</p>
               <a
                 class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
+                target="_blank"
                 href="https://tijarahub.com/vendor-registration/?plan_id=3"
                 >Select Plan</a
               >
               <hr class="text-[#d1d1d133]" />
             </div>
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 standard-details">
               <p class="h4">What you will get</p>
               <ul class="flex flex-col gap-3 text-sm">
                 <li class="flex items-center justify-between gap-2">
                   <p class="flex items-center gap-0.5 xl:gap-4">
                     <i class="fa-solid fa-circle-info"></i>
-                    International Export Sales
-                  </p>
-                  1 Sales
-                </li>
-                <li class="flex items-center justify-between gap-2">
-                  <p class="flex items-center gap-0.5 xl:gap-4">
-                    <i class="fa-solid fa-circle-info"></i>
                     Identifying Potential Buyers
                   </p>
-                  8 / month
+                  5 / month
                 </li>
                 <li class="flex items-center justify-between gap-2">
                   <p class="flex items-center gap-0.5 xl:gap-4">
                     <i class="fa-solid fa-circle-info"></i>
                     Buyers from DataBase
                   </p>
-                  12 / Month
+                  5 / Month
                 </li>
                 <li class="flex items-center justify-between gap-2">
                   <p class="flex items-center gap-0.5 xl:gap-4">
                     <i class="fa-solid fa-circle-info"></i>
-                    Paid Social Media Ads
+                    Paid Social Media Marketing
                   </p>
-                  1 Campain
+                  1 Campaign / Month
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Exhibitions and Trade Mission
+                  </p>
+                  <span class="text-red-500"
+                    ><i class="fa-solid fa-x"></i
+                  ></span>
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    International Export Sales
+                  </p>
+
+                  <span class="text-red-500"
+                    ><i class="fa-solid fa-x"></i
+                  ></span>
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Product Listing
+                  </p>
+                  Maximum 12
                 </li>
               </ul>
             </div>
@@ -1256,31 +1277,27 @@
           >
             <div class="flex flex-col justify-start gap-7">
               <div class="flex flex-col gap-2">
-                <h3 class="h3">Premium</h3>
-                <p class="text-sm">Good for starting</p>
+                <h3 class="h2">Premium</h3>
+                <p class="text-sm">
+                  Ideal for Established Businesses Ready to Scale
+                </p>
               </div>
               <div class="flex items-baseline gap-2">
                 <p class="h2" id="premium-price">$460</p>
                 <span class="text-sm"> / Monthly</span>
               </div>
-              <p class="hidden text-base font-light perYear">$3840 Per Year</p>
+              <p class="hidden text-base font-light perYear">$3840 Annually</p>
               <a
-                class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active standard-button ocean-gradient"
+                class="flex items-center justify-center duration-300 border-none rounded-full shadow-sm hover:shadow-secondary h-14 body active premium-button ocean-gradient"
+                target="_blank"
                 href="https://tijarahub.com/vendor-registration/?plan_id=3"
                 >Select Plan</a
               >
               <hr class="text-[#d1d1d133]" />
             </div>
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 premium-details">
               <p class="h4">What you will get</p>
               <ul class="flex flex-col gap-3 text-sm">
-                <li class="flex items-center justify-between gap-2">
-                  <p class="flex items-center gap-0.5 xl:gap-4">
-                    <i class="fa-solid fa-circle-info"></i>
-                    International Export Sales
-                  </p>
-                  1 Sales
-                </li>
                 <li class="flex items-center justify-between gap-2">
                   <p class="flex items-center gap-0.5 xl:gap-4">
                     <i class="fa-solid fa-circle-info"></i>
@@ -1298,13 +1315,42 @@
                 <li class="flex items-center justify-between gap-2">
                   <p class="flex items-center gap-0.5 xl:gap-4">
                     <i class="fa-solid fa-circle-info"></i>
-                    Paid Social Media Ads
+                    Paid Social Media Marketing
                   </p>
                   1 Campain
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Exhibitions and Trade Mission
+                  </p>
+                  1 Sales
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    International Export Sales
+                  </p>
+                  1 Sales 1 Sales
+                </li>
+                <li class="flex items-center justify-between gap-2">
+                  <p class="flex items-center gap-0.5 xl:gap-4">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Product Listing
+                  </p>
+                  1 Sales
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+        <div class="mt-12 text-center">
+          <a
+            href="./pricing.html"
+            class="px-8 py-4 mx-auto duration-300 rounded-full ocean-gradient h4"
+          >
+            Read More
+          </a>
         </div>
       </section>
 

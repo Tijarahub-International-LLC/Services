@@ -288,6 +288,109 @@ const monthlyPrices = {
   premium: "$460"
 };
 
+const monthlyDetails = {
+  standard:[
+    "5 / Month",
+    "5 / Month",
+    "1 Sales",
+    "1 Campaign / Month",
+    ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+    
+    ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+    "Maximum 12"
+  ],
+  premium:[
+    "8 / Month",
+    "12 / Month",
+    
+    "2 Campaign / Month",
+    ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+    "1 Sales",
+    "Maximum 30"
+  ]
+}
+const yearlyDetails = {
+  standard:[
+    "8 / Month",
+    "6 / Month",
+    "1 Sales",
+    "1 Campaign / Month",
+    ` <span class="text-dark-cyan"
+    ><i class="fa-solid fa-check"></i></span>`,
+    
+    `1 Sales`,
+    "Maximum 25"
+  ],
+  premium:[
+    "15 / Month",
+    "12 / Month",
+    
+    "2 Campaign / Month",
+    ` <span class="text-dark-cyan"
+    ><i class="fa-solid fa-check"></i></span>`,
+    "2 Sales",
+    "Maximum 60"
+  ]
+}
+function fillPlanContent(type){
+
+  const planDetailsContent = ` <p class="h4">What you will get</p>
+                <ul class="flex flex-col gap-3 text-sm">
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"><span class="tooltip"></span></i>
+                      Identifying Potential Buyers
+                    </p>
+                    ${type[0]}
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"></i>
+                      Buyers from DataBase
+                    </p>
+                    ${type[1]}
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"></i>
+                      Paid Social Media Marketing
+                    </p>
+                    ${type[2]}
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"></i>
+                      Exhibitions and Trade Mission
+                    </p>
+                    ${type[3]}
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"></i>
+                      International Export Sales
+                    </p>
+                    ${type[4]}
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      <i class="fa-solid fa-circle-info"></i>
+                      Product Listing
+                    </p>
+                    ${type[5]}
+                  </li>
+                </ul>`
+
+    return planDetailsContent
+}
+let premiumDetails = document.querySelector('.premium-details')
+let standardDetails = document.querySelector('.standard-details')
+
 document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
   if (e.target.id === "annually" || e.target.id === "monthly") {
     annuallyButton.classList.toggle('active', e.target.id === "annually")
@@ -296,10 +399,15 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
 
     const standardButton = document.querySelector(".standard-button")
     const premiumButton = document.querySelector(".premium-button")
-
-
     const yearlyCost = document.querySelectorAll(".perYear")
     if (e.target.id === "annually") {
+       if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()){
+        premiumDetails.innerHTML = ""
+        standardDetails.innerHTML = ""        
+      }
+     premiumDetails.insertAdjacentHTML("beforeend",fillPlanContent(yearlyDetails.premium))
+     standardDetails.insertAdjacentHTML("beforeend",fillPlanContent(yearlyDetails.standard))
+     
       standardPrice.innerText = annuallyPrices.standard;
       premiumPrice.innerText = annuallyPrices.premium;
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=5"
@@ -307,9 +415,17 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
       yearlyCost.forEach(e => {
         e.style.display = "block"
       })
+
+      
     } else if (e.target.id === "monthly") {
       standardPrice.innerText = monthlyPrices.standard;
       premiumPrice.innerText = monthlyPrices.premium;
+      if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()){
+        premiumDetails.innerHTML = ""
+        standardDetails.innerHTML = ""        
+      }
+      premiumDetails.insertAdjacentHTML("beforeend",fillPlanContent(monthlyDetails.premium))
+      standardDetails.insertAdjacentHTML("beforeend",fillPlanContent(monthlyDetails.standard))
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
       premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
       yearlyCost.forEach(e => {
