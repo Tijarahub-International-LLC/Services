@@ -6,32 +6,67 @@ const caseStudies = [
   {
     id: 1,
     vendor: {
-      img: "./assets/Sellers/Logos-24.png",
-      name: "LIBRA",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
-      services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
-      industry: "Software",
+      img: "./assets/case-studies/Untitled-1_0017_Premium-01 copy.png",
+      name: "Premium Food Industries",
+      desc: "certified Egyptian food manufacturer specializing in snack production for global markets",
+      industry: "High-Volume Snack Chips",
+      brands: ["Nosh - Ridge"],
       location: "Egypt",
-      challenge: ["challenge 1", "challenge 2", "challenge 3"],
-      solution: ["solution 1", "solution 2", "solution 3"],
-      results: ["result 1", "result 2", "result 3"],
+      challenge: ["Expand Market into Saudi Arabia"],
+      info: ["Manufacture", "Egypt", "Nosh - Ridge", "Targeting Saudi Arabia"]
     },
     caseStudy: {
-      img: "",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis alias totam quaerat, illo quisquam eos impedit hic. Dolor cum recusandae ipsam est sint, qui itaque accusamus labore hic sit.",
-      storyURL: "./case-study.html",
-      testimonialsURL: ""
+      orderNum: "#485",
+      desc: "Delivering High-Volume Snack Products",
+      inspection: {
+        name: "Intertek",
+        ref: "INT-Prim-00332"
+      },
+      shippingInfo: {
+        method: "Sea Freight",
+        quantity: "1 x 40 FT container",
+        date: "June 19, 2024",
+        containerNum: "WHSU557402-9",
+        sealSerial: "104593",
+        coo: "0092052",
+        telexNum: "196EA02584",
+        ods: {
+          name: "FedEx",
+          tracking: "#7768429117",
+        }
+      },
+      manageBy: {
+        name: "DHL",
+        ref: "AWB: 378359966"
+      },
+      outcome: {
+        otf: "with full documentation, COO, and telex release",
+        cg: "Product met Saudi market health and safety standards",
+        bve: "Premium shelf-ready packaging for Ridge & Nosh chips",
+        ste: "All processes managed via TijaraHub from order to door",
+      },
+      tradeSumm: "TijaraHub empowered this transaction by managing sourcing, compliance, and end-to-end logistics—all within a B2B interface that ensures reliability and trust between exporters and importers.",
+      quote: {
+        text: "This successful transaction proves how TijaraHub bridges premium Egyptian manufacturers with high-demand Gulf distributors seamlessly.",
+        by: "TijaraHub Trade Management Team"
+      },
+      productsOrder: {
+        brand: ["Nosh", "Ridge"],
+        type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
+        quantity: ["850 Cartons", "400 Cartons"],
+      }
     },
     buyer: {
-      img: "./assets/Parteners-Logos-06.png",
-      name: "BEAUTY GIRL",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet minustemporibus saepe fugiat aperiam explicabo alias hic officiis rem assumenda ipsa dolorem exercitationem beatae optio laudantium ad,sed quibusdam recusandae.",
-      services: ["Women Sports Wear", "Middle East", "Deals Facilitated", "Seller"],
-      industry: "",
-      location: "",
-      challenge: "",
-      solution: "",
-      results: ""
+      img: "./assets/case-studies/Parteners-Logos-12.png",
+      name: "The World of Gourmet Trading Co.",
+      desc: "The World of Gourmet Trading Co. is a Saudi Arabian importer and distributor of premium specialty food brands. Since 1990, we've brought world-class products to the region, offering exceptional quality, design, and flavour through a trusted retail network.",
+      industry: "Premium Food Import & Distribution",
+      destination: "Jeddah, Saudi Arabia",
+      info: ["Importer and Distributor", "Jeddah, Saudi Arabia"],
+      orderInfo: {
+        date: "June 02, 2024",
+        value: "$7,537.50"
+      },
     }
   },
 
@@ -39,181 +74,57 @@ const caseStudies = [
 
 const services = [
   {
-    title: "Generated Leads",
-    img: "./assets/Leads.png",
+    title: "Generation Qualified Leads",
+    img: "./assets/services-icons/leads.png",
+    services: ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"]
+  },
+  {
+    title: "International Export Sales",
+
+    img: "./assets/services-icons/intl-sales.png",
     services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
+      "Market Entry Strategy",
+      "Partner Development",
+      "Compliance Support",
+      "Sales Enablement"
     ]
   },
   {
-    title: "Generated Leads",
-    img: "./assets/market-research.png",
+    title: "Marketing",
+    img: "./assets/services-icons/marketing.png",
+    services: ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"]
+  },
+  {
+    title: "Market Research",
+    img: "./assets/services-icons/research.png",
     services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
+      "Industry Reports",
+      "Competitor Insights",
+      "Customer Profiling",
+      "Surveys & Focus Groups"
     ]
   },
   {
-    title: "Generated Leads",
-    img: "./assets/export.png",
+    title: "Customer Service",
+    img: "./assets/services-icons/cust-serv.png",
     services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
+      "Omnichannel Support",
+      "Helpdesk & Ticketing",
+      "Full Trading Cycle Support",
+      "Feedback Management"
     ]
   },
   {
-    title: "Generated Leads",
-    img: "./assets/marketing.png",
+    title: "AI-Powerd Proposal Tool",
+    img: "./assets/services-icons/gear.png",
     services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
+      "Automated RFQs",
+      "Required Export Documents",
+      "Proposal Analytics",
+      "Digital Sales Rooms"
     ]
   },
-  {
-    title: "Generated Leads",
-    img: "./assets/Leads.png",
-    services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
-    ]
-  },
-  {
-    title: "Generated Leads",
-    img: "./assets/market-research.png",
-    services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
-    ]
-  },
-  {
-    title: "Generated Leads",
-    img: "./assets/export.png",
-    services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
-    ]
-  },
-  {
-    title: "Generated Leads",
-    img: "./assets/marketing.png",
-    services: [
-      {
-        icon: "./assets/icons/money.png",
-        text: "+9.5k Wholesale buyers"
-      },
-      {
-        icon: "./assets/icons/user-group.png",
-        text: "+90K Visitors"
-      },
-      {
-        icon: "./assets/icons/deal.png",
-        text: "+4.5K Deals Facilitated"
-      },
-      {
-        icon: "./assets/icons/supplier.png",
-        text: "+1.2k Suppliers"
-      },
-    ]
-  },
+
 ]
 
 const burgerIcon = document.querySelector("header .burger-icon")
@@ -275,6 +186,420 @@ const monthlyButton = document.getElementById("monthly");
 const standardPrice = document.getElementById("standard-price");
 const premiumPrice = document.getElementById("premium-price");
 
+
+const plansContent = {
+  services: [
+    {
+      text: "Services"
+    },
+    {
+      text: "International Export Sales",
+      info: "",
+      gain: "1 Sales",
+    },
+    {
+      text: "Tailor made Market Research",
+      info: "",
+      gain: "1 Time / Year",
+    }, {
+      text: "Identifying Potential Buyers",
+      info: "",
+      gain: "8 / Month",
+    }, {
+      text: "Logistcs support for Door to Door",
+      info: "",
+      gain: true,
+    }, {
+      text: "Building a brand by Drop-Shipping Services",
+      info: "",
+      gain: true,
+    }, {
+      text: "Buyers from DataBase",
+      info: "",
+      gain: "6 / Month",
+    }, {
+      text: "Sample Support Services",
+      info: "",
+      gain: true,
+    }, {
+      text: "Ads in Home page",
+      info: "",
+      gain: false,
+    },
+  ],
+  marketing: [
+    { text: "Marketing" },
+    {
+      text: "WhatsApp and email Marketing",
+      info: "",
+      gain: "1 Campaign / Month",
+    },
+    {
+      text: "Paid Social Media Ads",
+      info: "",
+      gain: "1 Campaign / Month",
+    }, {
+      text: "Product Popup through SEO Support",
+      info: "",
+      gain: true,
+    }, {
+      text: "Landing Company Profile webpage on Tijarahub",
+      info: "",
+      gain: false,
+    }, {
+      text: "Trade Missions in target countries",
+      info: "",
+      gain: true,
+    }, {
+      text: "Social Media Designs",
+      info: "",
+      gain: "3 Designs / Month",
+    }
+  ],
+  techFeatures: [
+    {
+      text: "Platform & Technology Features"
+    },
+    {
+      text: "Platform Access",
+      info: "",
+      gain: true,
+    },
+    {
+      text: "Ai One click Proposal Calculator",
+      info: "",
+      gain: true,
+    }, {
+      text: "Dedicattrueed Catalog Team",
+      info: "",
+      gain: false,
+    }, {
+      text: "Products Listing",
+      info: "",
+      gain: "Maximum 25",
+    }, {
+      text: "Images Per Product",
+      info: "",
+      gain: "Maximum 5",
+    }
+    , {
+      text: "Videos",
+      info: "",
+      gain: true,
+    }
+    , {
+      text: "Ai Search Optimization",
+      info: "",
+      gain: true,
+    }
+  ],
+  standard: {
+    annually: {
+      price: "$193",
+      services: ["", "1 Sales", "1 Time / Year", "8 / Month", true, true, "6 / Month", true, false],
+      marketing: ["", "1 Campaign / Month", "1 Campaign / Month", true, false, true, "3 Designs / Month"],
+      techFeatures: ["", true, true, false, "Maximum 25", "Maximum 5", true, true],
+    },
+    monthly: {
+      price: "$275",
+      services: ["", false, "With Cost", "5 / Month", true, true, "5 / Month", true, false],
+      marketing: ["", "1 Campaign / Month", "1 Campaign / Month", true, false, false, "2 Designs / Month"],
+      techFeatures: ["", true, true, false, "Maximum 12", "Maximum 5", true, true],
+    }
+  },
+  premium: {
+    annually: {
+      price: "$320",
+      services: ["", "2 Sales", "2 Time / Year", "15 / Month", true, true, "12 / Month", true, true],
+      marketing: ["", "2 Campaign / Month", "2 Campaign / Month", true, true, true, "6 Designs / Month"],
+      techFeatures: ["", true, true, true, "Maximum 60", "Maximum 8", true, true],
+    },
+    monthly: {
+      price: "$460",
+      services: ["", "1 Sales", "With Cost", "12 / Month", true, true, "10 / Month", true, true],
+      marketing: ["", "2 Campaign / Month", "2 Campaign / Month", true, true, false, "4 Designs / Month"],
+      techFeatures: ["", true, true, true, "Maximum 30", "Maximum 8", true, true],
+    }
+  },
+}
+
+const togglePlan = document.querySelector("#togglePlan");
+const standardContent = document.querySelector("#standard-content");
+const premiumContent = document.querySelector("#premium-content");
+togglePlan?.addEventListener("click", (e) => {
+  // initial variable
+  let isAnnually = true;
+  let isMonthly = false;
+  if (e.target.id === "annually") {
+    isAnnually = true
+    isMonthly = false
+  } else {
+    isAnnually = false;
+    isMonthly = true
+  }
+  // add active to the current plan
+  annuallyButton.classList.toggle('active', isAnnually)
+  monthlyButton.classList.toggle('active', isMonthly)
+
+  // empty all content
+  standardContent.querySelectorAll("li").forEach(li => li.remove())
+  premiumContent.querySelectorAll("li").forEach(li => li.remove())
+
+  const yearlyCost = document.querySelectorAll(".perYear");
+  const standardPrice = document.querySelector("#standard-price-page");
+  const premiumPrice = document.querySelector("#premium-price-page");
+  const standardLink = document.querySelector("#standard-link");
+  const premiumLink = document.querySelector("#premium-link");
+
+  // toggle plans content logic
+  if (isAnnually) {
+    // Price 
+    standardPrice.textContent = plansContent.standard.annually.price;
+    premiumPrice.textContent = plansContent.premium.annually.price;
+    premiumLink.href = "https://tijarahub.com/vendor-registration/?plan_id=6"
+    standardLink.href = "https://tijarahub.com/vendor-registration/?plan_id=5"
+    //====== Standard Content ======//
+    // services Content
+    plansContent.services.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.annually.services[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.services[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.annually.services[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+    // marketing Content
+    plansContent.marketing.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.annually.marketing[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.marketing[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.annually.marketing[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+    // Technology Featuers Content
+    plansContent.techFeatures.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.techFeatures[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.annually.techFeatures[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+
+    //====== Premium Content ======//
+    // services Content
+    plansContent.services.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.annually.services[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.services[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.annually.services[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+    // marketing Content
+    plansContent.marketing.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.annually.marketing[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.marketing[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.annually.marketing[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+    // Technology Featuers Content
+    plansContent.techFeatures.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.techFeatures[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.annually.techFeatures[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+
+    // toggle the annually per year price text
+    yearlyCost.forEach(e => {
+      e.style.display = "block"
+    })
+  } else {
+    premiumLink.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
+    standardLink.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
+    // Price 
+    standardPrice.textContent = plansContent.standard.monthly.price;
+    premiumPrice.textContent = plansContent.premium.monthly.price;
+    //====== Standard Content ======//
+    // services Content
+    plansContent.services.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.monthly.services[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.services[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.monthly.services[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+    // marketing Content
+    plansContent.marketing.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.marketing[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.monthly.marketing[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+    // Technology Featuers Content
+    plansContent.techFeatures.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.standard.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.techFeatures[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.standard.monthly.techFeatures[index]}
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content)
+    })
+
+    //====== Premium Content ======//
+    // services Content
+    plansContent.services.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.monthly.services[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.services[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.monthly.services[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+    // marketing Content
+    plansContent.marketing.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.marketing[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.monthly.marketing[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+    // Technology Featuers Content
+    plansContent.techFeatures.map((service, index) => {
+      const content =
+        `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${index === 0 ? "h4 text-light-cyan pt-4" : ""}">
+          
+            ${service.text}
+          </p>
+          ${plansContent.premium.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.techFeatures[index] === false ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>` : plansContent.premium.monthly.techFeatures[index]}
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content)
+    })
+
+    // toggle the annually per year price text
+    yearlyCost.forEach(e => {
+      e.style.display = "none"
+    })
+  }
+})
+
+
 const annuallyPrices = {
   standard: "$193",
   premium: "$320"
@@ -286,7 +611,7 @@ const monthlyPrices = {
 };
 
 const monthlyDetails = {
-  standard:[
+  standard: [
     "5 / Month",
     "5 / Month",
     "1 Sales",
@@ -294,16 +619,16 @@ const monthlyDetails = {
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-    
+
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
     "Maximum 12"
   ],
-  premium:[
+  premium: [
     "8 / Month",
     "12 / Month",
-    
+
     "2 Campaign / Month",
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
@@ -313,21 +638,21 @@ const monthlyDetails = {
   ]
 }
 const yearlyDetails = {
-  standard:[
+  standard: [
     "8 / Month",
     "6 / Month",
     "1 Sales",
     "1 Campaign / Month",
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
-    
+
     `1 Sales`,
     "Maximum 25"
   ],
-  premium:[
+  premium: [
     "15 / Month",
     "12 / Month",
-    
+
     "2 Campaign / Month",
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
@@ -335,55 +660,50 @@ const yearlyDetails = {
     "Maximum 60"
   ]
 }
-function fillPlanContent(type){
+
+function fillPlanContent(type) {
 
   const planDetailsContent = ` <p class="h4">What you will get</p>
                 <ul class="flex flex-col gap-3 text-sm">
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"><span class="tooltip"></span></i>
                       Identifying Potential Buyers
                     </p>
                     ${type[0]}
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"></i>
                       Buyers from DataBase
                     </p>
                     ${type[1]}
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"></i>
                       Paid Social Media Marketing
                     </p>
                     ${type[2]}
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"></i>
                       Exhibitions and Trade Mission
                     </p>
                     ${type[3]}
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"></i>
                       International Export Sales
                     </p>
                     ${type[4]}
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      <i class="fa-solid fa-circle-info"></i>
                       Product Listing
                     </p>
                     ${type[5]}
                   </li>
                 </ul>`
 
-    return planDetailsContent
+  return planDetailsContent
 }
 let premiumDetails = document.querySelector('.premium-details')
 let standardDetails = document.querySelector('.standard-details')
@@ -398,13 +718,13 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
     const premiumButton = document.querySelector(".premium-button")
     const yearlyCost = document.querySelectorAll(".perYear")
     if (e.target.id === "annually") {
-       if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()){
+      if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()) {
         premiumDetails.innerHTML = ""
-        standardDetails.innerHTML = ""        
+        standardDetails.innerHTML = ""
       }
-     premiumDetails.insertAdjacentHTML("beforeend",fillPlanContent(yearlyDetails.premium))
-     standardDetails.insertAdjacentHTML("beforeend",fillPlanContent(yearlyDetails.standard))
-     
+      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.premium))
+      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.standard))
+
       standardPrice.innerText = annuallyPrices.standard;
       premiumPrice.innerText = annuallyPrices.premium;
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=5"
@@ -413,16 +733,16 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         e.style.display = "block"
       })
 
-      
+
     } else if (e.target.id === "monthly") {
       standardPrice.innerText = monthlyPrices.standard;
       premiumPrice.innerText = monthlyPrices.premium;
-      if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()){
+      if (premiumDetails.hasChildNodes() && standardDetails.hasChildNodes()) {
         premiumDetails.innerHTML = ""
-        standardDetails.innerHTML = ""        
+        standardDetails.innerHTML = ""
       }
-      premiumDetails.insertAdjacentHTML("beforeend",fillPlanContent(monthlyDetails.premium))
-      standardDetails.insertAdjacentHTML("beforeend",fillPlanContent(monthlyDetails.standard))
+      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.premium))
+      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.standard))
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
       premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
       yearlyCost.forEach(e => {
@@ -591,70 +911,92 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
   // Vendor Content
   const vendorContent = `<div
       data-aos="fade-right"
-      class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
+      class="flex-col  justify-center hidden gap-5 p-8 xl:flex text-secondary-100 ocean-gradient rounded-3xl"
     >
       <div>
         <img
           src="${vendor.img}"
           alt="${vendor.name}"
-          class="mx-auto rounded w-[300px]"
+          class="mx-auto rounded w-[200px]"
         />
       </div>
-      <p class="p-2 text-base leading-5">
+      <h4 class="h4 text-center">${vendor.name} <span class="block text-center text-gray-300 text-xs pt-1">${vendor.industry} Industry</span></h4>
+      <p class="p-2  capitalize text-center text-base leading-5">
         ${vendor.desc}
       </p>
       <div
-        class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold md:flex-row"
+        class="flex  flex-col flex-wrap items-center justify-center w-full gap-4 text-sm font-semibold md:flex-row"
       >
-        ${vendor.services.map((item) => `<div class='stat-card min-w-1/4'><p>${item}</p></div>`).join('')}
+        ${vendor.info.map((item) => `<div class='stat-card !bg-black/40 min-w-1/3'><p>${item}</p></div>`).join('')}
       </div>
     </div>`;
 
   // Case Study Content
   const caseStudyContent = ` <div
       data-aos="fade-up"
-      class="flex flex-col items-center justify-around p-8 gap-7 text-secondary-100 bg-gradient-to-b from-secondary-500 to-secondary rounded-3xl"
+      class="flex flex-col items-center justify-around p-8 gap-5 text-secondary-100 bg-white/5 backdrop-blur-md rounded-3xl"
     >
-      <h3 class="text-center capitalize h2">Case Study</h3>
+      <h3 class="text-center capitalize h2">Export Order
+      <br />
+      ${caseStudy.orderNum}
+      </h3>
       <div class="flex flex-wrap items-center justify-center gap-6 body">
+       <div class="flex text-center flex-col gap-1">
         <p class="text-center h4">
-          ${caseStudy.desc}
+          ${caseStudy.desc} 
         </p>
+         <p>
+          from ${vendor.location} to ${buyer.destination}
+          </p>
+       </div>
       </div>
-      <div class="relative mx-auto w-fit">
+      <div class="flex flex-wrap w-full justify-between *:flex-1 items-center">
+       <ul class="flex flex-col gap-2 text-base">
+        <li>
+        <p>Order Date: <span class="text-gray-400 italic">${buyer.orderInfo.date}</span></p>
+        </li>
+        <li>
+        <p>Shipping Date: <span class="text-gray-400 italic">${caseStudy.shippingInfo.date}</span></p>
+        </li>
+        <li>
+        <p>Shipping Method:  <span class="text-gray-400 italic">${caseStudy.shippingInfo.method}</span></p>
+        </li>
+        </ul>
         <a
           href="${caseStudy.storyURL}?i=${index}"
-          class="relative flex items-center gap-2 px-4 py-3 duration-300 rounded-full hover:shadow-md  size-full bg-secondary-100 text-secondary"
+          class="relative max-w-fit self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
+
         >
           <img src="./assets/checkicon.svg" alt="icon" />
           Check Story</a
         >
       </div>
+    
     </div>`;
 
   // Buyer Content
   const buyerContent = `
   <div
           data-aos="fade-left"
-          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex  text-secondary-100 bg-gradient-to-b from-lighter-dark-blue to-secondary rounded-3xl"
+          class="flex-col items-center justify-center hidden gap-5 p-8 xl:flex  text-secondary-100 ocean-gradient rounded-3xl"
         >
-          <div>
-            <img
-              src="${buyer.img}"
-              alt="${buyer.name}"
-              class="mx-auto rounded w-[300px]"
-            />
-          </div>
-          <p class="p-2 text-base leading-5">
-            ${buyer.desc}
-          </p>
-          <div
-            class="flex flex-col flex-wrap items-center justify-center w-full gap-6 text-sm font-semibold 2xl:flex-row md:flex-row"
-          >
-          ${buyer.services.map((item) => ` <div class="stat-card min-w-1/4">
-              <p>${item}</p>
-            </div>`).join("")}
-          </div>
+         <div>
+        <img
+          src="${buyer.img}"
+          alt="${buyer.name}"
+          class="mx-auto rounded w-[200px]"
+        />
+      </div>
+      <h4 class="h4 text-center">${buyer.name} <span class="block text-center text-gray-300 text-xs pt-1">${buyer.industry} Industry</span></h4>
+      <p class="p-2  capitalize text-center text-base leading-5">
+        ${buyer.desc}
+      </p>
+      <div
+        class="flex  flex-col flex-wrap items-center justify-center w-full gap-4 text-sm font-semibold md:flex-row"
+      >
+      ${buyer.info.map(item => `<div class='stat-card !bg-black/40 min-w-1/3'><p>${item}</p></div>`).join("")}
+        
+      </div>
         </div>`
 
   const content = `
@@ -741,22 +1083,21 @@ services.forEach(({ title, img, services }, index) => {
   const card = `
         <div
           data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
-          class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/10 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
+          class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/5 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
         >
-          <h3 class="text-4xl font-bold capitalize">Generated Leads</h3>
-          <div>
+          <h3 class="text-4xl font-bold capitalize">${title}</h3>
+          <div class="py-5">
             <img
               src="${img}"
               alt="${title}"
-              class="mx-auto h-[285px]  "
+              class="mx-auto h-[200px]"
             />
           </div>
           <div class="flex-1">
             <div
               class="flex flex-wrap items-center justify-center h-full gap-4 body"
             >
-            ${services.map(({ icon, text }) => `<div class="flex-grow text-sm stat-card basis-w-1/4">
-                <img src="${icon}" alt="text" class="w-7"/>
+            ${services.map((text) => `<div class="flex-grow text-sm ${colIndex !== 1 ? "!bg-black/20" : ""} stat-card basis-w-1/4">
                 <p>${text}</p>
               </div>`).join("")}
               
