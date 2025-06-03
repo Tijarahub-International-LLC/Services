@@ -214,9 +214,6 @@ const services = [
       },
     ]
   },
-  
-    
-  
 ]
 
 const burgerIcon = document.querySelector("header .burger-icon")
