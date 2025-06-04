@@ -6,11 +6,20 @@ const caseStudies = [
   {
     id: 1,
     vendor: {
-      img: "./assets/case-studies/Untitled-1_0017_Premium-01 copy.png",
+      img: "./assets/case-studies/prem-food.png",
       name: "Premium Food Industries",
       desc: "certified Egyptian food manufacturer specializing in snack production for global markets",
       industry: "High-Volume Snack Chips",
-      brands: ["Nosh - Ridge"],
+      brands: [,
+        {
+          name: "Nosh",
+          img: "./assets/case-studies/nosh.png"
+        },
+        {
+          name: "Ridge",
+          img: "./assets/case-studies/ridge.png"
+        }
+      ],
       location: "Egypt",
       challenge: ["Expand Market into Saudi Arabia"],
       info: ["Manufacture", "Egypt", "Nosh - Ridge", "Targeting Saudi Arabia"]
@@ -54,10 +63,11 @@ const caseStudies = [
         brand: ["Nosh", "Ridge"],
         type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
         quantity: ["850 Cartons", "400 Cartons"],
-      }
+      },
+      preWorksImgs: ["./assets/case-studies/485-01.png", "./assets/case-studies/485-02.png", "./assets/case-studies/485-03.png"],
     },
     buyer: {
-      img: "./assets/case-studies/Parteners-Logos-12.png",
+      img: "./assets/case-studies/gourmet.png",
       name: "The World of Gourmet Trading Co.",
       desc: "The World of Gourmet Trading Co. is a Saudi Arabian importer and distributor of premium specialty food brands. Since 1990, we've brought world-class products to the region, offering exceptional quality, design, and flavour through a trusted retail network.",
       industry: "Premium Food Import & Distribution",
@@ -69,7 +79,6 @@ const caseStudies = [
       },
     }
   },
-
 ]
 
 const services = [
@@ -950,7 +959,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
           </p>
        </div>
       </div>
-      <div class="flex flex-wrap w-full justify-between *:flex-1 items-center">
+      <div class="flex flex-col md:flex-row gap-5 w-full justify-between *:flex-1 items-center">
        <ul class="flex flex-col gap-2 text-base">
         <li>
         <p>Order Date: <span class="text-gray-400 italic">${buyer.orderInfo.date}</span></p>
@@ -963,8 +972,8 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         </li>
         </ul>
         <a
-          href="${caseStudy.storyURL}?i=${index}"
-          class="relative max-w-fit self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
+          href="../case-study.html?i=${index}"
+          class="relative max-w-fit md:self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
 
         >
           <img src="./assets/checkicon.svg" alt="icon" />
@@ -1016,64 +1025,164 @@ function addContentToPage(index) {
 
 
   let storyContent = `
-            <h2 class="h2 text-secondary-200 lg:text-3xl">Case Study</h2>
-            <div class="w-[250px]">
-              <img src=${vendor.img} alt=${vendor.name} />
-            </div>
+            <h2 class="h2 text-secondary-200 lg:text-3xl">Export Order ${caseStudy.orderNum}</h2>
             <p class="text-3xl font-black tracking-wide text-secondary-200">
-              ${vendor.desc}
+              ${caseStudy.desc}
             </p>
-            <span class="info"> Industry: Performance Marketing </span>
-            <span class="info"> Location : ${vendor.location} </span>
-            <p class="body text-secondary-100">
-              They were struggling with high hiring costs, low conversion rates,
-              and slow sales cycles.
-            </p>
-            <span class="info"> The Challenge </span>
-            <p class="h4 text-secondary-200">
-              Before partnering with TijaraHub, G&S faced:
-            </p>
-            <div class="flex flex-col gap-6">
-            ${vendor.challenge.map(one =>
-    `
-                <p class="h4 text-secondary-200">
-                <i
-                  class="pr-2 text-2xl text-red-600 fa-solid fa-caret-down"
-                ></i>
-                  ${one}
-                </p>`
-  ).join("")}
+            <div class="flex w-full flex-col  gap-5">
+                <div class="flex flex-col lg:flex-row items-center gap-5 ">
+                  <div class="flex items-center gap-2 lg:flex-row flex-col">
+                    <img src=${vendor.img} class="w-[100px]" alt=${vendor.name} />
+                    <h3 class="h4">
+                    ${vendor.name}
+                    </h3>
+                  </div>
+                  <div class="flex items-center gap-2 lg:flex-row flex-col">
+                    <img src=${buyer.img} class="w-[100px]" alt=${buyer.name} />
+                    <h3 class="h4">
+                    ${buyer.name}
+                    </h3>
+                  </div>
+                </div>
+                <div class="flex flex-1 flex-col lg:flex-row lg:items-center gap-2 *:flex-1">
+            ${vendor.brands.map(({ name, img }) => `<div class='stat-card lg:max-w-[320px] !text-secondary !bg-white'>
+                  <img src="${img}" alt="${name} Image" class="h-10" />
+                  <p>${name}</p>
+                </div>`).join("")}
+              </div>
             </div>
-            <span class="info"> The Solution</span>
-            <p class="font-semibold body text-secondary-200">
-              TijaraHub provided a comprehensive medical services solution:
+          <div class="space-y-3 w-full">
+            <h3 class="h3 text-light-cyan font-semibold">Overview</h3>
+            <ul class="flex flex-col gap-2 text-base">
+              <li>
+                <p>Buyer: <span class="text-gray-300 italic">${buyer.name}</span></p>
+              </li>
+              <li>
+                <p>Destination: <span class="text-gray-300 italic">${buyer.destination}</span></p>
+              </li>
+              <li>
+                <p>Order Value: <span class="text-gray-300 italic">${buyer.orderInfo.value}</span></p>
+              </li>
+              <li>
+                <p>Order Date: <span class="text-gray-300 italic">${buyer.orderInfo.date}</span></p>
+              </li>
+              <li>
+                <p>Shipping Method:  <span class="text-gray-300 italic">${caseStudy.shippingInfo.method} (${caseStudy.shippingInfo.quantity})</span></p>
+              </li>
+              <li>
+                <p>Inspection &amp; Quality Control: <span class="text-gray-300 italic">Completed By${caseStudy.inspection.name} Ref(${caseStudy.inspection.ref})</span></p>
+              </li>
+              <li>
+                <p>Managed via: <span class="text-gray-300 italic">Completed By${caseStudy.manageBy.name} (${caseStudy.manageBy.ref})</span></p>
+              </li>
+              <li>
+                <p>Shipping Date: <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
+              </li>
+            </ul>
+            <h3 class="h3 text-light-cyan font-semibold">Products Ordered</h3>
+            <div class="border w-full border-gray-500">
+              <div class="flex *:flex-1 *:p-2 items-center border-b border-b-gray-500">
+                <h6 class="border-r border-gray-500 font-semibold">Brand</h6>
+                <h6 class="font-semibold">Quantity</h6>
+              </div>
+            ${caseStudy.productsOrder.brand.map((brand, index) => `
+              <div class="flex *:flex-1 *:p-2 items-center">
+              <p class="border-r border-gray-500 ${index !== caseStudy.productsOrder.brand.length - 1 ? "border-b" : ""}">${brand}</p>
+              <p class="border-gray-500 ${index !== caseStudy.productsOrder.brand.length - 1 ? "border-b" : ""}">${caseStudy.productsOrder.quantity[index]}</p>
+              </div>    
+                `).join("")}
+            </div>
+            <div class="flex items-center gap-5 *:rounded-2xl">
+              ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_${caseStudy.preWorksImgs.length}_-_1.25rem)]"/>`).join("")}
+            </div>
+            <hr class="text-gray-500"/>
+            <h3 class="h3 text-light-cyan font-semibold">Manufacturer</h3>
+            <p class="body"><span class="font-bold">${vendor.name}</span>, a ${vendor.desc}</p>
+
+            <hr class="text-gray-500"/>
+
+            <h3 class="h3 text-light-cyan font-semibold">Buyer Information</h3>
+            <ul class="flex flex-col gap-2 text-base">
+              <li>
+                <p>Company: <span class="text-gray-300 italic">${buyer.name}</span></p>
+              </li>
+              <li>
+                <p>Location: <span class="text-gray-300 italic">${buyer.destination}</span></p>
+              </li>
+              <li>
+                <p>Sector: <span class="text-gray-300 italic">${buyer.industry}</span></p>
+              </li>
+            </ul>
+
+            <hr class="text-gray-500"/>
+
+            <h3 class="h3 text-light-cyan font-semibold">Logistics &amp; Shipment Details</h3>
+            <ul class="flex flex-col gap-2 text-base">
+              <li>
+                <p>Container Number: <span class="text-gray-300 italic">${caseStudy.shippingInfo.containerNum}</span></p>
+              </li>
+              <li>
+                <p>Seal Serial: <span class="text-gray-300 italic">${caseStudy.shippingInfo.sealSerial}</span></p>
+              </li>
+              <li>
+                <p>Shipping Date: <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
+              </li>
+              <li>
+                <p>Country of Origin Certificate: <span class="text-gray-300 italic">${caseStudy.shippingInfo.coo}</span></p>
+              </li>
+              <li>
+                <p>Telex Release Number: <span class="text-gray-300 italic">${caseStudy.shippingInfo.telexNum}</span></p>
+              </li>
+              <li>
+                <p>Original Documents Sent via ${caseStudy.shippingInfo.ods.name}: Tracking <span class="text-gray-300 italic">${caseStudy.shippingInfo.ods.tracking}</span></p>
+              </li>
+            </ul>
+            <hr class="text-gray-500"/>
+            <h3 class="h3 text-light-cyan font-semibold">Quality Assurance</h3>
+            <p class="body">Inspection and pre-shipment verification conducted by <span class="font-bold">${caseStudy.inspection.name}</span>, ensuring
+            conformity to Gulf import standards.
+            <br />
+            <span class="font-bold"> Inspection Ref</span> :${caseStudy.inspection.ref}
             </p>
-            <div class="flex flex-col gap-3 pl-5">
-            ${vendor.solution.map(one =>
-    `
-                <p class="h4 text-secondary-200">
-                 <i class="pr-2 text-green-400 fa-solid fa-square-check"></i>
-                  ${one}
-                </p>
-                `
-  ).join("")}
+            <hr class="text-gray-500"/>
+            <h3 class="h3 text-light-cyan font-semibold">Outcome &amp; Value Delivered</h3>
+            <ul class="flex flex-col gap-2 text-base">
+              <li>
+                <p>On-Time Fulfillment: <span class="text-gray-300 italic">${caseStudy.outcome.otf}</span></p>
+              </li>
+              <li>
+                <p>Compliance Guaranteed: <span class="text-gray-300 italic">${caseStudy.outcome.cg}</span></p>
+              </li>
+              <li>
+                <p>Brand Visibility Enhanced: <span class="text-gray-300 italic">${caseStudy.outcome.bve}</span></p>
+              </li>
+              <li>
+                <p>Streamlined Trade Experience: <span class="text-gray-300 italic">${caseStudy.outcome.ste}</span></p>
+              </li>
+            </ul>
+            <hr class="text-gray-500"/>
+            <p class="h4 !leading-[1.5] max-w-[780px] font-bold">
+              <q>${caseStudy.quote.text}</q>
+              <br />
+              <span class="italic flex font-normal text-gray-300">---${caseStudy.quote.by}</span>
+            </p>
+
+            <hr class="text-gray-500"/>
+            <h3 class="h3 text-light-cyan font-semibold">Trade Summary</h3>
+            <p class="h4 !font-normal !leading-[1.5] max-w-[780px]">
+              <span class="font-bold">TijaraHub</span> empowered this transaction by managing sourcing, compliance,
+                and end-to-end logistics—all within a B2B interface that ensures reliability
+                and trust between exporters and importers.
+            </p>
             </div>
-            <span class="info">Results</span>
-            <div class="flex flex-col gap-3 pl-5">
-            ${vendor.results.map(one =>
-    `
-               <p class="h4 text-secondary-200">
-                🎯 ${one}
-              </p>`
-  ).join("")}           
-            </div>
-          `
+          `;
+  caseStudiesContainer.innerHTML = "";
   caseStudiesContainer?.insertAdjacentHTML("beforeend", storyContent);
 }
 
 const searchParams = new URLSearchParams(window.location.search);
-if (searchParams.get('i')) {
 
+if (searchParams.get("i")) {
   addContentToPage(searchParams.get('i'))
 }
 

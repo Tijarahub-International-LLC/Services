@@ -72,39 +72,103 @@
             <h1 class="text-center h1">Case Study</h1>
           </div>
           <div
-            class="flex flex-col justify-start items-start p-4 lg:py-12 lg:px-10 w-full rounded-3xl gap-6 ocean-gradient"
+            class="flex flex-col justify-start items-start p-4 lg:py-12 lg:px-10 w-full rounded-3xl gap-6 bg-white/5 backdrop-blur-md"
             id="caseStudyContainer"
-          ></div>
+          >
+            <h2 class="h2 w-full text-center">Case Study Not Found</h2>
+          </div>
         </div>
       </section>
     </div>
-    <section class="flex flex-col justify-center items-center gap-10 h-[300px]">
-      <div class="container">
-        <div
-          class="flex flex-col justify-center items-center gap-10 bg-white/10 backdrop-blur-md max-w-[800px] m-auto rounded-3xl p-10"
+    <!--  News Letter -->
+    <section class="container w-full pb-14" data-aos="fade-up">
+      <div class="flex flex-col mx-auto text-center">
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form
+          id="news-letter-form"
+          action="https://app.kit.com/forms/8057433/subscriptions"
+          class="w-full mx-auto text-center seva-form formkit-form lg:px-12 rounded-3xl bg-white/10 backdrop-blur-lg"
+          method="post"
+          data-sv-form="8057433"
+          data-uid="3f5cb920f8"
+          data-format="inline"
+          data-version="5"
+          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
         >
-          <h2 class="text-center h2 text-secondary-200">
-            Want Results<br />
-            Like This?
-          </h2>
-          <div
-            class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6 text-secondary-100"
-          >
-            <div
-              class="flex flex-col items-center w-full gap-4 md:justify-center md:flex-row lg:gap-6"
-            >
-              <a href="./free-trial.html" class="primary-btn">
-                <img src="./assets/icon.svg" alt="icon" />
-                Start Free Trial Now</a
+          <div class="formkit-container" data-style="full">
+            <div class="formkit-hero">
+              <div class="formkit-hero-bg-color"></div>
+              <div class="formkit-hero-bg-img"></div>
+              <div
+                class="formkit-header"
+                data-element="header"
+                style="color: #f5f5f5; font-size: 28px; font-weight: 700"
               >
-              <a
-                href="./services.html"
-                class="flex items-center px-4 duration-300 hover:shadow-md shadow-semi-lighter-blue rounded-full h-14 bg-semi-lighter-blue/30"
-                >Read More</a
+                <h2>Join our newsletter</h2>
+              </div>
+              <div
+                class="formkit-content"
+                data-element="content"
+                style="color: #d9d9d9; font-size: 18px; font-weight: 400"
               >
+                <p>Receive tips and tricks on how to lorum ipsum.</p>
+              </div>
+            </div>
+            <div>
+              <ul
+                class="formkit-alert formkit-alert-error"
+                data-element="errors"
+                data-group="alert"
+              ></ul>
+              <div class="formkit-field">
+                <input
+                  id="emailInput"
+                  class="formkit-input"
+                  name="email_address"
+                  aria-label="Email Address"
+                  placeholder="Enter Business Email"
+                  required=""
+                  type="email"
+                  style="
+                    color: rgb(146, 146, 146);
+                    border-color: rgb(228, 231, 234);
+                    border-radius: 1000px;
+                    font-weight: 400;
+                    max-width: 500px;
+                  "
+                />
+              </div>
+              <div
+                data-element="fields"
+                data-stacked="false"
+                class="seva-fields formkit-fields"
+              >
+                <button
+                  type="button"
+                  data-element="submit"
+                  class="formkit-submit"
+                  style="
+                    color: rgb(255, 255, 255);
+                    background-image: linear-gradient(
+                      119deg,
+                      var(--color-dark-blue),
+                      var(--color-dark-cyan)
+                    );
+                    border-radius: 1000px;
+                    font-weight: normal;
+                  "
+                >
+                  <div class="formkit-spinner">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <span class="">Send</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

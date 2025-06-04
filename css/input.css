@@ -181,7 +181,7 @@ button {
 }
 
 .info {
-  @apply py-3 px-4 font-semibold cursor-pointer rounded-3xl bg-[linear-gradient(119deg,var(--color-deep-light-blue),var(--color-black))];
+  @apply py-3 px-8 font-semibold cursor-pointer rounded-3xl bg-[linear-gradient(119deg,var(--color-deep-light-blue),var(--color-black))];
 }
 .info-reversed {
   @apply px-4 py-3 font-semibold rounded-3xl bg-secondary-200;
