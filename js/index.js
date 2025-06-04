@@ -972,7 +972,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         </li>
         </ul>
         <a
-          href="./Services/case-study.html?i=${index}"
+          href="./case-study.html?i=${index}"
           class="relative max-w-fit md:self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
 
         >
