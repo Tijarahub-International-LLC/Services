@@ -367,6 +367,8 @@ togglePlan?.addEventListener("click", (e) => {
     premiumPrice.textContent = plansContent.premium.annually.price;
     premiumLink.href = "https://tijarahub.com/vendor-registration/?plan_id=6"
     standardLink.href = "https://tijarahub.com/vendor-registration/?plan_id=5"
+
+
     //====== Standard Content ======//
     // services Content
     plansContent.services.map((service, index) => {
@@ -1218,3 +1220,315 @@ services.forEach(({ title, img, services }, index) => {
 
   servicesContainer?.insertAdjacentHTML("beforeend", card);
 })
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const planSelect = document.getElementById('plan');
+  const calculateBtn = document.getElementById('calculate-btn');
+  const customPlanForm = document.getElementById('custom-plan-form');
+  const customBuyers = document.getElementById('custom-buyers');
+  const customSales = document.getElementById('custom-sales');
+  const customResearch = document.getElementById('custom-research');
+  const customCampaigns = document.getElementById('custom-campaigns');
+  const customListings = document.getElementById('custom-listings');
+
+  // Chart initialization
+  const ctx = document.getElementById('growth-chart').getContext('2d');
+  let growthChart;
+
+  // Plan data
+  const plans = {
+    'standard-monthly': {
+      monthlyCost: 275,
+      annualCost: 275 * 12,
+      buyers: 8,
+      sales: 1,
+      research: 1,
+      campaigns: 1,
+      listings: 25,
+      name: "Standard Monthly"
+    },
+    'premium-monthly': {
+      monthlyCost: 460,
+      annualCost: 460 * 12,
+      buyers: 15,
+      sales: 2,
+      research: 2,
+      campaigns: 2,
+      listings: 60,
+      name: "Premium Monthly"
+    },
+    'standard-annual': {
+      monthlyCost: 195,
+      annualCost: 2340,
+      buyers: 8,
+      sales: 1,
+      research: 1,
+      campaigns: 1,
+      listings: 25,
+      name: "Standard Annual"
+    },
+    'premium-annual': {
+      monthlyCost: 320,
+      annualCost: 3840,
+      buyers: 15,
+      sales: 2,
+      research: 2,
+      campaigns: 2,
+      listings: 60,
+      name: "Premium Annual"
+    },
+    'custom': {
+      monthlyCost: 0,
+      annualCost: 0,
+      buyers: 8,
+      sales: 1,
+      research: 1,
+      campaigns: 1,
+      listings: 25,
+      name: "Custom Plan"
+    }
+  };
+
+  // Traditional cost benchmark
+  const traditionalCost = 7250;
+
+  function formatCurrency(amount) {
+    return '$' + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function format(amount) {
+    return amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+  function calculateCustomPlanCost() {
+    // Pricing model for custom plan
+    const buyers = parseInt(customBuyers.value) || 0;
+    const sales = parseInt(customSales.value) || 0;
+    const research = parseInt(customResearch.value) || 0;
+    const campaigns = parseInt(customCampaigns.value) || 0;
+    const listings = parseInt(customListings.value) || 0;
+
+    // Calculate costs
+    const buyersCost = buyers * 10;
+    const salesCost = sales * 150;
+    const researchCost = research * 250;
+    const campaignsCost = campaigns * 50;
+    const listingsCost = listings * 5;
+
+    // Base fee for the platform
+    const baseFee = 50;
+
+    // Monthly and annual cost
+    const monthlyCost = baseFee + buyersCost + salesCost + campaignsCost + (listingsCost / 12);
+    const annualCost = (baseFee * 12) + (buyersCost * 12) + (salesCost * 12) +
+      (researchCost) + (campaignsCost * 12) + listingsCost;
+
+    return {
+      monthlyCost,
+      annualCost,
+      buyers,
+      sales,
+      research,
+      campaigns,
+      listings
+    };
+  }
+
+
+  function updateGrowthChart(planData, targetLeeads, targeetRevenuePerLead) {
+    if (growthChart) {
+      growthChart.destroy();
+    }
+
+    //const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'];
+    // Extract target values from planData
+    const targetLeads = targetLeeads;  // e.g., 96
+    const targetRevenuePerLead = targeetRevenuePerLead;  // e.g., 15000
+
+    // Generate linearly increasing leads (from 0 to targetLeads)
+    const leadsData = [];
+    const leadIncrement = targetLeads / (months.length - 1);
+
+    // Generate linearly increasing revenue per lead (from 5000 to targetRevenuePerLead)
+    const revenuePerLeadData = [];
+    const revenueIncrement = targetRevenuePerLead / (months.length - 1);
+    //(targetRevenuePerLead - 15000) / (months.length - 1)
+    // Generate monthly data
+    const revenueData = [];
+    let totalRevenue = 0;
+
+    months.forEach((_, index) => {
+      // Calculate leads for this month
+      const leads = Math.min(targetLeads, index * leadIncrement);
+      leadsData.push(Math.round(leads));
+
+      // Calculate revenue per lead for this month
+      const revPerLead = 15000 + index * ((targetRevenuePerLead - 15000) / (months.length - 1));
+      revenuePerLeadData.push(revPerLead);
+
+      // Calculate monthly revenue and cumulative total
+      const monthlyRevenue = leads * revPerLead;
+      totalRevenue += monthlyRevenue;
+      revenueData.push(Math.round(totalRevenue));
+    });
+
+    growthChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: 'No. of Leads',
+            data: leadsData,
+            backgroundColor: 'rgba(52, 152, 219, 0.7)',
+            borderColor: 'rgba(52, 152, 219, 1)',
+            borderWidth: 1
+          },
+          {
+            label: 'Cumulative Revenue',
+            data: revenueData,
+            type: 'line',
+            fill: false,
+            borderColor: 'rgba(231, 76, 60, 1)',
+            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            borderWidth: 2,
+            pointRadius: 4,
+            pointBackgroundColor: 'rgba(231, 76, 60, 1)',
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'No. of Leads'
+            },
+            max: targetLeads   // Add 10% headroom
+          },
+          y1: {
+            position: 'right',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Revenue ($)'
+            },
+            grid: {
+              drawOnChartArea: false,
+            },
+            // Set max to final cumulative revenue + 10%
+            max: revenueData[revenueData.length - 1].toFixed(0) * 1.1
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Annual Sales Projection for ' + planData.name,
+            font: {
+              size: 16
+            }
+          },
+          legend: {
+            position: 'top',
+          },
+          tooltip: {
+            callbacks: {
+              afterBody: function (context) {
+                const index = context[0].dataIndex;
+                return `Revenue/Lead: $${revenuePerLeadData[index].toFixed(2)}`;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  function updateCalculator() {
+    const selectedPlan = planSelect.value;
+    let planData = { ...plans[selectedPlan] }; // Clone plan data
+    features_table = document.querySelector('.features-table');
+    features_title = document.querySelector('.features-title');
+    annualsavings = document.getElementById('savings-box');
+    // Show/hide custom plan form
+    if (selectedPlan === 'custom') {
+      customPlanForm.classList.add('active');
+      features_title.style.display = 'none';
+      features_table.style.display = 'none';
+      annualsavings.style.display = 'none';
+      planData = { ...planData, ...calculateCustomPlanCost() };
+    } else {
+      customPlanForm.classList.remove('active');
+      features_title.style.display = 'flex';
+      features_table.style.display = 'flex';
+      annualsavings.style.display = 'block';
+    }
+
+    // Update features display
+    document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
+    document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
+    document.getElementById('research-value').textContent = planData.research + ' per year';
+    document.getElementById('campaigns-value').textContent = planData.campaigns + ' per month';
+    document.getElementById('listings-value').textContent = planData.listings + ' products';
+
+    // Update cost display
+    document.getElementById('monthly-cost').textContent = formatCurrency(planData.monthlyCost);
+    document.getElementById('annual-cost').textContent = formatCurrency(planData.annualCost);
+
+    // Calculate savings
+    const savings = traditionalCost - planData.annualCost;
+    document.getElementById('savings').textContent = formatCurrency(savings);
+    document.getElementById('Avg_order').textContent = '$' + format(format(planData.buyers * 12 * 0.03) * 5000) + ' to ' + '$' + format(format(planData.buyers * 12 * 0.05) * 50000) + ' /year';
+    document.getElementById('tijara-cost').textContent = format(planData.buyers * 12 * 0.03) + ' to ' + format(planData.buyers * 12 * 0.05) + ' Buyers/year';
+    document.getElementById('Potential-Leeds').textContent = planData.buyers * 12 + ' Leeds/year';
+    document.getElementById('Retention-Rate').textContent = format(format(planData.buyers * 12 * 0.03) * 0.75) + ' to ' + format(format(planData.buyers * 12 * 0.05) * 0.75) + ' Buyers/year';
+    // Update savings display style
+    const savingsBox = document.getElementById('savings-box');
+    if (savings < 0) {
+      savingsBox.classList.remove('savings');
+      savingsBox.classList.add('negative');
+    } else {
+      savingsBox.classList.remove('negative');
+      savingsBox.classList.add('savings');
+    }
+    targetLeads = planData.buyers * 12;
+    targetRevenuePerLead = ((planData.buyers * 12 * 0.03) * 5000) + ((planData.buyers * 12 * 0.05) * 50000);
+    console.log(((planData.buyers * 12 * 0.03) * 5000))
+    console.log(((planData.buyers * 12 * 0.05) * 50000))
+    console.log('Target Leads:', targetLeads);
+
+    console.log('Target Revenue per Lead:', targetRevenuePerLead);
+    // Update growth chart
+    updateGrowthChart(planData, targetLeads, targetRevenuePerLead);
+  }
+
+  // Initial calculation
+  updateCalculator();
+
+  // Event listeners
+  calculateBtn.addEventListener('click', updateCalculator);
+  planSelect.addEventListener('change', updateCalculator);
+
+  // Listen to custom plan input changes
+  customBuyers.addEventListener('change', function () {
+    if (planSelect.value === 'custom') updateCalculator();
+  });
+  customSales.addEventListener('change', function () {
+    if (planSelect.value === 'custom') updateCalculator();
+  });
+  customResearch.addEventListener('change', function () {
+    if (planSelect.value === 'custom') updateCalculator();
+  });
+  customCampaigns.addEventListener('change', function () {
+    if (planSelect.value === 'custom') updateCalculator();
+  });
+  customListings.addEventListener('change', function () {
+    if (planSelect.value === 'custom') updateCalculator();
+  });
+
+
+});
