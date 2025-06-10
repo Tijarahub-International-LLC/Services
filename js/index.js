@@ -2,6 +2,8 @@
 AOS.init();
 let index;
 
+
+let chartContentColor = "#fff";
 const caseStudies = [
   {
     id: 1,
@@ -766,21 +768,21 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
 
 // Handle the lang options toggle
 const handleLangOptions = () => {
-  langMenu.classList.toggle("opacity-0")
-  langMenu.classList.toggle("-z-10")
+  langMenu?.classList.toggle("opacity-0")
+  langMenu?.classList.toggle("-z-10")
 }
 
 
 document.body.addEventListener("click", (e) => {
   if (e.target != document.querySelector(".lang-icon") && e.target != langMenu) {
-    if (!langMenu.classList.contains("opacity-0")) {
+    if (!langMenu?.classList.contains("opacity-0")) {
       handleLangOptions()
     }
   }
 })
 
 
-langToggle.addEventListener("click", handleLangOptions)
+langToggle?.addEventListener("click", handleLangOptions)
 const submitButton = document.querySelector('.formkit-submit')
 
 const email = document.getElementById('emailInput')
@@ -1223,23 +1225,24 @@ services.forEach(({ title, img, services }, index) => {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const planSelect = document.getElementById('plan');
-  const calculateBtn = document.getElementById('calculate-btn');
-  const customPlanForm = document.getElementById('custom-plan-form');
-  const customBuyers = document.getElementById('custom-buyers');
-  const customSales = document.getElementById('custom-sales');
-  const customResearch = document.getElementById('custom-research');
-  const customCampaigns = document.getElementById('custom-campaigns');
-  const customListings = document.getElementById('custom-listings');
+
+document.addEventListener("DOMContentLoaded", function () {
+  const planSelect = document.getElementById("plan");
+  const calculateBtn = document.getElementById("calculate-btn");
+  const customPlanForm = document.getElementById("custom-plan-form");
+  const customBuyers = document.getElementById("custom-buyers");
+  const customSales = document.getElementById("custom-sales");
+  const customResearch = document.getElementById("custom-research");
+  const customCampaigns = document.getElementById("custom-campaigns");
+  const customListings = document.getElementById("custom-listings");
 
   // Chart initialization
-  const ctx = document.getElementById('growth-chart').getContext('2d');
+  const ctx = document.getElementById("growth-chart")?.getContext("2d");
   let growthChart;
 
   // Plan data
   const plans = {
-    'standard-monthly': {
+    "standard-monthly": {
       monthlyCost: 275,
       annualCost: 275 * 12,
       buyers: 8,
@@ -1247,9 +1250,9 @@ document.addEventListener('DOMContentLoaded', function () {
       research: 1,
       campaigns: 1,
       listings: 25,
-      name: "Standard Monthly"
+      name: "Standard Monthly",
     },
-    'premium-monthly': {
+    "premium-monthly": {
       monthlyCost: 460,
       annualCost: 460 * 12,
       buyers: 15,
@@ -1257,9 +1260,9 @@ document.addEventListener('DOMContentLoaded', function () {
       research: 2,
       campaigns: 2,
       listings: 60,
-      name: "Premium Monthly"
+      name: "Premium Monthly",
     },
-    'standard-annual': {
+    "standard-annual": {
       monthlyCost: 195,
       annualCost: 2340,
       buyers: 8,
@@ -1267,9 +1270,9 @@ document.addEventListener('DOMContentLoaded', function () {
       research: 1,
       campaigns: 1,
       listings: 25,
-      name: "Standard Annual"
+      name: "Standard Annual",
     },
-    'premium-annual': {
+    "premium-annual": {
       monthlyCost: 320,
       annualCost: 3840,
       buyers: 15,
@@ -1277,9 +1280,9 @@ document.addEventListener('DOMContentLoaded', function () {
       research: 2,
       campaigns: 2,
       listings: 60,
-      name: "Premium Annual"
+      name: "Premium Annual",
     },
-    'custom': {
+    custom: {
       monthlyCost: 0,
       annualCost: 0,
       buyers: 8,
@@ -1287,18 +1290,27 @@ document.addEventListener('DOMContentLoaded', function () {
       research: 1,
       campaigns: 1,
       listings: 25,
-      name: "Custom Plan"
-    }
+      name: "Custom Plan",
+    },
   };
 
   // Traditional cost benchmark
   const traditionalCost = 7250;
 
   function formatCurrency(amount) {
-    return '$' + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return (
+      "$" +
+      amount?.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })
+    );
   }
   function format(amount) {
-    return amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    return amount.toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
   }
   function calculateCustomPlanCost() {
     // Pricing model for custom plan
@@ -1319,9 +1331,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const baseFee = 50;
 
     // Monthly and annual cost
-    const monthlyCost = baseFee + buyersCost + salesCost + campaignsCost + (listingsCost / 12);
-    const annualCost = (baseFee * 12) + (buyersCost * 12) + (salesCost * 12) +
-      (researchCost) + (campaignsCost * 12) + listingsCost;
+    const monthlyCost =
+      baseFee +
+      buyersCost +
+      salesCost +
+      campaignsCost +
+      listingsCost / 12;
+    const annualCost =
+      baseFee * 12 +
+      buyersCost * 12 +
+      salesCost * 12 +
+      researchCost +
+      campaignsCost * 12 +
+      listingsCost;
 
     return {
       monthlyCost,
@@ -1330,21 +1352,24 @@ document.addEventListener('DOMContentLoaded', function () {
       sales,
       research,
       campaigns,
-      listings
+      listings,
     };
   }
 
-
-  function updateGrowthChart(planData, targetLeeads, targeetRevenuePerLead) {
+  function updateGrowthChart(
+    planData,
+    targetLeeads,
+    targeetRevenuePerLead
+  ) {
     if (growthChart) {
       growthChart.destroy();
     }
 
     //const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const months = ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'];
+    const months = ["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"];
     // Extract target values from planData
-    const targetLeads = targetLeeads;  // e.g., 96
-    const targetRevenuePerLead = targeetRevenuePerLead;  // e.g., 15000
+    const targetLeads = targetLeeads; // e.g., 96
+    const targetRevenuePerLead = targeetRevenuePerLead; // e.g., 15000
 
     // Generate linearly increasing leads (from 0 to targetLeads)
     const leadsData = [];
@@ -1364,7 +1389,9 @@ document.addEventListener('DOMContentLoaded', function () {
       leadsData.push(Math.round(leads));
 
       // Calculate revenue per lead for this month
-      const revPerLead = 15000 + index * ((targetRevenuePerLead - 15000) / (months.length - 1));
+      const revPerLead =
+        15000 +
+        index * ((targetRevenuePerLead - 15000) / (months.length - 1));
       revenuePerLeadData.push(revPerLead);
 
       // Calculate monthly revenue and cumulative total
@@ -1374,134 +1401,191 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     growthChart = new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       data: {
         labels: months,
         datasets: [
           {
-            label: 'No. of Leads',
+            label: "No. of Leads",
             data: leadsData,
-            backgroundColor: 'rgba(52, 152, 219, 0.7)',
-            borderColor: 'rgba(52, 152, 219, 1)',
-            borderWidth: 1
+            backgroundColor: "rgba(52, 152, 219, 0.7)",
+            borderColor: "rgba(52, 152, 219, 1)",
+            borderWidth: 1,
           },
           {
-            label: 'Cumulative Revenue',
+            label: "Cumulative Revenue",
             data: revenueData,
-            type: 'line',
+            type: "line",
             fill: false,
-            borderColor: 'rgba(231, 76, 60, 1)',
-            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            borderColor: "rgba(231, 76, 60, 1)",
+            backgroundColor: "rgba(231, 76, 60, 0.2)",
             borderWidth: 2,
             pointRadius: 4,
-            pointBackgroundColor: 'rgba(231, 76, 60, 1)',
-            yAxisID: 'y1'
-          }
-        ]
+            pointBackgroundColor: "rgba(231, 76, 60, 1)",
+            yAxisID: "y1",
+          },
+        ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
           y: {
+            ticks: {
+              color: "#f5f5f5",
+            },
             beginAtZero: true,
             title: {
               display: true,
-              text: 'No. of Leads'
+              text: "No. of Leads",
+              color: chartContentColor,
             },
-            max: targetLeads   // Add 10% headroom
+            max: targetLeads * 1.1, // Add 10% headroom
           },
           y1: {
-            position: 'right',
+            ticks: {
+              color: "#f5f5f5",
+            },
+            position: "right",
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Revenue ($)'
+              text: "Revenue ($)",
+              color: chartContentColor
             },
             grid: {
               drawOnChartArea: false,
             },
             // Set max to final cumulative revenue + 10%
-            max: revenueData[revenueData.length - 1].toFixed(0) * 1.1
+            max: revenueData[revenueData.length - 1] * 1.1,
+          },
+          x: {
+            ticks: {
+              color: "#f5f5f5" // Set x-axis tick labels color
+            }
           }
+
         },
         plugins: {
           title: {
             display: true,
-            text: 'Annual Sales Projection for ' + planData.name,
+            text: "Annual Sales Projection for " + planData.name,
             font: {
-              size: 16
-            }
+              size: 16,
+            },
+            color: chartContentColor
           },
           legend: {
-            position: 'top',
+            position: "top",
+            labels: {
+              color: "#f5f5f5"
+            }
           },
           tooltip: {
             callbacks: {
               afterBody: function (context) {
                 const index = context[0].dataIndex;
-                return `Revenue/Lead: $${revenuePerLeadData[index].toFixed(2)}`;
-              }
-            }
-          }
-        }
-      }
+                return `Revenue/Lead: $${revenuePerLeadData[
+                  index
+                ].toFixed(2)}`;
+              },
+            },
+          },
+        },
+      },
     });
   }
   function updateCalculator() {
-    const selectedPlan = planSelect.value;
+    const selectedPlan = planSelect?.value;
     let planData = { ...plans[selectedPlan] }; // Clone plan data
-    features_table = document.querySelector('.features-table');
-    features_title = document.querySelector('.features-title');
-    annualsavings = document.getElementById('savings-box');
+    features_table = document.querySelector(".features-table");
+    features_title = document.querySelector(".features-title");
+    annualsavings = document.getElementById("savings-box");
     // Show/hide custom plan form
-    if (selectedPlan === 'custom') {
-      customPlanForm.classList.add('active');
-      features_title.style.display = 'none';
-      features_table.style.display = 'none';
-      annualsavings.style.display = 'none';
+    if (selectedPlan === "custom") {
+      customPlanForm.classList.add("container-active");
+      features_title.style.display = "none";
+      features_table.style.display = "none";
+      annualsavings.style.display = "none";
       planData = { ...planData, ...calculateCustomPlanCost() };
     } else {
-      customPlanForm.classList.remove('active');
-      features_title.style.display = 'flex';
-      features_table.style.display = 'flex';
-      annualsavings.style.display = 'block';
+      customPlanForm?.classList.remove("container-active");
+      features_title ? features_title.style.display = "flex" : null;
+      features_table ? features_table.style.display = "flex" : null;
+      annualsavings ? annualsavings.style.display = "block" : null;
     }
 
     // Update features display
-    document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
-    document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
-    document.getElementById('research-value').textContent = planData.research + ' per year';
-    document.getElementById('campaigns-value').textContent = planData.campaigns + ' per month';
-    document.getElementById('listings-value').textContent = planData.listings + ' products';
+    document.getElementById("buyers-value") ? document.getElementById("buyers-value").textContent =
+      planData.buyers + " buyers/month" : null;
+
+    document.getElementById("sales-value") ? document.getElementById("sales-value").textContent =
+      planData.sales +
+      " sale" +
+      (planData.sales !== 1 ? "s" : "") +
+      "/month" : null;
+    document.getElementById("research-value") ? document.getElementById("research-value").textContent =
+      planData.research + " / year" : null;
+    document.getElementById("campaigns-value") ? document.getElementById("campaigns-value").textContent =
+      planData.campaigns + " / month" : null;
+    document.getElementById("listings-value") ? document.getElementById("listings-value").textContent =
+      planData.listings + " products" : null;
 
     // Update cost display
-    document.getElementById('monthly-cost').textContent = formatCurrency(planData.monthlyCost);
-    document.getElementById('annual-cost').textContent = formatCurrency(planData.annualCost);
+    document.getElementById("monthly-cost") ? document.getElementById("monthly-cost").textContent = formatCurrency(
+      planData.monthlyCost
+    ) : null;
+    document.getElementById("annual-cost") ? document.getElementById("annual-cost").textContent = formatCurrency(
+      planData.annualCost
+    ) : null;
 
     // Calculate savings
     const savings = traditionalCost - planData.annualCost;
-    document.getElementById('savings').textContent = formatCurrency(savings);
-    document.getElementById('Avg_order').textContent = '$' + format(format(planData.buyers * 12 * 0.03) * 5000) + ' to ' + '$' + format(format(planData.buyers * 12 * 0.05) * 50000) + ' /year';
-    document.getElementById('tijara-cost').textContent = format(planData.buyers * 12 * 0.03) + ' to ' + format(planData.buyers * 12 * 0.05) + ' Buyers/year';
-    document.getElementById('Potential-Leeds').textContent = planData.buyers * 12 + ' Leeds/year';
-    document.getElementById('Retention-Rate').textContent = format(format(planData.buyers * 12 * 0.03) * 0.75) + ' to ' + format(format(planData.buyers * 12 * 0.05) * 0.75) + ' Buyers/year';
+    document.getElementById("savings") ? document.getElementById("savings").textContent =
+      formatCurrency(savings) : null;
+    document.getElementById("Avg_order") ? document.getElementById("Avg_order").textContent =
+      "$" +
+      format(Math.floor(planData.buyers * 12 * 0.03) * 5000) +
+      " to " +
+      "$" +
+      format(Math.floor(planData.buyers * 12 * 0.05) * 50000) +
+      " /year" : null;
+    document.getElementById("tijara-cost") ? document.getElementById("tijara-cost").textContent =
+      format(Math.floor(planData.buyers * 12 * 0.03)) +
+      " to " +
+      format(Math.floor(planData.buyers * 12 * 0.05)) +
+      " Buyers/year" : null;
+    document.getElementById("Potential-Leeds") ? document.getElementById("Potential-Leeds").textContent =
+      planData.buyers * 12 + " Leeds/year" : null;
+    document.getElementById("Retention-Rate") ? document.getElementById("Retention-Rate").textContent =
+      format(Math.floor(Math.floor(planData.buyers * 12 * 0.03) * 0.75)) +
+      " to " +
+      format(Math.floor(Math.floor(planData.buyers * 12 * 0.05) * 0.75)) +
+      " Buyers/year" : null;
     // Update savings display style
-    const savingsBox = document.getElementById('savings-box');
+    const savingsBox = document.getElementById("savings-box");
     if (savings < 0) {
-      savingsBox.classList.remove('savings');
-      savingsBox.classList.add('negative');
+      savingsBox.classList.remove("savings");
+      savingsBox.classList.add("negative", "bg-red-50", "border-red-500"); // Added Tailwind classes
     } else {
-      savingsBox.classList.remove('negative');
-      savingsBox.classList.add('savings');
+      savingsBox?.classList.remove(
+        "negative",
+        "bg-red-50",
+        "border-red-500"
+      ); // Removed Tailwind classes
+      savingsBox?.classList.add(
+        "savings",
+        "bg-blue-50",
+        "border-green-500"
+      ); // Added Tailwind classes
     }
-    targetLeads = planData.buyers * 12;
-    targetRevenuePerLead = ((planData.buyers * 12 * 0.03) * 5000) + ((planData.buyers * 12 * 0.05) * 50000);
-    console.log(((planData.buyers * 12 * 0.03) * 5000))
-    console.log(((planData.buyers * 12 * 0.05) * 50000))
-    console.log('Target Leads:', targetLeads);
 
-    console.log('Target Revenue per Lead:', targetRevenuePerLead);
+    targetLeads = planData.buyers * 12;
+    targetRevenuePerLead =
+      (planData.buyers * 12 * 0.03 * 5000 +
+        planData.buyers * 12 * 0.05 * 50000) /
+      2; // Average of min and max revenue
+
     // Update growth chart
     updateGrowthChart(planData, targetLeads, targetRevenuePerLead);
   }
@@ -1510,25 +1594,24 @@ document.addEventListener('DOMContentLoaded', function () {
   updateCalculator();
 
   // Event listeners
-  calculateBtn.addEventListener('click', updateCalculator);
-  planSelect.addEventListener('change', updateCalculator);
+  calculateBtn?.addEventListener("click", updateCalculator);
+  planSelect?.addEventListener("change", updateCalculator);
 
   // Listen to custom plan input changes
-  customBuyers.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
+  customBuyers?.addEventListener("change", function () {
+    if (planSelect.value === "custom") updateCalculator();
   });
-  customSales.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
+  customSales?.addEventListener("change", function () {
+    if (planSelect.value === "custom") updateCalculator();
   });
-  customResearch.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
+  customResearch?.addEventListener("change", function () {
+    if (planSelect.value === "custom") updateCalculator();
   });
-  customCampaigns.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
+  customCampaigns?.addEventListener("change", function () {
+    if (planSelect.value === "custom") updateCalculator();
   });
-  customListings.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
+  customListings?.addEventListener("change", function () {
+    if (planSelect.value === "custom") updateCalculator();
   });
-
-
 });
+
