@@ -843,7 +843,7 @@ const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
 let slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
-if (document.body.dir == "rtl") slideWidth = -slideWidth
+if (document.dir == "rtl") slideWidth = -slideWidth
 let autoScrollInterval
 rightArrow?.addEventListener('click', () => {
 
@@ -857,14 +857,18 @@ leftArrow?.addEventListener('click', () => {
 })
 
 autoScroll = () => {
-  autoScrollInterval = setInterval(() => {
+  
 
-    journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
-
-    if (journeyCarousel?.scrollLeft + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
-      journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
-    }
-  }, 3000);
+    autoScrollInterval = setInterval(() => {
+      
+      journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" });
+      
+   
+      if (Math.abs(journeyCarousel?.scrollLeft) + journeyCarousel?.offsetWidth >= journeyCarousel?.scrollWidth) {
+        journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 3000);
+  
 };
 
 autoScroll()
@@ -1224,6 +1228,7 @@ services.forEach(({ title, img, services }, index) => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (!window.location.href.includes("index") || !window.location.href.includes("indexar") || !window.location.href.includes("pricing") || !window.location.href.includes("pricingar")) return
   const planSelect = document.getElementById('plan');
   const calculateBtn = document.getElementById('calculate-btn');
   const customPlanForm = document.getElementById('custom-plan-form');
