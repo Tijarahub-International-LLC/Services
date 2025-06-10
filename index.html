@@ -627,7 +627,7 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 Cost to Acquire One Buyer Offline
               </h4>
               <span
-                class="h3 !font-bold block py-2.5 px-6 rounded-full text-white bg-[#2a425c]"
+                class="h3 !font-bold block py-2.5 px-6 rounded-full bg-[#2a425c]"
                 >~$3,250</span
               >
             </div>
@@ -1230,8 +1230,315 @@ with over +9.5K Wholesale Buyers With TijaraHub"
       </section>
 
       <!-- Calculator -->
-      <div class="text-center">
-        <a href="./calc.html" class="primary-btn !px-16">Calculate</a>
+      <div class="container grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section class="card rounded-lg p-6">
+          <h2
+            class="text-2xl font-semibold mb-5 pb-2 border-b-2 border-light-cyan"
+          >
+            Select Your Plan
+          </h2>
+
+          <div class="form-group mb-5">
+            <label for="plan" class="block mb-2 font-semibold"
+              >Subscription Plan</label
+            >
+            <select
+              id="plan"
+              class="w-full p-3 border-2 focus:bg-dark-blue border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+            >
+              <option value="standard-annual">
+                Standard Annual
+                <span
+                  class="plan-badge bg-blue-500 text-xs px-2 py-1 rounded ml-2"
+                  >$2,340/year</span
+                >
+              </option>
+              <option value="premium-annual">
+                Premium Annual
+                <span
+                  class="plan-badge bg-yellow-500 text-white text-xs px-2 py-1 rounded ml-2"
+                  >$3,840/year</span
+                >
+              </option>
+              <option value="standard-monthly">
+                Standard Monthly
+                <span
+                  class="plan-badge bg-blue-500 text-white text-xs px-2 py-1 rounded ml-2"
+                  >$275/month</span
+                >
+              </option>
+              <option value="premium-monthly">
+                Premium Monthly
+                <span
+                  class="plan-badge bg-yellow-500 text-white text-xs px-2 py-1 rounded ml-2"
+                  >$460/month</span
+                >
+              </option>
+              <option value="custom">
+                Build your own plan
+                <span
+                  class="plan-badge bg-green-500 text-white text-xs px-2 py-1 rounded ml-2"
+                  >Custom</span
+                >
+              </option>
+            </select>
+          </div>
+
+          <div
+            id="custom-plan-form"
+            class="custom-plan-form hidden mt-5 p-4 rounded-lg"
+          >
+            <h3 class="text-xl font-semibold mb-4">Build your own plan</h3>
+
+            <div class="custom-input-group flex mb-4 items-center">
+              <label for="custom-buyers" class="w-7/12 mb-0"
+                >Potential Leads /month</label
+              >
+              <input
+                type="number"
+                id="custom-buyers"
+                min="0"
+                max="15"
+                value="1"
+                oninput="this.value = Math.min(15, Math.max(0, this.value))"
+                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <div class="custom-input-group flex mb-4 items-center">
+              <label for="custom-sales" class="w-7/12 mb-0"
+                >International Export sales</label
+              >
+              <input
+                type="number"
+                id="custom-sales"
+                min="0"
+                max="2"
+                value="1"
+                oninput="this.value = Math.min(2, Math.max(0, this.value))"
+                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <div class="custom-input-group flex mb-4 items-center">
+              <label for="custom-research" class="w-7/12 mb-0"
+                >Tailor-made Market Research /year</label
+              >
+              <input
+                type="number"
+                id="custom-research"
+                min="0"
+                max="2"
+                value="1"
+                oninput="this.value = Math.min(2, Math.max(0, this.value))"
+                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <div class="custom-input-group flex mb-4 items-center">
+              <label for="custom-campaigns" class="w-7/12 mb-0"
+                >Paid Marketing campaigns</label
+              >
+              <input
+                type="number"
+                id="custom-campaigns"
+                min="0"
+                max="2"
+                value="1"
+                oninput="this.value = Math.min(2, Math.max(0, this.value))"
+                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <div class="custom-input-group flex mb-4 items-center">
+              <label for="custom-listings" class="w-7/12 mb-0"
+                >Product listing</label
+              >
+              <input
+                type="number"
+                id="custom-listings"
+                min="1"
+                max="60"
+                value="25"
+                oninput="this.value = Math.min(60, Math.max(0, this.value))"
+                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+
+            <div
+              class="highlight text-dark-blue bg-yellow-50 px-5 py-4 rounded-lg mt-6 border-l-4 border-yellow-500"
+            >
+              <p class="text-sm">
+                <span class="text-yellow-700 font-bold">Pricing:</span> $10 per
+                buyer lead, $150 per sale, $250 per research, $50 per campaign,
+                $5 per product listing
+              </p>
+            </div>
+          </div>
+
+          <h3 class="features-title text-xl font-semibold mt-6 mb-4">
+            Plan Features
+          </h3>
+          <table
+            class="features-table w-full border-collapse mt-4 flex flex-col"
+          >
+            <thead class="w-full">
+              <tr class="w-full bg-gray-100 text-dark-blue flex">
+                <th class="text-left py-3 px-4 w-full">Service</th>
+                <th class="text-left py-3 px-4 w-full">Value</th>
+              </tr>
+            </thead>
+            <tbody class="w-full">
+              <tr class="flex w-full border-b border-gray-500">
+                <td class="w-1/2 py-3 px-4">Potential Leads</td>
+                <td id="buyers-value" class="w-1/2 py-3 px-4">
+                  8 buyers/month
+                </td>
+              </tr>
+              <tr class="flex w-full border-b border-gray-500">
+                <td class="w-1/2 py-3 px-4">International Export sales</td>
+                <td id="sales-value" class="w-1/2 py-3 px-4">1 sales/month</td>
+              </tr>
+              <tr class="flex w-full border-b border-gray-500">
+                <td class="w-1/2 py-3 px-4">Tailor-made Market Research</td>
+                <td id="research-value" class="w-1/2 py-3 px-4">1 / year</td>
+              </tr>
+              <tr class="flex w-full border-b border-gray-500">
+                <td class="w-1/2 py-3 px-4">Paid Marketing campaigns</td>
+                <td id="campaigns-value" class="w-1/2 py-3 px-4">1 / month</td>
+              </tr>
+              <tr class="flex w-full border-b border-gray-500">
+                <td class="w-1/2 py-3 px-4">Product listing</td>
+                <td id="listings-value" class="w-1/2 py-3 px-4">25 products</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div
+            class="highlight text-dark-blue bg-yellow-50 px-5 py-4 rounded-lg mt-6 border-l-4 border-yellow-500"
+          >
+            <h3 class="text-xl font-semibold text-yellow-600 mb-3">
+              Traditional Cost Benchmark
+            </h3>
+            <p class="mb-2">
+              The traditional method of international expansion typically costs:
+            </p>
+            <p class="font-bold text-lg">
+              $7,250 per year
+              <span class="text-sm"
+                >(Average of Exhibition, Trade Mission, and Commissioned
+                Agent)</span
+              >
+            </p>
+          </div>
+          <button
+            id="calculate-btn"
+            class="ocean-gradient py-3 px-6 rounded-md text-base cursor-pointer transition-colors duration-300 block w-full mt-5 font-semibold"
+          >
+            Update Calculation
+          </button>
+        </section>
+
+        <section class="card rounded-lg p-6">
+          <h2
+            class="text-2xl font-semibold mb-5 pb-2 border-b-2 border-light-cyan"
+          >
+            Calculation Results
+          </h2>
+
+          <div class="results grid grid-cols-auto-fit gap-5 mt-5">
+            <div
+              class="result-box bg-light-cyan/10 border-l-4 border-light-cyan p-4 rounded-r-md"
+            >
+              <h3 class="text-base mb-2">Monthly Cost</h3>
+              <div
+                class="result-value text-3xl font-bold text-light-cyan"
+                id="monthly-cost"
+              >
+                $195
+              </div>
+            </div>
+
+            <div
+              class="result-box bg-light-cyan/10 border-l-4 border-light-cyan p-4 rounded-r-md"
+            >
+              <h3>Annual Cost</h3>
+              <div
+                class="result-value text-3xl font-bold text-light-cyan"
+                id="annual-cost"
+              >
+                $2,340
+              </div>
+            </div>
+
+            <div
+              class="result-box savings bg-green-500/10 border-l-4 border-green-500 p-4 rounded-r-md"
+              id="savings-box"
+            >
+              <h3 class="text-base mb-2">Annual Savings</h3>
+              <div
+                class="result-value text-3xl font-bold text-green-500"
+                id="savings"
+              >
+                $4,910
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison mt-8">
+            <h3 class="text-xl font-semibold mb-4">Growth Projection</h3>
+            <div class="chart-container mt-5 h-72 relative">
+              <canvas id="growth-chart"></canvas>
+            </div>
+          </div>
+
+          <div class="comparison mt-8">
+            <h3 class="text-xl font-semibold mb-4">Facts</h3>
+            <table class="comparison-table w-full border-collapse mt-4">
+              <tbody>
+                <tr class="trad-cost bg-red-50 text-red-900">
+                  <td class="py-3 px-4 border-b border-gray-200">
+                    Number of leads
+                  </td>
+                  <td
+                    id="Potential-Leeds"
+                    class="py-3 px-4 border-b border-gray-200"
+                  >
+                    96 Leed/year
+                  </td>
+                </tr>
+                <tr class="tijara-cost bg-blue-50 text-blue-500">
+                  <td class="py-3 px-4 border-b border-gray-200">
+                    Active Buyers (3%-5%)
+                  </td>
+                  <td
+                    id="tijara-cost"
+                    class="py-3 px-4 border-b border-gray-200"
+                  >
+                    From 3 to 5 Buyer
+                  </td>
+                </tr>
+                <tr class="Retention-Rate bg-green-50 text-green-700">
+                  <td class="py-3 px-4 border-b border-gray-200">
+                    Retention Buyers
+                  </td>
+                  <td
+                    id="Retention-Rate"
+                    class="py-3 px-4 border-b border-gray-200"
+                  >
+                    3 Buyers
+                  </td>
+                </tr>
+                <tr class="Avg_order bg-orange-50 text-orange-400 font-bold">
+                  <td class="py-3 px-4 border-b-0">Total Revenue for SMEs</td>
+                  <td id="Avg_order" class="py-3 px-4 border-b-0">
+                    $5k to $50k /Order
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
 
       <!-- <section id="calc-section" class="container" data-aos="fade-up">
@@ -1714,7 +2021,7 @@ with over +9.5K Wholesale Buyers With TijaraHub"
               ></i>
             </button>
             <div
-              class="answer w-[100%] bg-transparent text-white max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
+              class="answer w-[100%] bg-transparent max-h-0 rounded-lg transition-all ease-in-out duration-300 overflow-hidden"
             >
               <p class="p-4 border rounded-lg text-start body">
                 Sellers can monitor their performance through: Dashboard

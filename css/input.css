@@ -220,6 +220,18 @@ button {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 53%);
 }
 
+.custom-plan-form.container-active {
+  display: block;
+}
+  input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
 
    .formkit-form[data-uid="3f5cb920f8"] * {
         box-sizing: border-box;
