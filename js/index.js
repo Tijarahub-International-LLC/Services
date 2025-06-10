@@ -912,7 +912,7 @@ function dragEnd() {
       journeyCarousel?.scrollTo({ left: 0, behavior: "smooth" });
     }
   }, 3000);
-  journeyCarousel.scrollLeft = Math.round(journeyCarousel.scrollLeft / slideWidth) * slideWidth
+  journeyCarousel.scrollTo({left:Math.round(journeyCarousel.scrollLeft / slideWidth) * slideWidth , behavior:"smooth"})
   journeyCarousel.style.cursor = "grab"
   holding = false
 }
@@ -1149,6 +1149,19 @@ function addContentToPage(index) {
             <span class="font-bold"> Inspection Ref</span> :${caseStudy.inspection.ref}
             </p>
             <hr class="text-gray-500"/>
+            <div class="flex flex-col items-center gap-10 relative my-20">
+          <h3 class="h3 text-light-cyan font-semibold">Customer Feedback</h3>
+          <h3
+            class="h3 quote"
+          >
+            Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership
+          </h3>
+          <div class="flex flex-col gap-1 text-center">
+            <h4 class="h4">Anas Elwy</h4>
+            <span class="text-gray-400">Founder & CEO Premium Food Industries</span>
+          </div>
+          </div>
+          <hr class="text-gray-500"/>
             <h3 class="h3 text-light-cyan font-semibold">Outcome &amp; Value Delivered</h3>
             <ul class="flex flex-col gap-2 text-base">
               <li>
