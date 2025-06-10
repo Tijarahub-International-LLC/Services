@@ -1097,7 +1097,7 @@ function addContentToPage(index) {
                 `).join("")}
             </div>
             <div class="flex items-center gap-5 *:rounded-2xl">
-              ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_${caseStudy.preWorksImgs.length}_-_1.25rem)]"/>`).join("")}
+              ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_3-_1.25rem)]"/>`).join("")}
             </div>
             <hr class="text-gray-500"/>
             <h3 class="h3 text-light-cyan font-semibold">Manufacturer</h3>
