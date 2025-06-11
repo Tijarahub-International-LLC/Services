@@ -1244,7 +1244,6 @@ services.forEach(({ title, img, services }, index) => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (!window.location.href.includes("index") || !window.location.href.includes("indexar") || !window.location.href.includes("pricing") || !window.location.href.includes("pricingar")) return
   const planSelect = document.getElementById('plan');
   const calculateBtn = document.getElementById('calculate-btn');
   const customPlanForm = document.getElementById('custom-plan-form');
@@ -1462,21 +1461,29 @@ document.addEventListener('DOMContentLoaded', function () {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'No. of Leads'
+              text: 'No. of Leads',
+              color: "#f5f5f5",
             },
             min: 0,
             max: 15,
+            ticks: {
+              color: "#f5f5f5" // Set x-axis tick labels color
+            }
           },
           y1: {
             position: 'right',
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Revenue ($)'
+              text: 'Revenue ($)',
+              color: "#f5f5f5"
             },
             grid: {
               drawOnChartArea: false,
             },
+            ticks: {
+              color: "#f5f5f5" // Set x-axis tick labels color
+            }
             // Set max to final cumulative revenue + 10%
             // min: Math.floor(getCalcDataByLeads(8).minOrderValue * 1.1),
             // max: Math.floor(getCalcDataByLeads(8).maxOrderValue * 1.1),
@@ -1493,10 +1500,14 @@ document.addEventListener('DOMContentLoaded', function () {
             text: 'Annual Sales Projection for ' + planData.name,
             font: {
               size: 16
-            }
+            },
+            color: "#f5f5f5"
           },
           legend: {
             position: 'top',
+            labels: {
+              color: "#f5f5f5"
+            }
           },
           tooltip: {
             callbacks: {
@@ -1516,15 +1527,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let features_table = document.querySelector(".features-table");
     let features_title = document.querySelector(".features-title");
     let annualsavings = document.getElementById("savings-box");
+
     // Show/hide custom plan form
     if (selectedPlan === 'custom') {
-      customPlanForm.classList.add('active');
+      customPlanForm.classList.add('container-active');
       features_title.style.display = 'none';
       features_table.style.display = 'none';
       annualsavings.style.display = 'none';
       planData = { ...planData, ...calculateCustomPlanCost() };
     } else {
-      customPlanForm.classList.remove('active');
+      customPlanForm.classList.remove('container-active');
       features_title.style.display = 'flex';
       features_table.style.display = 'flex';
       annualsavings.style.display = 'block';
@@ -1668,5 +1680,5 @@ function getAnnualSavings(annualCost) {
   return traditionalCostBenchmark - annualCost
 }
 
-console.log(minOrderValue);
-console.log(maxOrderValue);
+// console.log(minOrderValue);
+// console.log(maxOrderValue);
