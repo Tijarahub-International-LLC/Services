@@ -197,109 +197,114 @@ const monthlyButton = document.getElementById("monthly");
 const standardPrice = document.getElementById("standard-price");
 const premiumPrice = document.getElementById("premium-price");
 
+function isEnglishVersion() {
+  return document.documentElement.getAttribute("dir") === "ltr"
+}
 
 const plansContent = {
   services: [
     {
-      text: "Services"
+      text: isEnglishVersion() ? "Services" : "الخدمات"
     },
     {
-      text: "International Export Sales",
+      text: isEnglishVersion() ? "International Export Sales" : "دعم الصادرات الدولية",
       info: "",
       gain: "1 Sales",
     },
     {
-      text: "Tailor made Market Research",
+      text: isEnglishVersion() ? "Tailor made Market Research" : "أبحاث السوق المخصصة",
       info: "",
       gain: "1 Time / Year",
     }, {
-      text: "Identifying Potential Buyers",
+      text: isEnglishVersion() ? "Identifying Potential Buyers" : "تحديد المشترين المحتملين",
       info: "",
       gain: "8 / Month",
     }, {
-      text: "Logistcs support for Door to Door",
+      text: isEnglishVersion() ? "Logistcs support for Door to Door" : "دعم لوجستي شامل",
       info: "",
       gain: true,
     }, {
-      text: "Building a brand by Drop-Shipping Services",
+      text: isEnglishVersion() ? "Building a brand by Drop-Shipping Services" : "بناء العلامة التجارية عبر الدروب شيبنج",
       info: "",
       gain: true,
     }, {
-      text: "Buyers from DataBase",
+      text: isEnglishVersion() ? "Buyers from DataBase" : "خدمة العملاء للمشترين",
       info: "",
       gain: "6 / Month",
     }, {
-      text: "Sample Support Services",
+      text: isEnglishVersion() ? "Sample Support Services" : "دعم طلب العينات",
       info: "",
       gain: true,
     }, {
-      text: "Ads in Home page",
+      text: isEnglishVersion() ? "Ads in Home page" : "عرض في الصفحة الرئيسية",
       info: "",
       gain: false,
     },
   ],
   marketing: [
-    { text: "Marketing" },
     {
-      text: "WhatsApp and email Marketing",
+      text: isEnglishVersion() ? "Marketing" : "التسويق"
+    },
+    {
+      text: isEnglishVersion() ? "WhatsApp and email Marketing" : "التسويق عبر واتساب والبريد الإلكتروني",
       info: "",
       gain: "1 Campaign / Month",
     },
     {
-      text: "Paid Social Media Ads",
+      text: isEnglishVersion() ? "Paid Social Media Ads" : "إعلانات مدفوعة - ميتا وجوجل",
       info: "",
       gain: "1 Campaign / Month",
     }, {
-      text: "Product Popup through SEO Support",
+      text: isEnglishVersion() ? "Product Popup through SEO Support" : "دعم تحسين محركات البحث للمنتجات",
       info: "",
       gain: true,
     }, {
-      text: "Landing Company Profile webpage on Tijarahub",
+      text: isEnglishVersion() ? "Landing Company Profile webpage on Tijarahub" : "صفحة ويب للشركة لدعم التصدير",
       info: "",
       gain: false,
     }, {
-      text: "Trade Missions in target countries",
+      text: isEnglishVersion() ? "Trade Missions in target countries" : "بعثات تجارية مستهدفة",
       info: "",
       gain: true,
     }, {
-      text: "Social Media Designs",
+      text: isEnglishVersion() ? "Social Media Designs" : "تصميم الحملات الإعلانية",
       info: "",
       gain: "3 Designs / Month",
     }
   ],
   techFeatures: [
     {
-      text: "Platform & Technology Features"
+      text: isEnglishVersion() ? "Platform & Technology Features" : "ميزات المنصة والتكنولوجيا"
     },
     {
-      text: "Platform Access",
+      text: isEnglishVersion() ? "Platform Access" : "الوصول إلى المنصة",
       info: "",
       gain: true,
     },
     {
-      text: "Ai One click Proposal Calculator",
+      text: isEnglishVersion() ? "Ai One click Proposal Calculator" : "حاسبة عروض الشحن الفورية",
       info: "",
       gain: true,
     }, {
-      text: "Dedicattrueed Catalog Team",
+      text: isEnglishVersion() ? "Dedicattrueed Catalog Team" : "فريق كتالوج مخصص",
       info: "",
       gain: false,
     }, {
-      text: "Products Listing",
+      text: isEnglishVersion() ? "Products Listing" : "إدراج المنتجات",
       info: "",
       gain: "Maximum 25",
     }, {
-      text: "Images Per Product",
+      text: isEnglishVersion() ? "Images Per Product" : "صور للمنتج",
       info: "",
       gain: "Maximum 5",
     }
     , {
-      text: "Videos",
+      text: isEnglishVersion() ? "Videos" : "مقاطع فيديو",
       info: "",
       gain: true,
     }
     , {
-      text: "Ai Search Optimization",
+      text: isEnglishVersion() ? "Ai Search Optimization" : "تحسين البحث بالذكاء الاصطناعي",
       info: "",
       gain: true,
     }
@@ -307,29 +312,29 @@ const plansContent = {
   standard: {
     annually: {
       price: "$193",
-      services: ["", "1 Sales", "1 Time / Year", "8 / Month", true, true, "6 / Month", true, false],
-      marketing: ["", "1 Campaign / Month", "1 Campaign / Month", true, false, true, "3 Designs / Month"],
-      techFeatures: ["", true, true, false, "Maximum 25", "Maximum 5", true, true],
+      services: isEnglishVersion() ? ["", "1 Sales", "1 Time / Year", "8 / Month", true, true, "6 / Month", true, false] : ["", "1 موظف مبيعات", "1 مرة / سنة", "8 / شهر", true, true, "6 / شهر", true, false],
+      marketing: isEnglishVersion() ? ["", "1 Campaign / Month", "1 Campaign / Month", true, false, true, "3 Designs / Month"] : ["", "1 حملة / شهريا", "1 حملة / شهريا", true, false, true, "3 تصاميم / شهريا"],
+      techFeatures: isEnglishVersion() ? ["", true, true, false, "Maximum 25", "Maximum 5", true, true] : ["", true, true, false, "كحد اقصى 25", "كحد اقصى 5", true, true],
     },
     monthly: {
       price: "$275",
-      services: ["", false, "With Cost", "5 / Month", true, true, "5 / Month", true, false],
-      marketing: ["", "1 Campaign / Month", "1 Campaign / Month", true, false, false, "2 Designs / Month"],
-      techFeatures: ["", true, true, false, "Maximum 12", "Maximum 5", true, true],
+      services: isEnglishVersion() ? ["", false, "With Cost", "5 / Month", true, true, "5 / Month", true, false] : ["", false, "مع تكلفة", "5 / شهريا", true, true, "5 / شهريا", true, false],
+      marketing: isEnglishVersion() ? ["", "1 Campaign / Month", "1 Campaign / Month", true, false, false, "2 Designs / Month"] : ["", "1 حملة / شهريا", "1 حملة / شهريا", true, false, false, "2 تصاميم / شهريا"],
+      techFeatures: isEnglishVersion() ? ["", true, true, false, "Maximum 12", "Maximum 5", true, true] : ["", true, true, false, "كحد اقصى 12", "كحد اقصى 5", true, true],
     }
   },
   premium: {
     annually: {
       price: "$320",
-      services: ["", "2 Sales", "2 Time / Year", "15 / Month", true, true, "12 / Month", true, true],
-      marketing: ["", "2 Campaign / Month", "2 Campaign / Month", true, true, true, "6 Designs / Month"],
-      techFeatures: ["", true, true, true, "Maximum 60", "Maximum 8", true, true],
+      services: isEnglishVersion() ? ["", "2 Sales", "2 Time / Year", "15 / Month", true, true, "12 / Month", true, true] : ["", "2 مبيعات", "2 مرة / سنة", "15 / شهريا", true, true, "12 / شهريا", true, true],
+      marketing: isEnglishVersion() ? ["", "2 Campaign / Month", "2 Campaign / Month", true, true, true, "6 Designs / Month"] : ["", "2 حملة / شهريا", "2 حملة / شهريا", true, true, true, "6 تصاميم / شهريا"],
+      techFeatures: isEnglishVersion() ? ["", true, true, true, "Maximum 60", "Maximum 8", true, true] : ["", true, true, true, "كحد اقصى 60", "كحد اقصى 8", true, true],
     },
     monthly: {
       price: "$460",
-      services: ["", "1 Sales", "With Cost", "12 / Month", true, true, "10 / Month", true, true],
-      marketing: ["", "2 Campaign / Month", "2 Campaign / Month", true, true, false, "4 Designs / Month"],
-      techFeatures: ["", true, true, true, "Maximum 30", "Maximum 8", true, true],
+      services: isEnglishVersion() ? ["", "1 Sales", "With Cost", "12 / Month", true, true, "10 / Month", true, true] : ["", "1 مبيعات", "مع تكلفة", "12 / شهريا", true, true, "10 / شهريا", true, true],
+      marketing: isEnglishVersion() ? ["", "2 Campaign / Month", "2 Campaign / Month", true, true, false, "4 Designs / Month"] : ["", "2 حملة / شهريا", "2 حملة / شهريا", true, true, false, "4 تصاميم / شهريا"],
+      techFeatures: isEnglishVersion() ? ["", true, true, true, "Maximum 30", "Maximum 8", true, true] : ["", true, true, true, "كحد اقصى 30", "كحد اقصى 8", true, true],
     }
   },
 }
@@ -1096,7 +1101,7 @@ function addContentToPage(index) {
               </div>    
                 `).join("")}
             </div>
-            <div class="flex items-center gap-5 *:rounded-2xl">
+            <div class="flex flex-wrap items-center gap-5 *:rounded-2xl">
               ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_3-_1.25rem)]"/>`).join("")}
             </div>
             <hr class="text-gray-500"/>
@@ -1297,6 +1302,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Traditional cost benchmark
   const traditionalCost = 7250;
 
+  //Maximum Leads
+  let maxLeads = 15
+  const leadsSteps = [];
+  const stepSize = maxLeads / 11;
+
+  for (let i = 0; i < 12; i++) {
+    leadsSteps.push(parseFloat((i * stepSize).toFixed(0)));
+  }
+
+
+
   function formatCurrency(amount) {
     return (
       "$" +
@@ -1355,7 +1371,8 @@ document.addEventListener("DOMContentLoaded", function () {
       listings,
     };
   }
-
+  //  let maxLeadsAvg = planData.buyers * 12 * 0.05 * 50000;
+  //   let minLeadsAvg = planData.buyers * 12 * 0.03 * 5000;
   function updateGrowthChart(
     planData,
     targetLeeads,
@@ -1366,7 +1383,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const months = ["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"];
+    months = [
+      "1st month", "2nd month", "3rd month", "4th month", "5th month",
+      "6th month", "7th month", "8th month", "9th month", "10th month",
+      "11th month", "12th month"
+    ]
+    // const months = ["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"];
     // Extract target values from planData
     const targetLeads = targetLeeads; // e.g., 96
     const targetRevenuePerLead = targeetRevenuePerLead; // e.g., 15000
@@ -1394,6 +1416,7 @@ document.addEventListener("DOMContentLoaded", function () {
         index * ((targetRevenuePerLead - 15000) / (months.length - 1));
       revenuePerLeadData.push(revPerLead);
 
+
       // Calculate monthly revenue and cumulative total
       const monthlyRevenue = leads * revPerLead;
       totalRevenue += monthlyRevenue;
@@ -1407,11 +1430,24 @@ document.addEventListener("DOMContentLoaded", function () {
         datasets: [
           {
             label: "No. of Leads",
-            data: leadsData,
+            data: leadsSteps,
             backgroundColor: "rgba(52, 152, 219, 0.7)",
             borderColor: "rgba(52, 152, 219, 1)",
             borderWidth: 1,
           },
+          // {
+          //   label: "Cumulative Revenue",
+          //   label: "Retention Buyers",
+          //   data: revenueData,
+          //   type: "line",
+          //   fill: false,
+          //   borderColor: "rgb(0, 200, 0)",
+          //   backgroundColor: "rgba(0, 200, 0, 0.2)",
+          //   borderWidth: 2,
+          //   pointRadius: 4,
+          //   pointBackgroundColor: "rgb(0, 200, 0)",
+          //   yAxisID: "y3",
+          // },
           {
             label: "Cumulative Revenue",
             data: revenueData,
@@ -1440,7 +1476,8 @@ document.addEventListener("DOMContentLoaded", function () {
               text: "No. of Leads",
               color: chartContentColor,
             },
-            max: targetLeads * 1.1, // Add 10% headroom
+            min: 0,
+            max: 15,
           },
           y1: {
             ticks: {
@@ -1457,7 +1494,8 @@ document.addEventListener("DOMContentLoaded", function () {
               drawOnChartArea: false,
             },
             // Set max to final cumulative revenue + 10%
-            max: revenueData[revenueData.length - 1] * 1.1,
+            // min: Math.floor(getCalcDataByLeads(8).minOrderValue * 1.1),
+            // max: Math.floor(getCalcDataByLeads(8).maxOrderValue * 1.1),
           },
           x: {
             ticks: {
@@ -1498,9 +1536,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateCalculator() {
     const selectedPlan = planSelect?.value;
     let planData = { ...plans[selectedPlan] }; // Clone plan data
-    features_table = document.querySelector(".features-table");
-    features_title = document.querySelector(".features-title");
-    annualsavings = document.getElementById("savings-box");
+    let features_table = document.querySelector(".features-table");
+    let features_title = document.querySelector(".features-title");
+    let annualsavings = document.getElementById("savings-box");
     // Show/hide custom plan form
     if (selectedPlan === "custom") {
       customPlanForm.classList.add("container-active");
@@ -1580,11 +1618,12 @@ document.addEventListener("DOMContentLoaded", function () {
       ); // Added Tailwind classes
     }
 
-    targetLeads = planData.buyers * 12;
+    let targetLeads = planData.buyers * 12;
     targetRevenuePerLead =
       (planData.buyers * 12 * 0.03 * 5000 +
         planData.buyers * 12 * 0.05 * 50000) /
       2; // Average of min and max revenue
+
 
     // Update growth chart
     updateGrowthChart(planData, targetLeads, targetRevenuePerLead);
@@ -1615,3 +1654,79 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+const plans = {
+  "standard-monthly": {
+    monthlyCost: 275,
+    annualCost: 275 * 12,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Standard Monthly",
+  },
+  "premium-monthly": {
+    monthlyCost: 460,
+    annualCost: 460 * 12,
+    buyers: 15,
+    sales: 2,
+    research: 2,
+    campaigns: 2,
+    listings: 60,
+    name: "Premium Monthly",
+  },
+  "standard-annual": {
+    monthlyCost: 195,
+    annualCost: 2340,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Standard Annual",
+  },
+  "premium-annual": {
+    monthlyCost: 320,
+    annualCost: 3840,
+    buyers: 15,
+    sales: 2,
+    research: 2,
+    campaigns: 2,
+    listings: 60,
+    name: "Premium Annual",
+  },
+  custom: {
+    monthlyCost: 0,
+    annualCost: 0,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Custom Plan",
+  },
+};
+
+
+function getCalcDataByLeads(count) {
+  let minLeadsAvg = Math.floor(count * 12 * 0.03);
+  let maxLeadsAvg = Math.floor(count * 12 * 0.05);
+  let minOrderValue = Math.floor(minLeadsAvg * 5000);
+  let maxOrderValue = Math.floor(maxLeadsAvg * 50000);
+  let minRetetionBuyers = Math.ceil(minLeadsAvg * 0.75);
+  let maxRetetionBuyers = Math.ceil(maxLeadsAvg * 0.75);
+  return { minLeadsAvg, maxLeadsAvg, minOrderValue, maxOrderValue, minRetetionBuyers, maxRetetionBuyers }
+}
+
+
+const { minLeadsAvg, maxLeadsAvg, minOrderValue, maxOrderValue, minRetetionBuyers, maxRetetionBuyers } = getCalcDataByLeads(8);
+
+function getAnnualSavings(annualCost) {
+  const traditionalCostBenchmark = 7250;
+  return traditionalCostBenchmark - annualCost
+}
+
+console.log(minOrderValue);
+console.log(maxOrderValue);
