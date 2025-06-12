@@ -1242,178 +1242,197 @@ services.forEach(({ title, img, services }, index) => {
 })
 
 
+// Calculate
+const planSelect = document.getElementById('plan');
+const calculateBtn = document.getElementById('calculate-btn');
+const customPlanForm = document.getElementById('custom-plan-form');
+const customBuyers = document.getElementById('custom-buyers');
+const customSales = document.getElementById('custom-sales');
+const customResearch = document.getElementById('custom-research');
+const customCampaigns = document.getElementById('custom-campaigns');
+const customListings = document.getElementById('custom-listings');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const planSelect = document.getElementById('plan');
-  const calculateBtn = document.getElementById('calculate-btn');
-  const customPlanForm = document.getElementById('custom-plan-form');
-  const customBuyers = document.getElementById('custom-buyers');
-  const customSales = document.getElementById('custom-sales');
-  const customResearch = document.getElementById('custom-research');
-  const customCampaigns = document.getElementById('custom-campaigns');
-  const customListings = document.getElementById('custom-listings');
 
-  //Calc Quarter
-  function quarterCalculationByLeads(count, isFirst = false, prevRetcount) {
-    let totalLeads = count * 4;
-    let minLeadsAvg = totalLeads * 0.03;
-    let maxLeadsAvg = totalLeads * 0.05;
-    let minRetetionBuyers, maxRetetionBuyers, minOrderValue, maxOrderValue;
 
-    if (isFirst) {
-      minRetetionBuyers = 0;
-      maxRetetionBuyers = 0;
-      minOrderValue = minLeadsAvg * 5000;
-      maxOrderValue = maxLeadsAvg * 50000;
-    } else {
-      minRetetionBuyers = minLeadsAvg * 0.75;
-      maxRetetionBuyers = maxLeadsAvg * 0.75;
 
-      if (prevRetcount) {
-        minOrderValue = (minLeadsAvg + minRetetionBuyers + prevRetcount.min) * 5000;
-        maxOrderValue = (maxLeadsAvg + maxRetetionBuyers + prevRetcount.max) * 50000;
-      } else {
-        minOrderValue = (minLeadsAvg + minRetetionBuyers) * 5000;
-        maxOrderValue = (maxLeadsAvg + maxRetetionBuyers) * 50000;
-      }
-    }
-    return { minLeadsAvg, maxLeadsAvg, minOrderValue, maxOrderValue, minRetetionBuyers, maxRetetionBuyers }
+// Chart initialization
+const ctx = document.getElementById('growth-chart')?.getContext('2d');
+let growthChart;
+
+// Plan data
+const plans = {
+  'standard-monthly': {
+    monthlyCost: 275,
+    annualCost: 275 * 12,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Standard Monthly"
+  },
+  'premium-monthly': {
+    monthlyCost: 460,
+    annualCost: 460 * 12,
+    buyers: 12,
+    sales: 2,
+    research: 2,
+    campaigns: 2,
+    listings: 60,
+    name: "Premium Monthly"
+  },
+  'standard-annual': {
+    monthlyCost: 195,
+    annualCost: 2340,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Standard Annual"
+  },
+  'premium-annual': {
+    monthlyCost: 320,
+    annualCost: 3840,
+    buyers: 15,
+    sales: 2,
+    research: 2,
+    campaigns: 2,
+    listings: 60,
+    name: "Premium Annual"
+  },
+  'custom': {
+    monthlyCost: 0,
+    annualCost: 0,
+    buyers: 8,
+    sales: 1,
+    research: 1,
+    campaigns: 1,
+    listings: 25,
+    name: "Custom Plan"
   }
+};
 
+// Traditional cost benchmark
+const traditionalCost = 7250;
 
-  // Chart initialization
-  const ctx = document.getElementById('growth-chart').getContext('2d');
-  let growthChart;
+let totalBuyersMinMaxTextContent = 10 + " to " + 15 + " / year";
 
-  // Plan data
-  const plans = {
-    'standard-monthly': {
-      monthlyCost: 275,
-      annualCost: 275 * 12,
-      buyers: 8,
-      sales: 1,
-      research: 1,
-      campaigns: 1,
-      listings: 25,
-      name: "Standard Monthly"
-    },
-    'premium-monthly': {
-      monthlyCost: 460,
-      annualCost: 460 * 12,
-      buyers: 15,
-      sales: 2,
-      research: 2,
-      campaigns: 2,
-      listings: 60,
-      name: "Premium Monthly"
-    },
-    'standard-annual': {
-      monthlyCost: 195,
-      annualCost: 2340,
-      buyers: 8,
-      sales: 1,
-      research: 1,
-      campaigns: 1,
-      listings: 25,
-      name: "Standard Annual"
-    },
-    'premium-annual': {
-      monthlyCost: 320,
-      annualCost: 3840,
-      buyers: 15,
-      sales: 2,
-      research: 2,
-      campaigns: 2,
-      listings: 60,
-      name: "Premium Annual"
-    },
-    'custom': {
-      monthlyCost: 0,
-      annualCost: 0,
-      buyers: 8,
-      sales: 1,
-      research: 1,
-      campaigns: 1,
-      listings: 25,
-      name: "Custom Plan"
-    }
+function formatCurrency(amount) {
+  return '$' + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function format(amount) {
+  return amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+function calculateCustomPlanCost() {
+  // Pricing model for custom plan
+  const buyers = parseInt(customBuyers.value) || 0;
+  const sales = parseInt(customSales.value) || 0;
+  const research = parseInt(customResearch.value) || 0;
+  const campaigns = parseInt(customCampaigns.value) || 0;
+  const listings = parseInt(customListings.value) || 0;
+
+  // Calculate costs
+  const buyersCost = buyers * 10;
+  const salesCost = sales * 150;
+  const researchCost = research * 250;
+  const campaignsCost = campaigns * 50;
+  const listingsCost = listings * 5;
+
+  // Base fee for the platform
+  const baseFee = 50;
+
+  // Monthly and annual cost
+  const monthlyCost = baseFee + buyersCost + salesCost + campaignsCost + (listingsCost / 12);
+  const annualCost = (baseFee * 12) + (buyersCost * 12) + (salesCost * 12) +
+    (researchCost) + (campaignsCost * 12) + listingsCost;
+
+  return {
+    monthlyCost,
+    annualCost,
+    buyers,
+    sales,
+    research,
+    campaigns,
+    listings
   };
+}
+//Calc Quarter
+function quarterCalculationByLeads(count, isFirst = false, prevRetcount) {
+  let totalLeads = count * 4;
+  let minLeadsAvg = totalLeads * 0.03;
+  let maxLeadsAvg = totalLeads * 0.05;
+  let minRetetionBuyers, maxRetetionBuyers, minOrderValue, maxOrderValue;
+  if (isFirst) {
+    minRetetionBuyers = 0;
+    maxRetetionBuyers = 0;
+    minOrderValue = minLeadsAvg * 5000;
+    maxOrderValue = maxLeadsAvg * 50000;
+  } else {
+    minRetetionBuyers = minLeadsAvg * 0.75;
+    maxRetetionBuyers = maxLeadsAvg * 0.75;
 
-  // Traditional cost benchmark
-  const traditionalCost = 7250;
-
-
-
-
-  function formatCurrency(amount) {
-    return '$' + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  }
-  function format(amount) {
-    return amount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-  }
-  function calculateCustomPlanCost() {
-    // Pricing model for custom plan
-    const buyers = parseInt(customBuyers.value) || 0;
-    const sales = parseInt(customSales.value) || 0;
-    const research = parseInt(customResearch.value) || 0;
-    const campaigns = parseInt(customCampaigns.value) || 0;
-    const listings = parseInt(customListings.value) || 0;
-
-    // Calculate costs
-    const buyersCost = buyers * 10;
-    const salesCost = sales * 150;
-    const researchCost = research * 250;
-    const campaignsCost = campaigns * 50;
-    const listingsCost = listings * 5;
-
-    // Base fee for the platform
-    const baseFee = 50;
-
-    // Monthly and annual cost
-    const monthlyCost = baseFee + buyersCost + salesCost + campaignsCost + (listingsCost / 12);
-    const annualCost = (baseFee * 12) + (buyersCost * 12) + (salesCost * 12) +
-      (researchCost) + (campaignsCost * 12) + listingsCost;
-
-    return {
-      monthlyCost,
-      annualCost,
-      buyers,
-      sales,
-      research,
-      campaigns,
-      listings
-    };
-  }
-  function updateGrowthChart(
-    planData,
-  ) {
-    if (growthChart) {
-      growthChart.destroy();
+    if (prevRetcount) {
+      minOrderValue = (minLeadsAvg + minRetetionBuyers + prevRetcount.min) * 5000;
+      maxOrderValue = (maxLeadsAvg + maxRetetionBuyers + prevRetcount.max) * 50000;
+      minRetetionBuyers += prevRetcount.min
+      maxRetetionBuyers += prevRetcount.max
     }
+  }
 
-    let q1 = quarterCalculationByLeads(planData.buyers, true);
-    let q2 = quarterCalculationByLeads(planData.buyers, false, {
-      min: q1.minRetetionBuyers,
-      max: q1.maxRetetionBuyers
-    });
-    let q3 = quarterCalculationByLeads(planData.buyers, false, {
-      min: q2.minRetetionBuyers,
-      max: q2.maxRetetionBuyers
-    });
-    let q4 = quarterCalculationByLeads(planData.buyers, false, {
-      min: q3.minRetetionBuyers,
-      max: q3.maxRetetionBuyers
-    });
+  return { minLeadsAvg, maxLeadsAvg, minOrderValue, maxOrderValue, minRetetionBuyers, maxRetetionBuyers }
+}
 
+function getAllQuarters(planData) {
+  let q1 = quarterCalculationByLeads(planData.buyers, true,);
 
-    let minTotal = q1.minOrderValue + q2.minOrderValue + q3.minOrderValue + q4.minOrderValue;
-    let maxTotal = q1.maxOrderValue + q2.maxOrderValue + q3.maxOrderValue + q4.maxOrderValue;
-    let q1Col = q1.maxOrderValue;
-    let q2Col = q2.maxOrderValue + q2.minOrderValue + q1Col + q1.minOrderValue;
-    let q3Col = q3.maxOrderValue + q3.minOrderValue + q2Col;
-    let q4Col = q4.maxOrderValue + q4.minOrderValue + q3Col;
-    const months = ["Q1", "Q2", "Q3", "Q4"];
+  let q2 = quarterCalculationByLeads(planData.buyers, false, {
+    min: q1.minRetetionBuyers,
+    max: q1.maxRetetionBuyers
+  });
 
+  let q3 = quarterCalculationByLeads(planData.buyers, false, {
+    min: q2.minRetetionBuyers,
+    max: q2.maxRetetionBuyers
+  });
+
+  let q4 = quarterCalculationByLeads(planData.buyers, false, {
+    min: q3.minRetetionBuyers,
+    max: q3.maxRetetionBuyers
+  });
+
+  const minCalcObj = { q1: Math.ceil(q1.minRetetionBuyers + q1.minLeadsAvg), q2: Math.ceil(q2.minRetetionBuyers + q2.minLeadsAvg), q3: Math.ceil(q3.minRetetionBuyers + q3.minLeadsAvg), q4: Math.ceil(q4.minRetetionBuyers + q4.minLeadsAvg) }
+  const maxCalcObj = { q1: Math.ceil(q1.maxRetetionBuyers + q1.maxLeadsAvg), q2: Math.ceil(q2.maxRetetionBuyers + q2.maxLeadsAvg), q3: Math.ceil(q3.maxRetetionBuyers + q3.maxLeadsAvg), q4: Math.ceil(q4.maxRetetionBuyers + q4.maxLeadsAvg) }
+
+  const minTotalBuyers = minCalcObj.q1 + minCalcObj.q2 + minCalcObj.q3 + minCalcObj.q4;
+  const maxTotalBuyers = maxCalcObj.q1 + maxCalcObj.q2 + maxCalcObj.q3 + maxCalcObj.q4;
+
+  let minTotal = q1.minOrderValue + q2.minOrderValue + q3.minOrderValue + q4.minOrderValue;
+  let maxTotal = q1.maxOrderValue + q2.maxOrderValue + q3.maxOrderValue + q4.maxOrderValue;
+
+  //Col Bars 
+  let q1Col = q1.maxOrderValue;
+  let q2Col = q2.maxOrderValue + q2.minOrderValue + q1Col + q1.minOrderValue;
+  let q3Col = q3.maxOrderValue + q3.minOrderValue + q2Col;
+  let q4Col = q4.maxOrderValue + q4.minOrderValue + q3Col;
+
+  return {
+    q1, q2, q3, q4, minTotalBuyers, maxTotalBuyers, minTotal, maxTotal, q1Col
+    , q2Col
+    , q3Col,
+    q4Col
+  }
+}
+
+function updateGrowthChart(
+  planData,
+) {
+  if (growthChart) {
+    growthChart.destroy();
+  }
+  const { q1, q2, q3, q4, minTotal, maxTotal, q1Col, q2Col, q3Col, q4Col } = getAllQuarters(planData)
+  const months = ["Q1", "Q2", "Q3", "Q4"];
+  if (window.location.href.includes("index.html")) {
     growthChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -1422,21 +1441,22 @@ document.addEventListener('DOMContentLoaded', function () {
           {
             label: "Net Growth",
             data: [q1Col, q2Col, q3Col, q4Col],
-            backgroundColor: "rgba(52, 152, 219, 0.7)",
+            backgroundColor: "rgba(52, 152, 219, 0.2)",
             borderColor: "rgba(52, 152, 219, 1)",
             borderWidth: 1,
+            order: 2,
           },
           {
-            label: "Cumulative Revenue",
+            // label: "Cumulative Revenue",
             data: [q1Col, q2Col, q3Col, q4Col],
             type: 'line',
             fill: false,
-            borderColor: 'rgba(231, 76, 60, 1)',
-            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            borderColor: 'rgba(11, 156, 49, 0.7)',
             borderWidth: 2,
             pointRadius: 4,
-            pointBackgroundColor: 'rgba(231, 76, 60, 1)',
-            yAxisID: 'y1'
+            pointBackgroundColor: 'rgba(11, 156, 49, 1)',
+            yAxisID: 'y1',
+            order: 1
           }
         ]
       },
@@ -1519,9 +1539,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 let quarters = [q1, q2, q3, q4]
 
                 return [
-                  `Min Total Revenue: ${quarters[index].minOrderValue}`,
-                  `Max Total Revenue: ${quarters[index].maxOrderValue}`,
-                  `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + q1.maxLeadsAvg)}`,
+                  `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  `Max Total Revenue: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
                 ];
               },
             }
@@ -1530,91 +1550,87 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
-  function updateCalculator() {
-    const selectedPlan = planSelect.value;
-    let planData = { ...plans[selectedPlan] }; // Clone plan data
-    let features_table = document.querySelector(".features-table");
-    let features_title = document.querySelector(".features-title");
-    let annualsavings = document.getElementById("savings-box");
+}
+const selectedPlan = planSelect?.value;
+let planData = { ...plans[selectedPlan] };
 
-    // Show/hide custom plan form
-    if (selectedPlan === 'custom') {
-      customPlanForm.classList.add('container-active');
-      features_title.style.display = 'none';
-      features_table.style.display = 'none';
-      annualsavings.style.display = 'none';
-      planData = { ...planData, ...calculateCustomPlanCost() };
-    } else {
-      customPlanForm.classList.remove('container-active');
-      features_title.style.display = 'flex';
-      features_table.style.display = 'flex';
-      annualsavings.style.display = 'block';
-    }
+updateGrowthChart(planData);
 
-    // Update features display
-    document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
-    document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
-    document.getElementById('research-value').textContent = planData.research + ' /year';
-    document.getElementById('campaigns-value').textContent = planData.campaigns + ' /month';
-    document.getElementById('listings-value').textContent = planData.listings + ' products';
+function updateFeaturesDisplay(planData) {
+  // Update features display
+  document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
+  document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
+  document.getElementById('research-value').textContent = planData.research + ' /year';
+  document.getElementById('campaigns-value').textContent = planData.campaigns + ' /month';
+  document.getElementById('listings-value').textContent = planData.listings + ' products';
+}
 
-    // Update cost display
-    document.getElementById('monthly-cost').textContent = formatCurrency(planData.monthlyCost);
-    document.getElementById('annual-cost').textContent = formatCurrency(planData.annualCost);
+function updateCostDisplay(planData) {
+  // Update cost display
+  document.getElementById('monthly-cost').textContent = formatCurrency(planData.monthlyCost);
+  document.getElementById('annual-cost').textContent = formatCurrency(planData.annualCost);
+}
+// Event listeners
+calculateBtn?.addEventListener('click', () => {
+  let annualsavings = document.getElementById("savings-box");
+  const selectedPlan = planSelect.value;
+  // Clone plan data
+  let planData = { ...plans[selectedPlan] };
 
-    // Calculate savings
-    const savings = traditionalCost - planData.annualCost;
-    document.getElementById('savings').textContent = formatCurrency(savings);
-    document.getElementById('tijara-cost').textContent = format(planData.buyers * 12 * 0.03) + ' to ' + format(planData.buyers * 12 * 0.05) + ' / year';
-    document.getElementById('Potential-Leeds').textContent = planData.buyers * 12 + ' / year';
-    document.getElementById('Retention-Rate').textContent = format(format(planData.buyers * 12 * 0.03) * 0.75) + ' to ' + format(format(planData.buyers * 12 * 0.05) * 0.75) + ' / year';
+  // Update features display
+  updateFeaturesDisplay(planData)
 
-    // Update savings display style
-    const savingsBox = document.getElementById('savings-box');
-    if (savings < 0) {
-      savingsBox.classList.remove('savings');
-      savingsBox.classList.add('negative');
-    } else {
-      savingsBox.classList.remove('negative');
-      savingsBox.classList.add('savings');
-    }
+  // Update cost display
+  updateCostDisplay(planData)
 
-    let targetLeads = planData.buyers * 12;
-    targetRevenuePerLead =
-      (planData.buyers * 12 * 0.03 * 5000 +
-        planData.buyers * 12 * 0.05 * 50000) /
-      2; // Average of min and max revenue
-
-
-    // Update growth chart
-    updateGrowthChart(planData, targetLeads, targetRevenuePerLead);
+  // Check for Custom Plan
+  if (customPlanForm.classList.contains('container-active')) {
+    planData = { ...planData, ...calculateCustomPlanCost() };
+    updateCostDisplay(planData)
+  } else {
+    annualsavings.style.display = 'block';
   }
+  // Calculate savings
+  const savings = traditionalCost - planData.annualCost;
 
-  // Initial calculation
-  updateCalculator();
+  //Update Leads/Buyers Table
+  const { minTotalBuyers, maxTotalBuyers } = getAllQuarters(planData);
+  const totalLeadsTextContent = planData.buyers * 12 + ' / year';
+  totalBuyersMinMaxTextContent = "";
+  totalBuyersMinMaxTextContent = minTotalBuyers + " to " + maxTotalBuyers + " / year";
+  document.getElementById('Potential-Leeds').textContent = totalLeadsTextContent;
+  document.getElementById('savings').textContent = formatCurrency(savings);
+  document.getElementById('total-an-buyers').textContent = totalBuyersMinMaxTextContent;
 
-  // Event listeners
-  calculateBtn.addEventListener('click', updateCalculator);
-  planSelect.addEventListener('change', updateCalculator);
+  updateGrowthChart(planData);
+});
+planSelect?.addEventListener('change', (e) => {
+  const selectedPlan = e.target.value;
+  let planData = { ...plans[selectedPlan] };
 
-  // Listen to custom plan input changes
-  customBuyers.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
-  });
-  customSales.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
-  });
-  customResearch.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
-  });
-  customCampaigns.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
-  });
-  customListings.addEventListener('change', function () {
-    if (planSelect.value === 'custom') updateCalculator();
-  });
-})
+  updateFeaturesDisplay(planData)
+  let features_table = document.querySelector(".features-table");
+  let features_title = document.querySelector(".features-title");
+  let annualsavings = document.getElementById("savings-box");
+  // Show Hide Custom Plan Select
+  if (e.currentTarget.value === 'custom') {
+    customPlanForm.classList.add('container-active');
+    features_title.style.display = 'none';
+    features_table.style.display = 'none';
+    annualsavings.style.display = 'none';
+    planData = { ...planData, ...calculateCustomPlanCost() };
 
+  } else {
+    customPlanForm.classList.remove('container-active');
+    features_title.style.display = 'flex';
+    features_table.style.display = 'flex';
+  }
+});
+
+// Listen to custom plan input changes
+customBuyers?.addEventListener('change', function (e) {
+  planData = { ...planData, ...calculateCustomPlanCost() };
+});
 
 
 

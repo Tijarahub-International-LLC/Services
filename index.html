@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -536,9 +536,9 @@ with over +9.5K Wholesale Buyers With TijaraHub"
           </div>
           <div class="flex flex-col self-stretch gap-4 flex-2">
             <div
-              class="flex flex-col justify-center flex-1 gap-4 p-4 duration-300 shadow md:px-6 md:py-10 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
+              class="flex flex-col justify-center flex-1 gap-4 p-4 duration-300 shadow max-lg:text-center md:px-6 md:py-10 rounded-3xl bg-white/5 backdrop-blur-md hover:shadow-secondary-200"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3 max-lg:justify-center">
                 <img
                   src="./assets/icons/trade-missions.svg"
                   alt="Trade Mission icon"
@@ -806,60 +806,62 @@ with over +9.5K Wholesale Buyers With TijaraHub"
       <!-- Calculator -->
       <section class="container">
         <header>
-          <h2 class="mb-5 text-center h2">Calculate your Growth Rate</h2>
+          <h2 class="mb-3 text-center md:mb-5 h2">
+            Calculate your Growth Rate
+          </h2>
           <p class="!leading-normal mx-auto text-center max-w-[720px] h4 mb-6">
             No big teams, no big budgets. Just the right tools and support to
             grow your exports and enter new markets.
           </p>
         </header>
         <div
-          class="relative p-4 rounded-3xl bg-gradient-to-b from-semi-lighter-blue/40 to-light-cyan/50 grid grid-cols-1 md:grid-cols-2 gap-6"
+          class="relative grid grid-cols-1 gap-6 p-5 rounded-3xl bg-gradient-to-b from-semi-lighter-blue/40 to-light-cyan/50 lg:grid-cols-2"
         >
-          <section class="card rounded-lg p-6">
+          <section class="rounded-lg card md:p-6">
             <h2
-              class="text-2xl font-semibold mb-5 pb-2 border-b-2 border-light-cyan/20"
+              class="pb-2 mb-5 text-2xl font-semibold border-b-2 border-light-cyan/20"
             >
               Select Your Plan
             </h2>
 
-            <div class="form-group mb-5">
+            <div class="mb-5 form-group">
               <div class="relative">
                 <select
                   id="plan"
-                  class="w-full appearance-none p-3 border-2 focus:bg-dark-blue border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                  class="w-full p-3 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                 >
                   <option value="standard-annual">
                     Standard Annual
                     <span
-                      class="plan-badge bg-blue-500 text-xs px-2 py-1 rounded ml-2"
+                      class="px-2 py-1 ml-2 text-xs bg-blue-500 rounded plan-badge"
                       >$2,340/year</span
                     >
                   </option>
                   <option value="premium-annual">
                     Premium Annual
                     <span
-                      class="plan-badge bg-yellow-500 text-white text-xs px-2 py-1 rounded ml-2"
+                      class="px-2 py-1 ml-2 text-xs text-white bg-yellow-500 rounded plan-badge"
                       >$3,840/year</span
                     >
                   </option>
                   <option value="standard-monthly">
                     Standard Monthly
                     <span
-                      class="plan-badge bg-blue-500 text-white text-xs px-2 py-1 rounded ml-2"
+                      class="px-2 py-1 ml-2 text-xs text-white bg-blue-500 rounded plan-badge"
                       >$275/month</span
                     >
                   </option>
                   <option value="premium-monthly">
                     Premium Monthly
                     <span
-                      class="plan-badge bg-yellow-500 text-white text-xs px-2 py-1 rounded ml-2"
+                      class="px-2 py-1 ml-2 text-xs text-white bg-yellow-500 rounded plan-badge"
                       >$460/month</span
                     >
                   </option>
                   <option value="custom">
                     Build your own plan
                     <span
-                      class="plan-badge bg-green-500 text-white text-xs px-2 py-1 rounded ml-2"
+                      class="px-2 py-1 ml-2 text-xs text-white bg-green-500 rounded plan-badge"
                       >Custom</span
                     >
                   </option>
@@ -887,17 +889,17 @@ with over +9.5K Wholesale Buyers With TijaraHub"
 
             <div
               id="custom-plan-form"
-              class="custom-plan-form hidden mt-5 rounded-lg"
+              class="hidden mt-5 rounded-lg custom-plan-form"
             >
-              <h3 class="text-xl font-semibold mb-4">Build your own plan</h3>
+              <h3 class="mb-4 text-xl font-semibold">Build your own plan</h3>
 
-              <div class="custom-input-group flex mb-4 items-center">
+              <div class="flex items-center mb-4 custom-input-group">
                 <label for="custom-buyers" class="w-7/12 mb-0"
                   >Potential Leads
                 </label>
                 <div class="relative flex-1">
                   <select
-                    class="focus:bg-dark-blue w-full p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none appearance-none"
+                    class="w-full p-2 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                     name="custom-buyers"
                     id="custom-buyers"
                   >
@@ -932,11 +934,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 max="15"
                 value="1"
                 oninput="this.value = Math.min(15, Math.max(0, this.value))"
-                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                class="w-5/12 p-2 text-base border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
               /> -->
               </div>
 
-              <div class="custom-input-group flex mb-4 items-center">
+              <div class="flex items-center mb-4 custom-input-group">
                 <label for="custom-sales" class="w-7/12 mb-0"
                   >International Export sales</label
                 >
@@ -947,11 +949,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 max="2"
                 value="1"
                 oninput="this.value = Math.min(2, Math.max(0, this.value))"
-                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                class="w-5/12 p-2 text-base border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
               /> -->
                 <div class="relative flex-1">
                   <select
-                    class="focus:bg-dark-blue w-full p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none appearance-none"
+                    class="w-full p-2 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                     name="custom-sales"
                     id="custom-sales"
                   >
@@ -979,7 +981,7 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 </div>
               </div>
 
-              <div class="custom-input-group flex mb-4 items-center">
+              <div class="flex items-center mb-4 custom-input-group">
                 <label for="custom-research" class="w-7/12 mb-0"
                   >Tailor-made Market Research</label
                 >
@@ -990,11 +992,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 max="2"
                 value="1"
                 oninput="this.value = Math.min(2, Math.max(0, this.value))"
-                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                class="w-5/12 p-2 text-base border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
               /> -->
                 <div class="relative flex-1">
                   <select
-                    class="focus:bg-dark-blue w-full p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none appearance-none"
+                    class="w-full p-2 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                     name="custom-research"
                     id="custom-research"
                   >
@@ -1022,7 +1024,7 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 </div>
               </div>
 
-              <div class="custom-input-group flex mb-4 items-center">
+              <div class="flex items-center mb-4 custom-input-group">
                 <label for="custom-campaigns" class="w-7/12 mb-0"
                   >Paid Marketing campaigns</label
                 >
@@ -1033,11 +1035,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 max="2"
                 value="1"
                 oninput="this.value = Math.min(2, Math.max(0, this.value))"
-                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                class="w-5/12 p-2 text-base border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
               /> -->
                 <div class="relative flex-1">
                   <select
-                    class="focus:bg-dark-blue w-full p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none appearance-none"
+                    class="w-full p-2 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                     name="custom-campaigns"
                     id="custom-campaigns"
                   >
@@ -1065,7 +1067,7 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 </div>
               </div>
 
-              <div class="custom-input-group flex mb-4 items-center">
+              <div class="flex items-center mb-4 custom-input-group">
                 <label for="custom-listings" class="w-7/12 mb-0"
                   >Product listing</label
                 >
@@ -1076,11 +1078,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
                 max="60"
                 value="25"
                 oninput="this.value = Math.min(60, Math.max(0, this.value))"
-                class="w-5/12 p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none"
+                class="w-5/12 p-2 text-base border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
               /> -->
                 <div class="relative flex-1">
                   <select
-                    class="focus:bg-dark-blue w-full p-2 border-2 border-gray-300 rounded-md text-base focus:border-blue-500 focus:outline-none appearance-none"
+                    class="w-full p-2 text-base border-2 border-gray-300 rounded-md appearance-none focus:bg-dark-blue focus:border-blue-500 focus:outline-none"
                     name="custom-listings"
                     id="custom-listings"
                   >
@@ -1111,11 +1113,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
               </div>
             </div>
 
-            <h3 class="features-title text-xl font-semibold mt-6 mb-4">
+            <h3 class="mt-6 mb-4 text-xl font-semibold features-title">
               Plan Features
             </h3>
             <table
-              class="features-table w-full border-collapse mt-4 flex flex-col"
+              class="flex flex-col w-full mt-4 border-collapse features-table"
             >
               <tbody class="w-full">
                 <tr class="flex w-full border-b border-gray-500">
@@ -1152,23 +1154,18 @@ with over +9.5K Wholesale Buyers With TijaraHub"
             </table>
             <button
               id="calculate-btn"
-              class="ocean-gradient py-3 px-6 rounded-md text-base cursor-pointer transition-colors duration-300 block w-full mt-5 font-semibold"
+              class="block w-full px-6 py-3 mt-5 text-base font-semibold transition-colors duration-300 rounded-md cursor-pointer ocean-gradient"
             >
               Update Calculation
             </button>
             <div
-              class="highlight text-dark-blue bg-yellow-50 px-2 py-2.5 rounded-lg mt-4 border-l-4 border-yellow-500"
+              class="highlight bg-light-cyan/10 px-2 py-2.5 rounded-lg mt-4 border-l-4 border-light-cyan"
             >
-              <h3 class="font-semibold text-yellow-600 mb-2">
-                Traditional Cost Benchmark
-              </h3>
-              <p class="text-sm">
-                The traditional method of international expansion typically
-                costs:
-              </p>
-              <p class="text-base">
+              <h3 class="mb-2 font-semibold">Traditional Cost Benchmark</h3>
+              <p class="text-base font-bold">
                 $7,250 per year
-                <span class="text-xs"
+                <br />
+                <span class="text-xs font-normal"
                   >(Average of Exhibition, Trade Mission, and Commissioned
                   Agent)</span
                 >
@@ -1176,22 +1173,22 @@ with over +9.5K Wholesale Buyers With TijaraHub"
             </div>
           </section>
           <div
-            class="w-0.5 start-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[70%] rounded-full z-10 absolute bg-white/10 backdrop-blur-md"
+            class="w-0.5 start-1/2 top-1/2 hidden lg:block -translate-x-1/2 -translate-y-1/2 h-[70%] rounded-full z-10 absolute bg-light-cyan/20"
           ></div>
-          <section class="card rounded-lg p-6">
+          <section class="rounded-lg card md:p-6">
             <h2
-              class="text-2xl font-semibold mb-5 pb-2 border-b-2 border-light-cyan/20"
+              class="pb-2 mb-5 text-2xl font-semibold border-b-2 border-light-cyan/20"
             >
               Calculation Results
             </h2>
 
-            <div class="results grid grid-cols-3 gap-5 mt-5">
+            <div class="results flex flex-col lg:flex-row *:flex-1 gap-5 mt-5">
               <div
-                class="result-box bg-light-cyan/10 border-l-4 border-light-cyan p-4 rounded-r-md"
+                class="p-4 border-l-4 result-box bg-light-cyan/10 border-light-cyan rounded-r-md"
               >
-                <h3 class="text-base mb-2">Monthly Cost</h3>
+                <h3 class="mb-2 text-base">Monthly Cost</h3>
                 <div
-                  class="result-value text-xl font-bold text-light-cyan"
+                  class="text-xl font-bold result-value text-light-cyan"
                   id="monthly-cost"
                 >
                   $195
@@ -1199,11 +1196,11 @@ with over +9.5K Wholesale Buyers With TijaraHub"
               </div>
 
               <div
-                class="result-box bg-light-cyan/10 border-l-4 border-light-cyan p-4 rounded-r-md"
+                class="p-4 border-l-4 result-box bg-light-cyan/10 border-light-cyan rounded-r-md"
               >
                 <h3>Annual Cost</h3>
                 <div
-                  class="result-value text-xl font-bold text-light-cyan"
+                  class="text-xl font-bold result-value text-light-cyan"
                   id="annual-cost"
                 >
                   $2,340
@@ -1211,12 +1208,12 @@ with over +9.5K Wholesale Buyers With TijaraHub"
               </div>
 
               <div
-                class="result-box savings bg-green-500/10 border-l-4 border-green-500 p-4 rounded-r-md"
+                class="p-4 border-l-4 border-green-500 result-box savings bg-green-500/10 rounded-r-md"
                 id="savings-box"
               >
-                <h3 class="text-base mb-2">Annual Savings</h3>
+                <h3 class="mb-2 text-base">Annual Savings</h3>
                 <div
-                  class="result-value text-xl font-bold text-green-500"
+                  class="text-xl font-bold text-green-500 result-value"
                   id="savings"
                 >
                   $4,910
@@ -1224,41 +1221,71 @@ with over +9.5K Wholesale Buyers With TijaraHub"
               </div>
             </div>
 
-            <div class="comparison mt-4">
+            <div class="mt-4 comparison">
               <h3 class="text-xl font-semibold">Annually Growth Rate</h3>
-              <div class="chart-container h-72 relative">
+              <div class="relative chart-container h-72">
                 <canvas id="growth-chart"></canvas>
               </div>
             </div>
 
-            <div class="comparison mt-8">
+            <div class="mt-8 comparison">
               <table
-                class="comparison-table w-full bg-white/60 text-dark-blue backdrop-blur-md overflow-hidden rounded-lg border-collapse mt-4"
+                class="w-full mt-4 overflow-hidden border-collapse rounded-lg comparison-table bg-white/60 text-dark-blue backdrop-blur-md"
               >
                 <!-- New -->
                 <tbody>
-                  <tr class="trad-cost border-b border-white/60 font-semibold">
-                    <td class="py-3 text-sm text-center">No of leads</td>
-                    <td class="py-3 text-sm text-center">Active Buyers</td>
-                    <td class="py-3 text-sm text-center">Retention Buyers</td>
-                    <td class="py-3 text-sm text-center">Avg Order</td>
+                  <tr class="font-semibold border-b trad-cost border-white/60">
+                    <td class="py-3 text-xs px-0.5 md:text-sm text-center">
+                      No of leads
+                    </td>
+                    <!-- <td class="py-3 text-xs px-0.5 md:text-sm text-center">
+                      Active Buyers
+                    </td> -->
+                    <!-- <td class="py-3 text-xs px-0.5 md:text-sm text-center">
+                      Retention Buyers
+                    </td> -->
+                    <td class="py-3 text-xs px-0.5 md:text-sm text-center">
+                      Total Buyers
+                    </td>
                   </tr>
-                  <tr class="tijara-cost font-bold">
-                    <td id="Potential-Leeds" class="py-3 text-sm text-center">
+                  <tr class="font-bold tijara-cost">
+                    <td
+                      id="Potential-Leeds"
+                      class="py-3 text-xs px-0.5 md:text-sm text-center"
+                    >
                       96 / year
                     </td>
-                    <td id="tijara-cost" class="py-3 text-sm text-center">
-                      From 3 to 5 Buyer
+                    <!-- <td
+                      id="tijara-cost"
+                      class="py-3 text-xs px-0.5 md:text-sm text-center"
+                    >
+                      3 to 5 / year
                     </td>
-                    <td id="Retention-Rate" class="py-3 text-sm text-center">
-                      3
+                    <td
+                      id="Retention-Rate"
+                      class="py-3 text-xs px-0.5 md:text-sm text-center"
+                    >
+                      3 to 4 / year
+                    </td> -->
+                    <td
+                      id="total-an-buyers"
+                      class="py-3 text-xs px-0.5 md:text-sm text-center"
+                    >
+                      10 to 15 / year
                     </td>
-                    <td class="py-3 text-sm text-center">$5k to $50k</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </section>
+        </div>
+        <div
+          class="flex flex-col items-center w-full gap-4 mt-8 md:mt-10 md:justify-center md:flex-row lg:gap-6"
+        >
+          <a href="./free-trial.html" class="primary-btn">
+            <img src="./assets/icon.svg" alt="icon" />
+            Start Free Trial Now</a
+          >
         </div>
       </section>
       <!-- Our Top Sellers Section -->
@@ -1685,331 +1712,6 @@ with over +9.5K Wholesale Buyers With TijaraHub"
           </div>
         </div>
       </section>
-
-      <!-- <section id="calc-section" class="container" data-aos="fade-up">
-        <div class="p-6 mx-auto text-center lg:p-12 rounded-3xl ocean-gradient">
-          <div
-            class="flex flex-col items-center justify-center gap-5 mb-4 text-center md:mb-5"
-          >
-            <h2 class="h2 max-sm:!leading-[1]">
-              See Your Gross with <br />
-              TijaraHub
-            </h2>
-          </div>
-          <div class="flex items-center gap-10">
-            <div class="hidden lg:block">
-              <img
-                src="./assets/calculator.png"
-                class="max-w-[550px]"
-                alt="calculator"
-              />
-            </div>
-            <div class="flex flex-col flex-1 gap-6">
-              <form
-                id="calc-form"
-                class="w-full flex flex-col gap-4 max-w-[586px] mx-auto"
-              >
-                <div class="flex flex-col gap-2">
-                  <label for="generated-leads" class="text-left"
-                    >Generated Leads</label
-                  >
-                  <div class="relative w-full">
-                    <select
-                      id="generated-leads"
-                      name="generated-leads"
-                      class="w-full px-4 py-3 font-semibold border rounded-md outline-none appearance-none text-secondary bg-secondary-50 border-secondary-200"
-                    >
-                      <option value="5">5</option>
-                      <option value="8">8</option>
-                    </select>
-                    <div
-                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                    >
-                      <svg
-                        class="w-4 h-4 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <label for="int-sales" class="text-left"
-                    >International Sales</label
-                  >
-                  <div class="relative w-full">
-                    <select
-                      id="int-sales"
-                      name="int-sales"
-                      class="w-full px-4 py-3 font-semibold border rounded-md outline-none appearance-none text-secondary bg-secondary-50 border-secondary-200"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
-                    <div
-                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                    >
-                      <svg
-                        class="w-4 h-4 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <label for="market-research" class="text-left"
-                    >Market Research</label
-                  >
-                  <div class="relative w-full">
-                    <select
-                      id="market-research"
-                      name="market-research"
-                      class="w-full px-4 py-3 font-semibold border rounded-md outline-none appearance-none text-secondary bg-secondary-50 border-secondary-200"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
-                    <div
-                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                    >
-                      <svg
-                        class="w-4 h-4 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <label for="marketing" class="text-left">Marketing</label>
-                  <div class="relative w-full">
-                    <select
-                      id="marketing"
-                      name="marketing"
-                      class="w-full px-4 py-3 font-semibold border rounded-md outline-none appearance-none text-secondary bg-secondary-50 border-secondary-200"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
-                    <div
-                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                    >
-                      <svg
-                        class="w-4 h-4 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <label for="product-list" class="text-left"
-                    >Product List</label
-                  >
-                  <div class="relative w-full">
-                    <select
-                      id="product-list"
-                      name="product-list"
-                      class="w-full px-4 py-3 font-semibold border rounded-md outline-none appearance-none text-secondary bg-secondary-50 border-secondary-200"
-                    >
-                      <option value="25">25</option>
-                      <option value="60">60</option>
-                    </select>
-                    <div
-                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
-                    >
-                      <svg
-                        class="w-4 h-4 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <button class="p-4 mt-4 duration-300 rounded-md bg-[#265B9A]">
-                  Calculate
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div
-          id="calc-modal"
-          data-aos="zoom-in"
-          class="absolute top-0 flex-col hidden gap-10 p-6 md:p-12 size-full rounded-3xl ocean-gradient start-0"
-        >
-          <button
-            id="close-calc-modal"
-            class="absolute flex items-center justify-center text-3xl font-bold rounded-full cursor-pointer end-5 top-5 size-12 bg-secondary text-secondary-50"
-          >
-            X
-          </button>
-          <div class="flex w-full gap-10">
-            <div class="flex-col flex-1 hidden gap-4 md:flex">
-              <h3 class="h3">What you will save</h3>
-              <div class="flex flex-col gap-2">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./assets/icons/travel-planning.svg"
-                      alt="travling icon"
-                      class="w-8"
-                    />
-                    <h4 class="h4">Travel Planning</h4>
-                  </div>
-                  <p>
-                    Starts From :
-                    <span class="pl-2 font-bold text-yellow-500"> $400</span>
-                  </p>
-                </div>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./assets/icons/marketing-2.svg"
-                      alt="marketing icon"
-                      class="w-8"
-                    />
-                    <h4 class="h4">Marketing</h4>
-                  </div>
-                  <p>
-                    Starts From :
-                    <span class="pl-2 font-bold text-yellow-500"> $400</span>
-                  </p>
-                </div>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./assets/icons/follow-ups.svg"
-                      alt="follow up icon"
-                      class="w-8"
-                    />
-                    <h4 class="h4">Follow-ups</h4>
-                  </div>
-                  <p>
-                    Starts From :
-                    <span class="pl-2 font-bold text-yellow-500"> $400</span>
-                  </p>
-                </div>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./assets/icons/quote-preparation.svg"
-                      alt="preperation icon"
-                      class="w-8"
-                    />
-                    <h4 class="h4">Quotation Preparation</h4>
-                  </div>
-                  <p>
-                    Starts From :
-                    <span class="pl-2 font-bold text-yellow-500"> $400</span>
-                  </p>
-                </div>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./assets/icons/crm-managment.svg"
-                      alt="CRM
-                Management icon"
-                      class="w-8"
-                    />
-                    <h4 class="h4">CRM Management</h4>
-                  </div>
-                  <p>
-                    Starts From :
-                    <span class="pl-2 font-bold text-yellow-500"> $400</span>
-                  </p>
-                </div>
-                <p class="pt-5 text-center h3">It'll Cost $6K-$20k</p>
-              </div>
-            </div>
-            <div class="flex flex-col flex-1 gap-4 max-md:pt-10">
-              <h3 class="h3">What you will gain?</h3>
-              <div class="flex-1">
-                <div class="flex flex-col gap-3">
-                  <h4 class="h-4">
-                    Potential Leads
-                    <span id="potential-leads" class="font-bold text-yellow-500"
-                      >8</span
-                    >
-                  </h4>
-                  <p>
-                    Potential Active Deals
-                    <span id="potential-leads" class="font-bold text-yellow-500"
-                      >3</span
-                    >
-                  </p>
-                  <p>
-                    Avg Deal Value
-                    <span class="font-bold text-yellow-500">$2500</span>
-                  </p>
-                </div>
-              </div>
-              <p class="pt-5 text-center h3">You Will Gain $5K-$7.5K</p>
-            </div>
-          </div>
-          <div>
-            <div class="relative mx-auto w-fit">
-              <img
-                src="./assets/chart.png"
-                class="h-[200px] mx-auto"
-                alt="chart"
-              />
-              <p class="h2">Your Potential Growth</p>
-              <span
-                class="absolute -translate-x-1/2 h3 -translate-y-1/5 top-1/5 start-1/2"
-                >20%</span
-              >
-            </div>
-          </div>
-        </div>
-      </section> -->
-
       <!--  News Letter -->
       <section class="container w-full" data-aos="fade-up">
         <div class="flex flex-col mx-auto text-center">
