@@ -49,12 +49,12 @@
               >
                 <a
                   href="./case-studyar.html"
-                  class="block font-cairo p-3 text-black rounded-lg hover:bg-secondary-300"
+                  class="block p-3 text-black rounded-lg font-arabic hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
                   href="./case-study.html"
-                  class="block font-inter p-3 text-black rounded-lg hover:bg-secondary-300 bg-secondary-300"
+                  class="block p-3 text-black rounded-lg font-inter hover:bg-secondary-300 bg-secondary-300"
                   >English</a
                 >
               </div>
@@ -72,16 +72,36 @@
             <h1 class="text-center h1">Case Study</h1>
           </div>
           <div
-            class="flex flex-col justify-start items-start p-4 lg:py-12 lg:px-10 w-full rounded-3xl gap-6 bg-white/5 backdrop-blur-md"
+            class="flex flex-col items-start justify-start w-full gap-6 p-4 lg:py-12 lg:px-10 rounded-3xl bg-white/5 backdrop-blur-md"
             id="caseStudyContainer"
           >
-            <h2 class="h2 w-full text-center">Case Study Not Found</h2>
+            <h2 class="w-full text-center h2">Case Study Not Found</h2>
           </div>
         </div>
       </section>
+      <!-- Image Modal -->
+      <div
+        id="imageModal"
+        class="fixed inset-0 z-50 items-center justify-center hidden bg-light-cyan/20 backdrop-blur-md bg-opacity-60"
+      >
+        <div class="relative w-[95%] p-4 rounded-lg md:max-w-3xl">
+          <button
+            id="closeModal"
+            class="absolute text-4xl font-bold transition-all duration-300 text-dark-blue -top-5 right-2 hover:text-red-500"
+          >
+            &times;
+          </button>
+          <img
+            id="modalImage"
+            src=""
+            alt="Preview"
+            class="rounded-2xl max-h-[80vh] w-full object-contain"
+          />
+        </div>
+      </div>
     </div>
     <!--  News Letter -->
-    <section class="container w-full pb-14" data-aos="fade-up">
+    <section class="container w-full mb-12" data-aos="fade-up">
       <div class="flex flex-col mx-auto text-center">
         <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
         <form
@@ -104,14 +124,18 @@
                 data-element="header"
                 style="color: #f5f5f5; font-size: 28px; font-weight: 700"
               >
-                <h2>Join our newsletter</h2>
+                <h2>Stay Ahead with TijaraHub Insights</h2>
               </div>
               <div
                 class="formkit-content"
                 data-element="content"
                 style="color: #d9d9d9; font-size: 18px; font-weight: 400"
               >
-                <p>Receive tips and tricks on how to lorum ipsum.</p>
+                <p class="max-w-[620px] mx-auto">
+                  Join our community of B2B professionals to receive the latest
+                  market trends, exclusive platform updates, and expert tips for
+                  international trade - straight to your inbox.
+                </p>
               </div>
             </div>
             <div>

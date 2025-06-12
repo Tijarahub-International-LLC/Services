@@ -83,54 +83,79 @@ const caseStudies = [
 
 const services = [
   {
-    title: "Generation Qualified Leads",
+    title: isEnglishVersion() ? "Generation Qualified Leads" : "توليد العملاء المؤهلين",
     img: "./assets/services-icons/leads.png",
-    services: ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"]
+    services: isEnglishVersion() ? ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"] : ["العملاء المحتملين خارجيًا", "حملات التسويق الداخلي", "إدارة علاقات العملاء وتقييم جودتهم", "الندوات الرقمية"]
   },
   {
-    title: "International Export Sales",
+    title: isEnglishVersion() ? "International Export Sales" : "دعم الصادرات الدولية",
 
     img: "./assets/services-icons/intl-sales.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Market Entry Strategy",
       "Partner Development",
       "Compliance Support",
       "Sales Enablement"
+    ] : [
+      "استراتيجية دخول السوق",
+      "تطوير الشراكات",
+      "دعم الامتثال",
+      "تمكين فرق المبيعات"
     ]
   },
   {
-    title: "Marketing",
+    title: isEnglishVersion() ? "Marketing" : "التسويق ",
     img: "./assets/services-icons/marketing.png",
-    services: ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"]
+    services: isEnglishVersion() ? ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"] : [
+      "التسويق الرقمي المدفوع",
+      "حملات البريد الإلكتروني والواتساب",
+      "البعثات التجارية",
+      "المعارض والفعاليات"
+    ]
   },
   {
-    title: "Market Research",
+    title: isEnglishVersion() ? "Market Research" : "أبحاث السوق",
     img: "./assets/services-icons/research.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Industry Reports",
       "Competitor Insights",
       "Customer Profiling",
       "Surveys & Focus Groups"
+    ] : [
+      "تقارير الصناعة",
+      "رؤى حول المنافسين",
+      "تحليل ملفات العملاء",
+      "استبيانات ومجموعات التركيز"
     ]
   },
   {
-    title: "Customer Service",
+    title: isEnglishVersion() ? "Customer Service" : "خدمة العملاء",
     img: "./assets/services-icons/cust-serv.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Omnichannel Support",
       "Helpdesk & Ticketing",
       "Full Trading Cycle Support",
       "Feedback Management"
+    ] : [
+      "دعم متعدد القنوات",
+      "مكتب المساعدة وإدارة التذاكر",
+      "دعم كامل لدورة التجارة",
+      "إدارة الملاحظات والتقييمات"
     ]
   },
   {
-    title: "AI-Powerd Proposal Tool",
+    title: isEnglishVersion() ? "AI-Powerd Proposal Tool" : "أدوات الذكاء الاصطناعي",
     img: "./assets/services-icons/gear.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Automated RFQs",
       "Required Export Documents",
       "Proposal Analytics",
       "Digital Sales Rooms"
+    ] : [
+      "طلبات عروض الأسعار المؤتمتة",
+      "الوثائق المطلوبة للتصدير",
+      "تحليلات العروض",
+      "غرف مبيعات رقمية"
     ]
   },
 
@@ -387,7 +412,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.services[index]}</span>`}
         </li>
         `;
 
@@ -405,7 +430,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.marketing[index]}</span>`} 
         </li>
         `;
 
@@ -423,7 +448,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -443,7 +468,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.services[index]}</span>`}
         </li>
         `;
 
@@ -461,7 +486,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.marketing[index]}</span>`}
         </li>
         `;
 
@@ -479,7 +504,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -509,7 +534,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.services[index]}</span>`}
         </li>
         `;
 
@@ -527,7 +552,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.marketing[index]}</span>`}
         </li>
         `;
 
@@ -545,7 +570,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -565,7 +590,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.services[index]}</span>`}
         </li>
         `;
 
@@ -583,7 +608,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.marketing[index]}</span>`}
         </li>
         `;
 
@@ -601,7 +626,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -631,7 +656,7 @@ const monthlyDetails = {
     "5 / Month",
     "5 / Month",
     "1 Sales",
-    "1 Campaign / Month",
+    `<span class="text-end">1 Campaign / Month</span>`,
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
@@ -645,7 +670,7 @@ const monthlyDetails = {
     "8 / Month",
     "12 / Month",
 
-    "2 Campaign / Month",
+    `<span class="text-end">2 Campaign / Month</span>`,
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
@@ -658,7 +683,7 @@ const yearlyDetails = {
     "8 / Month",
     "6 / Month",
     "1 Sales",
-    "1 Campaign / Month",
+    `<span class="text-end">1 Campaign / Month</span>`,
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
@@ -669,7 +694,7 @@ const yearlyDetails = {
     "15 / Month",
     "12 / Month",
 
-    "2 Campaign / Month",
+    `<span class="text-end">2 Campaign / Month</span>`,
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
     "2 Sales",
@@ -848,9 +873,9 @@ const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
 let slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
-window.addEventListener('resize',()=>{
+window.addEventListener('resize', () => {
   slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16
-  
+
 })
 if (document.dir == "rtl") slideWidth = -slideWidth
 let autoScrollInterval
@@ -985,7 +1010,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         </li>
         </ul>
         <a
-          href="./case-study.html?i=${index}"
+          href="./case-study${isEnglishVersion() ? "" : "ar"}.html?i=${index}"
           class="relative max-w-fit md:self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
 
         >
@@ -1106,7 +1131,12 @@ function addContentToPage(index) {
                 `).join("")}
             </div>
             <div class="flex flex-wrap items-center gap-5 *:rounded-2xl">
-              ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_3-_1.25rem)]"/>`).join("")}
+                  ${caseStudy.preWorksImgs.map(img => `
+        <img src="${img}" 
+            data-src="${img}" 
+            alt="${caseStudy.orderNum}" 
+            class="popup-img cursor-pointer max-w-[calc(100%_/_3-_1.25rem)]"/>
+    `).join("")}
             </div>
             <hr class="text-gray-500"/>
             <h3 class="h3 text-light-cyan font-semibold">Manufacturer</h3>
@@ -1158,8 +1188,8 @@ function addContentToPage(index) {
             <span class="font-bold"> Inspection Ref</span> :${caseStudy.inspection.ref}
             </p>
             <hr class="text-gray-500"/>
-            <div class="flex flex-col items-center gap-10 relative my-20">
-          <h3 class="h3 text-light-cyan font-semibold">Customer Feedback</h3>
+            <div class="flex flex-col items-center gap-5 md:gap-10 relative my-20">
+          <h3 class="h3 max-sm:text-center text-light-cyan font-semibold">Customer Feedback</h3>
           <h3
             class="h3 quote"
           >
@@ -1220,7 +1250,7 @@ services.forEach(({ title, img, services }, index) => {
           data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
           class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/5 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
         >
-          <h3 class="text-4xl font-bold capitalize">${title}</h3>
+          <h3 class="text-4xl max-lg:text-center font-bold capitalize">${title}</h3>
           <div class="py-5">
             <img
               src="${img}"
@@ -1286,7 +1316,7 @@ const plans = {
     name: "Premium Monthly"
   },
   'standard-annual': {
-    monthlyCost: 195,
+    monthlyCost: 193,
     annualCost: 2340,
     buyers: 8,
     sales: 1,
@@ -1436,7 +1466,7 @@ function updateGrowthChart(
   }
   const { q1, q2, q3, q4, minTotal, maxTotal, q1Col, q2Col, q3Col, q4Col } = getAllQuarters(planData)
   const months = ["Q1", "Q2", "Q3", "Q4"];
-  if (window.location.href.includes("index.html")) {
+  if (window.location.href.includes("index.html") || window.location.href.includes("indexar.html")) {
     growthChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -1638,3 +1668,35 @@ customBuyers?.addEventListener('change', function (e) {
 
 
 
+
+
+
+const imgModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeBtn = document.getElementById("closeModal");
+
+// Bind click events to all popup images
+document?.querySelectorAll(".popup-img").forEach(img => {
+  img.addEventListener("click", () => {
+    const src = img.getAttribute("data-src");
+    modalImage.src = src;
+    imgModal.classList.remove("hidden");
+    imgModal.classList.add("flex");
+    document.body.style.overflowY = "hidden"
+  });
+});
+
+// Close logic
+closeBtn?.addEventListener("click", () => {
+  imgModal.classList.add("hidden");
+  imgModal.classList.remove("flex");
+  document.body.style.overflowY = "auto"
+});
+
+imgModal?.addEventListener("click", (e) => {
+  if (e.target === imgModal) {
+    imgModal.classList.add("hidden");
+    imgModal.classList.remove("flex");
+    document.body.style.overflowY = "auto"
+  }
+});
