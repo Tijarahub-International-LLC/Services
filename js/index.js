@@ -848,17 +848,21 @@ const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
 let slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
+window.addEventListener('resize',()=>{
+  slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16
+  
+})
 if (document.dir == "rtl") slideWidth = -slideWidth
 let autoScrollInterval
 rightArrow?.addEventListener('click', () => {
 
-  journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
-
+  // journeyCarousel?.scrollBy({ left: slideWidth, behavior: "smooth" })
+  journeyCarousel.scrollTo({ left: Math.round((journeyCarousel.scrollLeft + slideWidth) / slideWidth) * slideWidth, behavior: "smooth" })
 })
 leftArrow?.addEventListener('click', () => {
 
-  journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
-
+  // journeyCarousel?.scrollBy({ left: -slideWidth, behavior: 'smooth' })
+  journeyCarousel.scrollTo({ left: Math.round((journeyCarousel.scrollLeft - slideWidth) / slideWidth) * slideWidth, behavior: "smooth" })
 })
 
 autoScroll = () => {
