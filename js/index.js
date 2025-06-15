@@ -1465,12 +1465,12 @@ function updateGrowthChart(
     growthChart.destroy();
   }
   const { q1, q2, q3, q4, minTotal, maxTotal, q1Col, q2Col, q3Col, q4Col } = getAllQuarters(planData)
-  const months = ["Q1", "Q2", "Q3", "Q4"];
+  const quarters = isEnglishVersion() ? ["Q1", "Q2", "Q3", "Q4"] : ["الربع الأول", "الربع الثاني", "الربع الثالث", "الربع الرابع"];
   if (window.location.href.includes("index.html") || window.location.href.includes("indexar.html")) {
     growthChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: months,
+        labels: quarters,
         datasets: [
           {
             label: "Net Growth",
@@ -1507,7 +1507,7 @@ function updateGrowthChart(
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Total Buyers',
+              text: isEnglishVersion() ? 'Total Buyers' : "إجمالي المشترين",
               color: "#f5f5f5",
             },
             min: minTotal,
@@ -1573,9 +1573,10 @@ function updateGrowthChart(
                 let quarters = [q1, q2, q3, q4]
 
                 return [
-                  `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
-                  `Max Total Revenue: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
-                  `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
+                  isEnglishVersion() ? `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : `الحد الأدنى لإجمالي الإيرادات: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  `الحد الأقصى لإجمالي الإيرادات: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  isEnglishVersion() ? `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}` : `إجمالي المشترين
+: الحد الأدنى: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} الحد الأقصى: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
                 ];
               },
             }
@@ -1592,11 +1593,12 @@ updateGrowthChart(planData);
 
 function updateFeaturesDisplay(planData) {
   // Update features display
-  document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
-  document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
-  document.getElementById('research-value').textContent = planData.research + ' /year';
-  document.getElementById('campaigns-value').textContent = planData.campaigns + ' /month';
-  document.getElementById('listings-value').textContent = planData.listings + ' products';
+  document.getElementById('buyers-value').textContent = isEnglishVersion() ? planData.buyers + ' buyers/month' : planData.buyers + " مشترين /شهريًا";
+
+  document.getElementById('sales-value').textContent = isEnglishVersion() ? planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month' : planData.sales + " " + 'عملية بيع /شهريًا';
+  document.getElementById('research-value').textContent = isEnglishVersion() ? planData.research + ' /year' : planData.research + ' /سنويًا';
+  document.getElementById('campaigns-value').textContent = isEnglishVersion() ? planData.campaigns + ' /month' : planData.campaigns + ' /شهريًا';
+  document.getElementById('listings-value').textContent = isEnglishVersion() ? planData.listings + ' products' : planData.listings + ' منتجًا';
 }
 
 function updateCostDisplay(planData) {
@@ -1629,9 +1631,9 @@ calculateBtn?.addEventListener('click', () => {
 
   //Update Leads/Buyers Table
   const { minTotalBuyers, maxTotalBuyers } = getAllQuarters(planData);
-  const totalLeadsTextContent = planData.buyers * 12 + ' / year';
+  const totalLeadsTextContent = isEnglishVersion() ? planData.buyers * 12 + ' / year' : planData.buyers * 12 + ' / سنويًا';
   totalBuyersMinMaxTextContent = "";
-  totalBuyersMinMaxTextContent = minTotalBuyers + " to " + maxTotalBuyers + " / year";
+  totalBuyersMinMaxTextContent = isEnglishVersion() ? minTotalBuyers + " to " + maxTotalBuyers + " / year" : minTotalBuyers + " إلى " + maxTotalBuyers + " / سنويًا";
   document.getElementById('Potential-Leeds').textContent = totalLeadsTextContent;
   document.getElementById('savings').textContent = formatCurrency(savings);
   document.getElementById('total-an-buyers').textContent = totalBuyersMinMaxTextContent;

@@ -53,7 +53,7 @@
               >
                 <a
                   href="./case-studyar.html"
-                  class="block p-3 text-black rounded-lg font-cairo hover:bg-secondary-300"
+                  class="block p-3 text-black rounded-lg font-arabic hover:bg-secondary-300"
                   >العربية</a
                 >
                 <a
@@ -77,13 +77,33 @@
           </div>
 
           <div
-            class="flex flex-col items-start justify-start w-full gap-6 p-3 lg:py-12 lg:px-10 rounded-3xl ocean-gradient"
+            class="flex flex-col items-start justify-start w-full gap-6 p-4 lg:py-12 lg:px-10 rounded-3xl bg-white/5 backdrop-blur-md"
             id="caseStudyContainer"
           >
             <h2 class="w-full text-center h2">مثال واقعى غير موجود</h2>
           </div>
         </div>
       </section>
+      <!-- Image Modal -->
+      <div
+        id="imageModal"
+        class="fixed inset-0 z-50 items-center justify-center hidden bg-light-cyan/20 backdrop-blur-md bg-opacity-60"
+      >
+        <div class="relative w-[95%] p-4 rounded-lg md:max-w-3xl">
+          <button
+            id="closeModal"
+            class="absolute text-4xl font-bold transition-all duration-300 text-dark-blue -top-5 right-2 hover:text-red-500"
+          >
+            &times;
+          </button>
+          <img
+            id="modalImage"
+            src=""
+            alt="Preview"
+            class="rounded-2xl max-h-[80vh] w-full object-contain"
+          />
+        </div>
+      </div>
     </div>
     <!--  News Letter -->
     <section class="container w-full mb-12" data-aos="fade-up">
