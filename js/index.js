@@ -1239,7 +1239,12 @@ function addContentToPage(index) {
 const searchParams = new URLSearchParams(window.location.search);
 
 if (searchParams.get("i")) {
-  addContentToPage(searchParams.get('i'))
+  addContentToPage(searchParams.get('i'));
+  // handle toggling lang on single case study page
+  let arLink = document.getElementById("ar-lang-link");
+  let enLink = document.getElementById("en-lang-link");
+  arLink.href = `../case-studyar.html?i=${searchParams.get("i")}`;
+  enLink.href = `../case-study.html?i=${searchParams.get("i")}`;
 }
 
 services.forEach(({ title, img, services }, index) => {
