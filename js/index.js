@@ -1574,7 +1574,7 @@ function updateGrowthChart(
 
                 return [
                   isEnglishVersion() ? `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : `الحد الأدنى لإجمالي الإيرادات: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
-                  `الحد الأقصى لإجمالي الإيرادات: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  isEnglishVersion() ? `Max Total Revenue: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : `الحد الأقصى لإجمالي الإيرادات: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
                   isEnglishVersion() ? `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}` : `إجمالي المشترين
 : الحد الأدنى: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} الحد الأقصى: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
                 ];
