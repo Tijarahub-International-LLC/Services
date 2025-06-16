@@ -10,73 +10,100 @@
     <link href="./css/output.css" rel="stylesheet" />
   </head>
   <body class="overflow-x-hidden font-arabic page-gradient">
-    <!-- Hero Section -->
-    <div>
-      <header class="container">
-        <div class="flex justify-between items-center h-[80px]">
-          <a target="_blank" href="https://tijarahub.com/"
-            ><img src="assets/logo.png" alt="TijaraHub" class="max-w-12"
-          /></a>
+    <!-- Header -->
+    <header
+      id="page-header"
+      class="fixed top-0 start-0 bg-dark-blue/20 backdrop-blur-md overflow-hidden w-full z-50"
+    >
+      <nav class="container flex justify-between items-center h-[80px]">
+        <a target="_blank" href="https://tijarahub.com/"
+          ><img src="assets/logo.png" alt="TijaraHub" class="max-w-12"
+        /></a>
 
-          <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium h-[100vh]"
-          >
-            <li>
-              <span
-                class="absolute block text-3xl cursor-pointer end-4 top-4 size-8 close lg:hidden"
-                ><i class="fa-solid fa-xmark"></i
-              ></span>
-            </li>
-            <li>
-              <a href="./indexar.html" class="font-medium">الرئيسية</a>
-            </li>
-            <li><a href="./servicesar.html" class="font-medium">الخدمات</a></li>
-            <li>
-              <a href="./pricingar.html" class="font-medium text-dark-cyan"
-                >خطة الأسعار</a
-              >
-            </li>
-            <li>
-              <a href="./case-studyar.html?i=0" class="font-medium">قصص نجاح</a>
-            </li>
-            <li><a href="./journeyar.html" class="font-medium">قصتنا</a></li>
-          </ul>
-          <div class="flex items-center justify-between gap-4">
-            <div class="relative">
-              <span
-                id="lang-toggle"
-                class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-dark-cyan"
-                ><i class="fa-solid fa-globe lang-icon"></i
-              ></span>
-
-              <div
-                id="lang-menu"
-                class="absolute text-secondary -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
-              >
-                <a
-                  href="./pricingar.html"
-                  class="block p-3 rounded-lg font-arabic bg-secondary-300 hover:bg-secondary-300"
-                  >العربية</a
-                >
-                <a
-                  href="./pricing.html"
-                  class="block p-3 rounded-lg hover:bg-secondary-300"
-                  >English</a
-                >
-              </div>
-            </div>
-            <span class="text-3xl cursor-pointer burger-icon lg:hidden"
-              ><i class="fa-solid fa-bars"></i
+        <ul
+          class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium"
+        >
+          <li>
+            <span
+              class="absolute block text-3xl cursor-pointer end-4 top-4 size-8 close lg:hidden"
+              ><i class="fa-solid fa-xmark"></i
             ></span>
+          </li>
+          <li>
+            <a href="./indexar.html" class="font-medium">الرئيسية</a>
+          </li>
+          <li>
+            <a href="./servicesar.html" class="font-medium">الخدمات</a>
+          </li>
+          <li>
+            <a href="./pricingar.html" class="font-medium text-light-cyan"
+              >خطة الأسعار</a
+            >
+          </li>
+          <li>
+            <a href="./case-studyar.html?i=0" class="font-medium">قصص نجاح</a>
+          </li>
+          <li><a href="./journeyar.html" class="font-medium">قصتنا</a></li>
+        </ul>
+
+        <div class="flex items-center justify-between gap-4">
+          <div class="relative">
+            <span
+              id="lang-toggle"
+              class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-dark-cyan"
+              ><i class="fa-solid fa-globe lang-icon"></i
+            ></span>
+
+            <div
+              id="lang-menu"
+              class="absolute hidden duration-300 gap-0.5 flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
+            >
+              <a
+                href="./pricingar.html"
+                class="block p-3 text-black rounded-lg font-arabic bg-secondary-300 hover:bg-secondary-300"
+                >العربية</a
+              >
+              <a
+                href="./pricing.html"
+                class="block p-3 text-black rounded-lg font-inter hover:bg-secondary-300"
+                >English</a
+              >
+            </div>
           </div>
+          <span class="text-3xl cursor-pointer burger-icon lg:hidden"
+            ><i class="fa-solid fa-bars"></i
+          ></span>
         </div>
-      </header>
-      <a
-        class="fixed top-[90%] right-[20px] md:right-[50px] text-7xl bg-[#187469] size-[60px] flex items-center justify-center rounded-full z-20"
-        href="https://wa.me/+201116201406"
+      </nav>
+      <!-- Extra Mobile Links -->
+      <ul
+        class="hidden max-lg:flex justify-center body border-b border-b-light-cyan/10 gap-5 container pb-4"
       >
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
+        <li>
+          <a href="./indexar.html" class="font-medium">الرئيسية</a>
+        </li>
+        <li>
+          <a href="./pricingar.html" class="font-medium text-light-cyan"
+            >خطة الأسعار</a
+          >
+        </li>
+        <li>
+          <a href="./case-studiesar.html" class="font-medium">قصص نجاح</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Float WhatsApp Link -->
+    <a
+      class="fixed top-[90%] right-[20px] md:right-[50px] text-7xl bg-[#187469] size-[60px] flex items-center justify-center rounded-full z-20"
+      href="https://wa.me/+20"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main class="relative flex flex-col pt-24 pb-8 gap-14 md:gap-28">
+      <!-- Hero Section -->
       <section class="flex items-center justify-center pt-32 pb-12">
         <div
           class="container flex flex-col items-center justify-center gap-6 lg:gap-12"
@@ -681,7 +708,115 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
+    <footer class="bg-white/10 backdrop-blur-md py-10">
+      <div
+        class="container py-6 gap-10 flex flex-col max-lg:items-center lg:flex-row justify-between"
+      >
+        <div
+          class="flex flex-col lg:flex-row max-lg:text-center items-center gap-4"
+        >
+          <a target="_blank" href="https://tijarahub.com/"
+            ><img
+              src="assets/logo.png"
+              alt="TijaraHub"
+              class="h-[100px] object-contain"
+          /></a>
+
+          <hgroup class="space-y-1 max-w-[640px]">
+            <h4 class="font-bold">
+              شركة Tijarahub International ذ.م.م © 2025 جميع الحقوق محفوظة.
+            </h4>
+            <p>
+              شركة TijaraHub International LLC، شركة ذات مسؤولية محدودة مسجلة في
+              مدينة الشارقة للإعلام (Shams) بموجب الرخصة رقم 2323378.01، ورقم
+              التعريف الضريبي 104118980200001.
+            </p>
+          </hgroup>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-5 justify-between">
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://www.linkedin.com/company/tijarahub"
+            >
+              <i class="text-xl fa-brands fa-linkedin-in"></i>
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Linkedin</span
+              >
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://www.facebook.com/Tijarahub1"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Facebook</span
+              >
+              <i class="text-xl fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://twitter.com/TijaraHub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Twitter</span
+              >
+              <i class="text-xl fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://www.youtube.com/@tijarahub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Youtube</span
+              >
+              <i class="text-xl fa-brands fa-youtube"></i>
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://www.instagram.com/tijarahub1/"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Instagram</span
+              >
+              <i class="text-xl fa-brands fa-instagram"></i>
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.TijaraHub"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >Google Play</span
+              >
+              <i class="text-xl fa-brands fa-google-play"></i>
+            </a>
+            <a
+              class="relative group"
+              target="_blank"
+              href="https://apps.apple.com/eg/app/tijarahub/id6738108098"
+            >
+              <span
+                class="absolute group-hover:-translate-y-10/12 group-hover:-top-1/2 group-hover:opacity-100 duration-300 transition-all text-sm end-1/2 -translate-x-1/2 opacity-0 py-0.5 rounded-xl bg-white/10 backdrop-blur-md min-w-[120px] text-center hidden group-hover:block"
+                >App Store</span
+              >
+              <i class="text-2xl fa-brands fa-app-store"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/index.js" defer></script>
   </body>
