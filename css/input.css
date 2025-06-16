@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -24,15 +24,14 @@
   --color-secondary-100: #e0e8f9;
   --color-secondary-50: #f1f5fd;
   --font-inter: "Inter", sans-serif;
-  --font-arabic: "IBM Plex Sans Arabic", sans-serif;
+  --font-arabic:  "IBM Plex Sans Arabic", sans-serif;
   --color-dark: rgb(54, 54, 54);
 
   /* Custom Animations */
-  --animate-marquee-parteners: marquee-parteners 26s linear infinite;
+  --animate-marquee-parteners: marquee-parteners 27s linear infinite;
   --animate-marquee-parteners-mobile: marquee-parteners-mobile 20s linear
     infinite;
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-marquee-mobile: marquee-mobile 8s linear infinite;
+  --animate-marquee: marquee 36s linear infinite;
   --animate-up-down: up-down 10s linear infinite;
   --animate-gradient-glow: gradient-glow 5s ease infinite;
   --animate-primary-glow: primary-glow 5s infinite;
@@ -60,15 +59,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-643%);
-    }
-  }
-  @keyframes marquee-mobile {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-645%);
+      transform: translateX(-50%);
     }
   }
 
@@ -742,9 +733,9 @@ input[type="number"] {
 }
 
 @media (max-width: 720px) {
-  .formkit-form[data-uid="3f5cb920f8"] .formkit-container {
-    padding: 12px;
-  }
+ .formkit-form[data-uid="3f5cb920f8"] .formkit-container {
+  padding: 12px;
+}
 }
 .formkit-form[data-uid="3f5cb920f8"] .formkit-hero {
   padding: 30px 5%;

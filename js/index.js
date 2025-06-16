@@ -83,54 +83,79 @@ const caseStudies = [
 
 const services = [
   {
-    title: "Generation Qualified Leads",
+    title: isEnglishVersion() ? "Generation Qualified Leads" : "توليد العملاء المؤهلين",
     img: "./assets/services-icons/leads.png",
-    services: ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"]
+    services: isEnglishVersion() ? ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"] : ["العملاء المحتملين خارجيًا", "حملات التسويق الداخلي", "إدارة علاقات العملاء وتقييم جودتهم", "الندوات الرقمية"]
   },
   {
-    title: "International Export Sales",
+    title: isEnglishVersion() ? "International Export Sales" : "دعم الصادرات الدولية",
 
     img: "./assets/services-icons/intl-sales.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Market Entry Strategy",
       "Partner Development",
       "Compliance Support",
       "Sales Enablement"
+    ] : [
+      "استراتيجية دخول السوق",
+      "تطوير الشراكات",
+      "دعم الامتثال",
+      "تمكين فرق المبيعات"
     ]
   },
   {
-    title: "Marketing",
+    title: isEnglishVersion() ? "Marketing" : "التسويق ",
     img: "./assets/services-icons/marketing.png",
-    services: ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"]
+    services: isEnglishVersion() ? ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"] : [
+      "التسويق الرقمي المدفوع",
+      "حملات البريد الإلكتروني والواتساب",
+      "البعثات التجارية",
+      "المعارض والفعاليات"
+    ]
   },
   {
-    title: "Market Research",
+    title: isEnglishVersion() ? "Market Research" : "أبحاث السوق",
     img: "./assets/services-icons/research.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Industry Reports",
       "Competitor Insights",
       "Customer Profiling",
       "Surveys & Focus Groups"
+    ] : [
+      "تقارير الصناعة",
+      "رؤى حول المنافسين",
+      "تحليل ملفات العملاء",
+      "استبيانات ومجموعات التركيز"
     ]
   },
   {
-    title: "Customer Service",
+    title: isEnglishVersion() ? "Customer Service" : "خدمة العملاء",
     img: "./assets/services-icons/cust-serv.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Omnichannel Support",
       "Helpdesk & Ticketing",
       "Full Trading Cycle Support",
       "Feedback Management"
+    ] : [
+      "دعم متعدد القنوات",
+      "مكتب المساعدة وإدارة التذاكر",
+      "دعم كامل لدورة التجارة",
+      "إدارة الملاحظات والتقييمات"
     ]
   },
   {
-    title: "AI-Powerd Proposal Tool",
+    title: isEnglishVersion() ? "AI-Powerd Proposal Tool" : "أدوات الذكاء الاصطناعي",
     img: "./assets/services-icons/gear.png",
-    services: [
+    services: isEnglishVersion() ? [
       "Automated RFQs",
       "Required Export Documents",
       "Proposal Analytics",
       "Digital Sales Rooms"
+    ] : [
+      "طلبات عروض الأسعار المؤتمتة",
+      "الوثائق المطلوبة للتصدير",
+      "تحليلات العروض",
+      "غرف مبيعات رقمية"
     ]
   },
 
@@ -387,7 +412,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.services[index]}</span>`}
         </li>
         `;
 
@@ -405,7 +430,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.marketing[index]}</span>`} 
         </li>
         `;
 
@@ -423,7 +448,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.annually.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.annually.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.annually.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -443,7 +468,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.services[index]}</span>`}
         </li>
         `;
 
@@ -461,7 +486,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.marketing[index]}</span>`}
         </li>
         `;
 
@@ -479,7 +504,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.annually.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.annually.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.annually.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.annually.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -509,7 +534,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.services[index]}</span>`}
         </li>
         `;
 
@@ -527,7 +552,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.marketing[index]}</span>`}
         </li>
         `;
 
@@ -545,7 +570,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.standard.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.standard.monthly.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.standard.monthly.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.standard.monthly.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -565,7 +590,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.services[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.services[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.services[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.services[index]}</span>`}
         </li>
         `;
 
@@ -583,7 +608,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.marketing[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.marketing[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.marketing[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.marketing[index]}</span>`}
         </li>
         `;
 
@@ -601,7 +626,7 @@ togglePlan?.addEventListener("click", (e) => {
           ${plansContent.premium.monthly.techFeatures[index] === true ? `<span class="text-dark-cyan"
             ><i class="fa-solid fa-check"></i></span>` : plansContent.premium.monthly.techFeatures[index] === false ? `<span class="text-red-500"
             ><i class="fa-solid fa-x"></i
-            ></span>` : plansContent.premium.monthly.techFeatures[index]}
+            ></span>` : `<span class="text-end">${plansContent.premium.monthly.techFeatures[index]}</span>`}
         </li>
         `;
 
@@ -627,12 +652,11 @@ const monthlyPrices = {
 };
 
 const monthlyDetails = {
-  en:{
   standard: [
     "5 / Month",
     "5 / Month",
-
-    "1 Campaign / Month",
+    "1 Sales",
+    `<span class="text-end">1 Campaign / Month</span>`,
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
@@ -643,53 +667,23 @@ const monthlyDetails = {
     "Maximum 12"
   ],
   premium: [
+    "8 / Month",
     "12 / Month",
-    "10 / Month",
 
-    "2 Campaign / Month",
+    `<span class="text-end">2 Campaign / Month</span>`,
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-
     "1 Sales",
     "Maximum 30"
   ]
-} ,
-ar:{
-  standard: [
-    "5 / شهريا",
-    "5 / شهريا",
-    
-    "1 حملة / شهريا",
-   ` <span class="text-red-500"
-    ><i class="fa-solid fa-x"></i
-    ></span>`,
-
-    ` <span class="text-red-500"
-    ><i class="fa-solid fa-x"></i
-    ></span>`,
-    "كحد اقصى 12"
-  ],
-  premium: [
-    "12 / شهريا",
-    "10 / شهريا",
-
-    "2 حملة / شهريا",
-    `<span class="text-red-500"
-    ><i class="fa-solid fa-x"></i
-    ></span>`,
-    "1 موظف مبيعات",
-    "كحد اقصى 30"
-  ]
-}
 }
 const yearlyDetails = {
-  en:{
   standard: [
     "8 / Month",
     "6 / Month",
-    
-    "1 Campaign / Month",
+    "1 Sales",
+    `<span class="text-end">1 Campaign / Month</span>`,
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
@@ -700,89 +694,53 @@ const yearlyDetails = {
     "15 / Month",
     "12 / Month",
 
-    "2 Campaign / Month",
+    `<span class="text-end">2 Campaign / Month</span>`,
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
     "2 Sales",
     "Maximum 60"
   ]
-},
-  ar:{
-  standard: [
-    "8 / شهريا",
-    "6 / شهريا",
-    
-    "1 حملة / شهريا",
-    ` <span class="text-dark-cyan"
-    ><i class="fa-solid fa-check"></i></span>`,
-
-    `1 موظف مبيعات`,
-    "كحد اقصى 25"
-  ],
-  premium: [
-    "15 / شهريا",
-    "12 / شهريا",
-
-    "2 حملة / شهريا",
-    ` <span class="text-dark-cyan"
-    ><i class="fa-solid fa-check"></i></span>`,
-    "2 موظف مبيعات",
-    "كحد اقصى 60"
-  ]
-}
 }
 
-function fillPlanContent(type , lang) {
-  
-  const planDetailsContent = ` <p class="h4">  ${lang == "en" ? "What you will get" : "ما ستحصل عليه"}</p>
+function fillPlanContent(type) {
+
+  const planDetailsContent = ` <p class="h4">What you will get</p>
                 <ul class="flex flex-col gap-3 text-sm">
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "Identifying Potential Buyers" : "تحديد المشترين المحتملين"}
+                      Identifying Potential Buyers
                     </p>
-                    <p class="text-end">
                     ${type[0]}
-                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "Buyers from DataBase" : "المشترين من قاعدة البيانات"}
+                      Buyers from DataBase
                     </p>
-                    <p class="text-end">
                     ${type[1]}
-                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "Paid Social Media Marketing" : "التسويق عبر وسائل التواصل الاجتماعي المدفوعة"}
+                      Paid Social Media Marketing
                     </p>
-                    <p class="text-end">
                     ${type[2]}
-                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "Exhibitions and Trade Mission" : "المعارض والبعثات التجارية"}
+                      Exhibitions and Trade Mission
                     </p>
-                    <p class="text-end">
                     ${type[3]}
-                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "International Export Sales" : "دعم الصادرات الدولية"}
+                      International Export Sales
                     </p>
-                    <p class="text-end">
                     ${type[4]}
-                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${lang == "en" ? "Product Listing" : "إدراج المنتجات"}
+                      Product Listing
                     </p>
-                    <p class="text-end">
                     ${type[5]}
-                    </p>
                   </li>
                 </ul>`
 
@@ -805,13 +763,8 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         premiumDetails.innerHTML = ""
         standardDetails.innerHTML = ""
       }
-      if (document.dir == "ltr"){
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.premium , "en"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.standard , "en"))
-      }else{
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.premium , "ar"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.standard , "ar"))
-      }
+      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.premium))
+      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.standard))
 
       standardPrice.innerText = annuallyPrices.standard;
       premiumPrice.innerText = annuallyPrices.premium;
@@ -829,15 +782,8 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         premiumDetails.innerHTML = ""
         standardDetails.innerHTML = ""
       }
-
-      if (document.dir == "ltr"){
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.premium , "en"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.standard , "en"))
-      }else{
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.premium , "ar"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.standard , "ar"))
-      }
-
+      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.premium))
+      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.standard))
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
       premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
       yearlyCost.forEach(e => {
@@ -876,11 +822,10 @@ email?.addEventListener('keyup', (e) => {
   }
   if (isBusinessEmail(e.target.value)) {
     email.style.border = "none"
-    email.setCustomValidity("");
+    submitButton.type = 'submit'
   } else {
-    e.target.setCustomValidity('Please enter a business email address!')
-   
     email.style.border = "1px solid red"
+    submitButton.type = 'button'
   }
 })
 
@@ -928,9 +873,9 @@ const leftArrow = document.querySelector(".arrows .left-arrow")
 const rightArrow = document.querySelector(".arrows .right-arrow")
 const journeyCarousel = document.querySelector('.journey-carousel')
 let slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16 //slide + gap
-window.addEventListener('resize',()=>{
+window.addEventListener('resize', () => {
   slideWidth = +document.querySelector(".slide")?.getBoundingClientRect().width + 16
-  
+
 })
 if (document.dir == "rtl") slideWidth = -slideWidth
 let autoScrollInterval
@@ -1065,7 +1010,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         </li>
         </ul>
         <a
-          href="./case-study.html?i=${index}"
+          href="./case-study${isEnglishVersion() ? "" : "ar"}.html?i=${index}"
           class="relative max-w-fit md:self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
 
         >
@@ -1186,7 +1131,12 @@ function addContentToPage(index) {
                 `).join("")}
             </div>
             <div class="flex flex-wrap items-center gap-5 *:rounded-2xl">
-              ${caseStudy.preWorksImgs.map(img => `<img src="${img}" alt="${caseStudy.orderNum}" class="max-w-[calc(100%_/_3-_1.25rem)]"/>`).join("")}
+                  ${caseStudy.preWorksImgs.map(img => `
+        <img src="${img}" 
+            data-src="${img}" 
+            alt="${caseStudy.orderNum}" 
+            class="popup-img cursor-pointer max-w-[calc(100%_/_3-_1.25rem)]"/>
+    `).join("")}
             </div>
             <hr class="text-gray-500"/>
             <h3 class="h3 text-light-cyan font-semibold">Manufacturer</h3>
@@ -1238,8 +1188,8 @@ function addContentToPage(index) {
             <span class="font-bold"> Inspection Ref</span> :${caseStudy.inspection.ref}
             </p>
             <hr class="text-gray-500"/>
-            <div class="flex flex-col items-center gap-10 relative my-20">
-          <h3 class="h3 text-light-cyan font-semibold">Customer Feedback</h3>
+            <div class="flex flex-col items-center gap-5 md:gap-10 relative my-20">
+          <h3 class="h3 max-sm:text-center text-light-cyan font-semibold">Customer Feedback</h3>
           <h3
             class="h3 quote"
           >
@@ -1289,7 +1239,12 @@ function addContentToPage(index) {
 const searchParams = new URLSearchParams(window.location.search);
 
 if (searchParams.get("i")) {
-  addContentToPage(searchParams.get('i'))
+  addContentToPage(searchParams.get('i'));
+  // handle toggling lang on single case study page
+  let arLink = document.getElementById("ar-lang-link");
+  let enLink = document.getElementById("en-lang-link");
+  arLink.href = `../case-studyar.html?i=${searchParams.get("i")}`;
+  enLink.href = `../case-study.html?i=${searchParams.get("i")}`;
 }
 
 services.forEach(({ title, img, services }, index) => {
@@ -1300,7 +1255,7 @@ services.forEach(({ title, img, services }, index) => {
           data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
           class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/5 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
         >
-          <h3 class="text-4xl font-bold capitalize">${title}</h3>
+          <h3 class="text-4xl max-lg:text-center font-bold capitalize">${title}</h3>
           <div class="py-5">
             <img
               src="${img}"
@@ -1366,7 +1321,7 @@ const plans = {
     name: "Premium Monthly"
   },
   'standard-annual': {
-    monthlyCost: 195,
+    monthlyCost: 193,
     annualCost: 2340,
     buyers: 8,
     sales: 1,
@@ -1515,12 +1470,12 @@ function updateGrowthChart(
     growthChart.destroy();
   }
   const { q1, q2, q3, q4, minTotal, maxTotal, q1Col, q2Col, q3Col, q4Col } = getAllQuarters(planData)
-  const months = ["Q1", "Q2", "Q3", "Q4"];
-  if (window.location.href.includes("index.html")) {
+  const quarters = isEnglishVersion() ? ["Q1", "Q2", "Q3", "Q4"] : ["الربع الأول", "الربع الثاني", "الربع الثالث", "الربع الرابع"];
+  if (window.location.href.includes("index.html") || window.location.href.includes("indexar.html")) {
     growthChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: months,
+        labels: quarters,
         datasets: [
           {
             label: "Net Growth",
@@ -1557,7 +1512,7 @@ function updateGrowthChart(
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Total Buyers',
+              text: isEnglishVersion() ? 'Total Buyers' : "إجمالي المشترين",
               color: "#f5f5f5",
             },
             min: minTotal,
@@ -1623,9 +1578,10 @@ function updateGrowthChart(
                 let quarters = [q1, q2, q3, q4]
 
                 return [
-                  `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
-                  `Max Total Revenue: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
-                  `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
+                  isEnglishVersion() ? `Min Total Revenue: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : `الحد الأدنى لإجمالي الإيرادات: ${quarters[index].minOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  isEnglishVersion() ? `Max Total Revenue: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}` : `الحد الأقصى لإجمالي الإيرادات: ${quarters[index].maxOrderValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
+                  isEnglishVersion() ? `Total Buyers: Min: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} Max: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}` : `إجمالي المشترين
+: الحد الأدنى: ${Math.ceil(quarters[index].minLeadsAvg + quarters[index].minRetetionBuyers)} الحد الأقصى: ${Math.ceil(quarters[index].maxRetetionBuyers + quarters[index].maxLeadsAvg)}`,
                 ];
               },
             }
@@ -1642,11 +1598,12 @@ updateGrowthChart(planData);
 
 function updateFeaturesDisplay(planData) {
   // Update features display
-  document.getElementById('buyers-value').textContent = planData.buyers + ' buyers/month';
-  document.getElementById('sales-value').textContent = planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month';
-  document.getElementById('research-value').textContent = planData.research + ' /year';
-  document.getElementById('campaigns-value').textContent = planData.campaigns + ' /month';
-  document.getElementById('listings-value').textContent = planData.listings + ' products';
+  document.getElementById('buyers-value').textContent = isEnglishVersion() ? planData.buyers + ' buyers/month' : planData.buyers + " مشترين /شهريًا";
+
+  document.getElementById('sales-value').textContent = isEnglishVersion() ? planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month' : planData.sales + " " + 'عملية بيع /شهريًا';
+  document.getElementById('research-value').textContent = isEnglishVersion() ? planData.research + ' /year' : planData.research + ' /سنويًا';
+  document.getElementById('campaigns-value').textContent = isEnglishVersion() ? planData.campaigns + ' /month' : planData.campaigns + ' /شهريًا';
+  document.getElementById('listings-value').textContent = isEnglishVersion() ? planData.listings + ' products' : planData.listings + ' منتجًا';
 }
 
 function updateCostDisplay(planData) {
@@ -1679,9 +1636,9 @@ calculateBtn?.addEventListener('click', () => {
 
   //Update Leads/Buyers Table
   const { minTotalBuyers, maxTotalBuyers } = getAllQuarters(planData);
-  const totalLeadsTextContent = planData.buyers * 12 + ' / year';
+  const totalLeadsTextContent = isEnglishVersion() ? planData.buyers * 12 + ' / year' : planData.buyers * 12 + ' / سنويًا';
   totalBuyersMinMaxTextContent = "";
-  totalBuyersMinMaxTextContent = minTotalBuyers + " to " + maxTotalBuyers + " / year";
+  totalBuyersMinMaxTextContent = isEnglishVersion() ? minTotalBuyers + " to " + maxTotalBuyers + " / year" : minTotalBuyers + " إلى " + maxTotalBuyers + " / سنويًا";
   document.getElementById('Potential-Leeds').textContent = totalLeadsTextContent;
   document.getElementById('savings').textContent = formatCurrency(savings);
   document.getElementById('total-an-buyers').textContent = totalBuyersMinMaxTextContent;
@@ -1718,3 +1675,35 @@ customBuyers?.addEventListener('change', function (e) {
 
 
 
+
+
+
+const imgModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeBtn = document.getElementById("closeModal");
+
+// Bind click events to all popup images
+document?.querySelectorAll(".popup-img").forEach(img => {
+  img.addEventListener("click", () => {
+    const src = img.getAttribute("data-src");
+    modalImage.src = src;
+    imgModal.classList.remove("hidden");
+    imgModal.classList.add("flex");
+    document.body.style.overflowY = "hidden"
+  });
+});
+
+// Close logic
+closeBtn?.addEventListener("click", () => {
+  imgModal.classList.add("hidden");
+  imgModal.classList.remove("flex");
+  document.body.style.overflowY = "auto"
+});
+
+imgModal?.addEventListener("click", (e) => {
+  if (e.target === imgModal) {
+    imgModal.classList.add("hidden");
+    imgModal.classList.remove("flex");
+    document.body.style.overflowY = "auto"
+  }
+});
