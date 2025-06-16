@@ -760,7 +760,6 @@ const yearlyDetails = {
 }
 
 function fillPlanContent(type, lang) {
-  console.log(type)
   const planDetailsContent = ` <p class="h4">  ${lang == "en" ? "What you will get" : "ما ستحصل عليه"}</p>
                 <ul class="flex flex-col gap-3 text-sm">
                   <li class="flex items-center justify-between gap-2">
@@ -907,10 +906,8 @@ email?.addEventListener('keyup', (e) => {
     email.style.border = "none"
     email.setCustomValidity("");
   } else {
-    e.target.setCustomValidity('Please enter a business email address!')
-
+    email.setCustomValidity('Please enter a business email address!')
     email.style.border = "1px solid red"
-
   }
 
 })
