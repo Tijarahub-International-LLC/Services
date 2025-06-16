@@ -652,114 +652,114 @@ const monthlyPrices = {
 };
 
 const monthlyDetails = {
-  en:{
-  standard: [
-    "5 / Month",
-    "5 / Month",
+  en: {
+    standard: [
+      "5 / Month",
+      "5 / Month",
 
-    "1 Campaign / Month",
-    ` <span class="text-red-500"
+      "1 Campaign / Month",
+      ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
 
-    ` <span class="text-red-500"
+      ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-    "Maximum 12"
-  ],
-  premium: [
+      "Maximum 12"
+    ],
+    premium: [
 
-    "12 / Month",
-    "10 / Month",
+      "12 / Month",
+      "10 / Month",
 
-    "2 Campaign / Month",
-    ` <span class="text-red-500"
-    ><i class="fa-solid fa-x"></i
-    ></span>`,
-
-    "1 Sales",
-    "Maximum 30"
-  ]
-} ,
-ar:{
-  standard: [
-    "5 / شهريا",
-    "5 / شهريا",
-    
-    "1 حملة / شهريا",
-   ` <span class="text-red-500"
+      "2 Campaign / Month",
+      ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
 
-    ` <span class="text-red-500"
-    ><i class="fa-solid fa-x"></i
-    ></span>`,
-    "كحد اقصى 12"
-  ],
-  premium: [
-    "12 / شهريا",
-    "10 / شهريا",
+      "1 Sales",
+      "Maximum 30"
+    ]
+  },
+  ar: {
+    standard: [
+      "5 / شهريا",
+      "5 / شهريا",
 
-    "2 حملة / شهريا",
-    `<span class="text-red-500"
+      "1 حملة / شهريا",
+      ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-    "1 موظف مبيعات",
-    "كحد اقصى 30"
-  ]
-}
+
+      ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+      "كحد اقصى 12"
+    ],
+    premium: [
+      "12 / شهريا",
+      "10 / شهريا",
+
+      "2 حملة / شهريا",
+      `<span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+      "1 موظف مبيعات",
+      "كحد اقصى 30"
+    ]
+  }
 }
 const yearlyDetails = {
-  en:{
-  standard: [
-    "8 / Month",
-    "6 / Month",
-    
-    "1 Campaign / Month",
-    ` <span class="text-dark-cyan"
+  en: {
+    standard: [
+      "8 / Month",
+      "6 / Month",
+
+      "1 Campaign / Month",
+      ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-    `1 Sales`,
-    "Maximum 25"
-  ],
-  premium: [
-    "15 / Month",
-    "12 / Month",
+      `1 Sales`,
+      "Maximum 25"
+    ],
+    premium: [
+      "15 / Month",
+      "12 / Month",
 
-    "2 Campaign / Month",
-    ` <span class="text-dark-cyan"
+      "2 Campaign / Month",
+      ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-    "2 Sales",
-    "Maximum 60"
-  ]
-},
-  ar:{
-  standard: [
-    "8 / شهريا",
-    "6 / شهريا",
-    
-    "1 حملة / شهريا",
-    ` <span class="text-dark-cyan"
+      "2 Sales",
+      "Maximum 60"
+    ]
+  },
+  ar: {
+    standard: [
+      "8 / شهريا",
+      "6 / شهريا",
+
+      "1 حملة / شهريا",
+      ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-    `1 موظف مبيعات`,
-    "كحد اقصى 25"
-  ],
-  premium: [
-    "15 / شهريا",
-    "12 / شهريا",
+      `1 موظف مبيعات`,
+      "كحد اقصى 25"
+    ],
+    premium: [
+      "15 / شهريا",
+      "12 / شهريا",
 
-    "2 حملة / شهريا",
-    ` <span class="text-dark-cyan"
+      "2 حملة / شهريا",
+      ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
-    "2 موظف مبيعات",
-    "كحد اقصى 60"
-  ]
+      "2 موظف مبيعات",
+      "كحد اقصى 60"
+    ]
+  }
 }
-}
 
-function fillPlanContent(type , lang) {
+function fillPlanContent(type, lang) {
   console.log(type)
   const planDetailsContent = ` <p class="h4">  ${lang == "en" ? "What you will get" : "ما ستحصل عليه"}</p>
                 <ul class="flex flex-col gap-3 text-sm">
@@ -832,13 +832,13 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         premiumDetails.innerHTML = ""
         standardDetails.innerHTML = ""
       }
-      
-      if (document.dir == "ltr"){
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.premium , "en"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.standard , "en"))
-      }else{
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.premium , "ar"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.standard , "ar"))
+
+      if (document.dir == "ltr") {
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.premium, "en"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.standard, "en"))
+      } else {
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.premium, "ar"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.standard, "ar"))
       }
 
       standardPrice.innerText = annuallyPrices.standard;
@@ -858,12 +858,12 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         standardDetails.innerHTML = ""
       }
 
-      if (document.dir == "ltr"){
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.premium , "en"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.standard , "en"))
-      }else{
-        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.premium , "ar"))
-        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.standard , "ar"))
+      if (document.dir == "ltr") {
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.premium, "en"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.standard, "en"))
+      } else {
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.premium, "ar"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.standard, "ar"))
       }
 
 
@@ -903,12 +903,12 @@ email?.addEventListener('keyup', (e) => {
     const businessEmailRegex = /^(?!.*(@gmail\.com|@yahoo\.com|@outlook\.com|@hotmail\.com|@aol\.com|@protonmail\.com|@icloud\.com|@mail\.com|@zoho\.com|@yandex\.com))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return businessEmailRegex.test(email);
   }
-    if (isBusinessEmail(e.target.value)) {
+  if (isBusinessEmail(e.target.value)) {
     email.style.border = "none"
     email.setCustomValidity("");
   } else {
     e.target.setCustomValidity('Please enter a business email address!')
-   
+
     email.style.border = "1px solid red"
 
   }
@@ -1686,7 +1686,7 @@ function updateFeaturesDisplay(planData) {
   // Update features display
   document.getElementById('buyers-value').textContent = isEnglishVersion() ? planData.buyers + ' buyers/month' : planData.buyers + " مشترين /شهريًا";
 
-  document.getElementById('sales-value').textContent = isEnglishVersion() ? planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month' : planData.sales + " " + 'عملية بيع /شهريًا';
+  document.getElementById('sales-value').textContent = isEnglishVersion() ? planData.sales + ' sale' + (planData.sales !== 1 ? 's' : '') + '/month' : planData.sales + " " + "موظف مبيعات /شهريًا";
   document.getElementById('research-value').textContent = isEnglishVersion() ? planData.research + ' /year' : planData.research + ' /سنويًا';
   document.getElementById('campaigns-value').textContent = isEnglishVersion() ? planData.campaigns + ' /month' : planData.campaigns + ' /شهريًا';
   document.getElementById('listings-value').textContent = isEnglishVersion() ? planData.listings + ' products' : planData.listings + ' منتجًا';
