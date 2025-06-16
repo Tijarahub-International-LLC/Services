@@ -1179,13 +1179,16 @@ function addContentToPage(index) {
             <h3 class="h3 text-light-cyan font-semibold">Overview</h3>
             <ul class="flex flex-col gap-2 text-base">
               <li>
+                <p>Manufacuture: <span class="text-gray-300 italic">${vendor.name}</span></p>
+              </li>
+              <li>
+                <p>Location: <span class="text-gray-300 italic">${vendor.location}</span></p>
+              </li>
+              <li>
                 <p>Buyer: <span class="text-gray-300 italic">${buyer.name}</span></p>
               </li>
               <li>
                 <p>Destination: <span class="text-gray-300 italic">${buyer.destination}</span></p>
-              </li>
-              <li>
-                <p>Order Value: <span class="text-gray-300 italic">${buyer.orderInfo.value}</span></p>
               </li>
               <li>
                 <p>Order Date: <span class="text-gray-300 italic">${buyer.orderInfo.date}</span></p>
@@ -1195,9 +1198,6 @@ function addContentToPage(index) {
               </li>
               <li>
                 <p>Inspection &amp; Quality Control: <span class="text-gray-300 italic">Completed By${caseStudy.inspection.name} Ref(${caseStudy.inspection.ref})</span></p>
-              </li>
-              <li>
-                <p>Managed via: <span class="text-gray-300 italic">Completed By${caseStudy.manageBy.name} (${caseStudy.manageBy.ref})</span></p>
               </li>
               <li>
                 <p>Shipping Date: <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
@@ -1216,7 +1216,7 @@ function addContentToPage(index) {
               </div>    
                 `).join("")}
             </div>
-            <div class="flex flex-wrap items-center gap-5 *:rounded-2xl">
+            <div class="flex flex-wrap my-5 items-center gap-5 *:rounded-2xl">
                   ${caseStudy.preWorksImgs.map(img => `
         <img src="${img}" 
             data-src="${img}" 
@@ -1225,55 +1225,7 @@ function addContentToPage(index) {
     `).join("")}
             </div>
             <hr class="text-gray-500"/>
-            <h3 class="h3 text-light-cyan font-semibold">Manufacturer</h3>
-            <p class="body"><span class="font-bold">${vendor.name}</span>, a ${vendor.desc}</p>
 
-            <hr class="text-gray-500"/>
-
-            <h3 class="h3 text-light-cyan font-semibold">Buyer Information</h3>
-            <ul class="flex flex-col gap-2 text-base">
-              <li>
-                <p>Company: <span class="text-gray-300 italic">${buyer.name}</span></p>
-              </li>
-              <li>
-                <p>Location: <span class="text-gray-300 italic">${buyer.destination}</span></p>
-              </li>
-              <li>
-                <p>Sector: <span class="text-gray-300 italic">${buyer.industry}</span></p>
-              </li>
-            </ul>
-
-            <hr class="text-gray-500"/>
-
-            <h3 class="h3 text-light-cyan font-semibold">Logistics &amp; Shipment Details</h3>
-            <ul class="flex flex-col gap-2 text-base">
-              <li>
-                <p>Container Number: <span class="text-gray-300 italic">${caseStudy.shippingInfo.containerNum}</span></p>
-              </li>
-              <li>
-                <p>Seal Serial: <span class="text-gray-300 italic">${caseStudy.shippingInfo.sealSerial}</span></p>
-              </li>
-              <li>
-                <p>Shipping Date: <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
-              </li>
-              <li>
-                <p>Country of Origin Certificate: <span class="text-gray-300 italic">${caseStudy.shippingInfo.coo}</span></p>
-              </li>
-              <li>
-                <p>Telex Release Number: <span class="text-gray-300 italic">${caseStudy.shippingInfo.telexNum}</span></p>
-              </li>
-              <li>
-                <p>Original Documents Sent via ${caseStudy.shippingInfo.ods.name}: Tracking <span class="text-gray-300 italic">${caseStudy.shippingInfo.ods.tracking}</span></p>
-              </li>
-            </ul>
-            <hr class="text-gray-500"/>
-            <h3 class="h3 text-light-cyan font-semibold">Quality Assurance</h3>
-            <p class="body">Inspection and pre-shipment verification conducted by <span class="font-bold">${caseStudy.inspection.name}</span>, ensuring
-            conformity to Gulf import standards.
-            <br />
-            <span class="font-bold"> Inspection Ref</span> :${caseStudy.inspection.ref}
-            </p>
-            <hr class="text-gray-500"/>
             <div class="flex flex-col items-center gap-5 md:gap-10 relative my-20">
           <h3 class="h3 max-sm:text-center text-light-cyan font-semibold">Customer Feedback</h3>
           <h3
@@ -1303,6 +1255,7 @@ function addContentToPage(index) {
               </li>
             </ul>
             <hr class="text-gray-500"/>
+            <h3 class="h3 text-light-cyan font-semibold">TijaraHub in Action</h3>
             <p class="h4 !leading-[1.5] max-w-[780px] font-bold">
               <q>${caseStudy.quote.text}</q>
               <br />
@@ -1439,7 +1392,7 @@ const plans = {
 };
 
 // Traditional cost benchmark
-const traditionalCost = 7250;
+const traditionalCost = 50000;
 
 let totalBuyersMinMaxTextContent = 10 + " to " + 15 + " / year";
 
