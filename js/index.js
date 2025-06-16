@@ -652,11 +652,12 @@ const monthlyPrices = {
 };
 
 const monthlyDetails = {
+  en:{
   standard: [
     "5 / Month",
     "5 / Month",
-    "1 Sales",
-    `<span class="text-end">1 Campaign / Month</span>`,
+
+    "1 Campaign / Month",
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
@@ -667,23 +668,54 @@ const monthlyDetails = {
     "Maximum 12"
   ],
   premium: [
-    "8 / Month",
-    "12 / Month",
 
-    `<span class="text-end">2 Campaign / Month</span>`,
+    "12 / Month",
+    "10 / Month",
+
+    "2 Campaign / Month",
     ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
+
     "1 Sales",
     "Maximum 30"
   ]
+} ,
+ar:{
+  standard: [
+    "5 / شهريا",
+    "5 / شهريا",
+    
+    "1 حملة / شهريا",
+   ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+
+    ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+    "كحد اقصى 12"
+  ],
+  premium: [
+    "12 / شهريا",
+    "10 / شهريا",
+
+    "2 حملة / شهريا",
+    `<span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
+    "1 موظف مبيعات",
+    "كحد اقصى 30"
+  ]
+}
 }
 const yearlyDetails = {
+  en:{
   standard: [
     "8 / Month",
     "6 / Month",
-    "1 Sales",
-    `<span class="text-end">1 Campaign / Month</span>`,
+    
+    "1 Campaign / Month",
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
@@ -694,53 +726,90 @@ const yearlyDetails = {
     "15 / Month",
     "12 / Month",
 
-    `<span class="text-end">2 Campaign / Month</span>`,
+    "2 Campaign / Month",
     ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
+
     "2 Sales",
     "Maximum 60"
   ]
+},
+  ar:{
+  standard: [
+    "8 / شهريا",
+    "6 / شهريا",
+    
+    "1 حملة / شهريا",
+    ` <span class="text-dark-cyan"
+    ><i class="fa-solid fa-check"></i></span>`,
+
+    `1 موظف مبيعات`,
+    "كحد اقصى 25"
+  ],
+  premium: [
+    "15 / شهريا",
+    "12 / شهريا",
+
+    "2 حملة / شهريا",
+    ` <span class="text-dark-cyan"
+    ><i class="fa-solid fa-check"></i></span>`,
+    "2 موظف مبيعات",
+    "كحد اقصى 60"
+  ]
+}
 }
 
-function fillPlanContent(type) {
-
-  const planDetailsContent = ` <p class="h4">What you will get</p>
+function fillPlanContent(type , lang) {
+  console.log(type)
+  const planDetailsContent = ` <p class="h4">  ${lang == "en" ? "What you will get" : "ما ستحصل عليه"}</p>
                 <ul class="flex flex-col gap-3 text-sm">
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      Identifying Potential Buyers
+                      ${lang == "en" ? "Identifying Potential Buyers" : "تحديد المشترين المحتملين"}
                     </p>
+                    <p class="text-end">
                     ${type[0]}
+                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      Buyers from DataBase
+                      ${lang == "en" ? "Buyers from DataBase" : "المشترين من قاعدة البيانات"}
                     </p>
+                    <p class="text-end">
                     ${type[1]}
+                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      Paid Social Media Marketing
+                      ${lang == "en" ? "Paid Social Media Marketing" : "التسويق عبر وسائل التواصل الاجتماعي المدفوعة"}
                     </p>
+                    <p class="text-end">
                     ${type[2]}
+                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      Exhibitions and Trade Mission
+                      ${lang == "en" ? "Exhibitions and Trade Mission" : "المعارض والبعثات التجارية"}
                     </p>
+                    <p class="text-end">
                     ${type[3]}
+                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      International Export Sales
+                      ${lang == "en" ? "International Export Sales" : "دعم الصادرات الدولية"}
                     </p>
+                    <p class="text-end">
                     ${type[4]}
+                    </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
                     <p class="flex items-center gap-0.5 xl:gap-4">
-                      Product Listing
+                      ${lang == "en" ? "Product Listing" : "إدراج المنتجات"}
                     </p>
+                    <p class="text-end">
                     ${type[5]}
+                    </p>
                   </li>
                 </ul>`
 
@@ -763,8 +832,14 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         premiumDetails.innerHTML = ""
         standardDetails.innerHTML = ""
       }
-      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.premium))
-      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.standard))
+      
+      if (document.dir == "ltr"){
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.premium , "en"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.en.standard , "en"))
+      }else{
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.premium , "ar"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(yearlyDetails.ar.standard , "ar"))
+      }
 
       standardPrice.innerText = annuallyPrices.standard;
       premiumPrice.innerText = annuallyPrices.premium;
@@ -782,8 +857,16 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
         premiumDetails.innerHTML = ""
         standardDetails.innerHTML = ""
       }
-      premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.premium))
-      standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.standard))
+
+      if (document.dir == "ltr"){
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.premium , "en"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.en.standard , "en"))
+      }else{
+        premiumDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.premium , "ar"))
+        standardDetails.insertAdjacentHTML("beforeend", fillPlanContent(monthlyDetails.ar.standard , "ar"))
+      }
+
+
       standardButton.href = "https://tijarahub.com/vendor-registration/?plan_id=3"
       premiumButton.href = "https://tijarahub.com/vendor-registration/?plan_id=4"
       yearlyCost.forEach(e => {
@@ -820,13 +903,16 @@ email?.addEventListener('keyup', (e) => {
     const businessEmailRegex = /^(?!.*(@gmail\.com|@yahoo\.com|@outlook\.com|@hotmail\.com|@aol\.com|@protonmail\.com|@icloud\.com|@mail\.com|@zoho\.com|@yandex\.com))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return businessEmailRegex.test(email);
   }
-  if (isBusinessEmail(e.target.value)) {
+    if (isBusinessEmail(e.target.value)) {
     email.style.border = "none"
-    submitButton.type = 'submit'
+    email.setCustomValidity("");
   } else {
+    e.target.setCustomValidity('Please enter a business email address!')
+   
     email.style.border = "1px solid red"
-    submitButton.type = 'button'
+
   }
+
 })
 
 
