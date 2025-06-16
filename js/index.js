@@ -910,7 +910,6 @@ email?.addEventListener('keyup', (e) => {
     email.style.border = "none"
     email.setCustomValidity("");
   } else {
-    email.setCustomValidity('Please enter a business email address!')
     email.style.border = "1px solid red"
   }
 
