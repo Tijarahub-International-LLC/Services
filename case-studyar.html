@@ -9,73 +9,103 @@
     <link rel="icon" type="image/x-icon" href="./assets/Tijarahub-07.png" />
   </head>
   <body class="font-arabic page-gradient">
-    <div class="min-h-screen section-bottom-space">
-      <header class="container">
-        <div class="flex justify-between items-center h-[80px]">
-          <a target="_blank" href="https://tijarahub.com/"
-            ><img src="assets/logo.png" alt="TijaraHub" class="max-w-12"
-          /></a>
+    <!-- Header -->
+    <header
+      id="page-header"
+      class="fixed top-0 start-0 bg-dark-blue/20 backdrop-blur-md overflow-hidden w-full z-50"
+    >
+      <nav class="container flex justify-between items-center h-[80px]">
+        <a target="_blank" href="https://tijarahub.com/"
+          ><img src="assets/logo.png" alt="TijaraHub" class="max-w-12"
+        /></a>
 
-          <ul
-            class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium h-[100vh]"
-          >
-            <li>
-              <span
-                class="absolute block text-3xl cursor-pointer end-4 top-4 size-8 close lg:hidden"
-                ><i class="fa-solid fa-xmark"></i
-              ></span>
-            </li>
-            <li>
-              <a href="./indexar.html" class="font-medium">الرئيسية</a>
-            </li>
-            <li><a href="./servicesar.html" class="font-medium">الخدمات</a></li>
-            <li>
-              <a href="./pricingar.html" class="font-medium">خطة الأسعار</a>
-            </li>
-            <li>
-              <a href="./case-studyar.html?i=0" class="font-medium">قصص نجاح</a>
-            </li>
-            <li><a href="./journeyar.html" class="font-medium">قصتنا</a></li>
-          </ul>
-          <div class="flex items-center justify-between gap-4">
-            <div class="relative">
-              <span
-                id="lang-toggle"
-                class="text-3xl transition duration-300 ease-in-out cursor-pointer"
-                ><i class="fa-solid fa-globe lang-icon"></i
-              ></span>
-
-              <div
-                id="lang-menu"
-                class="absolute -z-10 duration-300 gap-0.5 flex flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
-              >
-                <a
-                  id="ar-lang-link"
-                  href="./case-studyar.html"
-                  class="block p-3 text-black rounded-lg font-arabic bg-secondary-300 hover:bg-secondary-300"
-                  >العربية</a
-                >
-                <a
-                  id="en-lang-link"
-                  href="./case-study.html"
-                  class="block p-3 text-black rounded-lg font-inter hover:bg-secondary-300"
-                  >English</a
-                >
-              </div>
-            </div>
-            <span class="text-3xl cursor-pointer burger-icon lg:hidden"
-              ><i class="fa-solid fa-bars"></i
+        <ul
+          class="absolute top-0 flex flex-col items-center justify-center gap-4 duration-300 opacity-0 lg:gap-10 -z-10 lg:z-auto lg:opacity-100 lg:bg-transparent lg:static lg:flex-row start-0 size-full menu body bg-dark-blue *:hover:text-dark-cyan *:duration-300 text-center font-medium"
+        >
+          <li>
+            <span
+              class="absolute block text-3xl cursor-pointer end-4 top-4 size-8 close lg:hidden"
+              ><i class="fa-solid fa-xmark"></i
             ></span>
-          </div>
-        </div>
-      </header>
-      <a
-        class="fixed top-[90%] right-[20px] md:right-[50px] text-7xl bg-[#187469] size-[60px] flex items-center justify-center rounded-full z-20"
-        href="https://wa.me/+201116201406"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
+          </li>
+          <li>
+            <a href="./indexar.html" class="font-medium">الرئيسية</a>
+          </li>
+          <li>
+            <a href="./servicesar.html" class="font-medium">الخدمات</a>
+          </li>
+          <li>
+            <a href="./pricingar.html" class="font-medium">خطة الأسعار</a>
+          </li>
+          <li>
+            <a
+              href="./case-studyar.html?i=0"
+              class="font-medium text-light-cyan"
+              >قصص نجاح</a
+            >
+          </li>
+          <li><a href="./journeyar.html" class="font-medium">قصتنا</a></li>
+        </ul>
 
+        <div class="flex items-center justify-between gap-4">
+          <div class="relative">
+            <span
+              id="lang-toggle"
+              class="text-3xl transition duration-300 ease-in-out cursor-pointer hover:text-dark-cyan"
+              ><i class="fa-solid fa-globe lang-icon"></i
+            ></span>
+
+            <div
+              id="lang-menu"
+              class="absolute hidden duration-300 gap-0.5 flex-col end-0 w-[200px] opacity-0 bg-secondary-50 top-full rounded-xl p-4"
+            >
+              <a
+                id="ar-lang-link"
+                href="./case-studiesar.html"
+                class="block p-3 text-black rounded-lg font-arabic bg-secondary-300 hover:bg-secondary-300"
+                >العربية</a
+              >
+              <a
+                id="en-lang-link"
+                href="./case-studies.html"
+                class="block p-3 text-black rounded-lg font-inter hover:bg-secondary-300"
+                >English</a
+              >
+            </div>
+          </div>
+          <span class="text-3xl cursor-pointer burger-icon lg:hidden"
+            ><i class="fa-solid fa-bars"></i
+          ></span>
+        </div>
+      </nav>
+      <!-- Extra Mobile Links -->
+      <ul
+        class="hidden max-lg:flex justify-center body border-b border-b-light-cyan/10 gap-5 container pb-4"
+      >
+        <li>
+          <a href="./indexar.html" class="font-medium">الرئيسية</a>
+        </li>
+        <li>
+          <a href="./pricingar.html" class="font-medium">خطة الأسعار</a>
+        </li>
+        <li>
+          <a href="./case-studiesar.html" class="font-medium text-light-cyan"
+            >قصص نجاح</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- Float WhatsApp Link -->
+    <a
+      class="fixed top-[90%] right-[20px] md:right-[50px] text-7xl bg-[#187469] size-[60px] flex items-center justify-center rounded-full z-20"
+      href="https://wa.me/+20"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main class="min-h-screen section-bottom-space">
       <section class="container pt-32 pb-12">
         <div class="flex flex-col items-center justify-center gap-6 lg:gap-12">
           <div class="flex flex-col justify-start gap-4">
@@ -110,7 +140,7 @@
           />
         </div>
       </div>
-    </div>
+    </main>
     <!--  News Letter -->
     <section class="container w-full mb-12" data-aos="fade-up">
       <div class="flex flex-col mx-auto text-center">
@@ -206,6 +236,7 @@
         </form>
       </div>
     </section>
+    <!-- Footer -->
     <footer class="bg-white/10 backdrop-blur-md py-10">
       <div
         class="container py-6 gap-10 flex flex-col max-lg:items-center lg:flex-row justify-between"

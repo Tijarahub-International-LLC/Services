@@ -171,6 +171,7 @@ const servicesContainer = document.querySelector("#servicesContainer");
 // Mobile Nav Logic
 burgerIcon?.addEventListener('click', () => {
   menu.classList.toggle('active-menu');
+  document?.getElementById("page-header").classList.toggle("overflow-hidden")
   menu.classList.remove('-z-10');
   if (!menu.classList.contains("z-10")) {
     menu.classList.add('z-10');
@@ -179,6 +180,7 @@ burgerIcon?.addEventListener('click', () => {
 })
 close?.addEventListener('click', () => {
   menu.classList.remove("z-10");
+  document?.getElementById("page-header").classList.toggle("overflow-hidden")
   if (!menu.classList.contains("-z-10")) {
     menu.classList.add("-z-10");
   }
@@ -880,7 +882,9 @@ document.querySelector(".togglePlan")?.addEventListener('click', (e) => {
 // Handle the lang options toggle
 const handleLangOptions = () => {
   langMenu.classList.toggle("opacity-0")
-  langMenu.classList.toggle("-z-10")
+  langMenu.classList.toggle("flex");
+  langMenu.classList.toggle("hidden")
+  document.getElementById("page-header").classList.toggle("overflow-hidden")
 }
 
 

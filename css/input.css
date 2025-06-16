@@ -185,7 +185,7 @@ div header {
 }
 
 .active-menu {
-  @apply opacity-100;
+  @apply opacity-100 h-screen;
 }
 .active-answer {
   @apply border-secondary-200 max-h-[340px];
