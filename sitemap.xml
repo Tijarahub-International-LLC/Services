@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://services.tijarahub.com/sitemap.xsl"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://services.tijarahub.com/</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/indexar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/indexar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/indexar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studyar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studiesar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/free-trialar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/free-trial.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/journeyar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/journey.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/pricingar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/servicesar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/services.html"/>
+  </url>
+
+</urlset>
