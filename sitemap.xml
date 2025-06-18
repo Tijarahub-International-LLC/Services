@@ -4,32 +4,136 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- Home Page -->
   <url>
     <loc>https://services.tijarahub.com/</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/indexar.html"/>
   </url>
 
+  <!-- Arabic Home -->
   <url>
     <loc>https://services.tijarahub.com/indexar.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/indexar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/"/>
+  </url>
+
+  <!-- Case Study -->
+  <url>
+    <loc>https://services.tijarahub.com/case-study.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studyar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/case-studyar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studyar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-study.html"/>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://services.tijarahub.com/case-studies.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studiesar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/case-studiesar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/case-studiesar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/case-studies.html"/>
+  </url>
+
+  <!-- Free Trial -->
+  <url>
+    <loc>https://services.tijarahub.com/free-trial.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/free-trial.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/free-trialar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/free-trialar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/free-trialar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/free-trial.html"/>
+  </url>
+
+  <!-- Journey -->
+  <url>
+    <loc>https://services.tijarahub.com/journey.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/journey.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/journeyar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/journeyar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/journeyar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/journey.html"/>
+  </url>
+
+  <!-- Pricing -->
+  <url>
+    <loc>https://services.tijarahub.com/pricing.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/pricingar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/pricingar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/pricingar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/pricing.html"/>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://services.tijarahub.com/services.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/servicesar.html"/>
+  </url>
+
+  <url>
+    <loc>https://services.tijarahub.com/servicesar.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://services.tijarahub.com/servicesar.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://services.tijarahub.com/services.html"/>
   </url>
