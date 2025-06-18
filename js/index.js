@@ -1510,7 +1510,7 @@ function updateGrowthChart(
   }
   const { q1, q2, q3, q4, minTotal, maxTotal, q1Col, q2Col, q3Col, q4Col } = getAllQuarters(planData)
   const quarters = isEnglishVersion() ? ["Q1", "Q2", "Q3", "Q4"] : ["الربع الأول", "الربع الثاني", "الربع الثالث", "الربع الرابع"];
-  if (window.location.href.includes("index.html") || window.location.href.includes("indexar.html")) {
+  if (window.location.href.includes("index.html") || window.location.href.includes("indexar.html") || window.location.pathname == "/") {
     growthChart = new Chart(ctx, {
       type: 'bar',
       data: {
