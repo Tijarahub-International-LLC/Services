@@ -897,23 +897,6 @@ document.body.addEventListener("click", (e) => {
 
 
 langToggle.addEventListener("click", handleLangOptions)
-const submitButton = document.querySelector('.formkit-submit')
-
-const email = document.getElementById('emailInput')
-
-email?.addEventListener('keyup', (e) => {
-  function isBusinessEmail(email) {
-    const businessEmailRegex = /^(?!.*(@gmail\.com|@yahoo\.com|@outlook\.com|@hotmail\.com|@aol\.com|@protonmail\.com|@icloud\.com|@mail\.com|@zoho\.com|@yandex\.com))[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return businessEmailRegex.test(email);
-  }
-  if (isBusinessEmail(e.target.value)) {
-    email.style.border = "none"
-    email.setCustomValidity("");
-  } else {
-    email.style.border = "1px solid red"
-  }
-
-})
 
 
 
@@ -929,7 +912,6 @@ const closeCalcModal = () => {
   modal.classList.toggle("flex");
   modal.classList.toggle("hidden");
 }
-
 
 
 closeModalBtn?.addEventListener("click", () => {
