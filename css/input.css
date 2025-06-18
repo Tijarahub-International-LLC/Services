@@ -141,7 +141,20 @@ html {
 body {
   @apply text-text;
 }
+.email + .mce_inline_error {
+  display: none !important;
+}
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+  border: 1px solid #abb0b2;
+}
+.email.valid {
+  border: 2px solid #4caf50;
+}
 
+/* Style for invalid input */
+.email:invalid {
+  border: 2px solid #e85c41 !important;
+}
 button {
   @apply cursor-pointer focus:border-none focus-within:border-none focus-visible:border-none;
 }
