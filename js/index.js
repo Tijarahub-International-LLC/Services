@@ -6,18 +6,18 @@ const caseStudies = [
   {
     id: 1,
     vendor: {
-      img: "./assets/case-studies/prem-food.png",
+      img: "./assets/case-studies/prem-food.webp",
       name: "Premium Food Industries",
       desc: isEnglishVersion() ? "certified Egyptian food manufacturer specializing in snack production for global markets" : "شركة مصرية مصنّعة للأغذية حاصلة على شهادات اعتماد، متخصصة في إنتاج الوجبات الخفيفة للأسواق العالمية.",
       industry: "High-Volume Snack Chips",
       brands: [,
         {
           name: "Nosh",
-          img: "./assets/case-studies/nosh.png"
+          img: "./assets/case-studies/nosh.webp"
         },
         {
           name: "Ridge",
-          img: "./assets/case-studies/ridge.png"
+          img: "./assets/case-studies/ridge.webp"
         }
       ],
       location: "Egypt",
@@ -64,7 +64,7 @@ const caseStudies = [
         type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
         quantity: isEnglishVersion() ? ["850 Cartons", "400 Cartons"] : ["850 كرتونة", "400 كرتونة"],
       },
-      preWorksImgs: ["./assets/case-studies/485-01.png", "./assets/case-studies/485-02.png", "./assets/case-studies/485-03.png"],
+      preWorksImgs: ["./assets/case-studies/485-01.webp", "./assets/case-studies/485-02.webp", "./assets/case-studies/485-03.webp"],
       customerFeedback: {
         text: isEnglishVersion() ? "Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership." : "شكر جزيل لمنصة TijaraHub! دعمهم الرائع ساعدنا في الحصول على أول طلب تصدير إلى السعودية، وضمان تسليمه بسرعة. نحن ممتنون لالتزامهم ونتطلع إلى شراكة طويلة الأمد معهم.",
         author: {
@@ -74,7 +74,7 @@ const caseStudies = [
       }
     },
     buyer: {
-      img: "./assets/case-studies/gourmet.png",
+      img: "./assets/case-studies/gourmet.webp",
       name: "The World of Gourmet Trading Co.",
       desc: "The World of Gourmet Trading Co. is a Saudi Arabian importer and distributor of premium specialty food brands. Since 1990, we've brought world-class products to the region, offering exceptional quality, design, and flavour through a trusted retail network.",
       industry: "Premium Food Import & Distribution",
@@ -91,13 +91,13 @@ const caseStudies = [
 const services = [
   {
     title: isEnglishVersion() ? "Generation Qualified Leads" : "توليد العملاء المؤهلين",
-    img: "./assets/services-icons/leads.png",
+    img: "./assets/services-icons/leads.webp",
     services: isEnglishVersion() ? ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"] : ["العملاء المحتملين خارجيًا", "حملات التسويق الداخلي", "إدارة علاقات العملاء وتقييم جودتهم", "الندوات الرقمية"]
   },
   {
     title: isEnglishVersion() ? "International Export Sales" : "دعم الصادرات الدولية",
 
-    img: "./assets/services-icons/intl-sales.png",
+    img: "./assets/services-icons/intl-sales.webp",
     services: isEnglishVersion() ? [
       "Market Entry Strategy",
       "Partner Development",
@@ -112,7 +112,7 @@ const services = [
   },
   {
     title: isEnglishVersion() ? "Marketing" : "التسويق ",
-    img: "./assets/services-icons/marketing.png",
+    img: "./assets/services-icons/marketing.webp",
     services: isEnglishVersion() ? ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"] : [
       "التسويق الرقمي المدفوع",
       "حملات البريد الإلكتروني والواتساب",
@@ -122,7 +122,7 @@ const services = [
   },
   {
     title: isEnglishVersion() ? "Market Research" : "أبحاث السوق",
-    img: "./assets/services-icons/research.png",
+    img: "./assets/services-icons/research.webp",
     services: isEnglishVersion() ? [
       "Industry Reports",
       "Competitor Insights",
@@ -137,7 +137,7 @@ const services = [
   },
   {
     title: isEnglishVersion() ? "Customer Service" : "خدمة العملاء",
-    img: "./assets/services-icons/cust-serv.png",
+    img: "./assets/services-icons/cust-serv.webp",
     services: isEnglishVersion() ? [
       "Omnichannel Support",
       "Helpdesk & Ticketing",
@@ -152,7 +152,7 @@ const services = [
   },
   {
     title: isEnglishVersion() ? "AI-Powerd Proposal Tool" : "أدوات الذكاء الاصطناعي",
-    img: "./assets/services-icons/gear.png",
+    img: "./assets/services-icons/gear.webp",
     services: isEnglishVersion() ? [
       "Automated RFQs",
       "Required Export Documents",
