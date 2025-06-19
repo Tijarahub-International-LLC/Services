@@ -1274,7 +1274,7 @@ if (searchParams.get("i")) {
   let enLink = document.getElementById("en-lang-link");
   arLink.href = `./case-studyar.html?i=${searchParams.get("i")}`;
   enLink.href = `./case-study.html?i=${searchParams.get("i")}`;
-  isEnglishVersion() ? document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-study.html?i=${searchParams.get("i")}` : document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-studyar.html?i=${searchParams.get("i")}`
+  // isEnglishVersion() ? document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-study.html?i=${searchParams.get("i")}` : document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-studyar.html?i=${searchParams.get("i")}`
 }
 
 services.forEach(({ title, img, services }, index) => {
