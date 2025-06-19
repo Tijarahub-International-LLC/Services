@@ -1030,6 +1030,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
     >
       <div>
         <img
+          role="img" aria-label="${vendor.name}" title="${vendor.name}"
           src="${vendor.img}"
           alt="${vendor.name}"
           class="mx-auto rounded w-[200px]"
@@ -1078,11 +1079,12 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         </li>
         </ul>
         <a
+          rel="noreferrer noopener"
           href="./case-study${isEnglishVersion() ? "" : "ar"}.html?i=${index}"
           class="relative max-w-fit md:self-end flex items-center gap-2 px-4 py-2  rounded-full  bg-secondary-100 text-secondary"
 
         >
-          <img src="./assets/checkicon.svg" alt="icon" />
+          <img role="img" aria-label="check icon" title="check icon" src="./assets/checkicon.svg" width="20" height="20" alt="icon" />
           Check Story</a
         >
       </div>
@@ -1097,6 +1099,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
         >
          <div>
         <img
+        role="img" aria-label="${buyer.name}" title="${buyer.name}"
           src="${buyer.img}"
           alt="${buyer.name}"
           class="mx-auto rounded w-[200px]"
@@ -1138,13 +1141,13 @@ function addContentToPage(index) {
             <div class="flex w-full flex-col  gap-5">
                 <div class="flex flex-col lg:flex-row items-center gap-5 ">
                   <div class="flex items-center gap-2 lg:flex-row flex-col">
-                    <img src=${vendor.img} class="w-[100px]" alt=${vendor.name} />
+                    <img role="img" aria-label="${vendor.name}" title="${vendor.name}" src=${vendor.img} class="w-[100px]" alt=${vendor.name} />
                     <h3 class="h4">
                     ${vendor.name}
                     </h3>
                   </div>
                   <div class="flex items-center gap-2 lg:flex-row flex-col">
-                    <img src=${buyer.img} class="w-[100px]" alt=${buyer.name} />
+                    <img role="img" aria-label="${buyer.name}" title="${buyer.name}" src=${buyer.img} class="w-[100px]" alt=${buyer.name} />
                     <h3 class="h4">
                     ${buyer.name}
                     </h3>
@@ -1152,7 +1155,7 @@ function addContentToPage(index) {
                 </div>
                 <div class="flex flex-1 flex-col lg:flex-row lg:items-center gap-2 *:flex-1">
             ${vendor.brands.map(({ name, img }) => `<div class='stat-card lg:max-w-[320px] !text-secondary !bg-white'>
-                  <img src="${img}" alt="${name} Image" class="h-10" />
+                  <img role="img" aria-label="${name}" title="${name}" src="${img}" alt="${name} Image" class="h-10" />
                   <p>${name}</p>
                 </div>`).join("")}
               </div>
@@ -1200,7 +1203,7 @@ function addContentToPage(index) {
             </div>
             <div class="flex flex-wrap my-5 items-center gap-5 *:rounded-2xl">
                   ${caseStudy.preWorksImgs.map(img => `
-        <img src="${img}" 
+        <img role="img" aria-label="${vendor.name}" title="${vendor.name}" src="${img}" 
             data-src="${img}" 
             alt="${caseStudy.orderNum}" 
             class="popup-img cursor-pointer max-w-[calc(100%_/_3-_1.25rem)]"/>
@@ -1279,6 +1282,7 @@ services.forEach(({ title, img, services }, index) => {
           <h3 class="text-4xl max-lg:text-center font-bold capitalize">${title}</h3>
           <div class="py-5">
             <img
+              role="img" aria-label="${title}" title="${title}"
               src="${img}"
               alt="${title}"
               class="mx-auto h-[200px]"
@@ -1710,6 +1714,9 @@ document?.querySelectorAll(".popup-img").forEach(img => {
     modalImage.src = src;
     imgModal.classList.remove("hidden");
     imgModal.classList.add("flex");
+    modalImage.role = "img";
+    modalImage.ariaLabel = isEnglishVersion() ? "goods" : "البضائع";
+    modalImage.title = isEnglishVersion() ? "products" : "المنتجات";
     document.body.style.overflowY = "hidden"
   });
 });
