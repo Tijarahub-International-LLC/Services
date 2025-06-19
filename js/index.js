@@ -8,7 +8,7 @@ const caseStudies = [
     vendor: {
       img: "./assets/case-studies/prem-food.png",
       name: "Premium Food Industries",
-      desc: "certified Egyptian food manufacturer specializing in snack production for global markets",
+      desc: isEnglishVersion() ? "certified Egyptian food manufacturer specializing in snack production for global markets" : "شركة مصرية مصنّعة للأغذية حاصلة على شهادات اعتماد، متخصصة في إنتاج الوجبات الخفيفة للأسواق العالمية.",
       industry: "High-Volume Snack Chips",
       brands: [,
         {
@@ -26,7 +26,7 @@ const caseStudies = [
     },
     caseStudy: {
       orderNum: "#485",
-      desc: "Delivering High-Volume Snack Products",
+      desc: isEnglishVersion() ? "Delivering High-Volume Snack Products" : "إنتاج وتوريد الوجبات الخفيفة بكميات ضخمة",
       inspection: {
         name: "Intertek",
         ref: "INT-Prim-00332"
@@ -49,22 +49,29 @@ const caseStudies = [
         ref: "AWB: 378359966"
       },
       outcome: {
-        otf: "with full documentation, COO, and telex release",
-        cg: "Product met Saudi market health and safety standards",
-        bve: "Premium shelf-ready packaging for Ridge & Nosh chips",
-        ste: "All processes managed via TijaraHub from order to door",
+        otf: isEnglishVersion() ? "with full documentation, COO, and telex release" : "مع الوثائق الكاملة، شهادة المنشأ (COO)، وتيليكس الإفراج",
+        cg: isEnglishVersion() ? "Product met Saudi market health and safety standards" : "المنتج متوافق مع معايير الصحة والسلامة في السوق السعودي",
+        bve: isEnglishVersion() ? "Premium shelf-ready packaging for Ridge & Nosh chips" : "تغليف فاخر وجاهز للعرض على الرف لرقائق Ridge & Nosh",
+        ste: isEnglishVersion() ? "All processes managed via TijaraHub from order to door" : "تم إدارة جميع العمليات عبر TijaraHub من الطلب وحتى التسليم",
       },
-      tradeSumm: "TijaraHub empowered this transaction by managing sourcing, compliance, and end-to-end logistics—all within a B2B interface that ensures reliability and trust between exporters and importers.",
+      tradeSumm: isEnglishVersion() ? `<span class="font-bold">TijaraHub</span> empowered this transaction by managing sourcing, compliance, and end-to-end logistics—all within a B2B interface that ensures reliability and trust between exporters and importers.` : `نجحت <span class="font-bold">TijaraHub</span> في تنفيذ هذه الصفقة عبر إدارة التوريد، والامتثال، والخدمات اللوجستية من البداية إلى النهاية، ضمن منصة B2B تضمن الثقة والاحتراف بين المصدرين والمستوردين.`,
       quote: {
-        text: "This successful transaction proves how TijaraHub bridges premium Egyptian manufacturers with high-demand Gulf distributors seamlessly.",
-        by: "TijaraHub Trade Management Team"
+        text: isEnglishVersion() ? "This successful transaction proves how TijaraHub bridges premium Egyptian manufacturers with high-demand Gulf distributors seamlessly." : " تُثبت هذه الصفقة الناجحة كيف تُوفّر TijaraHub حلقة وصل سلسة بين المصنّعين المصريين المتميزين والموزّعين الخليجيين ذوي الطلب العالي.",
+        by: isEnglishVersion() ? "TijaraHub Trade Management Team" : "فريق TijaraHub لإدارة الصفقات التجارية"
       },
       productsOrder: {
         brand: ["Nosh", "Ridge"],
         type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
-        quantity: ["850 Cartons", "400 Cartons"],
+        quantity: isEnglishVersion() ? ["850 Cartons", "400 Cartons"] : ["850 كرتونة", "400 كرتونة"],
       },
       preWorksImgs: ["./assets/case-studies/485-01.png", "./assets/case-studies/485-02.png", "./assets/case-studies/485-03.png"],
+      customerFeedback: {
+        text: isEnglishVersion() ? "Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership." : "شكر جزيل لمنصة TijaraHub! دعمهم الرائع ساعدنا في الحصول على أول طلب تصدير إلى السعودية، وضمان تسليمه بسرعة. نحن ممتنون لالتزامهم ونتطلع إلى شراكة طويلة الأمد معهم.",
+        author: {
+          name: isEnglishVersion() ? "Anas Elwy" : "أنس علوي",
+          title: isEnglishVersion() ? "Founder & CEO Premium Food Industries" : "المؤسس والمدير التنفيذي لشركة Premium Food Industries",
+        }
+      }
     },
     buyer: {
       img: "./assets/case-studies/gourmet.png",
@@ -1052,7 +1059,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
       data-aos="fade-up"
       class="flex flex-col items-center justify-around p-8 gap-5 text-secondary-100 bg-white/5 backdrop-blur-md rounded-3xl"
     >
-      <h3 class="text-center capitalize h2">Export Order
+      <h3 class="text-center capitalize h2">${isEnglishVersion() ? "Export Order" : "طلب تصدير رقم"} 
       <br />
       ${caseStudy.orderNum}
       </h3>
@@ -1134,7 +1141,7 @@ function addContentToPage(index) {
 
 
   let storyContent = `
-            <h2 class="h2 text-secondary-200 lg:text-3xl">Export Order ${caseStudy.orderNum}</h2>
+            <h2 class="h2 text-secondary-200 lg:text-3xl">${isEnglishVersion() ? "Export Order" : "طلب تصدير رقم"} ${caseStudy.orderNum}</h2>
             <p class="text-3xl font-black tracking-wide text-secondary-200">
               ${caseStudy.desc}
             </p>
@@ -1161,38 +1168,38 @@ function addContentToPage(index) {
               </div>
             </div>
           <div class="space-y-3 w-full">
-            <h3 class="h3 text-light-cyan font-semibold">Overview</h3>
+            <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Overview" : "نظرة عامة"}</h3>
             <ul class="flex flex-col gap-2 text-base">
               <li>
-                <p>Manufacuture: <span class="text-gray-300 italic">${vendor.name}</span></p>
+                <p>${isEnglishVersion() ? "Manufacture" : "المُصنِّع"} : <span class="text-gray-300 italic">${vendor.name}</span></p>
               </li>
               <li>
-                <p>Location: <span class="text-gray-300 italic">${vendor.location}</span></p>
+                <p>${isEnglishVersion() ? "Location" : "الموقع"} : <span class="text-gray-300 italic">${vendor.location}</span></p>
               </li>
               <li>
-                <p>Buyer: <span class="text-gray-300 italic">${buyer.name}</span></p>
+                <p>${isEnglishVersion() ? "Buyer" : "المشتري"} : <span class="text - gray - 300 italic">${buyer.name}</span></p>
+              </li >
+              <li>
+                <p>${isEnglishVersion() ? "Destination" : "الوجهة"} : <span class="text-gray-300 italic">${buyer.destination}</span></p>
               </li>
               <li>
-                <p>Destination: <span class="text-gray-300 italic">${buyer.destination}</span></p>
+                <p>${isEnglishVersion() ? "Order Date" : " تاريخ الطلب"} : <span class="text-gray-300 italic">${buyer.orderInfo.date}</span></p>
               </li>
               <li>
-                <p>Order Date: <span class="text-gray-300 italic">${buyer.orderInfo.date}</span></p>
+                <p>${isEnglishVersion() ? "Shipping Method" : "طريقة الشحن"} :  <span class="text-gray-300 italic">${caseStudy.shippingInfo.method} (${caseStudy.shippingInfo.quantity})</span></p>
               </li>
               <li>
-                <p>Shipping Method:  <span class="text-gray-300 italic">${caseStudy.shippingInfo.method} (${caseStudy.shippingInfo.quantity})</span></p>
+                <p>${isEnglishVersion() ? "Inspection &amp; Quality Control" : "المعاينة وضمان الجودة"} : <span class="text-gray-300 italic">Completed By${caseStudy.inspection.name} Ref(${caseStudy.inspection.ref})</span></p>
               </li>
               <li>
-                <p>Inspection &amp; Quality Control: <span class="text-gray-300 italic">Completed By${caseStudy.inspection.name} Ref(${caseStudy.inspection.ref})</span></p>
+                <p>${isEnglishVersion() ? "Shipping Date" : "تاريخ الشحن"} : <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
               </li>
-              <li>
-                <p>Shipping Date: <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
-              </li>
-            </ul>
-            <h3 class="h3 text-light-cyan font-semibold">Products Ordered</h3>
+            </ul >
+            <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Products Ordered" : "المنتجات المطلوبة"}</h3>
             <div class="border w-full border-gray-500">
               <div class="flex *:flex-1 *:p-2 items-center border-b border-b-gray-500">
-                <h6 class="border-r border-gray-500 font-semibold">Brand</h6>
-                <h6 class="font-semibold">Quantity</h6>
+                <h6 class="border-r border-gray-500 font-semibold">${isEnglishVersion() ? "Brand" : "علامة تجارية"}</h6>
+                <h6 class="font-semibold">${isEnglishVersion() ? "Quantity" : " الكمية"}</h6>
               </div>
             ${caseStudy.productsOrder.brand.map((brand, index) => `
               <div class="flex *:flex-1 *:p-2 items-center">
@@ -1212,35 +1219,35 @@ function addContentToPage(index) {
             <hr class="text-gray-500"/>
 
             <div class="flex flex-col items-center gap-5 md:gap-10 relative my-20">
-          <h3 class="h3 max-sm:text-center text-light-cyan font-semibold">Customer Feedback</h3>
+          <h3 class="h3 max-sm:text-center text-light-cyan font-semibold">${isEnglishVersion() ? "Customer Feedback" : " آراء العملاء"}</h3>
           <h3
             class="h3 quote"
           >
-            Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership
+          ${caseStudy.customerFeedback.text}
           </h3>
           <div class="flex flex-col gap-1 text-center">
-            <h4 class="h4">Anas Elwy</h4>
-            <span class="text-gray-400">Founder & CEO Premium Food Industries</span>
+            <h4 class="h4">${caseStudy.customerFeedback.author.name}</h4>
+            <span class="text-gray-400">${caseStudy.customerFeedback.author.title}</span>
           </div>
           </div>
           <hr class="text-gray-500"/>
-            <h3 class="h3 text-light-cyan font-semibold">Outcome &amp; Value Delivered</h3>
+            <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Outcome &amp; Value Delivered" : " النتائج والقيمة المقدّمة"}</h3>
             <ul class="flex flex-col gap-2 text-base">
               <li>
-                <p>On-Time Fulfillment: <span class="text-gray-300 italic">${caseStudy.outcome.otf}</span></p>
+                <p>${isEnglishVersion() ? "On-Time Fulfillment" : "الالتزام الزمني في تنفيذ الطلبات"} : <span class="text-gray-300 italic">${caseStudy.outcome.otf}</span></p>
               </li>
               <li>
-                <p>Compliance Guaranteed: <span class="text-gray-300 italic">${caseStudy.outcome.cg}</span></p>
+                <p>${isEnglishVersion() ? "Compliance Guaranteed" : "التزام تام بالجودة والمعايير التنظيمية"} : <span class="text-gray-300 italic">${caseStudy.outcome.cg}</span></p>
               </li>
               <li>
-                <p>Brand Visibility Enhanced: <span class="text-gray-300 italic">${caseStudy.outcome.bve}</span></p>
-              </li>
-              <li>
-                <p>Streamlined Trade Experience: <span class="text-gray-300 italic">${caseStudy.outcome.ste}</span></p>
-              </li>
-            </ul>
+                <p>${isEnglishVersion() ? "Brand Visibility Enhanced" : " تعزيز ظهور العلامة التجارية"} : <span class="text - gray - 300 italic">${caseStudy.outcome.bve}</span></p>
+              </li >
+    <li>
+      <p>${isEnglishVersion() ? "Streamlined Trade Experience" : " تجربة تجارية سلسة"} : <span class="text-gray-300 italic">${caseStudy.outcome.ste}</span></p>
+    </li>
+            </ul >
             <hr class="text-gray-500"/>
-            <h3 class="h3 text-light-cyan font-semibold">TijaraHub in Action</h3>
+            <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "TijaraHub in Action" : "قصص نجاح من TijaraHub على أرض الواقع"} </h3>
             <p class="h4 !leading-[1.5] max-w-[780px] font-bold">
               <q>${caseStudy.quote.text}</q>
               <br />
@@ -1248,11 +1255,9 @@ function addContentToPage(index) {
             </p>
 
             <hr class="text-gray-500"/>
-            <h3 class="h3 text-light-cyan font-semibold">Trade Summary</h3>
+            <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Trade Summary" : "ملخص العملية التجارية"} </h3>
             <p class="h4 !font-normal !leading-[1.5] max-w-[780px]">
-              <span class="font-bold">TijaraHub</span> empowered this transaction by managing sourcing, compliance,
-                and end-to-end logistics—all within a B2B interface that ensures reliability
-                and trust between exporters and importers.
+               ${caseStudy.tradeSumm}
             </p>
             </div>
           `;
