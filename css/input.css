@@ -112,6 +112,8 @@
   }
 }
 
+@custom-variant hover (&:hover);
+
 html {
   @apply scroll-smooth scroll-p-8;
 }
@@ -182,7 +184,7 @@ div header {
 }
 /* Typography */
 .h1 {
-  @apply text-[44px] leading-[46px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[100px] font-black;
+  @apply text-[38px] leading-[40px] md:text-[64px] md:leading-[66px] lg:text-[80px] lg:leading-[100px] font-black;
 }
 .h2 {
   @apply text-[32px] leading-[34px] md:text-[56px] md:leading-[58px] font-[700];

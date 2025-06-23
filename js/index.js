@@ -2,101 +2,496 @@
 AOS.init();
 let index;
 
-const caseStudies = [
-  {
-    id: 1,
-    vendor: {
-      img: "./assets/case-studies/prem-food.webp",
-      name: "Premium Food Industries",
-      desc: isEnglishVersion() ? "certified Egyptian food manufacturer specializing in snack production for global markets" : "شركة مصرية مصنّعة للأغذية حاصلة على شهادات اعتماد، متخصصة في إنتاج الوجبات الخفيفة للأسواق العالمية.",
-      industry: "High-Volume Snack Chips",
-      brands: [,
-        {
-          name: "Nosh",
-          img: "./assets/case-studies/nosh.webp"
+const caseStudies = isEnglishVersion() ?
+  [
+    {
+      id: 1,
+      vendor: {
+        img: "./assets/case-studies/prem-food.webp",
+        name: "Premium Food Industries",
+        desc: "certified Egyptian food manufacturer specializing in snack production for global markets",
+        industry: "High-Volume Snack Chips",
+        brands: [
+          {
+            name: "Nosh",
+            img: "./assets/case-studies/nosh.webp"
+          },
+          {
+            name: "Ridge",
+            img: "./assets/case-studies/ridge.webp"
+          }
+        ],
+        location: "Egypt",
+        challenge: ["Expand Market into Saudi Arabia"],
+        info: ["Manufacture", "Egypt", "Nosh - Ridge", " Saudi Arabia"]
+      },
+      caseStudy: {
+        orderNum: "#485",
+        desc: "Delivering High-Volume Snack Products",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
         },
-        {
-          name: "Ridge",
-          img: "./assets/case-studies/ridge.webp"
+        shippingInfo: {
+          method: "Sea Freight",
+          quantity: "1 x 40 FT container",
+          date: "June 19, 2024",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117"
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "with full documentation, COO, and telex release",
+          cg: "Product met Saudi market health and safety standards",
+          bve: "Premium shelf-ready packaging for Ridge & Nosh chips",
+          ste: "All processes managed via TijaraHub from order to door"
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> empowered this transaction by managing sourcing, compliance, and end-to-end logistics—all within a B2B interface that ensures reliability and trust between exporters and importers.`,
+        quote: {
+          text: "This successful transaction proves how TijaraHub bridges premium Egyptian manufacturers with high-demand Gulf distributors seamlessly.",
+          by: "TijaraHub Trade Management Team"
+        },
+        productsOrder: {
+          brand: ["Nosh", "Ridge"],
+          type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
+          quantity: ["850 Cartons", "400 Cartons"]
+        },
+        preWorksImgs: ["./assets/case-studies/485-01.webp", "./assets/case-studies/485-02.webp", "./assets/case-studies/485-03.webp"],
+        customerFeedback: {
+          text: "Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership.",
+          author: {
+            name: "Anas Elwy",
+            title: "Founder & CEO Premium Food Industries"
+          }
         }
-      ],
-      location: "Egypt",
-      challenge: ["Expand Market into Saudi Arabia"],
-      info: ["Manufacture", "Egypt", "Nosh - Ridge", "Targeting Saudi Arabia"]
-    },
-    caseStudy: {
-      orderNum: "#485",
-      desc: isEnglishVersion() ? "Delivering High-Volume Snack Products" : "إنتاج وتوريد الوجبات الخفيفة بكميات ضخمة",
-      inspection: {
-        name: "Intertek",
-        ref: "INT-Prim-00332"
       },
-      shippingInfo: {
-        method: "Sea Freight",
-        quantity: "1 x 40 FT container",
-        date: "June 19, 2024",
-        containerNum: "WHSU557402-9",
-        sealSerial: "104593",
-        coo: "0092052",
-        telexNum: "196EA02584",
-        ods: {
-          name: "FedEx",
-          tracking: "#7768429117",
-        }
-      },
-      manageBy: {
-        name: "DHL",
-        ref: "AWB: 378359966"
-      },
-      outcome: {
-        otf: isEnglishVersion() ? "with full documentation, COO, and telex release" : "مع الوثائق الكاملة، شهادة المنشأ (COO)، وتيليكس الإفراج",
-        cg: isEnglishVersion() ? "Product met Saudi market health and safety standards" : "المنتج متوافق مع معايير الصحة والسلامة في السوق السعودي",
-        bve: isEnglishVersion() ? "Premium shelf-ready packaging for Ridge & Nosh chips" : "تغليف فاخر وجاهز للعرض على الرف لرقائق Ridge & Nosh",
-        ste: isEnglishVersion() ? "All processes managed via TijaraHub from order to door" : "تم إدارة جميع العمليات عبر TijaraHub من الطلب وحتى التسليم",
-      },
-      tradeSumm: isEnglishVersion() ? `<span class="font-bold">TijaraHub</span> empowered this transaction by managing sourcing, compliance, and end-to-end logistics—all within a B2B interface that ensures reliability and trust between exporters and importers.` : `نجحت <span class="font-bold">TijaraHub</span> في تنفيذ هذه الصفقة عبر إدارة التوريد، والامتثال، والخدمات اللوجستية من البداية إلى النهاية، ضمن منصة B2B تضمن الثقة والاحتراف بين المصدرين والمستوردين.`,
-      quote: {
-        text: isEnglishVersion() ? "This successful transaction proves how TijaraHub bridges premium Egyptian manufacturers with high-demand Gulf distributors seamlessly." : " تُثبت هذه الصفقة الناجحة كيف تُوفّر TijaraHub حلقة وصل سلسة بين المصنّعين المصريين المتميزين والموزّعين الخليجيين ذوي الطلب العالي.",
-        by: isEnglishVersion() ? "TijaraHub Trade Management Team" : "فريق TijaraHub لإدارة الصفقات التجارية"
-      },
-      productsOrder: {
-        brand: ["Nosh", "Ridge"],
-        type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
-        quantity: isEnglishVersion() ? ["850 Cartons", "400 Cartons"] : ["850 كرتونة", "400 كرتونة"],
-      },
-      preWorksImgs: ["./assets/case-studies/485-01.webp", "./assets/case-studies/485-02.webp", "./assets/case-studies/485-03.webp"],
-      customerFeedback: {
-        text: isEnglishVersion() ? "Huge thanks to Tijarahub, Their amazing support helped us land our first Saudi order and ensured swift delivery,We're thrilled with their dedication and look forward to a lasting partnership." : "شكر جزيل لمنصة TijaraHub! دعمهم الرائع ساعدنا في الحصول على أول طلب تصدير إلى السعودية، وضمان تسليمه بسرعة. نحن ممتنون لالتزامهم ونتطلع إلى شراكة طويلة الأمد معهم.",
-        author: {
-          name: isEnglishVersion() ? "Anas Elwy" : "أنس علوي",
-          title: isEnglishVersion() ? "Founder & CEO Premium Food Industries" : "المؤسس والمدير التنفيذي لشركة Premium Food Industries",
+      buyer: {
+        img: "./assets/case-studies/gourmet.webp",
+        name: "The World of Gourmet Trading Co.",
+        desc: "The World of Gourmet Trading Co. is a Saudi Arabian importer and distributor of premium specialty food brands. Since 1990, we've brought world-class products to the region, offering exceptional quality, design, and flavour through a trusted retail network.",
+        industry: "Premium Food Import & Distribution",
+        destination: "Jeddah, Saudi Arabia",
+        info: ["Importer and Distributor", "Jeddah, Saudi Arabia"],
+        orderInfo: {
+          date: "June 02, 2024",
+          value: "$7,537.50"
         }
       }
     },
-    buyer: {
-      img: "./assets/case-studies/gourmet.webp",
-      name: "The World of Gourmet Trading Co.",
-      desc: "The World of Gourmet Trading Co. is a Saudi Arabian importer and distributor of premium specialty food brands. Since 1990, we've brought world-class products to the region, offering exceptional quality, design, and flavour through a trusted retail network.",
-      industry: "Premium Food Import & Distribution",
-      destination: "Jeddah, Saudi Arabia",
-      info: ["Importer and Distributor", "Jeddah, Saudi Arabia"],
-      orderInfo: {
-        date: "June 02, 2024",
-        value: "$7,537.50"
+    {
+      id: 2,
+      vendor: {
+        img: "./assets/case-studies/Order-545/TijaraHubLogo.webp",
+        name: "Al-Yasmine for Textiles",
+        desc: "is a Certified Egyptian manufacturer known for producing high-grade fabrics tailored for professionals across global markets.",
+        industry: "Supplying Premium Egyptian Fabrics",
+        brands: [],
+        location: "Egypt",
+        challenge: ["Expand Market into Saudi Arabia"],
+        info: ["Manufacture", "Egypt", "Melton Fabric", " Saudi Arabia"]
       },
+      caseStudy: {
+        orderNum: "#545",
+        desc: "Supplying Premium Egyptian Fabrics to the Saudi Market",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
+        },
+        shippingInfo: {
+          method: "Land Freight",
+          quantity: "",
+          date: "July 22, 2024",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117"
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "The order was shipped on schedule with complete documentation.",
+          cg: "Full conformity with GCC quality standards ensured.",
+          bve: "The fabric was delivered in professional-grade packaging, ready for distribution",
+          ste: "From sourcing to logistics, the transaction was fully managed through TijaraHub."
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> handled the entire B2B trade lifecycle—from supplier coordination and quality inspection to delivery and document management—providing Royal Ross Co. with a seamless and trustworthy import experience.`,
+        quote: {
+          text: "This order showcases TijaraHub’s efficiency in connecting Egyptian manufacturers with reliable partners in Saudi Arabia.",
+          by: "TijaraHub Trade Management Team"
+        },
+        productsOrder: {
+          brand: ["Al-Yasmine for Textiles"],
+          type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
+          quantity: ["350Kg"]
+        },
+        preWorksImgs: ["./assets/case-studies/Order-545/545-01.webp"],
+        customerFeedback: {
+          text: "",
+          author: {
+            name: "",
+            title: ""
+          }
+        }
+      },
+      buyer: {
+        img: "./assets/case-studies/Order-545/RoyalROse.webp",
+        name: "Royal Roses Co.",
+        desc: "Royal Roses Co. Supplying Premium Egyptian Fabrics to the Saudi Market.",
+        industry: "Wholesale Distribution",
+        destination: "Riyadh, Saudi Arabia",
+        info: ["Importer and Distributor", "Riyadh, Saudi Arabia"],
+        orderInfo: {
+          date: "July 10, 2024",
+          value: "$7,537.50"
+        }
+      }
+    },
+    {
+      id: 3,
+      vendor: {
+        img: "./assets/case-studies/Order-1499/3G-Hom.webp",
+        name: "3G Hom For Food and Beverages",
+        desc: " is a certified Egyptian manufacturer recognized for producing high-quality beverage solutions tailored to meet international standards. Their product lines are designed for both mass distribution and premium retail markets.",
+        industry: "Premium Egyptian Beverage Products",
+        brands: [
+          {
+            name: "So Plus",
+            img: "./assets/case-studies/Order-1499/So-Plus.webp"
+          }
+        ],
+        location: "Egypt",
+        challenge: ["Expand Market into Saudi Arabia"],
+        info: ["Manufacture", "Egypt", "Flavor Water Enhancer", " Saudi Arabia"]
+      },
+      caseStudy: {
+        orderNum: "#1499",
+        desc: "Delivering Premium Egyptian Beverage Products to Saudi Arabia",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
+        },
+        shippingInfo: {
+          method: "Land Freight",
+          quantity: "",
+          date: "June 10, 2025",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117"
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "The order was processed, packed, and shipped as scheduled.",
+          cg: "Intertek inspection confirmed the products met GCC import standards.",
+          bve: "The So Plus cartons were delivered in export-grade, retail-ready packaging.",
+          ste: "All stages—from sourcing to shipping—were managed seamlessly through TijaraHub’s B2B platform."
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> facilitated the complete export process—connecting the manufacturer with the buyer, overseeing inspection and quality control, and coordinating logistics. The outcome was a smooth, transparent, and trusted trade experience, reinforcing TijaraHub’s role as a key link in Egypt-to-Gulf B2B commerce.`,
+        quote: {
+          text: "This transaction highlights TijaraHub’s capability in managing reliable, cross-border trade between Egyptian producers and Saudi buyers, ensuring speed, safety, and compliance every step of the way.",
+          by: "TijaraHub Trade Management Team"
+        },
+        productsOrder: {
+          brand: ["So Plus"],
+          type: ["Flavored Potato Chips", "Crinkle-Cut Potato Chips"],
+          quantity: ["300 Carton"]
+        },
+        preWorksImgs: ["./assets/case-studies/Order-1499/1499-01.webp", "./assets/case-studies/Order-1499/1499-02.webp", "./assets/case-studies/Order-1499/1499-03.webp"],
+        customerFeedback: {
+          text: "",
+          author: {
+            name: "",
+            title: ""
+          }
+        }
+      },
+      buyer: {
+        img: "./assets/case-studies/Order-1499/Al-Gabry.webp",
+        name: "Modern Landmarks Foundation.",
+        desc: "",
+        industry: "Wholesale Distribution",
+        destination: "Jeddah, Saudi Arabia",
+        info: ["Importer and Distributor", "Jeddah, Saudi Arabia"],
+        orderInfo: {
+          date: "May 29, 2025",
+          value: "$7,537.50"
+        }
+      }
     }
-  },
-]
+  ]
+  : [
+    {
+      id: 1,
+      vendor: {
+        img: "./assets/case-studies/prem-food.webp",
+        name: "شركة Premium Food Industries",
+        desc: "شركة مصرية مصنّعة للأغذية حاصلة على شهادات اعتماد، متخصصة في إنتاج الوجبات الخفيفة للأسواق العالمية.",
+        industry: "رقائق خفيفة بكميات كبيرة",
+        brands: [
+          {
+            name: "Nosh",
+            img: "./assets/case-studies/nosh.webp"
+          },
+          {
+            name: "Ridge",
+            img: "./assets/case-studies/ridge.webp"
+          }
+        ],
+        location: "مصر",
+        challenge: ["التوسع في السوق السعودي"],
+        info: ["مصنع", "مصر", "Nosh - Ridge", "السعودية"]
+      },
+      caseStudy: {
+        orderNum: "#485",
+        desc: "إنتاج وتوريد الوجبات الخفيفة بكميات ضخمة",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
+        },
+        shippingInfo: {
+          method: "شحن بحري",
+          quantity: "حاوية واحدة 40 قدم",
+          date: "19 يونيو 2024",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117",
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "مع الوثائق الكاملة، شهادة المنشأ (COO)، وتيليكس الإفراج",
+          cg: "المنتج متوافق مع معايير الصحة والسلامة في السوق السعودي",
+          bve: "تغليف فاخر وجاهز للعرض على الرف لرقائق Ridge & Nosh",
+          ste: "تم إدارة جميع العمليات عبر TijaraHub من الطلب وحتى التسليم",
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> نجحت في تنفيذ هذه الصفقة عبر إدارة التوريد، والامتثال، والخدمات اللوجستية من البداية إلى النهاية، ضمن منصة B2B تضمن الثقة والاحتراف بين المصدرين والمستوردين.`,
+        quote: {
+          text: "تُثبت هذه الصفقة الناجحة كيف تُوفّر TijaraHub حلقة وصل سلسة بين المصنّعين المصريين المتميزين والموزّعين الخليجيين ذوي الطلب العالي.",
+          by: "فريق TijaraHub لإدارة الصفقات التجارية"
+        },
+        productsOrder: {
+          brand: ["Nosh", "Ridge"],
+          type: ["رقائق بطاطس بنكهة", "رقائق بطاطس مقطعة تمويجياً"],
+          quantity: ["850 كرتونة", "400 كرتونة"],
+        },
+        preWorksImgs: ["./assets/case-studies/485-01.webp", "./assets/case-studies/485-02.webp", "./assets/case-studies/485-03.webp"],
+        customerFeedback: {
+          text: "شكر جزيل لمنصة TijaraHub! دعمهم الرائع ساعدنا في الحصول على أول طلب تصدير إلى السعودية، وضمان تسليمه بسرعة. نحن ممتنون لالتزامهم ونتطلع إلى شراكة طويلة الأمد معهم.",
+          author: {
+            name: "أنس علوي",
+            title: "المؤسس والمدير التنفيذي لشركة Premium Food Industries",
+          }
+        }
+      },
+      buyer: {
+        img: "./assets/case-studies/gourmet.webp",
+        name: "شركة The World of Gourmet Trading Co.",
+        desc: "شركة سعودية لاستيراد وتوزيع العلامات الغذائية الفاخرة. منذ 1990، نقدم منتجات عالمية متميزة عبر شبكة بيع موثوقة.",
+        industry: "استيراد وتوزيع الأغذية الفاخرة",
+        destination: "جدة، المملكة العربية السعودية",
+        info: ["مستورد وموزع", "جدة، المملكة العربية السعودية"],
+        orderInfo: {
+          date: "02 يونيو 2024",
+          value: "$7,537.50"
+        },
+      }
+    },
+
+    {
+      id: 2,
+      vendor: {
+        img: "./assets/case-studies/Order-545/TijaraHubLogo.webp",
+        name: "شركة الياسمين للنسيج",
+        desc: "شركة مصرية حاصلة على شهادات اعتماد، مشهورة بإنتاج الأقمشة عالية الجودة لأسواق عالمية.",
+        industry: "توريد الأقمشة المصرية الفاخرة",
+        brands: [],
+        location: "مصر",
+        challenge: ["التوسع في السوق السعودي"],
+        info: ["مصنع", "مصر", "قماش ميلتون", "السعودية"]
+      },
+      caseStudy: {
+        orderNum: "#545",
+        desc: "تصدير الأقمشة المصرية الفاخرة إلى السعودية",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
+        },
+        shippingInfo: {
+          method: "شحن بري",
+          quantity: "",
+          date: "22 يوليو 2024",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117",
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "تم شحن الطلب في الوقت المحدد مع الوثائق الكاملة.",
+          cg: "تم التأكد من مطابقة المنتج لمعايير الجودة الخليجية.",
+          bve: "تم تسليم الأقمشة في تغليف احترافي وجاهزة للتوزيع.",
+          ste: "من التوريد إلى اللوجستيات، تمت إدارة الصفقة بالكامل عبر TijaraHub.",
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> قامت بإدارة دورة التجارة كاملة من التنسيق مع المورد والفحص إلى التسليم وإدارة الوثائق، لتوفر تجربة استيراد سلسة وموثوقة لشركة Royal Ross.`,
+        quote: {
+          text: "تُبرز هذه الصفقة كفاءة TijaraHub في ربط المصنّعين المصريين بشركاء موثوقين في السعودية.",
+          by: "فريق TijaraHub لإدارة الصفقات التجارية"
+        },
+        productsOrder: {
+          brand: ["الياسمين للنسيج"],
+          type: ["قماش ميلتون"],
+          quantity: ["350 كيلوجرام"],
+        },
+        preWorksImgs: ["./assets/case-studies/Order-545/545-01.webp"],
+        customerFeedback: {
+          text: "",
+          author: {
+            name: "",
+            title: "",
+          }
+        }
+      },
+      buyer: {
+        img: "./assets/case-studies/Order-545/RoyalROse.webp",
+        name: "شركة Royal Roses Co.",
+        desc: "شركة Royal Roses تقوم بتوزيع الأقمشة المصرية الفاخرة في السوق السعودي.",
+        industry: "توزيع الجملة",
+        destination: "الرياض، المملكة العربية السعودية",
+        info: ["مستورد وموزع", "الرياض، المملكة العربية السعودية"],
+        orderInfo: {
+          date: "10 يوليو 2024",
+          value: "$7,537.50"
+        },
+      }
+    },
+
+    {
+      id: 3,
+      vendor: {
+        img: "./assets/case-studies/Order-1499/3G-Hom.webp",
+        name: "شركة 3G Hom للأغذية والمشروبات",
+        desc: "شركة مصرية حاصلة على اعتماد، متخصصة في إنتاج حلول مشروبات عالية الجودة وفقًا للمعايير الدولية، موجهة للتوزيع الشامل والتجزئة الفاخرة.",
+        industry: "منتجات مشروبات مصرية فاخرة",
+        brands: [{
+          name: "So Plus",
+          img: "./assets/case-studies/Order-1499/So-Plus.webp"
+        }],
+        location: "مصر",
+        challenge: ["التوسع في السوق السعودي"],
+        info: ["مصنع", "مصر", "منكهات مياه الشرب", "السعودية"]
+      },
+      caseStudy: {
+        orderNum: "#1499",
+        desc: "تصدير مشروبات مصرية عالية الجودة إلى السعودية",
+        inspection: {
+          name: "Intertek",
+          ref: "INT-Prim-00332"
+        },
+        shippingInfo: {
+          method: "شحن بري",
+          quantity: "",
+          date: "10 يونيو 2025",
+          containerNum: "WHSU557402-9",
+          sealSerial: "104593",
+          coo: "0092052",
+          telexNum: "196EA02584",
+          ods: {
+            name: "FedEx",
+            tracking: "#7768429117",
+          }
+        },
+        manageBy: {
+          name: "DHL",
+          ref: "AWB: 378359966"
+        },
+        outcome: {
+          otf: "تم تجهيز وشحن الطلب حسب الجدول الزمني.",
+          cg: "تقرير Intertek أكد تطابق المنتج مع معايير الاستيراد الخليجية.",
+          bve: "تم تغليف عبوات So Plus بتغليف تصديري وجاهزة للبيع بالتجزئة.",
+          ste: "جميع المراحل من التوريد للشحن تمت بسلاسة عبر منصة TijaraHub B2B.",
+        },
+        tradeSumm: `<span class="font-bold">TijaraHub</span> سهّلت العملية التصديرية بالكامل، من الربط بين المصنع والمشتري، إلى الفحص، إلى تنسيق اللوجستيات، ما نتج عنه تجربة تجارة شفافة وموثوقة.`,
+        quote: {
+          text: "تُبرز هذه الصفقة قدرة TijaraHub على إدارة تجارة عابرة للحدود بموثوقية وكفاءة بين مصر والسعودية.",
+          by: "فريق TijaraHub لإدارة الصفقات التجارية"
+        },
+        productsOrder: {
+          brand: ["So Plus"],
+          type: ["منكهات مياه الشرب"],
+          quantity: ["300 كرتونة"],
+        },
+        preWorksImgs: ["./assets/case-studies/Order-1499/1499-01.webp", "./assets/case-studies/Order-1499/1499-02.webp", "./assets/case-studies/Order-1499/1499-03.webp"],
+        customerFeedback: {
+          text: "",
+          author: {
+            name: "",
+            title: "",
+          }
+        }
+      },
+      buyer: {
+        img: "./assets/case-studies/Order-1499/Al-Gabry.webp",
+        name: "شركة Modern Landmarks Foundation",
+        desc: "",
+        industry: "توزيع الجملة",
+        destination: "جدة، المملكة العربية السعودية",
+        info: ["مستورد وموزع", "جدة، المملكة العربية السعودية"],
+        orderInfo: {
+          date: "29 مايو 2025",
+          value: "$7,537.50"
+        },
+      }
+    }
+  ];
+
 
 const services = [
   {
     title: isEnglishVersion() ? "Generation Qualified Leads" : "توليد العملاء المؤهلين",
+    desc: isEnglishVersion() ? "High-quality leads via strategic inbound and outbound marketing." : "عملاء بجودة عالية من خلال استراتيجيات تسويق داخلية وخارجية.",
     img: "./assets/services-icons/leads.webp",
-    services: isEnglishVersion() ? ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"] : ["العملاء المحتملين خارجيًا", "حملات التسويق الداخلي", "إدارة علاقات العملاء وتقييم جودتهم", "الندوات الرقمية"]
+    services: isEnglishVersion() ? ["Inbound Campaigns", "Outbound Prospecting", "CRM & Lead Scoring", "Webinars & Interactive Content"] : ["العملاء المحتملين خارجيًا", "حملات التسويق الداخلي", "إدارة علاقات العملاء وتقييم جودتهم", "الندوات الرقمية"],
+    servicesInfo: isEnglishVersion() ? [`SEO, content, and ads to attract your ideal audience.`, `Targeted email, LinkedIn, and calls to reach qualified leads.`, `Track and prioritize leads with CRM and scoring tools`, `Engage prospects with webinars and interactive tools.`,] : [`تحسين محركات البحث، المحتوى، والإعلانات لجذب الجمهور المناسب.`, `تواصل مخصص عبر البريد، لينكدإن، والمكالمات.`, `متابعة وتقييم العملاء باستخدام CRM وأدوات التقييم.`, `ندوات وتجارب تفاعلية لبناء الثقة وتحفيز العملاء.`,]
   },
   {
     title: isEnglishVersion() ? "International Export Sales" : "دعم الصادرات الدولية",
-
+    desc: isEnglishVersion() ? "Expand globally with market entry to deal closure support." : "التوسع العالمي من دخول السوق حتى إتمام الصفقات.",
     img: "./assets/services-icons/intl-sales.webp",
     services: isEnglishVersion() ? [
       "Market Entry Strategy",
@@ -108,20 +503,43 @@ const services = [
       "تطوير الشراكات",
       "دعم الامتثال",
       "تمكين فرق المبيعات"
-    ]
+    ],
+    servicesInfo: isEnglishVersion() ? [`Tailored market research and entry plans.`, `Find and onboard distributors and agents.`, `Ensure export regulations and certifications.`, `Equip teams with tools and training`,] : ["أبحاث وخطط دخول مخصصة.", "تحديد وتطوير الشركاء والوكلاء.", "ضمان الامتثال للوائح والشهادات.", "تزويد الفرق بالأدوات والتدريب."]
   },
   {
     title: isEnglishVersion() ? "Marketing" : "التسويق ",
+    desc: isEnglishVersion()
+      ? "Boost visibility and leads via digital and offline channels."
+      : "تعزيز الظهور والعملاء عبر القنوات الرقمية والميدانية.",
+
     img: "./assets/services-icons/marketing.webp",
     services: isEnglishVersion() ? ["Paid Digital Marketing", "Email & WhatsApp Campaigns", "Trade Missions", "Exhibitions & Events"] : [
       "التسويق الرقمي المدفوع",
       "حملات البريد الإلكتروني والواتساب",
       "البعثات التجارية",
       "المعارض والفعاليات"
-    ]
+    ],
+    servicesInfo: isEnglishVersion()
+      ? [
+        "Targeted ads on Meta, Google, etc.",
+        "Personalized campaigns to nurture leads.",
+        "B2B trips for market exploration.",
+        "Showcase your brand at industry events.",
+      ]
+      : [
+        "إعلانات مستهدفة على ميتا وجوجل.",
+        "حملات مخصصة عبر البريد والواتساب.",
+        "زيارات تجارية لاستكشاف الأسواق.",
+        "عرض العلامة التجارية في المعارض والفعاليات.",
+      ],
   },
   {
     title: isEnglishVersion() ? "Market Research" : "أبحاث السوق",
+    desc: isEnglishVersion()
+      ? "Data-driven insights to guide your strategy."
+      : "تحليلات مدعومة بالبيانات لتوجيه استراتيجيتك.",
+
+
     img: "./assets/services-icons/research.webp",
     services: isEnglishVersion() ? [
       "Industry Reports",
@@ -133,10 +551,28 @@ const services = [
       "رؤى حول المنافسين",
       "تحليل ملفات العملاء",
       "استبيانات ومجموعات التركيز"
-    ]
+    ],
+    servicesInfo: isEnglishVersion()
+      ? [
+        "Trends and forecasts.",
+        "Understand competition and positioning.",
+        "Define target segments.",
+        "Collect real customer feedback.",
+      ]
+      : [
+        "اتجاهات وتوقعات السوق.",
+        "تحليل المنافسين والموقع في السوق.",
+        "تحديد الشرائح المستهدفة.",
+        "جمع آراء العملاء.",
+      ],
   },
   {
     title: isEnglishVersion() ? "Customer Service" : "خدمة العملاء",
+    desc: isEnglishVersion()
+      ? "Seamless support across all touchpoints."
+      : "دعم متكامل وسريع عبر جميع القنوات.",
+
+
     img: "./assets/services-icons/cust-serv.webp",
     services: isEnglishVersion() ? [
       "Omnichannel Support",
@@ -148,10 +584,28 @@ const services = [
       "مكتب المساعدة وإدارة التذاكر",
       "دعم كامل لدورة التجارة",
       "إدارة الملاحظات والتقييمات"
-    ]
+    ],
+    servicesInfo: isEnglishVersion()
+      ? [
+        "Chat, email, phone, social media.",
+        "Organized issue tracking.",
+        "Assist from inquiry to delivery.",
+        "Analyze and act on customer feedback.",
+      ]
+      : [
+        "دعم عبر المحادثات، البريد، الهاتف، ووسائل التواصل.",
+        "نظام تتبع المشكلات.",
+        "دعم كامل من الطلب حتى التسليم.",
+        "تحليل ملاحظات العملاء لتحسين الخدمة.",
+      ],
   },
   {
     title: isEnglishVersion() ? "AI-Powerd Proposal Tool" : "أدوات الذكاء الاصطناعي",
+    desc: isEnglishVersion()
+      ? "Automate and analyze proposals to close deals faster."
+      : "أتمتة وتحليل الاقتراحات لإتمام الصفقات بسرعة.",
+
+
     img: "./assets/services-icons/gear.webp",
     services: isEnglishVersion() ? [
       "Automated RFQs",
@@ -163,7 +617,20 @@ const services = [
       "الوثائق المطلوبة للتصدير",
       "تحليلات العروض",
       "غرف مبيعات رقمية"
-    ]
+    ],
+    servicesInfo: isEnglishVersion()
+      ? [
+        "Auto-generate and send RFQs.",
+        "Prepare export documents automatically.",
+        "Real-time tracking of proposal engagement.",
+        "Secure spaces to share and collaborate.",
+      ]
+      : [
+        "إنشاء وإرسال طلبات عروض الأسعار تلقائيًا.",
+        "إعداد مستندات التصدير تلقائيًا.",
+        "متابعة تفاعل الاقتراحات بشكل فوري.",
+        "مساحات رقمية آمنة للتعاون مع العملاء.",
+      ],
   },
 
 ]
@@ -1043,7 +1510,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
           class="mx-auto rounded w-[200px]"
         />
       </div>
-      <h4 class="h4 text-center">${vendor.name} <span class="block text-center text-gray-300 text-xs pt-1">${vendor.industry} Industry</span></h4>
+      <h4 class="h4 text-center">${vendor.name} <span class="block text-center text-gray-300 text-xs pt-1">${vendor.industry}</span></h4>
       <p class="p-2  capitalize text-center text-base leading-5">
         ${vendor.desc}
       </p>
@@ -1112,7 +1579,7 @@ caseStudies.forEach(({ id, buyer, caseStudy, vendor }, index) => {
           class="mx-auto rounded w-[200px]"
         />
       </div>
-      <h4 class="h4 text-center">${buyer.name} <span class="block text-center text-gray-300 text-xs pt-1">${buyer.industry} Industry</span></h4>
+      <h4 class="h4 text-center">${buyer.name} <span class="block text-center text-gray-300 text-xs pt-1">${buyer.industry}</span></h4>
       <p class="p-2  capitalize text-center text-base leading-5">
         ${buyer.desc}
       </p>
@@ -1186,11 +1653,9 @@ function addContentToPage(index) {
                 <p>${isEnglishVersion() ? "Order Date" : " تاريخ الطلب"} : <span class="text-gray-300 italic">${buyer.orderInfo.date}</span></p>
               </li>
               <li>
-                <p>${isEnglishVersion() ? "Shipping Method" : "طريقة الشحن"} :  <span class="text-gray-300 italic">${caseStudy.shippingInfo.method} (${caseStudy.shippingInfo.quantity})</span></p>
+                <p>${isEnglishVersion() ? "Shipping Method" : "طريقة الشحن"} :  <span class="text-gray-300 italic">${caseStudy.shippingInfo.method} ${caseStudy.shippingInfo.quantity !== "" ? `(${caseStudy.shippingInfo.quantity})` : ""}</span></p>
               </li>
-              <li>
-                <p>${isEnglishVersion() ? "Inspection &amp; Quality Control" : "المعاينة وضمان الجودة"} : <span class="text-gray-300 italic">Completed By${caseStudy.inspection.name} Ref(${caseStudy.inspection.ref})</span></p>
-              </li>
+
               <li>
                 <p>${isEnglishVersion() ? "Shipping Date" : "تاريخ الشحن"} : <span class="text-gray-300 italic">${caseStudy.shippingInfo.date}</span></p>
               </li>
@@ -1198,12 +1663,12 @@ function addContentToPage(index) {
             <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Products Ordered" : "المنتجات المطلوبة"}</h3>
             <div class="border w-full border-gray-500">
               <div class="flex *:flex-1 *:p-2 items-center border-b border-b-gray-500">
-                <h6 class="border-r border-gray-500 font-semibold">${isEnglishVersion() ? "Brand" : "علامة تجارية"}</h6>
+                <h6 class="${isEnglishVersion() ? "border-r" : "border-l"} border-gray-500 font-semibold">${isEnglishVersion() ? "Brand" : "علامة تجارية"}</h6>
                 <h6 class="font-semibold">${isEnglishVersion() ? "Quantity" : " الكمية"}</h6>
               </div>
             ${caseStudy.productsOrder.brand.map((brand, index) => `
               <div class="flex *:flex-1 *:p-2 items-center">
-              <p class="border-r border-gray-500 ${index !== caseStudy.productsOrder.brand.length - 1 ? "border-b" : ""}">${brand}</p>
+              <p class="${isEnglishVersion() ? "border-r" : "border-l"} border-gray-500 ${index !== caseStudy.productsOrder.brand.length - 1 ? "border-b" : ""}">${brand}</p>
               <p class="border-gray-500 ${index !== caseStudy.productsOrder.brand.length - 1 ? "border-b" : ""}">${caseStudy.productsOrder.quantity[index]}</p>
               </div>    
                 `).join("")}
@@ -1257,7 +1722,7 @@ function addContentToPage(index) {
             <hr class="text-gray-500"/>
             <h3 class="h3 text-light-cyan font-semibold">${isEnglishVersion() ? "Trade Summary" : "ملخص العملية التجارية"} </h3>
             <p class="h4 !font-normal !leading-[1.5] max-w-[780px]">
-               ${caseStudy.tradeSumm}
+                ${caseStudy.tradeSumm}
             </p>
             </div>
           `;
@@ -1277,7 +1742,7 @@ if (searchParams.get("i")) {
   // isEnglishVersion() ? document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-study.html?i=${searchParams.get("i")}` : document.head.querySelector("[rel='canonical']").href = `https://services.tijarahub.com/case-studyar.html?i=${searchParams.get("i")}`
 }
 
-services.forEach(({ title, img, services }, index) => {
+services.forEach(({ title, img, services, servicesInfo, desc }, index) => {
   const colIndex = index % 3;
 
   const card = `
@@ -1285,7 +1750,10 @@ services.forEach(({ title, img, services }, index) => {
           data-aos="${colIndex === 0 ? "fade-right" : colIndex === 1 ? "fade-up" : "fade-left"}"
           class="flex flex-col gap-5 p-6 lg:gap-6 lg:p-10 ${colIndex === 1 ? "bg-white/5 backdrop-blur-md" : "ocean-gradient"} rounded-3xl"
         >
-          <h3 class="text-4xl max-lg:text-center font-bold capitalize">${title}</h3>
+          <hgroup>
+          <h3 class="text-4xl mb-2 max-lg:text-center font-bold capitalize">${title}</h3>
+          <p>${desc}</p>
+          </hgroup>
           <div class="py-5">
             <img
               role="img" aria-label="${title}" title="${title}"
@@ -1298,8 +1766,8 @@ services.forEach(({ title, img, services }, index) => {
             <div
               class="flex flex-wrap items-center justify-center h-full gap-4 body"
             >
-            ${services.map((text) => `<div class="flex-grow text-sm ${colIndex !== 1 ? "!bg-black/20" : ""} stat-card basis-w-1/4">
-                <p>${text}</p>
+            ${services.map((text, i) => `<div class="flex-grow text-sm ${colIndex !== 1 ? "!bg-black/20" : ""} stat-card basis-w-1/4">
+                <p class="relative group size-full flex items-center justify-center">${text} <span class="absolute text-center duration-300 py-2 px-4 transition-all opacity-0 group-hover:opacity-100 ${isEnglishVersion() ? "start-1/2" : "end-1/2"} -translate-x-1/2 top-1/2 -translate-y-1/2 group-hover:-translate-y-1/2 group-hover:-top-1/2  text-sm min-h-full w-full rounded-full  bg-dark-blue flex items-center justify-center ">${servicesInfo[i]}</span></p>
               </div>`).join("")}
               
             </div>
@@ -1543,7 +2011,7 @@ function updateGrowthChart(
             beginAtZero: true,
             title: {
               display: true,
-              text: isEnglishVersion() ? 'Total Buyers' : "إجمالي المشترين",
+              text: isEnglishVersion() ? 'Total Revenue' : "إجمالي الإيرادات",
               color: "#f5f5f5",
             },
             min: minTotal,
