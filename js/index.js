@@ -1752,7 +1752,7 @@ services.forEach(({ title, img, services, servicesInfo, desc }, index) => {
         >
           <hgroup>
           <h3 class="text-4xl mb-2 max-lg:text-center font-bold capitalize">${title}</h3>
-          <p>${desc}</p>
+          <p class="max-lg:text-center">${desc}</p>
           </hgroup>
           <div class="py-5">
             <img
