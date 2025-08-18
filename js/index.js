@@ -739,6 +739,11 @@ const plansContent = {
       info: "",
       gain: false,
     },
+    {
+      text: isEnglishVersion() ? "Access to Fund" : "الوصول إلى التمويل",
+      info: "",
+      gain: false,
+    },
   ],
   marketing: [
     {
@@ -811,13 +816,13 @@ const plansContent = {
   standard: {
     annually: {
       price: "$193",
-      services: isEnglishVersion() ? ["", "1 Sales", "1 Time / Year", "8 / Month", true, true, "6 / Month", true, false] : ["", "1 موظف مبيعات", "1 مرة / سنة", "8 / شهر", true, true, "6 / شهر", true, false],
+      services: isEnglishVersion() ? ["", "1 Sales", "1 Time / Year", "8 / Month", true, true, "6 / Month", true, false,"Up to 10M"] : ["", "1 موظف مبيعات", "1 مرة / سنة", "8 / شهر", true, true, "6 / شهر", true, false,"الي 10 ملايين"],
       marketing: isEnglishVersion() ? ["", "1 Campaign / Month", "1 Campaign / Month", true, false, true, "3 Designs / Month"] : ["", "1 حملة / شهريا", "1 حملة / شهريا", true, false, true, "3 تصاميم / شهريا"],
       techFeatures: isEnglishVersion() ? ["", true, true, false, "Maximum 25", "Maximum 5", true, true] : ["", true, true, false, "كحد اقصى 25", "كحد اقصى 5", true, true],
     },
     monthly: {
       price: "$275",
-      services: isEnglishVersion() ? ["", false, "With Cost", "5 / Month", true, true, "5 / Month", true, false] : ["", false, "مع تكلفة", "5 / شهريا", true, true, "5 / شهريا", true, false],
+      services: isEnglishVersion() ? ["", false, "With Cost", "5 / Month", true, true, "5 / Month", true, false,"Up to 10M"] : ["", false, "مع تكلفة", "5 / شهريا", true, true, "5 / شهريا", true, false,"الي 10 ملايين"],
       marketing: isEnglishVersion() ? ["", "1 Campaign / Month", "1 Campaign / Month", true, false, false, "2 Designs / Month"] : ["", "1 حملة / شهريا", "1 حملة / شهريا", true, false, false, "2 تصاميم / شهريا"],
       techFeatures: isEnglishVersion() ? ["", true, true, false, "Maximum 12", "Maximum 5", true, true] : ["", true, true, false, "كحد اقصى 12", "كحد اقصى 5", true, true],
     }
@@ -825,13 +830,13 @@ const plansContent = {
   premium: {
     annually: {
       price: "$320",
-      services: isEnglishVersion() ? ["", "2 Sales", "2 Time / Year", "15 / Month", true, true, "12 / Month", true, true] : ["", "2 مبيعات", "2 مرة / سنة", "15 / شهريا", true, true, "12 / شهريا", true, true],
+      services: isEnglishVersion() ? ["", "2 Sales", "2 Time / Year", "15 / Month", true, true, "12 / Month", true, true,"Up to 10M"] : ["", "2 مبيعات", "2 مرة / سنة", "15 / شهريا", true, true, "12 / شهريا", true, true,"الي 10 ملايين"],
       marketing: isEnglishVersion() ? ["", "2 Campaign / Month", "2 Campaign / Month", true, true, true, "6 Designs / Month"] : ["", "2 حملة / شهريا", "2 حملة / شهريا", true, true, true, "6 تصاميم / شهريا"],
       techFeatures: isEnglishVersion() ? ["", true, true, true, "Maximum 60", "Maximum 8", true, true] : ["", true, true, true, "كحد اقصى 60", "كحد اقصى 8", true, true],
     },
     monthly: {
       price: "$460",
-      services: isEnglishVersion() ? ["", "1 Sales", "With Cost", "12 / Month", true, true, "10 / Month", true, true] : ["", "1 مبيعات", "مع تكلفة", "12 / شهريا", true, true, "10 / شهريا", true, true],
+      services: isEnglishVersion() ? ["", "1 Sales", "With Cost", "12 / Month", true, true, "10 / Month", true, true,"Up to 10M"] : ["", "1 مبيعات", "مع تكلفة", "12 / شهريا", true, true, "10 / شهريا", true, true,"الي 10 ملايين"],
       marketing: isEnglishVersion() ? ["", "2 Campaign / Month", "2 Campaign / Month", true, true, false, "4 Designs / Month"] : ["", "2 حملة / شهريا", "2 حملة / شهريا", true, true, false, "4 تصاميم / شهريا"],
       techFeatures: isEnglishVersion() ? ["", true, true, true, "Maximum 30", "Maximum 8", true, true] : ["", true, true, true, "كحد اقصى 30", "كحد اقصى 8", true, true],
     }
