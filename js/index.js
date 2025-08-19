@@ -740,7 +740,7 @@ const plansContent = {
       gain: false,
     },
     {
-      text: isEnglishVersion() ? "Access to Fund" : "الوصول إلى التمويل",
+      text: isEnglishVersion() ? "Access to Fund" : "الحصول علي التمويل",
       info: "",
       gain: false,
     },
@@ -1146,7 +1146,8 @@ const monthlyDetails = {
       ` <span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-      "Maximum 12"
+      "Maximum 12",
+      "Up to 10M EGP"
     ],
     premium: [
 
@@ -1159,7 +1160,8 @@ const monthlyDetails = {
     ></span>`,
 
       "1 Sales",
-      "Maximum 30"
+      "Maximum 30",
+      "Up to 10M EGP"
     ]
   },
   ar: {
@@ -1176,6 +1178,7 @@ const monthlyDetails = {
     ><i class="fa-solid fa-x"></i
     ></span>`,
       "كحد اقصى 12"
+      , "الي 10 ملايين ج. م."
     ],
     premium: [
       "12 / شهريا",
@@ -1186,7 +1189,8 @@ const monthlyDetails = {
     ><i class="fa-solid fa-x"></i
     ></span>`,
       "1 موظف مبيعات",
-      "كحد اقصى 30"
+      "كحد اقصى 30",
+      "الي 10 ملايين ج. م."
     ]
   }
 }
@@ -1201,7 +1205,8 @@ const yearlyDetails = {
     ><i class="fa-solid fa-check"></i></span>`,
 
       `1 Sales`,
-      "Maximum 25"
+      "Maximum 25",
+      "Up to 10M EGP"
     ],
     premium: [
       "15 / Month",
@@ -1213,6 +1218,7 @@ const yearlyDetails = {
 
       "2 Sales",
       "Maximum 60"
+      , "Up to 10M EGP"
     ]
   },
   ar: {
@@ -1225,7 +1231,8 @@ const yearlyDetails = {
     ><i class="fa-solid fa-check"></i></span>`,
 
       `1 موظف مبيعات`,
-      "كحد اقصى 25"
+      "كحد اقصى 25",
+      "الي 10 ملايين ج. م."
     ],
     premium: [
       "15 / شهريا",
@@ -1235,7 +1242,8 @@ const yearlyDetails = {
       ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
       "2 موظف مبيعات",
-      "كحد اقصى 60"
+      "كحد اقصى 60",
+      "الي 10 ملايين ج. م."
     ]
   }
 }
@@ -1289,6 +1297,14 @@ function fillPlanContent(type, lang) {
                     </p>
                     <p class="text-end">
                     ${type[5]}
+                    </p>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <p class="flex items-center gap-0.5 xl:gap-4">
+                      ${lang == "en" ? "Access to Fund" : " الحصول علي التمويل"}
+                    </p>
+                    <p class="text-end">
+                    ${type[6]}
                     </p>
                   </li>
                 </ul>`
