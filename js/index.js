@@ -823,11 +823,6 @@ const plansContent = {
       gain: "6 / Month",
     },
     {
-      text: isEnglishVersion() ? "Sample Support Services" : "دعم طلب العينات",
-      info: "",
-      gain: true,
-    },
-    {
       text: isEnglishVersion() ? "Ads in Home page" : "عرض في الصفحة الرئيسية",
       info: "",
       gain: false,
@@ -945,7 +940,6 @@ const plansContent = {
             true,
             true,
             "6 / Month",
-            true,
             false,
             "Up to 10M EGP",
           ]
@@ -957,7 +951,6 @@ const plansContent = {
             true,
             true,
             "6 / شهر",
-            true,
             false,
             "يصل الى 10 ملايين ج. م.",
           ],
@@ -995,7 +988,6 @@ const plansContent = {
             true,
             true,
             "5 / Month",
-            true,
             false,
             "Up to 10M EGP",
           ]
@@ -1007,7 +999,6 @@ const plansContent = {
             true,
             true,
             "5 / شهريا",
-            true,
             false,
             "يصل الى 10 ملايين ج. م.",
           ],
@@ -1048,7 +1039,6 @@ const plansContent = {
             true,
             "12 / Month",
             true,
-            true,
             "Up to 10M EGP",
           ]
         : [
@@ -1059,7 +1049,6 @@ const plansContent = {
             true,
             true,
             "12 / شهريا",
-            true,
             true,
             "يصل الى 10 ملايين ج. م.",
           ],
@@ -1098,7 +1087,6 @@ const plansContent = {
             true,
             "10 / Month",
             true,
-            true,
             "Up to 10M EGP",
           ]
         : [
@@ -1109,7 +1097,6 @@ const plansContent = {
             true,
             true,
             "10 / شهريا",
-            true,
             true,
             "يصل الى 10 ملايين ج. م.",
           ],
@@ -1342,7 +1329,9 @@ togglePlan?.addEventListener("click", (e) => {
     //====== Standard Content ======//
     // services Content
     plansContent.services.map((service, index) => {
-      const content = `
+      const content =
+        index !== 6 && index !== 5
+          ? `
         <li class="flex items-center justify-between gap-2">
           <p class="flex items-center gap-0.5 xl:gap-4 ${
             index === 0 ? "h4 text-light-cyan pt-4" : ""
@@ -1361,7 +1350,8 @@ togglePlan?.addEventListener("click", (e) => {
               : `<span class="text-end">${plansContent.standard.monthly.services[index]}</span>`
           }
         </li>
-        `;
+        `
+          : "";
 
       standardContent.insertAdjacentHTML("beforeend", content);
     });
@@ -1419,7 +1409,9 @@ togglePlan?.addEventListener("click", (e) => {
     //====== Premium Content ======//
     // services Content
     plansContent.services.map((service, index) => {
-      const content = `
+      const content =
+        index !== 6 && index !== 5
+          ? `
         <li class="flex items-center justify-between gap-2">
           <p class="flex items-center gap-0.5 xl:gap-4 ${
             index === 0 ? "h4 text-light-cyan pt-4" : ""
@@ -1438,7 +1430,8 @@ togglePlan?.addEventListener("click", (e) => {
               : `<span class="text-end">${plansContent.premium.monthly.services[index]}</span>`
           }
         </li>
-        `;
+        `
+          : "";
 
       premiumContent.insertAdjacentHTML("beforeend", content);
     });
@@ -1640,18 +1633,6 @@ function fillPlanContent(type, lang) {
                     </p>
                     <p class="text-end">
                     ${type[0]}
-                    </p>
-                  </li>
-                  <li class="flex items-center justify-between gap-2">
-                    <p class="flex items-center gap-0.5 xl:gap-4">
-                      ${
-                        lang == "en"
-                          ? "Buyers from DataBase"
-                          : "المشترين من قاعدة البيانات"
-                      }
-                    </p>
-                    <p class="text-end">
-                    ${type[1]}
                     </p>
                   </li>
                   <li class="flex items-center justify-between gap-2">
