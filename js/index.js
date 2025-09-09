@@ -776,23 +776,9 @@ function isEnglishVersion() {
 }
 
 const plansContent = {
-  services: [
+  generateLeads: [
     {
-      text: isEnglishVersion() ? "Services" : "الخدمات",
-    },
-    {
-      text: isEnglishVersion()
-        ? "International Export Sales"
-        : "دعم الصادرات الدولية",
-      info: "",
-      gain: "1 Sales",
-    },
-    {
-      text: isEnglishVersion()
-        ? "Tailor made Market Research"
-        : "أبحاث السوق المخصصة",
-      info: "",
-      gain: "1 Time / Year",
+      text: isEnglishVersion() ? "Generating Leads" : "توليد العملاء المؤهلين",
     },
     {
       text: isEnglishVersion()
@@ -803,30 +789,38 @@ const plansContent = {
     },
     {
       text: isEnglishVersion()
-        ? "Logistcs support for Door to Door"
-        : "دعم لوجستي شامل",
-      info: "",
-      gain: true,
-    },
-    {
-      text: isEnglishVersion()
-        ? "Building a brand by Drop-Shipping Services"
-        : "بناء العلامة التجارية عبر الدروب شيبنج",
-      info: "",
-      gain: true,
-    },
-    {
-      text: isEnglishVersion()
         ? "Buyers from DataBase"
         : "خدمة العملاء للمشترين",
       info: "",
       gain: "6 / Month",
     },
     {
-      text: isEnglishVersion() ? "Ads in Home page" : "عرض في الصفحة الرئيسية",
+      text: isEnglishVersion()
+        ? "International Export Consultant"
+        : "دعم الصادرات الدولية",
       info: "",
-      gain: false,
+      gain: "1 Sales",
     },
+    {
+      text: isEnglishVersion()
+        ? "Trade Missions in target countries"
+        : "بعثات تجارية مستهدفة",
+      info: "",
+      gain: true,
+    },
+  ],
+  services: [
+    {
+      text: isEnglishVersion() ? "Services" : "الخدمات",
+    },
+    {
+      text: isEnglishVersion()
+        ? "Logistcs support for Door to Door"
+        : "دعم لوجستي شامل",
+      info: "",
+      gain: true,
+    },
+
     {
       text: isEnglishVersion() ? "Access to Fund" : "الحصول علي التمويل",
       info: "",
@@ -838,11 +832,9 @@ const plansContent = {
       text: isEnglishVersion() ? "Marketing" : "التسويق",
     },
     {
-      text: isEnglishVersion()
-        ? "WhatsApp and email Marketing"
-        : "التسويق عبر واتساب والبريد الإلكتروني",
+      text: isEnglishVersion() ? "Market Research" : "أبحاث السوق المخصصة",
       info: "",
-      gain: "1 Campaign / Month",
+      gain: "1 Time / Year",
     },
     {
       text: isEnglishVersion()
@@ -853,24 +845,10 @@ const plansContent = {
     },
     {
       text: isEnglishVersion()
-        ? "Product Popup through SEO Support"
-        : "دعم تحسين محركات البحث للمنتجات",
+        ? "WhatsApp and email Marketing"
+        : "التسويق عبر واتساب والبريد الإلكتروني",
       info: "",
-      gain: true,
-    },
-    {
-      text: isEnglishVersion()
-        ? "Landing Company Profile webpage on Tijarahub"
-        : "صفحة ويب للشركة لدعم التصدير",
-      info: "",
-      gain: false,
-    },
-    {
-      text: isEnglishVersion()
-        ? "Trade Missions in target countries"
-        : "بعثات تجارية مستهدفة",
-      info: "",
-      gain: true,
+      gain: "1 Campaign / Month",
     },
     {
       text: isEnglishVersion()
@@ -879,12 +857,31 @@ const plansContent = {
       info: "",
       gain: "3 Designs / Month",
     },
+    {
+      text: isEnglishVersion()
+        ? "Product Popup through SEO Support"
+        : "دعم تحسين محركات البحث للمنتجات",
+      info: "",
+      gain: true,
+    },
+    {
+      text: isEnglishVersion() ? "Ads in Home page" : "عرض في الصفحة الرئيسية",
+      info: "",
+      gain: false,
+    },
   ],
   techFeatures: [
     {
       text: isEnglishVersion()
         ? "Platform & Technology Features"
         : "ميزات المنصة والتكنولوجيا",
+    },
+    {
+      text: isEnglishVersion()
+        ? "Landing Company Profile webpage on Tijarahub"
+        : "صفحة ويب للشركة لدعم التصدير",
+      info: "",
+      gain: false,
     },
     {
       text: isEnglishVersion() ? "Platform Access" : "الوصول إلى المنصة",
@@ -900,10 +897,10 @@ const plansContent = {
     },
     {
       text: isEnglishVersion()
-        ? "Dedicattrueed Catalog Team"
-        : "فريق كتالوج مخصص",
+        ? "Ai Search Optimization"
+        : "تحسين البحث بالذكاء الاصطناعي",
       info: "",
-      gain: false,
+      gain: true,
     },
     {
       text: isEnglishVersion() ? "Products Listing" : "إدراج المنتجات",
@@ -920,208 +917,133 @@ const plansContent = {
       info: "",
       gain: true,
     },
-    {
-      text: isEnglishVersion()
-        ? "Ai Search Optimization"
-        : "تحسين البحث بالذكاء الاصطناعي",
-      info: "",
-      gain: true,
-    },
   ],
   standard: {
     annually: {
-      price: "$193",
+      price: "$195",
+      generateLeads: isEnglishVersion()
+        ? ["", "8 / Month", "6 / Month", "1 Sales", true]
+        : ["", "8 / شهر", "6 / شهر", "1 موظف مبيعات", true],
       services: isEnglishVersion()
-        ? [
-            "",
-            "1 Sales",
-            "1 Time / Year",
-            "8 / Month",
-            true,
-            true,
-            "6 / Month",
-            false,
-            "Up to 10M EGP",
-          ]
-        : [
-            "",
-            "1 موظف مبيعات",
-            "1 مرة / سنة",
-            "8 / شهر",
-            true,
-            true,
-            "6 / شهر",
-            false,
-            "يصل الى 10 ملايين ج. م.",
-          ],
+        ? ["", true, "Up to 10M EGP"]
+        : ["", true, "يصل الى 10 ملايين ج. م."],
       marketing: isEnglishVersion()
         ? [
             "",
+            "1 Time / Year",
             "1 Campaign / Month",
             "1 Campaign / Month",
+            "3 Designs / Month",
             true,
             false,
-            true,
-            "3 Designs / Month",
           ]
         : [
             "",
+            "1 مرة / سنوياً",
             "1 حملة / شهريا",
             "1 حملة / شهريا",
+            "3 تصاميم / شهريا",
             true,
             false,
-            true,
-            "3 تصاميم / شهريا",
           ],
       techFeatures: isEnglishVersion()
-        ? ["", true, true, false, "Maximum 25", "Maximum 5", true, true]
-        : ["", true, true, false, "كحد اقصى 25", "كحد اقصى 5", true, true],
+        ? ["", false, true, true, true, "Maximum 25", "Maximum 5", true]
+        : ["", false, true, true, "كحد اقصى 25", "كحد اقصى 5", true, true],
     },
     monthly: {
       price: "$275",
+      generateLeads: isEnglishVersion()
+        ? ["", "5 / Month", "6 / Month", false, false]
+        : ["", "5 / شهر", "6 / شهر", false, false],
       services: isEnglishVersion()
-        ? [
-            "",
-            false,
-            "With Cost",
-            "5 / Month",
-            true,
-            true,
-            "5 / Month",
-            false,
-            "Up to 10M EGP",
-          ]
-        : [
-            "",
-            false,
-            "مع تكلفة",
-            "5 / شهريا",
-            true,
-            true,
-            "5 / شهريا",
-            false,
-            "يصل الى 10 ملايين ج. م.",
-          ],
+        ? ["", true, "Up to 10M EGP"]
+        : ["", true, "يصل الى 10 ملايين ج. م."],
       marketing: isEnglishVersion()
         ? [
             "",
+            "With Cost",
             "1 Campaign / Month",
             "1 Campaign / Month",
+            "2 Designs / Month",
             true,
             false,
-            false,
-            "2 Designs / Month",
           ]
         : [
             "",
+            "مع تكلفة",
             "1 حملة / شهريا",
             "1 حملة / شهريا",
+            "2 تصاميم / شهريا",
             true,
             false,
-            false,
-            "2 تصاميم / شهريا",
           ],
       techFeatures: isEnglishVersion()
-        ? ["", true, true, false, "Maximum 12", "Maximum 5", true, true]
-        : ["", true, true, false, "كحد اقصى 12", "كحد اقصى 5", true, true],
+        ? ["", false, true, true, true, "Maximum 12", "Maximum 5", true]
+        : ["", false, true, true, true, "كحد اقصى 12", "كحد اقصى 5", true],
     },
   },
   premium: {
     annually: {
       price: "$320",
+      generateLeads: isEnglishVersion()
+        ? ["", "15 / Month", "12 / Month", "2 Sales", true]
+        : ["", "15 / شهر", "12 / شهر", "2 موظف مبيعات", true],
       services: isEnglishVersion()
-        ? [
-            "",
-            "2 Sales",
-            "2 Time / Year",
-            "15 / Month",
-            true,
-            true,
-            "12 / Month",
-            true,
-            "Up to 10M EGP",
-          ]
-        : [
-            "",
-            "2 مبيعات",
-            "2 مرة / سنة",
-            "15 / شهريا",
-            true,
-            true,
-            "12 / شهريا",
-            true,
-            "يصل الى 10 ملايين ج. م.",
-          ],
+        ? ["", true, "Up to 10M EGP"]
+        : ["", true, "يصل الى 10 ملايين ج. م."],
       marketing: isEnglishVersion()
         ? [
             "",
+            "2 Time / Year",
             "2 Campaign / Month",
             "2 Campaign / Month",
-            true,
-            true,
-            true,
             "6 Designs / Month",
+            true,
+            true,
           ]
         : [
             "",
-            "2 حملة / شهريا",
-            "2 حملة / شهريا",
-            true,
-            true,
-            true,
+            "2 مرة / سنوياً",
+            "1 حملة / شهريا",
+            "1 حملة / شهريا",
             "6 تصاميم / شهريا",
+            true,
+            true,
           ],
       techFeatures: isEnglishVersion()
-        ? ["", true, true, true, "Maximum 60", "Maximum 8", true, true]
+        ? ["", true, true, true, true, "Maximum 60", "Maximum 8", true]
         : ["", true, true, true, "كحد اقصى 60", "كحد اقصى 8", true, true],
     },
     monthly: {
       price: "$460",
+      generateLeads: isEnglishVersion()
+        ? ["", "12 / Month", "6 / Month", "1 Sales", false]
+        : ["", "12 / شهر", "6 / شهر", , false],
       services: isEnglishVersion()
-        ? [
-            "",
-            "1 Sales",
-            "With Cost",
-            "12 / Month",
-            true,
-            true,
-            "10 / Month",
-            true,
-            "Up to 10M EGP",
-          ]
-        : [
-            "",
-            "1 مبيعات",
-            "مع تكلفة",
-            "12 / شهريا",
-            true,
-            true,
-            "10 / شهريا",
-            true,
-            "يصل الى 10 ملايين ج. م.",
-          ],
+        ? ["", true, "Up to 10M EGP"]
+        : ["", true, "يصل الى 10 ملايين ج. م."],
       marketing: isEnglishVersion()
         ? [
             "",
+            "With Cost",
             "2 Campaign / Month",
             "2 Campaign / Month",
-            true,
-            true,
-            false,
             "4 Designs / Month",
+            true,
+            true,
           ]
         : [
             "",
+            "مع تكلفة",
             "2 حملة / شهريا",
             "2 حملة / شهريا",
-            true,
-            true,
-            false,
             "4 تصاميم / شهريا",
+            true,
+            true,
           ],
       techFeatures: isEnglishVersion()
-        ? ["", true, true, true, "Maximum 30", "Maximum 8", true, true]
-        : ["", true, true, true, "كحد اقصى 30", "كحد اقصى 8", true, true],
+        ? ["", true, true, true, true, "Maximum 30", "Maximum 8", true]
+        : ["", true, true, true, true, "كحد اقصى 30", "كحد اقصى 8", true],
     },
   },
 };
@@ -1163,6 +1085,31 @@ togglePlan?.addEventListener("click", (e) => {
     standardLink.href = "https://tijarahub.com/vendor-registration/?plan_id=5";
 
     //====== Standard Content ======//
+    // Genertaing Leads Content
+    plansContent.generateLeads.map((service, index) => {
+      const content = `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${
+            index === 0 ? "h4 text-light-cyan pt-4" : ""
+          }">
+          
+            ${service.text}
+          </p>
+          ${
+            plansContent.standard.annually.generateLeads[index] === true
+              ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>`
+              : plansContent.standard.annually.generateLeads[index] === false
+              ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>`
+              : `<span class="text-end">${plansContent.standard.annually.generateLeads[index]}</span>`
+          }
+        </li>
+        `;
+
+      standardContent.insertAdjacentHTML("beforeend", content);
+    });
     // services Content
     plansContent.services.map((service, index) => {
       const content = `
@@ -1240,6 +1187,31 @@ togglePlan?.addEventListener("click", (e) => {
     });
 
     //====== Premium Content ======//
+    // Genertaing Leads Content
+    plansContent.generateLeads.map((service, index) => {
+      const content = `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${
+            index === 0 ? "h4 text-light-cyan pt-4" : ""
+          }">
+          
+            ${service.text}
+          </p>
+          ${
+            plansContent.premium.annually.generateLeads[index] === true
+              ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>`
+              : plansContent.premium.annually.generateLeads[index] === false
+              ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>`
+              : `<span class="text-end">${plansContent.premium.annually.generateLeads[index]}</span>`
+          }
+        </li>
+        `;
+
+      premiumContent.insertAdjacentHTML("beforeend", content);
+    });
     // services Content
     plansContent.services.map((service, index) => {
       const content = `
@@ -1327,6 +1299,35 @@ togglePlan?.addEventListener("click", (e) => {
     standardPrice.textContent = plansContent.standard.monthly.price;
     premiumPrice.textContent = plansContent.premium.monthly.price;
     //====== Standard Content ======//
+    // Generating Leads Content
+    plansContent.generateLeads.map((service, index) => {
+      const content =
+        index !== 2
+          ? // index !== 2 && index !== 5
+            `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${
+            index === 0 ? "h4 text-light-cyan pt-4" : ""
+          }">
+          
+            ${service.text}
+          </p>
+          ${
+            plansContent.standard.monthly.generateLeads[index] === true
+              ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>`
+              : plansContent.standard.monthly.generateLeads[index] === false
+              ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>`
+              : `<span class="text-end">${plansContent.standard.monthly.generateLeads[index]}</span>`
+          }
+        </li>
+        `
+          : "";
+
+      standardContent.insertAdjacentHTML("beforeend", content);
+    });
     // services Content
     plansContent.services.map((service, index) => {
       const content =
@@ -1407,6 +1408,34 @@ togglePlan?.addEventListener("click", (e) => {
     });
 
     //====== Premium Content ======//
+    // Genertaing Leads Content
+    plansContent.generateLeads.map((service, index) => {
+      const content =
+        index !== 2
+          ? `
+        <li class="flex items-center justify-between gap-2">
+          <p class="flex items-center gap-0.5 xl:gap-4 ${
+            index === 0 ? "h4 text-light-cyan pt-4" : ""
+          }">
+          
+            ${service.text}
+          </p>
+          ${
+            plansContent.premium.monthly.generateLeads[index] === true
+              ? `<span class="text-dark-cyan"
+            ><i class="fa-solid fa-check"></i></span>`
+              : plansContent.premium.monthly.generateLeads[index] === false
+              ? `<span class="text-red-500"
+            ><i class="fa-solid fa-x"></i
+            ></span>`
+              : `<span class="text-end">${plansContent.premium.monthly.generateLeads[index]}</span>`
+          }
+        </li>
+        `
+          : "";
+
+      premiumContent.insertAdjacentHTML("beforeend", content);
+    });
     // services Content
     plansContent.services.map((service, index) => {
       const content =
@@ -1494,7 +1523,7 @@ togglePlan?.addEventListener("click", (e) => {
 });
 
 const annuallyPrices = {
-  standard: "$193",
+  standard: "$195",
   premium: "$320",
 };
 
@@ -1558,7 +1587,7 @@ const monthlyDetails = {
       `<span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-      "1 موظف مبيعات",
+      ,
       "كحد اقصى 30",
       "يصل الى 10 ملايين ج. م.",
     ],
@@ -1651,8 +1680,8 @@ function fillPlanContent(type, lang) {
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       ${
                         lang == "en"
-                          ? "Exhibitions and Trade Mission"
-                          : "المعارض والبعثات التجارية"
+                          ? "Trade Missions in target countries"
+                          : "بعثات تجارية مستهدفة"
                       }
                     </p>
                     <p class="text-end">
@@ -1663,7 +1692,7 @@ function fillPlanContent(type, lang) {
                     <p class="flex items-center gap-0.5 xl:gap-4">
                       ${
                         lang == "en"
-                          ? "International Export Sales"
+                          ? "International Export Consultant"
                           : "دعم الصادرات الدولية"
                       }
                     </p>
@@ -2410,7 +2439,7 @@ const plans = {
     name: "Premium Monthly",
   },
   "standard-annual": {
-    monthlyCost: 193,
+    monthlyCost: 195,
     annualCost: 2340,
     buyers: 8,
     sales: 1,
