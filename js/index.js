@@ -799,7 +799,7 @@ const plansContent = {
         ? "International Export Consultant"
         : "دعم الصادرات الدولية",
       info: "",
-      gain: "1 Sales",
+      gain: "1 Sales / 3 Month",
     },
     {
       text: isEnglishVersion()
@@ -922,8 +922,8 @@ const plansContent = {
     annually: {
       price: "$195",
       generateLeads: isEnglishVersion()
-        ? ["", "8 / Month", "6 / Month", "1 Sales", true]
-        : ["", "8 / شهر", "6 / شهر", "1 موظف مبيعات", true],
+        ? ["", "8 / Month", "6 / Month", "1 Sales / 3 Month", true]
+        : ["", "8 / شهر", "6 / شهر", "1 موظف مبيعات / 3 شهر", true],
       services: isEnglishVersion()
         ? ["", true, "Up to 10M EGP"]
         : ["", true, "يصل الى 10 ملايين ج. م."],
@@ -986,8 +986,8 @@ const plansContent = {
     annually: {
       price: "$320",
       generateLeads: isEnglishVersion()
-        ? ["", "15 / Month", "12 / Month", "2 Sales", true]
-        : ["", "15 / شهر", "12 / شهر", "2 موظف مبيعات", true],
+        ? ["", "15 / Month", "12 / Month", "1 Sales / 6 Month", true]
+        : ["", "15 / شهر", "12 / شهر", "1 موظف مبيعات / 6 شهر", true],
       services: isEnglishVersion()
         ? ["", true, "Up to 10M EGP"]
         : ["", true, "يصل الى 10 ملايين ج. م."],
@@ -1017,8 +1017,8 @@ const plansContent = {
     monthly: {
       price: "$460",
       generateLeads: isEnglishVersion()
-        ? ["", "12 / Month", "6 / Month", "1 Sales", false]
-        : ["", "12 / شهر", "6 / شهر", , false],
+        ? ["", "12 / Month", "6 / Month",false, false]
+        : ["", "12 / شهر", "6 / شهر", false , false],
       services: isEnglishVersion()
         ? ["", true, "Up to 10M EGP"]
         : ["", true, "يصل الى 10 ملايين ج. م."],
@@ -1558,7 +1558,9 @@ const monthlyDetails = {
     ><i class="fa-solid fa-x"></i
     ></span>`,
 
-      "1 Sales",
+      ` <span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`,
       "Maximum 30",
       "Up to 10M EGP",
     ],
@@ -1587,6 +1589,9 @@ const monthlyDetails = {
       `<span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
+    `<span class="text-red-500"
+    ><i class="fa-solid fa-x"></i
+    ></span>`
       ,
       "كحد اقصى 30",
       "يصل الى 10 ملايين ج. م.",
@@ -1603,7 +1608,7 @@ const yearlyDetails = {
       ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-      `1 Sales`,
+      `1 Sales / 3 Months`,
       "Maximum 25",
       "Up to 10M EGP",
     ],
@@ -1615,7 +1620,7 @@ const yearlyDetails = {
       ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-      "2 Sales",
+      "1 Sales / 6 Months",
       "Maximum 60",
       "Up to 10M EGP",
     ],
@@ -1629,7 +1634,7 @@ const yearlyDetails = {
       ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
 
-      `1 موظف مبيعات`,
+      `1 موظف مبيعات / 3 أشهر`,
       "كحد اقصى 25",
       "يصل الى 10 ملايين ج. م.",
     ],
@@ -1640,7 +1645,7 @@ const yearlyDetails = {
       "2 حملة / شهريا",
       ` <span class="text-dark-cyan"
     ><i class="fa-solid fa-check"></i></span>`,
-      "2 موظف مبيعات",
+      "1 موظف مبيعات / 6 أشهر",
       "كحد اقصى 60",
       "يصل الى 10 ملايين ج. م.",
     ],
