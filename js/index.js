@@ -951,13 +951,13 @@ const plansContent = {
         : ["", false, true, true, "كحد اقصى 25", "كحد اقصى 5", true, true],
     },
     monthly: {
-      price: "$275",
+      price: "$315",
       generateLeads: isEnglishVersion()
-        ? ["", "5 / Month", "6 / Month", false, false]
-        : ["", "5 / شهر", "6 / شهر", false, false],
+        ? ["", "5 / Month", false, false, false]
+        : ["", "5 / شهر", false, false, false],
       services: isEnglishVersion()
-        ? ["", true, "Up to 10M EGP"]
-        : ["", true, "يصل الى 10 ملايين ج. م."],
+        ? ["", true, "Up to 1M EGP"]
+        : ["", true, "يصل الى 1 ملايين ج. م."],
       marketing: isEnglishVersion()
         ? [
             "",
@@ -978,8 +978,8 @@ const plansContent = {
             false,
           ],
       techFeatures: isEnglishVersion()
-        ? ["", false, true, true, true, "Maximum 12", "Maximum 5", true]
-        : ["", false, true, true, true, "كحد اقصى 12", "كحد اقصى 5", true],
+        ? ["", false, true, true, true, "Maximum 10", "Maximum 5", true]
+        : ["", false, true, true, true, "كحد اقصى 10", "كحد اقصى 5", true],
     },
   },
   premium: {
@@ -1015,10 +1015,10 @@ const plansContent = {
         : ["", true, true, true, "كحد اقصى 60", "كحد اقصى 8", true, true],
     },
     monthly: {
-      price: "$460",
+      price: "$520",
       generateLeads: isEnglishVersion()
-        ? ["", "12 / Month", "6 / Month",false, false]
-        : ["", "12 / شهر", "6 / شهر", false , false],
+        ? ["", "10 / Month", "6 / Month", false, false]
+        : ["", "10 / شهر", "6 / شهر", false, false],
       services: isEnglishVersion()
         ? ["", true, "Up to 10M EGP"]
         : ["", true, "يصل الى 10 ملايين ج. م."],
@@ -1030,7 +1030,7 @@ const plansContent = {
             "2 Campaign / Month",
             "4 Designs / Month",
             true,
-            true,
+            false,
           ]
         : [
             "",
@@ -1039,7 +1039,7 @@ const plansContent = {
             "2 حملة / شهريا",
             "4 تصاميم / شهريا",
             true,
-            true,
+            false,
           ],
       techFeatures: isEnglishVersion()
         ? ["", true, true, true, true, "Maximum 30", "Maximum 8", true]
@@ -1301,10 +1301,7 @@ togglePlan?.addEventListener("click", (e) => {
     //====== Standard Content ======//
     // Generating Leads Content
     plansContent.generateLeads.map((service, index) => {
-      const content =
-        index !== 2
-          ? // index !== 2 && index !== 5
-            `
+      const content = `
         <li class="flex items-center justify-between gap-2">
           <p class="flex items-center gap-0.5 xl:gap-4 ${
             index === 0 ? "h4 text-light-cyan pt-4" : ""
@@ -1323,9 +1320,7 @@ togglePlan?.addEventListener("click", (e) => {
               : `<span class="text-end">${plansContent.standard.monthly.generateLeads[index]}</span>`
           }
         </li>
-        `
-          : "";
-
+        `;
       standardContent.insertAdjacentHTML("beforeend", content);
     });
     // services Content
@@ -1410,9 +1405,7 @@ togglePlan?.addEventListener("click", (e) => {
     //====== Premium Content ======//
     // Genertaing Leads Content
     plansContent.generateLeads.map((service, index) => {
-      const content =
-        index !== 2
-          ? `
+      const content = `
         <li class="flex items-center justify-between gap-2">
           <p class="flex items-center gap-0.5 xl:gap-4 ${
             index === 0 ? "h4 text-light-cyan pt-4" : ""
@@ -1431,9 +1424,7 @@ togglePlan?.addEventListener("click", (e) => {
               : `<span class="text-end">${plansContent.premium.monthly.generateLeads[index]}</span>`
           }
         </li>
-        `
-          : "";
-
+        `;
       premiumContent.insertAdjacentHTML("beforeend", content);
     });
     // services Content
@@ -1589,10 +1580,9 @@ const monthlyDetails = {
       `<span class="text-red-500"
     ><i class="fa-solid fa-x"></i
     ></span>`,
-    `<span class="text-red-500"
+      `<span class="text-red-500"
     ><i class="fa-solid fa-x"></i
-    ></span>`
-      ,
+    ></span>`,
       "كحد اقصى 30",
       "يصل الى 10 ملايين ج. م.",
     ],
