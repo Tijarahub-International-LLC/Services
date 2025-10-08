@@ -920,7 +920,7 @@ const plansContent = {
   ],
   standard: {
     annually: {
-      price: "$195",
+      price: "$220.5",
       generateLeads: isEnglishVersion()
         ? ["", "8 / Month", "6 / Month", "1 Sales / 3 Month", true]
         : ["", "8 / شهر", "6 / شهر", "1 موظف مبيعات / 3 شهر", true],
@@ -984,7 +984,7 @@ const plansContent = {
   },
   premium: {
     annually: {
-      price: "$320",
+      price: "$364",
       generateLeads: isEnglishVersion()
         ? ["", "15 / Month", "12 / Month", "1 Sales / 6 Month", true]
         : ["", "15 / شهر", "12 / شهر", "1 موظف مبيعات / 6 شهر", true],
@@ -1514,13 +1514,13 @@ togglePlan?.addEventListener("click", (e) => {
 });
 
 const annuallyPrices = {
-  standard: "$195",
-  premium: "$320",
+  standard: "$220.5",
+  premium: "$364",
 };
 
 const monthlyPrices = {
-  standard: "$275",
-  premium: "$460",
+  standard: "$315",
+  premium: "$520",
 };
 
 const monthlyDetails = {
@@ -2414,8 +2414,8 @@ let growthChart;
 // Plan data
 const plans = {
   "standard-monthly": {
-    monthlyCost: 275,
-    annualCost: 275 * 12,
+    monthlyCost: 315,
+    annualCost: 220.5 * 12,
     buyers: 8,
     sales: 1,
     research: 1,
@@ -2424,8 +2424,8 @@ const plans = {
     name: "Standard Monthly",
   },
   "premium-monthly": {
-    monthlyCost: 460,
-    annualCost: 460 * 12,
+    monthlyCost: 520,
+    annualCost: 364 * 12,
     buyers: 12,
     sales: 2,
     research: 2,
@@ -2434,8 +2434,8 @@ const plans = {
     name: "Premium Monthly",
   },
   "standard-annual": {
-    monthlyCost: 195,
-    annualCost: 2340,
+    monthlyCost: 315,
+    annualCost: 2646,
     buyers: 8,
     sales: 1,
     research: 1,
@@ -2444,8 +2444,8 @@ const plans = {
     name: "Standard Annual",
   },
   "premium-annual": {
-    monthlyCost: 320,
-    annualCost: 3840,
+    monthlyCost: 364,
+    annualCost: 4368,
     buyers: 15,
     sales: 2,
     research: 2,
